@@ -751,10 +751,10 @@
           <!-- mac:method = rastermeta Method, TODO: add a code list -->
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:method"/>
           <!-- mac:scope/mcc:extent/gex:EX_Extent/gex:temporalExtent = rastermeta Year of Acquisition -->
-          <field name="yearOfAcquisition" templateModeOnly="true" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent" del=".">
+          <field name="yearOfAcquisition" templateModeOnly="true" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent" del=".">
             <template>
               <values>
-                <key label="yearOfAcquisition" xpath="gex:extent/gml:TimePeriod/gml:beginPosition" tooltip="yearOfAcquisition" use="string"/>
+                <key label="yearOfAcquisition" xpath=".//gml:TimePeriod//gml:beginPosition" tooltip="yearOfAcquisition"/>
               </values>
               <snippet>
                 <gex:extent>
@@ -794,19 +794,23 @@
             <template>
               <values>
                 <!-- TODO: Add suggestion list for project partner agencies -->
-                <key label="projectPartnerAgency" xpath="delwp:MD_ProjectPartner/delwp:agency/gco:CharacterString" tooltip="delwp-projectPartnerAgency"/>
+                <key label="projectPartnerAgency" xpath="delwp:MD_ProjectPartner/delwp:agency/delwp:MD_AgencyCode/@codeListValue" tooltip="delwp-projectPartnerAgency">
+                  <codelist name="delwp:MD_AgencyCode"/>
+                </key>
                 <!-- TODO: Add suggestion list for project partner name -->
-                <key label="projectPartnerName" xpath="delwp:MD_ProjectPartner/delwp:name/gco:CharacterString" tooltip="delwp-projectPartnerName"/>
-                <key label="projectPartnerPurpose" xpath="delwp:MD_ProjectPartner/delwp:purpose/gco:CharacterString" tooltip="delwp-projectPartnerPurpose"/>
+                <key label="projectPartnerName" xpath="delwp:MD_ProjectPartner/delwp:name/delwp:MD_PartnerNameCode/@codeListValue" tooltip="delwp-projectPartnerName">
+                  <codelist name="delwp:MD_PartnerNameCode"/>
+                </key>
+                <key label="projectPartnerPurpose" xpath="delwp:MD_ProjectPartner/delwp:purpose/gco:CharacterString" tooltip="delwp-projectPartnerPurpose" use="textarea"/>
               </values>
               <snippet>
 								<delwp:projectPartner>
         					<delwp:MD_ProjectPartner>
           					<delwp:agency>
-            					<gco:CharacterString>{{projectPartnerAgency}}</gco:CharacterString>
+            					<delwp:MD_AgencyCode codeList="codeListLocation#MD_AgencyCode" codeListValue="{{projectPartnerAgency}}"/>
           					</delwp:agency>
           					<delwp:name>
-            					<gco:CharacterString>{{projectPartnerName}}</gco:CharacterString>
+            					<delwp:MD_PartnerNameCode codeList="codeListLocation#MD_PartnerNameCode" codeListValue="{{projectPartnerName}}"/>
           					</delwp:name>
           					<delwp:purpose>
             					<gco:CharacterString>{{projectPartnerPurpose}}</gco:CharacterString>
