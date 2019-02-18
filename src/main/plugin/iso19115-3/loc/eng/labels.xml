@@ -27,6 +27,7 @@
         xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
         xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
         xmlns:gml="http://www.opengis.net/gml/3.2"
+        xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xsi:noNamespaceSchemaLocation="../../../../../../../schema-labels.xsd">
   <element name="gco:Distance">
@@ -96,6 +97,11 @@
     <description></description>
     <condition></condition>
   </element>
+  <element name="mac:MI_Operation">
+    <label>Operation</label>
+    <description></description>
+    <condition></condition>
+  </element>
   <element name="mac:platform">
     <label>Platform</label>
     <description></description>
@@ -108,6 +114,16 @@
   </element>
   <element name="mac:objective">
     <label>Objective</label>
+    <description></description>
+    <condition></condition>
+  </element>
+  <element name="mac:scope">
+    <label>Scope</label>
+    <description></description>
+    <condition></condition>
+  </element>
+  <element name="mac:otherProperty">
+    <label>Other properties</label>
     <description></description>
     <condition></condition>
   </element>
@@ -5585,6 +5601,30 @@
   </element>
   <element name="reg:RE_ItemStatus">
     <label>Item status</label>
+    <description></description>
+  </element>
+  <element name="delwp:method">
+    <label>Method</label>
+    <description></description>
+  </element>
+  <element name="delwp:agency">
+    <label>Agency</label>
+    <description></description>
+  </element>
+  <element name="delwp:name">
+    <label>Name</label>
+    <description></description>
+  </element>
+  <element name="delwp:purpose">
+    <label>Purpose</label>
+    <description></description>
+  </element>
+  <element name="delwp:projectPartner">
+    <label>Project Partner</label>
+    <description></description>
+  </element>
+  <element name="delwp:MD_ProjectPartner">
+    <label>Project Partner</label>
     <description></description>
   </element>
 </labels>

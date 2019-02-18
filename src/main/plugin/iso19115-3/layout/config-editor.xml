@@ -18,6 +18,7 @@
   xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
   xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
   xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
   xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018">
 
   <!-- Form field type configuration. Default is text. -->
@@ -189,7 +190,7 @@
 
   <!-- View configuration -->
   <views>
-    <view name="default" displayIfRecord="count(mdb:MD_Metadata/mdb:metadataScope/mdb:MD_MetadataScope/mdb:resourceScope/mcc:MD_ScopeCode[@codeListValue='service']) = 0">
+    <view name="default" displayIfRecord="count(mdb:MD_Metadata/mdb:metadataScope/mdb:MD_MetadataScope/mdb:resourceScope/mcc:MD_ScopeCode[@codeListValue=('','dataset')]) = 1">
       <sidePanel>
         <directive data-gn-onlinesrc-list=""/>
         <directive gn-geo-publisher=""
@@ -483,16 +484,6 @@
 			</tab>
 			-->
 
-      <tab id="acquisitionInfo" mode="flat" displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='grid']) > 0">
-        <section name=" ">
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:instrument" or="instrument" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation"/>
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation" or="operation" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation"/>
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:platform" or="platform" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation"/>
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:environmentalConditions" or="environmentalConditions" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation"/>
-				</section>
-			</tab>
-         
-
       <!-- Elements that should not use the "flat" mode -->
       <flatModeExceptions>
         <for name="cit:date" />
@@ -699,8 +690,8 @@
       </flatModeExceptions>
     </view>
 
-    <view name="project" displayIfRecord="count(mdb:MD_Metadata/mdb:metadataScope/mdb:MD_MetadataScope/mdb:resourceScope/mcc:MD_ScopeCode[@codeListValue='project']) = 0">
-      <tab id="projectDescription" default="true" mode="flat">
+    <view name="project" displayIfRecord="count(mdb:MD_Metadata/mdb:metadataScope/mdb:MD_MetadataScope/mdb:resourceScope/mcc:MD_ScopeCode[@codeListValue='project']) > 0">
+      <tab id="resourceDescription" default="true" mode="flat">
         <section name=" ">
 					<!-- special template to render this field readonly - see layout-custom-fields.xsl -->
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:title"/>
@@ -712,14 +703,14 @@
 				</section>
 			</tab>
 
-      <tab id="projectParties" mode="flat">
+      <tab id="resourceContacts" mode="flat">
         <section name=" ">
           <!-- Template has Custodian, Owner can be added if required -->
 					<field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:citedResponsibleParty" or="citedResponsibleParty" in="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation"/>
 				</section>
 			</tab>
 
-      <tab id="projectKeywords" mode="flat">
+      <tab id="resourceKeywords" mode="flat">
         <section name=" ">
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:topicCategory"/>
           <!-- TODO: add ANZLIC extent keywords as thesaurus? Only allow choices from that
@@ -728,14 +719,14 @@
 				</section>
 			</tab>
 
-      <tab id="projectMaintenance" mode="flat">
+      <tab id="resourceMaintenance" mode="flat">
         <section name=" ">
           <!-- TODO: check codelist as we need to match Availability in rastermeta -->
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceMaintenance"/>
 				</section>
 			</tab>
  
-      <tab id="projectMetadataContacts" mode="flat">
+      <tab id="metadataContacts" mode="flat">
         <section name=" ">
           <!-- TODO: make sure that current user is added as the metadata creator.
                If already a creator then add the current user as an editor, it is
@@ -747,23 +738,37 @@
       <!-- TODO: This section needs a check to see whether an ANZLIC place has been selected
            as a keyword, if so then update-fixed-info.xsl will add an extent from the 
            thesaurus, alternatively could use gex:description? -->
-      <tab id="projectExtents" mode="flat">
+      <tab id="resourceExtents" mode="flat">
         <section name=" ">
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:extent"/>
 				</section>
 			</tab>
 
-      <tab id="projectAcquisitionInfo" mode="flat">
+      <tab id="resourceAcquisitionInfo" mode="flat">
         <section name=" ">
           <!-- mac:description = rastermeta Program -->
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:description"/>
-          <!-- mac:method = rastermeta Method, TODO: add a suggestion list -->
+          <!-- mac:method = rastermeta Method, TODO: add a code list -->
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:method"/>
-          <!-- mac:scope/mcc:extent/gex:EX_Extent/gex:temporalExtent = rastermeta Year of Acquisition, TODO: add a restriction to enter year only -->
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent/gex:EX_Extent/gex:temporalExtent"/>
+          <!-- mac:scope/mcc:extent/gex:EX_Extent/gex:temporalExtent = rastermeta Year of Acquisition -->
+          <field name="yearOfAcquisition" templateModeOnly="true" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent" del=".">
+            <template>
+              <values>
+                <key label="yearOfAcquisition" xpath="gex:extent/gml:TimePeriod/gml:beginPosition" tooltip="yearOfAcquisition" use="string"/>
+              </values>
+              <snippet>
+                <gex:extent>
+                  <gml:TimePeriod gml:id="A1234">
+                    <gml:beginPosition>{{yearOfAcquisition}}</gml:beginPosition>
+                    <gml:endPosition></gml:endPosition>
+                  </gml:TimePeriod>
+                </gex:extent>
+              </snippet>
+            </template>
+          </field>
           <!-- Acquistion details supplier - this is a lookup of a fragment containing the
                supplier details -->
-					<field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:citation/cit:CI_Citation/cit:citedResponsibleParty" or="citedResponsibleParty" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:citation/cit:CI_Citation"/>
+					<field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation/cit:citedResponsibleParty" or="citedResponsibleParty" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation"/>
 					<!-- offer a mac:identifier for schedule number --> 
           <field name="projectScheduleNumber" templateModeOnly="true" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:identifier[mcc:MD_Identifier/mcc:codeSpace/gco:CharacterString='delwp-sequenceNumber']" del=".">
             <template>
@@ -785,7 +790,7 @@
             </template>
 					</field>
 					<!-- offer one or more delwp:projectPartner --> 
-          <field name="projectPartner" templateModeOnly="true" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherPeroperty/gco:Record/delwp:projectPartner" del=".">
+          <field name="projectPartner" templateModeOnly="true" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:projectPartner" or="projectPartner" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record" del=".">
             <template>
               <values>
                 <!-- TODO: Add suggestion list for project partner agencies -->
@@ -829,6 +834,7 @@
 				<for name="mac:environmentalConditions"/>
       </flatModeExceptions>
     </view>
+
     <view name="advanced" displayIfServiceInfo="count(session[profile='Administrator'])=1">
       <sidePanel>
         <directive data-gn-onlinesrc-list=""/>

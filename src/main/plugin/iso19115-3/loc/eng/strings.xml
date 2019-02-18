@@ -78,6 +78,7 @@
   <resourceDescription>Description</resourceDescription>
   <resourceKeywords>Keywords</resourceKeywords>
   <resourceMaintenance>Maintenance</resourceMaintenance>
+  <resourceAcquisitionInfo>Acquisition Info</resourceAcquisitionInfo>
   <constraints>Constraints</constraints>
   <resourceConstraints>Resource Constraints</resourceConstraints>
   <metadataConstraints>Metadata Constraints</metadataConstraints>
@@ -88,10 +89,13 @@
   <distribution_name>Name</distribution_name>
   <distribution_version>Version</distribution_version>
   <resourceType>Type</resourceType>
+  <resourceResponsibleParties>Responsibility</resourceResponsibleParties>
         <resourceLineageTab>Lineage</resourceLineageTab>
         <resourceFormat>Format (admin only)</resourceFormat>
         <resourceFormatNoTitle></resourceFormatNoTitle>
         <distribution>Distribution</distribution>
+        <metadataContacts>Metadata Contacts</metadataContacts>
+        <resourceContacts>Responsibility</resourceContacts>
 
   <useAssociatedResources><span>Add an online resource for distribution using the "<i class="fa fa-link"></i><i class="icon-external-link"></i>Associated resources" panel at the right hand side of the form</span></useAssociatedResources>
 
@@ -112,6 +116,13 @@
   <repeatability>Repeatable?</repeatability>
 
   <useAssociatedResourcesForOperatesOn><span>Select metadata records describing datasets that the service operates on using the "<i class="fa fa-link"></i><i class="icon-external-link"></i>Associated resources" panel at the right hand side of the form. Use the "<i class="fa fa-files-o"></i><i class="icon-external-link"></i>Link to a dataset" menu option.</span></useAssociatedResourcesForOperatesOn>
+
+  <projectPartner>Project Partner</projectPartner>
+  <projectScheduleNumber>RFQ Number</projectScheduleNumber>
+  <projectPartnerAgency>Agency</projectPartnerAgency>
+  <projectPartnerName>Name</projectPartnerName>
+  <projectPartnerPurpose>Purpose</projectPartnerPurpose>
+  <yearOfAcquisition>Year (eg. 2008-9)</yearOfAcquisition>
 
 
 </strings>
