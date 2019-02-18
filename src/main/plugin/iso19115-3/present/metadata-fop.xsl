@@ -12,6 +12,7 @@
   xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
   xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
   xmlns:dqm="http://standards.iso.org/iso/19157/-2/dqm/1.0"
+                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
   xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0"
   xmlns:geonet="http://www.fao.org/geonetwork"
   xmlns:date="http://exslt.org/dates-and-times" 

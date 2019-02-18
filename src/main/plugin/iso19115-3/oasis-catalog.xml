@@ -55,6 +55,9 @@
   <uri name="http://schemas.opengis.net/gml/3.2.1/gml.xsd"
        uri="schema/others/ISO19136/gml.xsd"/>
 
+  <uri name="https://github.com/geonetwork-delwp/iso19115-3.2018"
+       uri="schema/delwp/delwp.xsd"/>
+
 <!-- older -->
 
   <uri name="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19136_Schemas/gml.xsd"

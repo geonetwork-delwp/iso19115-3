@@ -26,6 +26,7 @@
   xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
   xmlns:dqm="http://standards.iso.org/iso/19157/-2/dqm/1.0"
   xmlns:gml="http://www.opengis.net/gml/3.2" 
+                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
   xmlns:ogc="http://www.opengis.net/rdf#"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:iso19115-3="http://geonetwork-opensource.org/schemas/iso19115-3"

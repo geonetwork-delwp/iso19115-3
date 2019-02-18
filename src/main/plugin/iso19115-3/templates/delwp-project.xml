@@ -226,4 +226,17 @@
          </mco:classification>
       </mco:MD_SecurityConstraints>
    </mdb:metadataConstraints>
+   <mdb:acquistionInformation>
+    <mac:MI_AcquisitionInformation>
+      <mac:operation>
+        <mac:MI_Operation>
+          <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_PropertyType'])"/>
+          <mac:otherProperty>
+            <gco:Record xsi:type="delwp:MD_AgencyCode_PropertyType">
+            </gco:Record>
+          </mac:otherProperty>
+        </mac:MI_Operation>
+      </mac:operation> 
+    </mac:MI_AcquisitionInformation>
+  </mdb:acquistionInformation>
 </mdb:MD_Metadata>

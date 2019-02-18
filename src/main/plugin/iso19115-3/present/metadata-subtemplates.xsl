@@ -6,6 +6,7 @@
   xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
   xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
   xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
+                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
   xmlns:geonet="http://www.fao.org/geonetwork" 
   exclude-result-prefixes="mds mri cit mrd mco gex gco geonet">
   

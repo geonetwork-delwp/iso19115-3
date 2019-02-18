@@ -37,6 +37,7 @@
                 xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0"
                 xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
                 xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
                 xmlns:gn-fn-index="http://geonetwork-opensource.org/xsl/functions/index"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:daobs="http://daobs.org"

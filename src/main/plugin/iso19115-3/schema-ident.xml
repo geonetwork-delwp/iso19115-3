@@ -4,37 +4,11 @@
         xsi:schemaLocation="http://geonetwork-opensource.org/schemas/schema-ident http://geonetwork-opensource.org/schemas/schema-ident/schema-ident.xsd">
   <name>iso19115-3</name>
   <id>00c26e3d-560a-49e8-9d10-49705b6ac863</id>
-  <version>2.0</version>
+  <version>1.0</version>
   <appMinorVersionSupported>3.4.0</appMinorVersionSupported>
-  <title xml:lang="en">Geographic information &#45;&#45; Metadata</title>
-  <title xml:lang="fr">Information géographique &#45;&#45; Métadonnées</title>
+  <title xml:lang="en">Department of Environment, Land, Water and Planning (DELWP) ISO19115-3 2018 Metadata Profile</title>
   <description xml:lang="en"><![CDATA[
-ISO19115-1/-3 schemas from github for DELWP.
-This schema also includes:
-
-- ISO19110 for feature catalog
-
-- ISO19115-2 for Imagery
-
-- ISO19157 for Data Quality
-  ]]></description>
-  <description xml:lang="fr"><![CDATA[
-L’objectif de l’ISO 19115 est de fournir un modèle destiné à décrire des informations
-ou des ressources pouvant avoir des étendues géographiques. Cette partie de l’ISO 19115 est destinée à être utilisée, entre autres, par des analystes de systèmes d’informations, des planificateurs de programmes et des développeurs de systèmes d’informations, dans le but de définir des principes de base et des exigences permettant d’établir une description normalisée des ressources d’informations.
-
-Cette partie de l’ISO 19115 définit les éléments de métadonnées, leurs propriétés et les relations entre les éléments et établit un ensemble commun de terminologies, de définitions et de procédures d’extension concernant les métadonnées.
-﻿
-Bien que cette partie de l’ISO 19115 ait pour but principal de décrire les informations numériques qui ont une étendue géographique, elle peut être utilisée pour décrire tous les types de ressources, y compris les documents textuels, les initiatives, les logiciels, les informations non géographiques, les spécifications de produit et les entrepôts de données, c’est-à-dire qu’elle peut même être utilisée pour décrire des ressources d’informations n’ayant aucune étendue géographique. Certains domaines ont leurs propres normes de métadonnées, telles que celles du Dublin Core pour les bibliothèques. Si besoin, des profils
-de telles normes et de cette partie de l’ISO 19115 pourraient être développés pour créer un Schéma Communautaire.
-
-
-Ce schéma est également composé des normes :
-
-- ISO19110 pour les modèles de données
-
-- ISO19115-2 pour l'imagerie
-
-- ISO19157 pour la qualité des données
+Metadata Profile of ISO19115-3 (2018) for Victorian Government Department of Environment, Land, Water and Planning (DELWP), Australia.
   ]]></description>
   <standardUrl xml:lang="en">http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=32579</standardUrl>
   <standardUrl xml:lang="fr">http://www.iso.org/iso/fr/home/store/catalogue_tc/catalogue_detail.htm?csnumber=32579</standardUrl>

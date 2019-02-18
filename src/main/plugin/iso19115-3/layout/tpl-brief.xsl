@@ -16,6 +16,7 @@
   xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
   xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
   xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
   xmlns:gn="http://www.fao.org/geonetwork"
   xmlns:gn-fn-core="http://geonetwork-opensource.org/xsl/functions/core"
   xmlns:gn-fn-iso19139="http://geonetwork-opensource.org/xsl/functions/profiles/iso19139"

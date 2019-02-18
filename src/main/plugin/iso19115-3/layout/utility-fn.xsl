@@ -6,6 +6,7 @@
   xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
   xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
   xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
+                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
   xmlns:gn-fn-iso19115-3="http://geonetwork-opensource.org/xsl/functions/profiles/iso19115-3"
   xmlns:gn-fn-metadata="http://geonetwork-opensource.org/xsl/functions/metadata"
   exclude-result-prefixes="#all">

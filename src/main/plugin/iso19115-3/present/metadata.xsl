@@ -13,6 +13,7 @@
   xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
   xmlns:dqm="http://standards.iso.org/iso/19157/-2/dqm/1.0"
   xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
+                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
 	xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:gml="http://www.opengis.net/gml/3.2"

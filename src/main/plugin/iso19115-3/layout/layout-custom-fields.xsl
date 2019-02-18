@@ -10,6 +10,7 @@
   xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0"
   xmlns:gts="http://www.isotc211.org/2005/gts"
   xmlns:gml="http://www.opengis.net/gml/3.2"
+                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
   xmlns:gn="http://www.fao.org/geonetwork"
   xmlns:gn-fn-metadata="http://geonetwork-opensource.org/xsl/functions/metadata"
   xmlns:java-xsl-util="java:org.fao.geonet.util.XslUtil"

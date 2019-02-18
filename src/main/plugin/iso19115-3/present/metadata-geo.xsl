@@ -8,6 +8,7 @@
     xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0"
     xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
     xmlns:geonet="http://www.fao.org/geonetwork" 
+                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
     xmlns:exslt="http://exslt.org/common" 
     exclude-result-prefixes="gco gml gex mds xlink exslt geonet java math">
 

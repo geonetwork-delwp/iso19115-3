@@ -11,6 +11,7 @@
     xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
     xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
     xmlns:geonet="http://www.fao.org/geonetwork"
+                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
     xmlns:java="java:org.fao.geonet.util.XslUtil"
     version="2.0"
     exclude-result-prefixes="#all">
