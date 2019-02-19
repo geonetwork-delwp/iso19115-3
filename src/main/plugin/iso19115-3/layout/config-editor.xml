@@ -39,6 +39,7 @@
     <for name="mri:specificUsage" use="textarea"/>
     <for name="mco:useLimitation" use="textarea"/>
     <for name="mri:levelOfDetail" use="textarea"/>
+    <for name="delwp:purpose" use="textarea"/>
 
 
     <for name="gco:Distance" use="number"/>
@@ -790,19 +791,9 @@
             </template>
 					</field>
 					<!-- offer one or more delwp:projectPartner --> 
-          <field name="projectPartner" templateModeOnly="true" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:projectPartner" or="projectPartner" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record" del=".">
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:projectPartner"/>
+					<action type="add" name="projectPartner" or="projectPartner" if="true()" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record">
             <template>
-              <values>
-                <!-- TODO: Add suggestion list for project partner agencies -->
-                <key label="projectPartnerAgency" xpath="delwp:MD_ProjectPartner/delwp:agency/delwp:MD_AgencyCode/@codeListValue" tooltip="delwp-projectPartnerAgency">
-                  <codelist name="delwp:MD_AgencyCode"/>
-                </key>
-                <!-- TODO: Add suggestion list for project partner name -->
-                <key label="projectPartnerName" xpath="delwp:MD_ProjectPartner/delwp:name/delwp:MD_PartnerNameCode/@codeListValue" tooltip="delwp-projectPartnerName">
-                  <codelist name="delwp:MD_PartnerNameCode"/>
-                </key>
-                <key label="projectPartnerPurpose" xpath="delwp:MD_ProjectPartner/delwp:purpose/gco:CharacterString" tooltip="delwp-projectPartnerPurpose" use="textarea"/>
-              </values>
               <snippet>
 								<delwp:projectPartner>
         					<delwp:MD_ProjectPartner>
@@ -819,7 +810,7 @@
       					</delwp:projectPartner>
               </snippet>
             </template>
-					</field>
+					</action>
 				</section>
 			</tab>
          

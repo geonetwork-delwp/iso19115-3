@@ -51,24 +51,6 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
-  <complexType name="MD_OperationProperties_PropertyType">
-    <annotation>
-      <documentation>Description: Describes the DELWP operation properties that don't fit within in the standard</documentation>
-    </annotation>
-    <sequence minOccurs="0">
-      <element minOccurs="0" name="method" type="delwp:MD_MethodCode_PropertyType">
-        <annotation>
-          <documentation>Description: Describes the method used to acquire the imagery in the project</documentation>
-        </annotation>
-      </element>
-      <element minOccurs="0" name="projectPartner" type="delwp:MD_ProjectPartner_PropertyType">
-        <annotation>
-          <documentation>Description: Describes the project partners that financially contributed to the project</documentation>
-        </annotation>
-      </element>
-    </sequence>
-  </complexType>
-
   <element name="MD_AgencyCode"      substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type">
     <annotation>
       <documentation>Description: Describes the agency code of a partner that financially contributed to the project</documentation>
@@ -95,9 +77,11 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
-  <complexType name="MD_ProjectPartner_PropertyType">
+  <complexType name="MD_ProjectPartner_Type">
     <sequence minOccurs="0">
-      <element ref="delwp:MD_ProjectPartner"/>
+      <element minOccurs="1" name="agency"  type="delwp:MD_AgencyCode_PropertyType"/>
+      <element minOccurs="1" name="name"    type="delwp:MD_PartnerNameCode_PropertyType"/>
+      <element minOccurs="0" name="purpose" type="gco:CharacterString_PropertyType"/>
     </sequence>
   </complexType>
 
@@ -107,11 +91,27 @@
     </annotation>
   </element>
 
-  <complexType name="MD_ProjectPartner_Type">
+  <complexType name="MD_ProjectPartner_PropertyType">
     <sequence minOccurs="0">
-      <element minOccurs="1" name="agency"  type="delwp:MD_AgencyCode_PropertyType"/>
-      <element minOccurs="1" name="name"    type="delwp:MD_PartnerNameCode_PropertyType"/>
-      <element minOccurs="0" name="purpose" type="gco:CharacterString_PropertyType"/>
+      <element ref="delwp:MD_ProjectPartner"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="MD_OperationProperties_PropertyType">
+    <annotation>
+      <documentation>Description: Describes the DELWP operation properties that don't fit within in the standard</documentation>
+    </annotation>
+    <sequence minOccurs="0">
+      <element minOccurs="1" name="method" type="delwp:MD_MethodCode_PropertyType">
+        <annotation>
+          <documentation>Description: Describes the method used to acquire the imagery in the project</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="unbounded" name="projectPartner" type="delwp:MD_ProjectPartner_PropertyType">
+        <annotation>
+          <documentation>Description: Describes the project partners that financially contributed to the project</documentation>
+        </annotation>
+      </element>
     </sequence>
   </complexType>
 </schema>

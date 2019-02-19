@@ -241,7 +241,7 @@
           </mac:citation>
           <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_PropertyType'])"/>
           <mac:otherProperty>
-            <gco:Record xsi:type="delwp:MD_AgencyCode_PropertyType">
+            <gco:Record xsi:type="delwp:MD_OperationProperties_PropertyType">
               <delwp:method>
                 <gco:CharacterString></gco:CharacterString>
               </delwp:method>
