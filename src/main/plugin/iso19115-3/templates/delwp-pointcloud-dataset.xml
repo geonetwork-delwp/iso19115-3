@@ -68,7 +68,7 @@
       <mri:citation>
         <cit:CI_Citation>
           <cit:title>
-            <gco:CharacterString>DELWP Template for raster datasets</gco:CharacterString>
+            <gco:CharacterString>DELWP Template for point cloud datasets</gco:CharacterString>
           </cit:title>
           <cit:date>
             <cit:CI_Date>
@@ -115,7 +115,7 @@
 			<mri:pointOfContact xlink:href="local://xml.metadata.get?uuid=urn:delwp-contacts:11&amp;process=cit:role/cit:CI_RoleCode/@codeListValue~pointOfContact"/>
       <mri:spatialRepresentationType>
         <mcc:MD_SpatialRepresentationTypeCode codeList="codeListLocation#MD_SpatialRepresentationTypeCode"
-          codeListValue="grid"/>
+          codeListValue="pointcloud"/>
       </mri:spatialRepresentationType>
       <mri:spatialResolution>
         <mri:MD_Resolution>

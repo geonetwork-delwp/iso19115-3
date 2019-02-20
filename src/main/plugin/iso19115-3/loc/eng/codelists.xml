@@ -1739,6 +1739,17 @@
       <label>Video</label>
       <description>Scene from a video recording</description>
     </entry>
+    <!-- DELWP extensions -->
+    <entry>
+      <code>pointcloud</code>
+      <label>Point Cloud</label>
+      <description>Point cloud data from scanners such as LIDAR</description>
+    </entry>
+    <entry>
+      <code>contour</code>
+      <label>Contours</label>
+      <description>Contour data from a Digital Elevation Model (DEM)</description>
+    </entry>
   </codelist>
   <codelist name="mri:MD_TopicCategoryCode" alias="topicCategory">
     <entry>
@@ -2937,4 +2948,34 @@
       <label>Unknown</label>
     </entry>
   </codelist>
+
+<!-- DELWP Extensions -->
+  <codelist name="delwp:MD_MethodCode">
+    <entry>
+      <code>notEntered</code>
+      <label>Not Entered</label>
+      <description>Not Entered</description>
+    </entry>
+    <entry>
+      <code>captured</code>
+      <label>Captured</label>
+      <description>Captured</description>
+    </entry>
+    <entry>
+      <code>purchased</code>
+      <label>Purchased</label>
+      <description>Purchased</description>
+    </entry>
+    <entry>
+      <code>copied</code>
+      <label>Copied</label>
+      <description>Copied</description>
+    </entry>
+    <entry>
+      <code>unknown</code>
+      <label>Unknown</label>
+      <description>Unknown</description>
+    </entry>
+  </codelist>
+
 </codelists>

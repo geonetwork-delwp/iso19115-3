@@ -5607,12 +5607,8 @@
     <label>Method</label>
     <description></description>
   </element>
-  <element name="delwp:agency">
-    <label>Agency</label>
-    <description></description>
-  </element>
-  <element name="delwp:name">
-    <label>Name</label>
+  <element name="delwp:partner">
+    <label>Partner</label>
     <description></description>
   </element>
   <element name="delwp:purpose">

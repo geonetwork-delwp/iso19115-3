@@ -70,13 +70,16 @@
        <directiveAttributes data-schema="iso19115-3"/>
 		</for>
 
-		<!--
-		<for name="cit:party" addDirective="data-gn-organisation-entry-selector">
-		      <directiveAttributes data-schema="iso19115-3"
-		                           data-root="cit:CI_Individual or cit:CI_Organisation"/>
+		<for name="delwp:partner" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+            data-schema="iso19139.mcp"
+            data-template-add-action="true"
+            data-search-action="true"
+            data-popup-action="true"
+            data-template-type="party"
+            data-filter='{"_root": "mcp:CI_Organisation"}'
+            data-insert-modes="xlink"/>
     </for>
-		-->
-		
     <for name="mdb:contact" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
 						  data-schema="iso19115-3"
@@ -146,6 +149,7 @@
     <name>mdb:resourceLineage</name>
     <name>cit:citedResponsibleParty</name>
     <name>cit:party</name>
+    <name>delwp:partner</name>
     <name>cit:individual</name>
     <name>cit:logo</name>
     <name>mrd:onLine</name>
@@ -797,14 +801,8 @@
               <snippet>
 								<delwp:projectPartner>
         					<delwp:MD_ProjectPartner>
-          					<delwp:agency>
-            					<delwp:MD_AgencyCode codeList="codeListLocation#MD_AgencyCode" codeListValue="{{projectPartnerAgency}}"/>
-          					</delwp:agency>
-          					<delwp:name>
-            					<delwp:MD_PartnerNameCode codeList="codeListLocation#MD_PartnerNameCode" codeListValue="{{projectPartnerName}}"/>
-          					</delwp:name>
           					<delwp:purpose>
-            					<gco:CharacterString>{{projectPartnerPurpose}}</gco:CharacterString>
+            					<gco:CharacterString></gco:CharacterString>
           					</delwp:purpose>
         					</delwp:MD_ProjectPartner>
       					</delwp:projectPartner>
@@ -817,6 +815,9 @@
 
       <!-- Elements that should not use the "flat" mode -->
       <flatModeExceptions>
+        <for name="delwp:projectPartner"/>
+        <for name="delwp:MD_ProjectPartner"/>
+        <for name="delwp:partner"/>
         <for name="cit:date" />
         <for name="mri:descriptiveKeywords" />
         <for name="cit:party"/>

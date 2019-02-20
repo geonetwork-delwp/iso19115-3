@@ -18,7 +18,7 @@
   xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
   xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
   xmlns:gfc="http://standards.iso.org/iso/19110/gfc/1.1"
-                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
+  xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
   xmlns:gmx="http://standards.iso.org/iso/19115/-3/gmx"
   xmlns:gts="http://www.isotc211.org/2005/gts"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -37,11 +37,13 @@
   <xsl:include href="layout-custom-fields-date.xsl"/>
   <xsl:include href="layout-custom-fields-contact.xsl"/>
   <xsl:include href="layout-custom-fields-keywords.xsl"/>
+  <!-- <xsl:include href="layout-custom-fields-delwp.xsl"/> -->
 
   <!-- Visit all XML tree recursively -->
   <xsl:template mode="mode-iso19115-3"
                 match="mds:*|mcc:*|mri:*|mrs:*|mrc:*|mrd:*|mco:*|msr:*|lan:*|
-                       gcx:*|gex:*|dqm:*|mdq:*|cit:*|srv:*|gml:*|gts:*|gfc:*"
+                       gcx:*|gex:*|dqm:*|mdq:*|cit:*|srv:*|gml:*|gts:*|gfc:*|
+                       delwp:*"
                 priority="2">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
@@ -66,7 +68,6 @@
     <xsl:param name="labels" select="$labels" required="no"/>
 
     <xsl:variable name="name" select="concat(@prefix, ':', @name)"/>
-    <xsl:message>SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS <xsl:copy-of select="$viewConfig"/></xsl:message>
     <xsl:variable name="flatModeException"
                   select="gn-fn-metadata:isFieldFlatModeException($viewConfig, $name)"/>
 

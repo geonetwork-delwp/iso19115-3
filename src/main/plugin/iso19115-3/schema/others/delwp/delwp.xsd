@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018" xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" elementFormDefault="qualified" targetNamespace="https://github.com/geonetwork-delwp/iso19115-3.2018" version="1.0">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+        xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" 
+        xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0" 
+        xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018" 
+        xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" 
+        elementFormDefault="qualified" 
+        targetNamespace="https://github.com/geonetwork-delwp/iso19115-3.2018" 
+        version="1.0">
   <import namespace="http://standards.iso.org/iso/19115/-3/gco/1.0" schemaLocation="https://schemas.isotc211.org/19115/-3/gco/1.0/gco.xsd"/>
+  <import namespace="http://standards.iso.org/iso/19115/-3/cit/2.0" schemaLocation="https://schemas.isotc211.org/19115/-3/cit/2.0/cit.xsd"/>
 
 <!-- A gco:Record type that can be used as a child of elements
      such as mac:otherProperty eg. 
@@ -12,18 +20,14 @@
         ...
         <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_PropertyType'])"/>
         <mac:otherProperty>
-         <gco:Record xsi:type="delwp:MD_AgencyCode_PropertyType">
+         <gco:Record xsi:type="delwp:MD_OperationProperties_PropertyType">
           <delwp:method>
             <delwp:MD_MethodCode @codeListValue="Not Entered"/>
           </delwp:method>
           <delwp:projectPartner>
             <delwp:MD_ProjectPartner>
-                 <delwp:agency>
-                   <delwp:MD_AgencyCode @codeListValue="DSE"/>
-                 </delwp:agency>
-                 <delwp:name>
-                   <delwp:MD_PartnerNameCode @codeListValue="DSE Victoria"/>
-                 </delwp:name>
+                 <delwp:partner>
+                 </delwp:partner>
                  <delwp:purpose>
                    <gco:CharacterString>Photogrammetry project</gco:CharacterString>
                  </delwp:purpose>
@@ -51,43 +55,16 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
-  <element name="MD_AgencyCode"      substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type">
-    <annotation>
-      <documentation>Description: Describes the agency code of a partner that financially contributed to the project</documentation>
-    </annotation>
-  </element>
-
-  <element name="MD_PartnerNameCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type">
-    <annotation>
-      <documentation>Description: Describes the name of a partner that financially contributed to the project</documentation>
-    </annotation>
-  </element>
-
-  <complexType name="MD_AgencyCode_PropertyType">
-    <sequence minOccurs="0">
-      <element ref="delwp:MD_AgencyCode"/>
-    </sequence>
-    <attribute ref="gco:nilReason"/>
-  </complexType>
-
-  <complexType name="MD_PartnerNameCode_PropertyType">
-    <sequence minOccurs="0">
-      <element ref="delwp:MD_PartnerNameCode"/>
-    </sequence>
-    <attribute ref="gco:nilReason"/>
-  </complexType>
-
   <complexType name="MD_ProjectPartner_Type">
-    <sequence minOccurs="0">
-      <element minOccurs="1" name="agency"  type="delwp:MD_AgencyCode_PropertyType"/>
-      <element minOccurs="1" name="name"    type="delwp:MD_PartnerNameCode_PropertyType"/>
+    <sequence>
+      <element minOccurs="1" maxOccurs="unbounded" name="partner"  type="cit:AbstractCI_Party_PropertyType"/>
       <element minOccurs="0" name="purpose" type="gco:CharacterString_PropertyType"/>
     </sequence>
   </complexType>
 
   <element name="MD_ProjectPartner" substitutionGroup="gco:AbstractObject" type="delwp:MD_ProjectPartner_Type">
     <annotation>
-      <documentation>Description: Describes the agency, name and purpose of a partner that financially contributed to the project</documentation>
+      <documentation>Description: Describes the contact details and purpose of a partner that financially contributed to the project</documentation>
     </annotation>
   </element>
 
