@@ -2576,11 +2576,9 @@
     <description>Number of elements along the axis</description>
     <condition>mandatory</condition>
   </element>
-  <element name="mri:distance" id="61.0" context="mri:MD_Resolution">
-    <label>Distance</label>
-    <description>Ground sample distance</description>
-    <condition>Provide a distance if no equivalent Scale is documented
-    </condition>
+  <element name="mri:distance" id="61.0">
+    <label>Horizontal Accuracy</label>
+    <description>Horizontal Accuracy eg. 10</description>
     <helper relAtt="uom">
       <option value="0.10" title="cm">10 cm</option>
       <option value="0.25" title="cm">25 cm</option>
@@ -3995,8 +3993,16 @@
     <description>Degree of detail in the grid dataset</description>
   </element>
   <element name="mri:vertical">
-    <label>Vertical sampling distance</label>
-    <description>Vertical sampling distance</description>
+    <label>Vertical Accuracy</label>
+    <description>Vertical accuracy eg. 10</description>
+    <helper relAtt="uom">
+      <option value="0.10" title="cm">10 cm</option>
+      <option value="0.25" title="cm">25 cm</option>
+      <option value="0.50" title="cm">50 cm</option>
+      <option value="1" title="m">1 m</option>
+      <option value="30" title="m">30 m</option>
+      <option value="100" title="m">100 m</option>
+    </helper>
   </element>
   <element name="mri:angularDistance">
     <label>Angular sampling measure</label>
@@ -4253,104 +4259,57 @@
   <element name="cit:title" id="285.0"
            context="/mdb:MD_Metadata/mdb:distributionInfo/mrd:MD_Distribution/mrd:distributionFormat/mrd:MD_Format/mrd:formatSpecificationCitation/cit:CI_Citation/cit:title">
     <label>Format name</label>
-    <description>Name of the data transfer format(s)</description>
+    <description>Name of the data format(s)</description>
     <help>File or link format name</help>
     <helper>
-      <option value="Text">Text</option>
-      <option value="ESRI Shapefile">ESRI Shapefile</option>
-      <option value="Mapinfo MIF/MID">Mapinfo MIF/MID</option>
-      <option value="Mapinfo TAB">Mapinfo TAB</option>
-      <option value="KML">KML</option>
-      <option value="GML">GML</option>
-      <option value="Ascii">Ascii</option>
-      <option value="NetCDF">NetCDF</option>
-      <option value="GeoTIFF">GeoTIFF</option>
-      <option value="TIFF">TIFF</option>
-      <option value="ECW">ECW</option>
-      <option value="JPEG2000">JPEG2000</option>
-      <option value="ZIP">ZIP</option>
-      <option value="PDF">PDF</option>
-      <option value="PNG">PNG</option>
-      <option value="JPEG">JPEG</option>
-      <option value="OGC:WMC">OGC:WMC</option>
-      <option value="OGC:OWS-C">OGC OWS Context</option>
-    </helper>
-  </element>
-
-  <element name="cit:title" id="360.0"
-           context="/mdb:MD_Metadata/mdb:dataQualityInfo/mdq:DQ_DataQuality/mdq:report/mdq:DQ_DomainConsistency/mdq:result/mdq:DQ_ConformanceResult/mdq:specification/cit:CI_Citation/cit:title">
-    <label>Specification</label>
-    <description></description>
-    <help></help>
-    <helper editorMode="radio_linebreak"
-            displayIf="ancestor::node()[name()='mdb:MD_Metadata']/mdb:identificationInfo/mri:MD_DataIdentification">
-      <option value="COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services">
-        COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing
-        Directive 2007/2/EC of the European Parliament and of the Council as
-        regards interoperability of spatial data sets and services
-      </option>
-      <option value="INSPIRE Data Specification on Administrative Units - Guidelines v3.0.1">
-        Guide INSPIRE sur les unités administratives
-      </option>
-      <option value="INSPIRE Data Specification on Cadastral Parcels - Guidelines v 3.0.1">
-        Guide INSPIRE sur les parcelles cadastrales
-      </option>
-      <option value="INSPIRE Data Specification on Geographical Names - Guidelines v 3.0.1">
-        Guide INSPIRE sur les dénominations géographiques
-      </option>
-      <option value="INSPIRE Data Specification on Hydrography - Guidelines v 3.0.1">
-        Guide INSPIRE sur l’hydrographie
-      </option>
-      <option value="INSPIRE Data Specification on Protected Sites - Guidelines v 3.1.0">
-        Guide INSPIRE sur les sites protégés
-      </option>
-      <option value="INSPIRE Data Specification on Transport Networks - Guidelines v 3.1.0">
-        Guide INSPIRE sur les réseaux de transport
-      </option>
-      <option value="INSPIRE Data Specification on Addresses - Guidelines v 3.0.1">
-        Guide INSPIRE sur les adresses
-      </option>
-      <option value="INSPIRE Specification on Coordinate Reference Systems - Guidelines v 3.1">
-        Guide INSPIRE sur les référentiels de coordonnées
-      </option>
-      <option value="INSPIRE Specification on Geographical Grid Systems - Guidelines v 3.0.1">
-        Guide INSPIRE sur les systèmes de maillage géographique
-      </option>
-    </helper>
-    <helper editorMode="radio_linebreak"
-            displayIf="ancestor::node()[name()='mdb:MD_Metadata']/mdb:identificationInfo/srv:SV_ServiceIdentification">
-      <option value="RÈGLEMENT (UE) N° 976/2009">Règlement service en réseau
-        INSPIRE (service de recherche et de consultation) - RÈGLEMENT (UE) N°
-        976/2009
-      </option>
-      <option value="RÈGLEMENT (UE) N° 1088/2010">Règlement service en réseau
-        INSPIRE (service de téléchargement et de transformation) - RÈGLEMENT
-        (UE) N° 1088/2010
-      </option>
-      <option value="Technical Guidance for the implementation of INSPIRE Discovery Services – v.3.1">
-        Guide INSPIRE sur les services de recherche
-      </option>
-      <option value="Technical Guidance for the implementation of INSPIRE View Services - v3.1 – part 4">
-        Guide INSPIRE sur les services de consultation – profil ISO 19128 (WMS)
-      </option>
-      <option value="Technical Guidance for the implementation of INSPIRE View Services - v3.1 – part 5">
-        Guide INSPIRE sur les services de consultation – profil ISO WMTS 1.0.0
-      </option>
-      <option value="Technical Guidance for the INSPIRE Schema Transformation Network Service - v3.0">
-        Guide INSPIRE sur les services de transformation de schéma
-      </option>
-      <option value="Technical Guidance for the implementation of INSPIRE Download Services – level1 - v3.0">
-        Guide INSPIRE sur les services de téléchargement – classe de conformité
-        1 (ATOM pré-défini)
-      </option>
-      <option value="Technical Guidance for the implementation of INSPIRE Download Services – level2 - v3.0">
-        Guide INSPIRE sur les services de téléchargement – classe de conformité
-        2 (WFS pré-défini)
-      </option>
-      <option value="Technical Guidance for the implementation of INSPIRE Download Services – level3 - v3.0">
-        Guide INSPIRE sur les services de téléchargement – classe de conformité
-        3 (WFS direct)
-      </option>
+<option value="LAS 1.2 - Class(Model Key Points, Non-Ground)">LAS 1.2 - Class(Model Key Points, Non-Ground)</option>
+<option value="LAS 1.2">LAS 1.2</option>
+<option value="LAS 1.2, XYZI Ascii">LAS 1.2, XYZI Ascii</option>
+<option value="XYZ Ascii, ESRI Ascii, TIFF">XYZ Ascii, ESRI Ascii, TIFF</option>
+<option value="BIL">BIL</option>
+<option value="ECW">ECW</option>
+<option value="ECW,ERS,TAB">ECW,ERS,TAB</option>
+<option value="ECW,TIFF">ECW,TIFF</option>
+<option value="TIFF,TAB,ECW,ERS">TIFF,TAB,ECW,ERS</option>
+<option value="JPEG2000">JPEG2000</option>
+<option value="TIFF">TIFF</option>
+<option value="TIFF,ECW">TIFF,ECW</option>
+<option value="TIFF,ECW,TAB">TIFF,ECW,TAB</option>
+<option value="TIFF,ERS,TFW,JP2">TIFF,ERS,TFW,JP2</option>
+<option value="XYZ ASCII">XYZ ASCII</option>
+<option value="XYZI ASCII">XYZI ASCII</option>
+<option value="Shapefile">Shapefile</option>
+<option value="Shapefile, DXF">Shapefile, DXF</option>
+<option value="DXF">DXF</option>
+<option value="MapInfo TAB">MapInfo TAB</option>
+<option value="DXF, DWG">DXF, DWG</option>
+<option value="Shapefile, MapInfo TAB">Shapefile, MapInfo TAB</option>
+<option value="ACRES">ACRES</option>
+<option value="ACRES (OLD)">ACRES (OLD)</option>
+<option value="AMIRA">AMIRA</option>
+<option value="BSQ">BSQ</option>
+<option value="DIMAP">DIMAP</option>
+<option value="Imagine">Imagine</option>
+<option value="ERMapper">ERMapper</option>
+<option value="ERMapper and Imagine">ERMapper and Imagine</option>
+<option value="FLASHBAK">FLASHBAK</option>
+<option value="MicroBRIAN">MicroBRIAN</option>
+<option value="MicroBRIAN and ERMapper">MicroBRIAN and ERMapper</option>
+<option value="Not Applicable">Not Applicable</option>
+<option value="Other">Other</option>
+<option value="UnRecorded">UnRecorded</option>
+<option value="ESRI Ascii">ESRI Ascii</option>
+<option value="XYZ Ascii, ESRI Ascii">XYZ Ascii, ESRI Ascii</option>
+<option value="LAS 1.2 - Class(Ground, Unclassified)">LAS 1.2 - Class(Ground, Unclassified)</option>
+<option value="LAS 1.2 - Class(Ground, Unclassified), XYZI Ascii">LAS 1.2 - Class(Ground, Unclassified), XYZI Ascii</option>
+<option value="LAS 1.2 Classification Level 1">LAS 1.2 Classification Level 1</option>
+<option value="LAS 1.2 Classification Level 2">LAS 1.2 Classification Level 2</option>
+<option value="XYZ ASCII, TIFF">XYZ ASCII, TIFF</option>
+<option value="GeoTIF">GeoTIF</option>
+<option value="LAS 1.2 Classification Level 1, XYZI ASCII">LAS 1.2 Classification Level 1, XYZI ASCII</option>
+<option value="LAS 1.2 Classification Level 2, XYZI ASCII">LAS 1.2 Classification Level 2, XYZI ASCII</option>
+<option value="LAS 1.3, Waveform Packets">LAS 1.3, Waveform Packets</option>
+<option value="LAS 1.3">LAS 1.3</option> 
     </helper>
   </element>
   <element name="cit:title" id="360.0">
@@ -5621,6 +5580,18 @@
   </element>
   <element name="delwp:MD_ProjectPartner">
     <label>Project Partner</label>
+    <description></description>
+  </element>
+  <element name="delwp:platformType">
+    <label>Platform Type</label>
+    <description></description>
+  </element>
+  <element name="delwp:assembly">
+    <label>Assembly</label>
+    <description></description>
+  </element>
+  <element name="delwp:tileSize">
+    <label>Tile Size</label>
     <description></description>
   </element>
 </labels>

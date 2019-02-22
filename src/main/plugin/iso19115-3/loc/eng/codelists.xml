@@ -691,6 +691,7 @@
     </entry>
   </codelist>
   <codelist name="mco:MD_ClassificationCode">
+    <!--
     <entry>
       <code>unclassified</code>
       <label>Unclassified</label>
@@ -743,6 +744,38 @@
       <code>limitedDistribution</code>
       <label>Limited Distribution</label>
       <description>Dissemination limited by designating body</description>
+    </entry>
+    -->
+    <!-- DELWP extensions -->
+    <entry>
+       <code>Unknown</code>
+       <label>Unknown</label>
+       <description>Unknown</description>
+    </entry>
+    <entry>
+       <code>Departmental</code>
+       <label>Departmental</label>
+       <description>Departmental</description>
+    </entry>
+    <entry>
+       <code>Restricted</code>
+       <label>Restricted</label>
+       <description>Restricted</description>
+    </entry>
+    <entry>
+       <code>General</code>
+       <label>General</label>
+       <description>General</description>
+    </entry>
+    <entry>
+       <code>DataVic</code>
+       <label>Data Vic</label>
+       <description>Data Vic</description>
+    </entry>
+    <entry>
+       <code>Withdrawn</code>
+       <label>Withdrawn</label>
+       <description>Withdrawn</description>
     </entry>
   </codelist>
   <codelist name="mrc:MD_CoverageContentTypeCode">
@@ -2952,30 +2985,324 @@
 <!-- DELWP Extensions -->
   <codelist name="delwp:MD_MethodCode">
     <entry>
-      <code>notEntered</code>
+      <code>NotEntered</code>
       <label>Not Entered</label>
       <description>Not Entered</description>
     </entry>
     <entry>
-      <code>captured</code>
+      <code>Captured</code>
       <label>Captured</label>
       <description>Captured</description>
     </entry>
     <entry>
-      <code>purchased</code>
+      <code>Purchased</code>
       <label>Purchased</label>
       <description>Purchased</description>
     </entry>
     <entry>
-      <code>copied</code>
+      <code>Copied</code>
       <label>Copied</label>
       <description>Copied</description>
     </entry>
     <entry>
-      <code>unknown</code>
+      <code>Unknown</code>
       <label>Unknown</label>
       <description>Unknown</description>
     </entry>
   </codelist>
+
+<codelist name="delwp:MD_PlatformTypeCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>ASTER</code>
+   <label>ASTER</label>
+   <description>ASTER</description>
+</entry>
+<entry>
+   <code>COSMOS</code>
+   <label>COSMOS</label>
+   <description>COSMOS</description>
+</entry>
+<entry>
+   <code>ERS2</code>
+   <label>ERS2</label>
+   <description>ERS2</description>
+</entry>
+<entry>
+   <code>Landsat-1</code>
+   <label>Landsat-1</label>
+   <description>Landsat-1</description>
+</entry>
+<entry>
+   <code>Landsat-2</code>
+   <label>Landsat-2</label>
+   <description>Landsat-2</description>
+</entry>
+<entry>
+   <code>Landsat-3</code>
+   <label>Landsat-3</label>
+   <description>Landsat-3</description>
+</entry>
+<entry>
+   <code>Landsat-4</code>
+   <label>Landsat-4</label>
+   <description>Landsat-4</description>
+</entry>
+<entry>
+   <code>Landsat-5</code>
+   <label>Landsat-5</label>
+   <description>Landsat-5</description>
+</entry>
+<entry>
+   <code>Landsat-7</code>
+   <label>Landsat-7</label>
+   <description>Landsat-7</description>
+</entry>
+<entry>
+   <code>SPOT</code>
+   <label>SPOT</label>
+   <description>SPOT</description>
+</entry>
+<entry>
+   <code>SPOT-1</code>
+   <label>SPOT-1</label>
+   <description>SPOT-1</description>
+</entry>
+<entry>
+   <code>SPOT-2</code>
+   <label>SPOT-2</label>
+   <description>SPOT-2</description>
+</entry>
+<entry>
+   <code>SPOT-3</code>
+   <label>SPOT-3</label>
+   <description>SPOT-3</description>
+</entry>
+<entry>
+   <code>SPOT-4</code>
+   <label>SPOT-4</label>
+   <description>SPOT-4</description>
+</entry>
+<entry>
+   <code>SPOT-5</code>
+   <label>SPOT-5</label>
+   <description>SPOT-5</description>
+</entry>
+<entry>
+   <code>FixedWingAircraft</code>
+   <label>Fixed Wing Aircraft</label>
+   <description>Fixed Wing Aircraft</description>
+</entry>
+<entry>
+   <code>TERRA</code>
+   <label>TERRA</label>
+   <description>TERRA</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
+</entry>
+<entry>
+   <code>RapidEye</code>
+   <label>RapidEye</label>
+   <description>RapidEye</description>
+</entry>
+<entry>
+   <code>Quickbird</code>
+   <label>Quickbird</label>
+   <description>Quickbird</description>
+</entry>
+<entry>
+   <code>GeoEye</code>
+   <label>GeoEye</label>
+   <description>GeoEye</description>
+</entry>
+<entry>
+   <code>Worldview1</code>
+   <label>Worldview 1</label>
+   <description>Worldview 1</description>
+</entry>
+<entry>
+   <code>Worldview2</code>
+   <label>Worldview 2</label>
+   <description>Worldview 2</description>
+</entry>
+<entry>
+   <code>SPOT-6</code>
+   <label>SPOT-6</label>
+   <description>SPOT-6</description>
+</entry>
+<entry>
+   <code>Pleiades1A</code>
+   <label>Pleiades 1A</label>
+   <description>Pleiades 1A</description>
+</entry>
+<entry>
+   <code>Pleiades1B</code>
+   <label>Pleiades 1B</label>
+   <description>Pleiades 1B</description>
+</entry>
+<entry>
+   <code>Landsat-8</code>
+   <label>Landsat-8</label>
+   <description>Landsat-8</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_TileSizeCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>450M</code>
+   <label>450 m</label>
+   <description>450 m</description>
+</entry>
+<entry>
+   <code>0.5Km</code>
+   <label>0.5 km</label>
+   <description>0.5 km</description>
+</entry>
+<entry>
+   <code>1Km</code>
+   <label>1 km</label>
+   <description>1 km</description>
+</entry>
+<entry>
+   <code>1.25Km</code>
+   <label>1.25 km</label>
+   <description>1.25 km</description>
+</entry>
+<entry>
+   <code>1.5Km</code>
+   <label>1.5 km</label>
+   <description>1.5 km</description>
+</entry>
+<entry>
+   <code>2Km</code>
+   <label>2 km</label>
+   <description>2 km</description>
+</entry>
+<entry>
+   <code>3Km</code>
+   <label>3 km</label>
+   <description>3 km</description>
+</entry>
+<entry>
+   <code>3.5Km</code>
+   <label>3.5 km</label>
+   <description>3.5 km</description>
+</entry>
+<entry>
+   <code>5Km</code>
+   <label>5 km</label>
+   <description>5 km</description>
+</entry>
+<entry>
+   <code>20Km</code>
+   <label>20 km</label>
+   <description>20 km</description>
+</entry>
+<entry>
+   <code>OriginalFrames</code>
+   <label>Original Frames</label>
+   <description>Original Frames</description>
+</entry>
+<entry>
+   <code>1:1millionMapsheet</code>
+   <label>1:1million mapsheet</label>
+   <description>1:1million mapsheet</description>
+</entry>
+<entry>
+   <code>HalfScene</code>
+   <label>Half Scene</label>
+   <description>Half Scene</description>
+</entry>
+<entry>
+   <code>PartScene</code>
+   <label>Part Scene</label>
+   <description>Part Scene</description>
+</entry>
+<entry>
+   <code>QuarterScene</code>
+   <label>Quarter Scene</label>
+   <description>Quarter Scene</description>
+</entry>
+<entry>
+   <code>UnRecorded</code>
+   <label>UnRecorded</label>
+   <description>UnRecorded</description>
+</entry>
+<entry>
+   <code>WholeScene</code>
+   <label>Whole Scene</label>
+   <description>Whole Scene</description>
+</entry>
+<entry>
+   <code>Mosaic</code>
+   <label>Mosaic</label>
+   <description>Mosaic</description>
+</entry>
+<entry>
+   <code>NotApplicable</code>
+   <label>Not Applicable</label>
+   <description>Not Applicable</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
+</entry>
+<entry>
+   <code>200M</code>
+   <label>200 m</label>
+   <description>200 m</description>
+</entry>
+<entry>
+   <code>25Km</code>
+   <label>25 km</label>
+   <description>25 km</description>
+</entry>
+<entry>
+   <code>10Km</code>
+   <label>10 km</label>
+   <description>10 km</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_AssemblyCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>Single</code>
+   <label>Single</label>
+   <description>Single</description>
+</entry>
+<entry>
+   <code>Fused</code>
+   <label>Fused</label>
+   <description>Fused</description>
+</entry>
+<entry>
+   <code>Mosaic</code>
+   <label>Mosaic</label>
+   <description>Mosaic</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
+</entry>
+</codelist>
 
 </codelists>

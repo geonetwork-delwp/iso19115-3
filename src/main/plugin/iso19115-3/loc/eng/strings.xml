@@ -23,6 +23,7 @@
   <identificationInfo>Identification</identificationInfo>
   <distributionInfo>Distribution</distributionInfo>
   <dataQualityInfo>Quality</dataQualityInfo>
+  <dataQuality>Quality</dataQuality>
   <resourceLineage>Lineage</resourceLineage>
   <spatialRepresentationInfo>Spatial rep.</spatialRepresentationInfo>
   <referenceSystemInfo>Ref. system</referenceSystemInfo>
@@ -32,6 +33,7 @@
   <applicationSchemaInfo>Schema info</applicationSchemaInfo>
   <acquisitionInfo>Acquisition Info</acquisitionInfo>
   <acquisitionInformation>Acquisition Info</acquisitionInformation>
+  <anzlicId>ANZLIC Id</anzlicId>
 
 
   <add-resource-id>Compute resource identifier</add-resource-id>
@@ -50,13 +52,11 @@
   <resourceExtents>Extents</resourceExtents>
 
   <resourceQuality>Quality</resourceQuality>
-  <conceptualConsistency>Logical Consistency</conceptualConsistency>
-  <absoluteExternalPositionalAccuracy>Positional Accuracy</absoluteExternalPositionalAccuracy>
-  <nonQuantitativeAttributeCorrectness>Attribute Correctness</nonQuantitativeAttributeCorrectness>
+  <logicalConsistency>Logical Consistency</logicalConsistency>
   <completenessOmission>Completeness</completenessOmission>
-  <conformity_title>Title</conformity_title>
-  <conformity_date>Date</conformity_date>
-  <explanation>Explanation</explanation>
+  <conformity_title>Report Title</conformity_title>
+  <conformity_date>Report Date</conformity_date>
+  <explanation>Comments</explanation>
   <pass>Pass</pass>
   <notEvaluated>Not evaluated</notEvaluated>
 
@@ -80,7 +80,7 @@
   <resourceMaintenance>Maintenance</resourceMaintenance>
   <resourceAcquisitionInfo>Acquisition Info</resourceAcquisitionInfo>
   <constraints>Constraints</constraints>
-  <resourceConstraints>Resource Constraints</resourceConstraints>
+  <resourceConstraints>Constraints</resourceConstraints>
   <metadataConstraints>Metadata Constraints</metadataConstraints>
   <contacts>Contacts</contacts>
   <resourceContact>Resource Contacts</resourceContact>
@@ -90,17 +90,14 @@
   <distribution_version>Version</distribution_version>
   <resourceType>Type</resourceType>
   <resourceResponsibleParties>Responsibility</resourceResponsibleParties>
-        <resourceLineageTab>Lineage</resourceLineageTab>
-        <resourceFormat>Format (admin only)</resourceFormat>
-        <resourceFormatNoTitle></resourceFormatNoTitle>
-        <distribution>Distribution</distribution>
-        <metadataContacts>Metadata Contacts</metadataContacts>
-        <resourceContacts>Responsibility</resourceContacts>
+  <resourceLineageTab>Lineage</resourceLineageTab>
+  <resourceFormat>Format</resourceFormat>
+  <resourceFormatNoTitle></resourceFormatNoTitle>
+  <distribution>Distribution</distribution>
+  <metadataContacts>Metadata Contacts</metadataContacts>
+  <resourceContacts>Responsibility</resourceContacts>
 
   <useAssociatedResources><span>Add an online resource for distribution using the "<i class="fa fa-link"></i><i class="icon-external-link"></i>Associated resources" panel at the right hand side of the form</span></useAssociatedResources>
-
-  <!-- gaDatasetURI -->
-  <gaDatasetURI>GA Dataset URI</gaDatasetURI>
 
   <!-- Service stuff -->
   <serviceDescription>Description</serviceDescription>

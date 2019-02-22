@@ -215,13 +215,6 @@
                </mco:useConstraints>
             </mco:MD_LegalConstraints>
          </mri:resourceConstraints>
-         <mri:resourceConstraints>
-            <mco:MD_SecurityConstraints>
-               <mco:classification>
-                  <mco:MD_ClassificationCode codeList="codeListLocation#MD_ClassificationCode" codeListValue="unclassified"/>
-               </mco:classification>
-            </mco:MD_SecurityConstraints>
-         </mri:resourceConstraints>
       <mri:defaultLocale>
         <lan:PT_Locale>
           <lan:language>

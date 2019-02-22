@@ -62,16 +62,39 @@
     </sequence>
   </complexType>
 
-  <element name="MD_ProjectPartner" substitutionGroup="gco:AbstractObject" type="delwp:MD_ProjectPartner_Type">
-    <annotation>
-      <documentation>Description: Describes the contact details and purpose of a partner that financially contributed to the project</documentation>
-    </annotation>
-  </element>
+  <element name="MD_ProjectPartner" substitutionGroup="gco:AbstractObject" type="delwp:MD_ProjectPartner_Type"/>
 
   <complexType name="MD_ProjectPartner_PropertyType">
     <sequence minOccurs="0">
       <element ref="delwp:MD_ProjectPartner"/>
     </sequence>
+  </complexType>
+
+  <element name="MD_PlatformTypeCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_PlatformTypeCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_PlatformTypeCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
+  <element name="MD_AssemblyCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_AssemblyCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_AssemblyCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
+  <element name="MD_TileSizeCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_TileSizeCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_TileSizeCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
   </complexType>
 
   <complexType name="MD_OperationProperties_PropertyType">
@@ -87,6 +110,21 @@
       <element minOccurs="0" maxOccurs="unbounded" name="projectPartner" type="delwp:MD_ProjectPartner_PropertyType">
         <annotation>
           <documentation>Description: Describes the project partners that financially contributed to the project</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" maxOccurs="unbounded" name="platformType" type="delwp:MD_PlatformTypeCode_PropertyType">
+        <annotation>
+          <documentation>Description: Describes the type of platform that was used to collect the data</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" maxOccurs="unbounded" name="assembly" type="delwp:MD_AssemblyCode_PropertyType">
+        <annotation>
+          <documentation>Description: Describes the way in which the data has been assembled</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" maxOccurs="unbounded" name="tileSize" type="delwp:MD_TileSizeCode_PropertyType">
+        <annotation>
+          <documentation>Description: Describes the size of the tiles in the dataset</documentation>
         </annotation>
       </element>
     </sequence>
