@@ -67,7 +67,8 @@
     <for name="cit:country" use="data-gn-country-picker"/>
 
     <for name="mdb:referenceSystemInfo" addDirective="data-gn-crs-selector">
-       <directiveAttributes data-schema="iso19115-3"/>
+       <directiveAttributes data-schema="iso19115-3"
+                            data-template-add-action="false"/>
 		</for>
 
 		<for name="delwp:partner" addDirective="data-gn-directory-entry-selector">
