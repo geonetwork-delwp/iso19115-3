@@ -223,9 +223,9 @@
     <mac:MI_AcquisitionInformation>
       <mac:operation>
         <mac:MI_Operation>
-          <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_PropertyType'])"/>
+          <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_Type'])"/>
           <mac:otherProperty>
-            <gco:Record xsi:type="delwp:MD_OperationProperties_PropertyType">
+            <gco:Record xsi:type="delwp:MD_OperationProperties_Type">
               <delwp:datasetDetails>
                 <delwp:MD_DatasetDetails>
                   <delwp:platformType>

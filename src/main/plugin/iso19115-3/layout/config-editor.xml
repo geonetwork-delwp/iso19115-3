@@ -620,7 +620,7 @@
 					</field>
 					<!-- offer one or more delwp:projectPartner --> 
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:projectDetails/delwp:MD_ProjectDetails/delwp:projectPartner"/>
-					<action type="add" name="projectPartner" or="projectPartner" if="true()" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:projectDetails/delwp:MD_ProjectDetails">
+					<action type="add" name="projectPartner" or="projectPartner" if="true()" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record//delwp:projectDetails/delwp:MD_ProjectDetails">
             <template>
               <snippet>
 								<delwp:projectPartner>

@@ -20,9 +20,9 @@
     <mac:operation>
       <mac:MI_Operation>
         ...
-        <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_PropertyType'])"/>
+        <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_Type'])"/>
         <mac:otherProperty>
-         <gco:Record xsi:type="delwp:MD_OperationProperties_PropertyType">
+         <gco:Record xsi:type="delwp:MD_OperationProperties_Type">
            <delwp:projectDetails>
              <delwp:MD_ProjectDetails>
                <delwp:method>
@@ -53,9 +53,9 @@
     <mac:operation>
       <mac:MI_Operation>
         ...
-        <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_PropertyType'])"/>
+        <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_Type'])"/>
         <mac:otherProperty>
-         <gco:Record xsi:type="delwp:MD_OperationProperties_PropertyType">
+         <gco:Record xsi:type="delwp:MD_OperationProperties_Type">
            <delwp:datasetDetails>
              <delwp:MD_DatasetDetails>
                <delwp:platformType>
@@ -144,7 +144,15 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
+  <element name="MD_ProjectDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_ProjectDetails_Type"/>
+
   <complexType name="MD_ProjectDetails_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_ProjectDetails"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="MD_ProjectDetails_Type">
     <sequence minOccurs="0">
       <element minOccurs="1" name="method" type="delwp:MD_MethodCode_PropertyType">
         <annotation>
@@ -168,7 +176,15 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
+  <element name="MD_RasterDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_RasterDetails_Type"/>
+
   <complexType name="MD_RasterDetails_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_RasterDetails"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="MD_RasterDetails_Type">
     <sequence minOccurs="0">
       <element minOccurs="1" name="type" type="delwp:MD_RasterTypeCode_PropertyType">
         <annotation>
@@ -178,17 +194,33 @@
     </sequence>
   </complexType>
 
+  <element name="MD_DataDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_DataDetails_Type"/>
+
   <complexType name="MD_DataDetails_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_DataDetails"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="MD_DataDetails_Type">
     <choice>
-      <element name="rasterDetails" type="delwp:MD_RasterDetails"/>
+      <element name="rasterDetails" type="delwp:MD_RasterDetails_PropertyType"/>
       <!--
-      <element name="pointCloudDetails" type="delwp:MD_PointCloudDetails"/>
-      <element name="contourDetails" type="delwp:MD_ContourDetails"/>
+      <element name="pointCloudDetails" type="delwp:MD_PointCloudDetails_PropertyType"/>
+      <element name="contourDetails" type="delwp:MD_ContourDetails_PropertyType"/>
       -->
     </choice>
   </complexType>
 
+  <element name="MD_DatasetDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_DatasetDetails_Type"/>
+
   <complexType name="MD_DatasetDetails_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_DatasetDetails"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="MD_DatasetDetails_Type">
     <sequence minOccurs="0">
       <element minOccurs="1" name="platformType" type="delwp:MD_PlatformTypeCode_PropertyType">
         <annotation>
@@ -213,7 +245,7 @@
     </sequence>
   </complexType>
 
-  <complexType name="MD_OperationProperties_PropertyType">
+  <complexType name="MD_OperationProperties_Type">
     <annotation>
       <documentation>Description: Describes the DELWP operation properties that don't fit within in the standard</documentation>
     </annotation>
