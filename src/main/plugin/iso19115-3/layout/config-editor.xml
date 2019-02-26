@@ -502,6 +502,10 @@
         <section name=" ">
           <!-- delwp:type = rastermeta RasterType -->
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type"/>
+          <field name="xPixelResolution" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_Georectified/msr:axisDimensionProperties[1]/msr:MD_Dimension/msr:resolution"/>
+          <field name="columns" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_Georectified/msr:axisDimensionProperties[1]/msr:MD_Dimension/msr:dimensionSize"/>
+          <field name="yPixelResolution" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_Georectified/msr:axisDimensionProperties[2]/msr:MD_Dimension/msr:resolution"/>
+          <field name="rows" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_Georectified/msr:axisDimensionProperties[2]/msr:MD_Dimension/msr:dimensionSize"/>
 				</section>
 			</tab>
       

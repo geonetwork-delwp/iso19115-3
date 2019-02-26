@@ -578,6 +578,14 @@
     <label>Resolution</label>
     <description iso="true">Degree of detail in the grid dataset</description>
     <condition>optional</condition>
+    <helper relAtt="uom">
+      <option value="1" title="cm">1 cm</option>
+      <option value="10" title="cm">10 cm</option>
+      <option value="15" title="cm">15 cm</option>
+      <option value="20" title="cm">20 cm</option>
+      <option value="25" title="cm">25 cm</option>
+      <option value="30" title="cm">30 cm</option>
+    </helper>
   </element>
   <element name="msr:dimensionTitle" id="174.0">
     <label>Dimension title</label>
@@ -2580,9 +2588,9 @@
     <label>Horizontal Accuracy</label>
     <description>Horizontal Accuracy eg. 10</description>
     <helper relAtt="uom">
-      <option value="0.10" title="cm">10 cm</option>
-      <option value="0.25" title="cm">25 cm</option>
-      <option value="0.50" title="cm">50 cm</option>
+      <option value="10" title="cm">10 cm</option>
+      <option value="25" title="cm">25 cm</option>
+      <option value="50" title="cm">50 cm</option>
       <option value="1" title="m">1 m</option>
       <option value="30" title="m">30 m</option>
       <option value="100" title="m">100 m</option>
@@ -3996,9 +4004,9 @@
     <label>Vertical Accuracy</label>
     <description>Vertical accuracy eg. 10</description>
     <helper relAtt="uom">
-      <option value="0.10" title="cm">10 cm</option>
-      <option value="0.25" title="cm">25 cm</option>
-      <option value="0.50" title="cm">50 cm</option>
+      <option value="10" title="cm">10 cm</option>
+      <option value="25" title="cm">25 cm</option>
+      <option value="50" title="cm">50 cm</option>
       <option value="1" title="m">1 m</option>
       <option value="30" title="m">30 m</option>
       <option value="100" title="m">100 m</option>
@@ -5592,6 +5600,10 @@
   </element>
   <element name="delwp:tileSize">
     <label>Tile Size</label>
+    <description></description>
+  </element>
+  <element name="delwp:type">
+    <label>Raster Type</label>
     <description></description>
   </element>
 </labels>
