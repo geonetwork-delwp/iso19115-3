@@ -11,7 +11,9 @@
   <import namespace="http://standards.iso.org/iso/19115/-3/cit/2.0" schemaLocation="https://schemas.isotc211.org/19115/-3/cit/2.0/cit.xsd"/>
 
 <!-- A gco:Record type that can be used as a child of elements
-     such as mac:otherProperty eg. 
+     such as mac:otherProperty 
+
+     eg. for projects:
 
 <mdb:acquistionInformation>
   <mac:MI_AcquisitionInformation>
@@ -21,24 +23,69 @@
         <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_PropertyType'])"/>
         <mac:otherProperty>
          <gco:Record xsi:type="delwp:MD_OperationProperties_PropertyType">
-          <delwp:method>
-            <delwp:MD_MethodCode @codeListValue="Not Entered"/>
-          </delwp:method>
-          <delwp:projectPartner>
-            <delwp:MD_ProjectPartner>
-                 <delwp:partner>
-                 </delwp:partner>
-                 <delwp:purpose>
-                   <gco:CharacterString>Photogrammetry project</gco:CharacterString>
-                 </delwp:purpose>
-            </delwp:MD_ProjectPartner>
-          </delwp:projectPartner> 
+           <delwp:projectDetails>
+             <delwp:MD_ProjectDetails>
+               <delwp:method>
+                 <delwp:MD_MethodCode @codeListValue="Not Entered"/>
+               </delwp:method>
+               <delwp:projectPartner>
+                 <delwp:MD_ProjectPartner>
+                      <delwp:partner>
+                      </delwp:partner>
+                      <delwp:purpose>
+                        <gco:CharacterString>Photogrammetry project</gco:CharacterString>
+                      </delwp:purpose>
+                 </delwp:MD_ProjectPartner>
+               </delwp:projectPartner> 
+             </delwp:MD_ProjectDetails>
+           </delwp:projectDetails>
          </gco:Record>
         </mac:otherProperty>
       </mac:MI_Operation>
     </mac:operation>
   </mac:MI_AcquisitionInformation>
 </mdb:acquistionInformation>
+
+     eg. for raster datasets:
+
+<mdb:acquistionInformation>
+  <mac:MI_AcquisitionInformation>
+    <mac:operation>
+      <mac:MI_Operation>
+        ...
+        <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_PropertyType'])"/>
+        <mac:otherProperty>
+         <gco:Record xsi:type="delwp:MD_OperationProperties_PropertyType">
+           <delwp:datasetDetails>
+             <delwp:MD_DatasetDetails>
+               <delwp:platformType>
+                 <delwp:MD_PlatormTypeCode @codeListValue="..."/>
+               </delwp:platformType>
+               <delwp:assembly>
+                 <delwp:MD_AssemblyCode @codeListValue="..."/>
+               </delwp:assembly>
+               <delwp:tileSize>
+                 <delwp:MD_TileSizeCode @codeListValue="..."/>
+               </delwp:tileSize>
+               <delwp:dataDetails>
+                 <delwp:MD_DataDetails>
+                   <delwp:rasterDetails>
+                     <delwp:MD_RasterDetails>
+                         
+                     </delwp:MD_RasterDetails>
+                   </delwp:rasterDetails>
+                 </delwp:MD_DataDetails>
+               </delwp:dataDetails>
+             </delwp:MD_DatasetDetails>
+           </delwp:datasetDetails>
+         </gco:Record>
+        </mac:otherProperty>
+      </mac:MI_Operation>
+    </mac:operation>
+  </mac:MI_AcquisitionInformation>
+</mdb:acquistionInformation>
+
+
 
 -->
 
@@ -97,10 +144,7 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
-  <complexType name="MD_OperationProperties_PropertyType">
-    <annotation>
-      <documentation>Description: Describes the DELWP operation properties that don't fit within in the standard</documentation>
-    </annotation>
+  <complexType name="MD_ProjectDetails_PropertyType">
     <sequence minOccurs="0">
       <element minOccurs="1" name="method" type="delwp:MD_MethodCode_PropertyType">
         <annotation>
@@ -112,23 +156,73 @@
           <documentation>Description: Describes the project partners that financially contributed to the project</documentation>
         </annotation>
       </element>
-      <element minOccurs="1" maxOccurs="unbounded" name="platformType" type="delwp:MD_PlatformTypeCode_PropertyType">
+    </sequence>
+  </complexType>
+
+  <element name="MD_RasterTypeCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_RasterTypeCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_RasterTypeCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
+  <complexType name="MD_RasterDetails_PropertyType">
+    <sequence minOccurs="0">
+      <element minOccurs="1" name="type" type="delwp:MD_RasterTypeCode_PropertyType">
         <annotation>
-          <documentation>Description: Describes the type of platform that was used to collect the data</documentation>
-        </annotation>
-      </element>
-      <element minOccurs="1" maxOccurs="unbounded" name="assembly" type="delwp:MD_AssemblyCode_PropertyType">
-        <annotation>
-          <documentation>Description: Describes the way in which the data has been assembled</documentation>
-        </annotation>
-      </element>
-      <element minOccurs="1" maxOccurs="unbounded" name="tileSize" type="delwp:MD_TileSizeCode_PropertyType">
-        <annotation>
-          <documentation>Description: Describes the size of the tiles in the dataset</documentation>
+          <documentation>Description: Describes the type of raster data eg. aerial photo</documentation>
         </annotation>
       </element>
     </sequence>
   </complexType>
+
+  <complexType name="MD_DataDetails_PropertyType">
+    <choice>
+      <element name="rasterDetails" type="delwp:MD_RasterDetails"/>
+      <!--
+      <element name="pointCloudDetails" type="delwp:MD_PointCloudDetails"/>
+      <element name="contourDetails" type="delwp:MD_ContourDetails"/>
+      -->
+    </choice>
+  </complexType>
+
+  <complexType name="MD_DatasetDetails_PropertyType">
+    <sequence minOccurs="0">
+      <element minOccurs="1" name="platformType" type="delwp:MD_PlatformTypeCode_PropertyType">
+        <annotation>
+          <documentation>Description: Describes the type of platform that was used to collect the data</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="assembly" type="delwp:MD_AssemblyCode_PropertyType">
+        <annotation>
+          <documentation>Description: Describes the way in which the data has been assembled</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="tileSize" type="delwp:MD_TileSizeCode_PropertyType">
+        <annotation>
+          <documentation>Description: Describes the size of the tiles in the dataset</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="dataDetails" type="delwp:MD_DataDetails_PropertyType">
+        <annotation>
+          <documentation>Description: Describes the details of the raster data collected in this operation</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+
+  <complexType name="MD_OperationProperties_PropertyType">
+    <annotation>
+      <documentation>Description: Describes the DELWP operation properties that don't fit within in the standard</documentation>
+    </annotation>
+    <choice>
+       <element name="projectDetails" type="delwp:MD_ProjectDetails_PropertyType"/>
+       <element name="datasetDetails" type="delwp:MD_DatasetDetails_PropertyType"/>
+    </choice>
+  </complexType>
+
 </schema>
 
 

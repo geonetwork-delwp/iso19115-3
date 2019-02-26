@@ -49,8 +49,6 @@
   <metadataScope>Type of Resource</metadataScope>
 
 
-  <resourceExtents>Extents</resourceExtents>
-
   <resourceQuality>Quality</resourceQuality>
   <logicalConsistency>Logical Consistency</logicalConsistency>
   <completenessOmission>Completeness</completenessOmission>
@@ -75,16 +73,17 @@
 
   <!-- new tabs in default mode -->
   <resourceCitation>Citation</resourceCitation>
-  <resourceDescription>Description</resourceDescription>
+  <description>Description</description>
   <resourceKeywords>Keywords</resourceKeywords>
+  <projectKeywords>Keywords</projectKeywords>
   <resourceMaintenance>Maintenance</resourceMaintenance>
+  <projectMaintenance>Maintenance</projectMaintenance>
   <resourceAcquisitionInfo>Acquisition Info</resourceAcquisitionInfo>
+  <projectAcquisitionInfo>Acquisition Info</projectAcquisitionInfo>
   <constraints>Constraints</constraints>
   <resourceConstraints>Constraints</resourceConstraints>
   <metadataConstraints>Metadata Constraints</metadataConstraints>
-  <contacts>Contacts</contacts>
-  <resourceContact>Resource Contacts</resourceContact>
-  <metadataContact>Metadata Contacts</metadataContact>
+  <projectContacts>Responsibiliy</projectContacts>
   <resourceSpatial>Spatial</resourceSpatial>
   <distribution_name>Name</distribution_name>
   <distribution_version>Version</distribution_version>
@@ -94,24 +93,12 @@
   <resourceFormat>Format</resourceFormat>
   <resourceFormatNoTitle></resourceFormatNoTitle>
   <distribution>Distribution</distribution>
-  <metadataContacts>Metadata Contacts</metadataContacts>
-  <resourceContacts>Responsibility</resourceContacts>
+  <resourceExtents>Extents</resourceExtents>
+  <projectExtents>Extents</projectExtents>
+  <resourceDataDetails>Details</resourceDataDetails>
+
 
   <useAssociatedResources><span>Add an online resource for distribution using the "<i class="fa fa-link"></i><i class="icon-external-link"></i>Associated resources" panel at the right hand side of the form</span></useAssociatedResources>
-
-  <!-- Service stuff -->
-  <serviceDescription>Description</serviceDescription>
-  <serviceType>Service Type</serviceType>
-  <serviceParameter>Parameter</serviceParameter>
-  <containsOperations>Operations</containsOperations>
-  <operation>Operation</operation>
-  <operatesOn>Operates On</operatesOn>
-  <parameter-name>Name</parameter-name>
-  <parameter-direction>Direction</parameter-direction>
-  <parameter-description>Description</parameter-description>
-  <optionality>Optional?</optionality>
-  <repeatability>Repeatable?</repeatability>
-
   <useAssociatedResourcesForOperatesOn><span>Select metadata records describing datasets that the service operates on using the "<i class="fa fa-link"></i><i class="icon-external-link"></i>Associated resources" panel at the right hand side of the form. Use the "<i class="fa fa-files-o"></i><i class="icon-external-link"></i>Link to a dataset" menu option.</span></useAssociatedResourcesForOperatesOn>
 
   <projectPartner>Project Partner</projectPartner>

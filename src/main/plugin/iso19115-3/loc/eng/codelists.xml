@@ -3018,6 +3018,39 @@
    <description>Not Entered</description>
 </entry>
 <entry>
+   <code>Satellite</code>
+   <label>Satellite</label>
+   <description>Satellite</description>
+</entry>
+<entry>
+   <code>Aerial</code>
+   <label>Aerial</label>
+   <description>Aerial</description>
+</entry>
+<entry>
+   <code>Ground</code>
+   <label>Ground</label>
+   <description>Ground</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
+</entry>
+<entry>
+   <code>Water</code>
+   <label>Water</label>
+   <description>Water</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_PlatformCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
    <code>ASTER</code>
    <label>ASTER</label>
    <description>ASTER</description>
@@ -3302,6 +3335,14 @@
    <code>Unknown</code>
    <label>Unknown</label>
    <description>Unknown</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_RasterTypeCode">
+<entry>
+   <code>AerialPhoto</code>
+   <label>Aerial Photo</label>
+   <description>Aerial Photo</description>
 </entry>
 </codelist>
 

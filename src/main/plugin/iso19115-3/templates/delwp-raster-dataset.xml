@@ -63,6 +63,39 @@
   		</cit:editionDate>
     </cit:CI_Citation>
   </mdb:metadataStandard>
+  <mdb:spatialRepresentationInfo>
+    <msr:MD_Georectified>
+      <msr:numberOfDimensions>
+        <gco:Integer>2</gco:Integer>
+      </msr:numberOfDimensions>
+      <msr:axisDimensionProperties>
+        <msr:MD_Dimension>
+          <msr:dimensionName>
+            <msr:MD_DimensionNameTypeCode codeList="http://www.isotc211.org/2005/resources/codeList.xml#MD_DimensionNameTypeCode" codeListValue="row"/>
+          </msr:dimensionName>
+          <msr:dimensionSize>
+            <gco:Integer></gco:Integer>
+          </msr:dimensionSize>
+          <msr:resolution>
+            <gco:Measure uom="cm"></gco:Measure>
+          </msr:resolution>
+        </msr:MD_Dimension>
+      </msr:axisDimensionProperties>
+      <msr:axisDimensionProperties>
+        <msr:MD_Dimension>
+          <msr:dimensionName>
+            <msr:MD_DimensionNameTypeCode codeList="http://www.isotc211.org/2005/resources/codeList.xml#MD_DimensionNameTypeCode" codeListValue="column"/>
+          </msr:dimensionName>
+          <msr:dimensionSize>
+            <gco:Integer></gco:Integer>
+          </msr:dimensionSize>
+          <msr:resolution>
+            <gco:Measure uom="cm"></gco:Measure>
+          </msr:resolution>
+        </msr:MD_Dimension>
+      </msr:axisDimensionProperties>
+    </msr:MD_Georectified>
+  </mdb:spatialRepresentationInfo>
   <mdb:identificationInfo>
     <mri:MD_DataIdentification>
       <mri:citation>
@@ -193,15 +226,30 @@
           <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_PropertyType'])"/>
           <mac:otherProperty>
             <gco:Record xsi:type="delwp:MD_OperationProperties_PropertyType">
-              <delwp:platformType>
-                <delwp:MD_PlatformTypeCode codeList="codeListLocation#MD_PlatformTypeCode" codeListValue="NotEntered"/>
-              </delwp:platformType>
-              <delwp:assembly>
-                <delwp:MD_AssemblyCode codeList="codeListLocation#MD_AssemblyCode" codeListValue="NotEntered"/>
-              </delwp:assembly>
-              <delwp:tileSize>
-                <delwp:MD_TileSizeCode codeList="codeListLocation#MD_TileSizeCode" codeListValue="NotEntered"/>
-              </delwp:tileSize>
+              <delwp:datasetDetails>
+                <delwp:MD_DatasetDetails>
+                  <delwp:platformType>
+                    <delwp:MD_PlatformTypeCode codeList="codeListLocation#MD_PlatformTypeCode" codeListValue="NotEntered"/>
+                  </delwp:platformType>
+                  <delwp:assembly>
+                    <delwp:MD_AssemblyCode codeList="codeListLocation#MD_AssemblyCode" codeListValue="NotEntered"/>
+                  </delwp:assembly>
+                  <delwp:tileSize>
+                    <delwp:MD_TileSizeCode codeList="codeListLocation#MD_TileSizeCode" codeListValue="NotEntered"/>
+                  </delwp:tileSize>
+                  <delwp:dataDetails>
+                    <delwp:MD_DataDetails>
+                      <delwp:rasterDetails>
+                        <delwp:MD_RasterDetails>
+                          <delwp:type>
+                             <delwp:MD_RasterTypeCode codeList="codeListLocation#MD_RasterTypeCode" codeListValue="NotEntered"/>
+                          </delwp:type>
+                        </delwp:MD_RasterDetails>
+                      </delwp:rasterDetails>
+                    </delwp:MD_DataDetails>
+                  </delwp:dataDetails>
+                </delwp:MD_DatasetDetails>
+              </delwp:datasetDetails>
             </gco:Record>
           </mac:otherProperty>
         </mac:MI_Operation>

@@ -242,9 +242,13 @@
           <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_PropertyType'])"/>
           <mac:otherProperty>
             <gco:Record xsi:type="delwp:MD_OperationProperties_PropertyType">
-              <delwp:method>
-                <delwp:MD_MethodCode codeList="codeListLocation#MD_MethodCode" codeListValue="NotEntered"/>
-              </delwp:method>
+              <delwp:projectDetails>
+                <delwp:MD_ProjectDetails>
+                  <delwp:method>
+                    <delwp:MD_MethodCode codeList="codeListLocation#MD_MethodCode" codeListValue="NotEntered"/>
+                  </delwp:method>
+                </delwp:MD_ProjectDetails>
+              </delwp:projectDetails>
             </gco:Record>
           </mac:otherProperty>
         </mac:MI_Operation>

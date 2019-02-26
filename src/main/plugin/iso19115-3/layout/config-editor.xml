@@ -208,7 +208,7 @@
         <directive data-gn-need-help="user-guide/describing-information/creating-metadata.html"/> 
       </sidePanel>
 
-      <tab id="resourceDescription" default="true" mode="flat">
+      <tab id="description" default="true" mode="flat">
         <section name=" ">
           <!-- RasterMeta dataset name -->
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:title"/>
@@ -306,11 +306,11 @@
       <tab id="resourceAcquisitionInfo" mode="flat">
         <section name=" ">
           <!-- mac:platformType = rastermeta platform -->
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:platformType"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:platformType"/>
           <!-- mac:assembly = rastermeta assembly -->
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:assembly"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:assembly"/>
           <!-- mac:tileSize = rastermeta tileSize -->
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:tileSize"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:tileSize"/>
 				</section>
 			</tab>
 
@@ -497,7 +497,145 @@
           </field>
         </section>
       </tab>
+
+      <tab id="resourceDataDetails" mode="flat">
+        <section name=" ">
+          <!-- delwp:type = rastermeta RasterType -->
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type"/>
+				</section>
+			</tab>
       
+      <!-- Elements that should not use the "flat" mode -->
+      <flatModeExceptions>
+        <for name="cit:date" />
+        <for name="mri:descriptiveKeywords" />
+        <for name="cit:party"/>
+				<for name="cit:CI_Individual"/>
+				<for name="cit:CI_Organisation"/>
+				<for name="mrl:LI_Lineage"/>
+				<for name="mac:instrument"/>
+				<for name="mac:operation"/>
+				<for name="mac:platform"/>
+				<for name="mac:environmentalConditions"/>
+      </flatModeExceptions>
+    </view>
+
+    <view name="project" displayIfRecord="count(mdb:MD_Metadata/mdb:metadataScope/mdb:MD_MetadataScope/mdb:resourceScope/mcc:MD_ScopeCode[@codeListValue='project']) > 0">
+      <tab id="description" default="true" mode="flat">
+        <section name=" ">
+					<!-- special template to render this field readonly - see layout-custom-fields.xsl -->
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:title"/>
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:alternativeTitle"/>
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:purpose"/>
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:abstract"/>
+          <field xpath="/mdb:MD_Metadata/mdb:alternativeMetadataReference"/>
+
+				</section>
+			</tab>
+
+      <tab id="projectContacts" mode="flat">
+        <section name=" ">
+          <!-- Template has Custodian, Owner can be added if required -->
+					<field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:citedResponsibleParty" or="citedResponsibleParty" in="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation"/>
+				</section>
+			</tab>
+
+      <tab id="projectKeywords" mode="flat">
+        <section name=" ">
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:topicCategory"/>
+          <!-- TODO: add ANZLIC extent keywords as thesaurus? Only allow choices from that
+               thesaurus - see directiveAttributes for gn-keyword-selector -->
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:descriptiveKeywords" or="descriptiveKeywords" in="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification"/>
+				</section>
+			</tab>
+
+      <tab id="projectMaintenance" mode="flat">
+        <section name=" ">
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceMaintenance"/>
+				</section>
+			</tab>
+ 
+      <tab id="projectContacts" mode="flat">
+        <section name=" ">
+          <!-- TODO: make sure that current user is added as the metadata creator.
+               If already a creator then add the current user as an editor, it is
+               effectively read only as the creator is s  -->
+          <field xpath="/mdb:MD_Metadata/mdb:contact" or="contact" in="/mdb:MD_Metadata"/>
+				</section>
+			</tab>
+ 
+      <!-- TODO: This section needs a check to see whether an ANZLIC place has been selected
+           as a keyword, if so then update-fixed-info.xsl will add an extent from the 
+           thesaurus, alternatively could use gex:description? -->
+      <tab id="projectExtents" mode="flat">
+        <section name=" ">
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:extent"/>
+				</section>
+			</tab>
+
+      <tab id="projectAcquisitionInfo" mode="flat">
+        <section name=" ">
+          <!-- mac:description = rastermeta Program -->
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:description"/>
+          <!-- mac:method = rastermeta Method -->
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:projectDetails/delwp:MD_ProjectDetails/delwp:method"/>
+          <!-- mac:scope/mcc:extent/gex:EX_Extent/gex:temporalExtent = rastermeta Year of Acquisition -->
+          <field name="yearOfAcquisition" templateModeOnly="true" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent" del=".">
+            <template>
+              <values>
+                <key label="yearOfAcquisition" xpath=".//gml:TimePeriod//gml:beginPosition" tooltip="yearOfAcquisition"/>
+              </values>
+              <snippet>
+                <gex:extent>
+                  <gml:TimePeriod gml:id="A1234">
+                    <gml:beginPosition>{{yearOfAcquisition}}</gml:beginPosition>
+                    <gml:endPosition></gml:endPosition>
+                  </gml:TimePeriod>
+                </gex:extent>
+              </snippet>
+            </template>
+          </field>
+          <!-- Acquistion details supplier - this is a lookup of a fragment containing the
+               supplier details -->
+					<field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation/cit:citedResponsibleParty" or="citedResponsibleParty" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation"/>
+					<!-- offer a mac:identifier for schedule number --> 
+          <field name="projectScheduleNumber" templateModeOnly="true" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:identifier[mcc:MD_Identifier/mcc:codeSpace/gco:CharacterString='delwp-sequenceNumber']" del=".">
+            <template>
+              <values>
+                <key label="projectScheduleNumber" xpath="mcc:MD_Identifier/mcc:code/gco:CharacterString" tooltip="delwp-sequenceNumber" use="textarea"/>
+              </values>
+              <snippet>
+								<mac:identifier>
+        					<mcc:MD_Identifier>
+          					<mcc:code>
+            					<gco:CharacterString>{{projectScheduleNumber}}</gco:CharacterString>
+          					</mcc:code>
+            				<mcc:codeSpace>
+              				<gco:CharacterString>delwp-sequenceNumber</gco:CharacterString>
+            				</mcc:codeSpace>
+        					</mcc:MD_Identifier>
+      					</mac:identifier>
+              </snippet>
+            </template>
+					</field>
+					<!-- offer one or more delwp:projectPartner --> 
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:projectDetails/delwp:MD_ProjectDetails/delwp:projectPartner"/>
+					<action type="add" name="projectPartner" or="projectPartner" if="true()" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:projectDetails/delwp:MD_ProjectDetails">
+            <template>
+              <snippet>
+								<delwp:projectPartner>
+        					<delwp:MD_ProjectPartner>
+          					<delwp:purpose>
+            					<gco:CharacterString></gco:CharacterString>
+          					</delwp:purpose>
+        					</delwp:MD_ProjectPartner>
+      					</delwp:projectPartner>
+              </snippet>
+            </template>
+					</action>
+				</section>
+			</tab>
+
       <!-- Elements that should not use the "flat" mode -->
       <flatModeExceptions>
         <for name="delwp:projectPartner"/>
