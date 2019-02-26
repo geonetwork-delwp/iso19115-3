@@ -5644,4 +5644,72 @@
       <option value="100" title="m">100 m</option>
     </helper>
   </element>
+  <element name="delwp:pulseMode">
+    <label>Pulse Mode</label>
+    <description></description>
+  </element>
+  <element name="delwp:returnTypes">
+    <label>Return Types</label>
+    <description></description>
+  </element>
+  <element name="delwp:scanRate">
+    <label>Scan Rate (Hz)</label>
+    <description></description>
+  </element>
+  <element name="delwp:scanFrequency">
+    <label>Scan Frequency (kHz)</label>
+    <description></description>
+  </element>
+  <element name="delwp:scanAngle">
+    <label>Scan Angle (degrees)</label>
+    <description></description>
+  </element>
+  <element name="delwp:footprintSize">
+    <label>Footprint Size (m)</label>
+    <description></description>
+  </element>
+  <element name="delwp:pointDensityTarget">
+    <label>Point Density Target (pts/m2)</label>
+    <description></description>
+  </element>
+  <element name="delwp:pointDensityActual">
+    <label>Point Density Actual (pts/m2)</label>
+    <description></description>
+  </element>
+  <element name="delwp:pointSpacingTarget">
+    <label>Point Spacing Target (pts/m)</label>
+    <description></description>
+  </element>
+  <element name="delwp:pointSpacingActual">
+    <label>Point Spacing Actual (pts/m)</label>
+    <description></description>
+  </element>
+  <element name="delwp:ellipsoidProvided">
+    <label>Ellipsoid Provided</label>
+    <description></description>
+  </element>
+  <element name="delwp:ellipsoidVerticalDatum">
+    <label>Ellipsoid Vertical Datum</label>
+    <description></description>
+  </element>
+  <element name="delwp:ellipsoidFormat">
+    <label>Ellipsoid Format</label>
+    <description></description>
+  </element>
+  <element name="delwp:geoidVerticalDatum">
+    <label>Geoid Vertical Datum</label>
+    <description></description>
+  </element>
+  <element name="delwp:additionalAdjustments">
+    <label>Additional Adjustments</label>
+    <description></description>
+  </element>
+  <element name="delwp:environmentalConditions">
+    <label>Environmental Conditions</label>
+    <description></description>
+  </element>
+  <element name="delwp:tidalConditions">
+    <label>Tidal Conditions</label>
+    <description></description>
+  </element>
 </labels>

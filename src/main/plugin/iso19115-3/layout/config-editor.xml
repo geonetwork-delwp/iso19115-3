@@ -41,6 +41,9 @@
     <for name="mri:levelOfDetail" use="textarea"/>
     <for name="delwp:purpose" use="textarea"/>
     <for name="delwp:rectificationNotes" use="textarea"/>
+    <for name="delwp:additionalAdjustments" use="textarea"/>
+    <for name="delwp:environmentalConditions" use="textarea"/>
+    <for name="delwp:tidalConditions" use="textarea"/>
 
 
     <for name="gco:Distance" use="number"/>

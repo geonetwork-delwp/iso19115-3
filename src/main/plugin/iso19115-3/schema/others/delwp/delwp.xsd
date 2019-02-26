@@ -194,6 +194,104 @@
     </sequence>
   </complexType>
 
+  <element name="MD_PointCloudDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_PointCloudDetails_Type"/>
+
+  <complexType name="MD_PointCloudDetails_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_PointCloudDetails"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="MD_PointCloudDetails_Type">
+    <sequence minOccurs="0">
+      <element minOccurs="0" name="pulseMode" type="gco:CharacterString_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details pulse mode</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="returnTypes" type="gco:CharacterString_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details return types</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="scanRate" type="gco:Measure_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details scan rate</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="scanFrequency" type="gco:Measure_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details scan frequency</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="scanAngle" type="gco:Measure_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details scan angle</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="footprintSize" type="gco:Measure_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details footprint size</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="pointDensityTarget" type="gco:Measure_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details point density target</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="pointDensityActual" type="gco:Measure_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details point density actual</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="pointSpacingTarget" type="gco:Measure_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details point spacing target</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="pointSpacingActual" type="gco:Measure_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details point spacing actual</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="ellipsoidProvided" type="gco:Boolean_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details ellipsoid provided</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="ellipsoidVerticalDatum" type="delwp:MD_EllipsoidVerticalDatumCode_PropertyType">
+        <annotation>
+          <documentation>Description: Describes the ellipsoid vertical datum</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="ellipsoidFormat" type="delwp:MD_EllipsoidFormatCode_PropertyType">
+        <annotation>
+          <documentation>Description: Describes the ellipsoid format</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="geoidVerticalDatum" type="delwp:MD_GeoidVerticalDatumCode_PropertyType">
+        <annotation>
+          <documentation>Description: Describes the geoid vertical datum</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="additionalAdjustments" type="gco:CharacterString_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details additional adjustments</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="environmentalConditions" type="gco:CharacterString_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details environmental conditions</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="tidalConditions" type="gco:CharacterString_PropertyType">
+        <annotation>
+          <documentation>Description: Lidar details tidal conditions</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+
   <element name="MD_RasterDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_RasterDetails_Type"/>
 
   <complexType name="MD_RasterDetails_PropertyType">
@@ -258,9 +356,7 @@
   <complexType name="MD_DataDetails_Type">
     <choice>
       <element name="rasterDetails" type="delwp:MD_RasterDetails_PropertyType"/>
-      <!--
       <element name="pointCloudDetails" type="delwp:MD_PointCloudDetails_PropertyType"/>
-      -->
       <element name="contourDetails" type="delwp:MD_ContourDetails_PropertyType"/>
     </choice>
   </complexType>
