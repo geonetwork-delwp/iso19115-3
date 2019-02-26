@@ -3340,9 +3340,301 @@
 
 <codelist name="delwp:MD_RasterTypeCode">
 <entry>
+   <code>DigitalHeightModel</code>
+   <label>Digital Height Model</label>
+   <description>Digital Height Model</description>
+</entry>
+<entry>
+   <code>BuildingHeightModel</code>
+   <label>Building Height Model</label>
+   <description>Building Height Model</description>
+</entry>
+<entry>
+   <code>DEM</code>
+   <label>DEM</label>
+   <description>DEM</description>
+</entry>
+<entry>
+   <code>Satellite</code>
+   <label>Satellite</label>
+   <description>Satellite</description>
+</entry>
+<entry>
    <code>AerialPhoto</code>
    <label>Aerial Photo</label>
    <description>Aerial Photo</description>
+</entry>
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>Intensity</code>
+   <label>Intensity</label>
+   <description>Intensity</description>
+</entry>
+<entry>
+   <code>DigitalSurfaceModel</code>
+   <label>Digital Surface Model</label>
+   <description>Digital Surface Model</description>
+</entry>
+<entry>
+   <code>Slope</code>
+   <label>Slope</label>
+   <description>Slope</description>
+</entry>
+<entry>
+   <code>CanopyHeightModel</code>
+   <label>Canopy Height Model</label>
+   <description>Canopy Height Model</description>
+</entry>
+<entry>
+   <code>FractionalCoverCount</code>
+   <label>Fractional Cover Count</label>
+   <description>Fractional Cover Count</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_SeamlessnessCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>Partial</code>
+   <label>Partial</label>
+   <description>Partial</description>
+</entry>
+<entry>
+   <code>Full</code>
+   <label>Full</label>
+   <description>Full</description>
+</entry>
+<entry>
+   <code>NotApplicable</code>
+   <label>Not Applicable</label>
+   <description>Not Applicable</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_RectificationTypeCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>FastLook</code>
+   <label>FastLook</label>
+   <description>FastLook</description>
+</entry>
+<entry>
+   <code>NotRectified</code>
+   <label>Not Rectified</label>
+   <description>Not Rectified</description>
+</entry>
+<entry>
+   <code>Orthorectified</code>
+   <label>Orthorectified</label>
+   <description>Orthorectified</description>
+</entry>
+<entry>
+   <code>UnRecorded</code>
+   <label>UnRecorded</label>
+   <description>UnRecorded</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_BandListCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>1</code>
+   <label>1</label>
+   <description>1</description>
+</entry>
+<entry>
+   <code>1,2,3</code>
+   <label>1,2,3</label>
+   <description>1,2,3</description>
+</entry>
+<entry>
+   <code>1,2,3,4</code>
+   <label>1,2,3,4</label>
+   <description>1,2,3,4</description>
+</entry>
+<entry>
+   <code>1,2,3,4,5</code>
+   <label>1,2,3,4,5</label>
+   <description>1,2,3,4,5</description>
+</entry>
+<entry>
+   <code>1,2,3,4,5,6</code>
+   <label>1,2,3,4,5,6</label>
+   <description>1,2,3,4,5,6</description>
+</entry>
+<entry>
+   <code>1,2,3,4,5,6,7</code>
+   <label>1,2,3,4,5,6,7</label>
+   <description>1,2,3,4,5,6,7</description>
+</entry>
+<entry>
+   <code>1,2,3,4,5,6H,6L,7,8</code>
+   <label>1,2,3,4,5,6H,6L,7,8</label>
+   <description>1,2,3,4,5,6H,6L,7,8</description>
+</entry>
+<entry>
+   <code>1,2,3,4,5,7</code>
+   <label>1,2,3,4,5,7</label>
+   <description>1,2,3,4,5,7</description>
+</entry>
+<entry>
+   <code>1-14</code>
+   <label>1-14</label>
+   <description>1-14</description>
+</entry>
+<entry>
+   <code>2</code>
+   <label>2</label>
+   <description>2</description>
+</entry>
+<entry>
+   <code>2,3,4,5</code>
+   <label>2,3,4,5</label>
+   <description>2,3,4,5</description>
+</entry>
+<entry>
+   <code>2,3,4,5,6,7</code>
+   <label>2,3,4,5,6,7</label>
+   <description>2,3,4,5,6,7</description>
+</entry>
+<entry>
+   <code>2,3,4,5,7</code>
+   <label>2,3,4,5,7</label>
+   <description>2,3,4,5,7</description>
+</entry>
+<entry>
+   <code>2,3,4,7</code>
+   <label>2,3,4,7</label>
+   <description>2,3,4,7</description>
+</entry>
+<entry>
+   <code>2,4,5,7</code>
+   <label>2,4,5,7</label>
+   <description>2,4,5,7</description>
+</entry>
+<entry>
+   <code>3,4,5</code>
+   <label>3,4,5</label>
+   <description>3,4,5</description>
+</entry>
+<entry>
+   <code>3,4,5,7</code>
+   <label>3,4,5,7</label>
+   <description>3,4,5,7</description>
+</entry>
+<entry>
+   <code>C-Band</code>
+   <label>C-Band</label>
+   <description>C-Band</description>
+</entry>
+<entry>
+   <code>PAN</code>
+   <label>PAN</label>
+   <description>PAN</description>
+</entry>
+<entry>
+   <code>PAN,1,2,3,4</code>
+   <label>PAN,1,2,3,4</label>
+   <description>PAN,1,2,3,4</description>
+</entry>
+<entry>
+   <code>C-Band</code>
+   <label>C-Band</label>
+   <description>C-Band</description>
+</entry>
+<entry>
+   <code>1</code>
+   <label>1</label>
+   <description>1</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
+</entry>
+<entry>
+   <code>X-Band</code>
+   <label>X-Band</label>
+   <description>X-Band</description>
+</entry>
+<entry>
+   <code>L-Band</code>
+   <label>L-Band</label>
+   <description>L-Band</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_ResamplingKernelCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>CubicConvolution</code>
+   <label>Cubic Convolution</label>
+   <description>Cubic Convolution</description>
+</entry>
+<entry>
+   <code>DS8</code>
+   <label>DS8</label>
+   <description>DS8</description>
+</entry>
+<entry>
+   <code>NearestNeighbour</code>
+   <label>Nearest Neighbour</label>
+   <description>Nearest Neighbour</description>
+</entry>
+<entry>
+   <code>Restoration(ESRI)</code>
+   <label>Restoration(ESRI)</label>
+   <description>Restoration(ESRI)</description>
+</entry>
+<entry>
+   <code>UnRecorded</code>
+   <label>UnRecorded</label>
+   <description>UnRecorded</description>
+</entry>
+<entry>
+   <code>NotApplicable</code>
+   <label>Not Applicable</label>
+   <description>Not Applicable</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
+</entry>
+<entry>
+   <code>Bilinear</code>
+   <label>Bilinear</label>
+   <description>Bilinear</description>
 </entry>
 </codelist>
 

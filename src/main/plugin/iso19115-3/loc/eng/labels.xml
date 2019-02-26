@@ -5606,4 +5606,42 @@
     <label>Raster Type</label>
     <description></description>
   </element>
+  <element name="delwp:seamlessness">
+    <label>Seamlessness</label>
+    <description></description>
+  </element>
+  <element name="delwp:rectificationType">
+    <label>Rectification Type</label>
+    <description></description>
+  </element>
+  <element name="delwp:numberOfBands">
+    <label>Number of Bands</label>
+    <description></description>
+  </element>
+  <element name="delwp:bandList">
+    <label>Band List</label>
+    <description></description>
+  </element>
+  <element name="delwp:resamplingKernel">
+    <label>Resampling Kernel</label>
+    <description></description>
+  </element>
+  <element name="delwp:platform">
+    <label>Platform Name</label>
+    <description></description>
+  </element>
+  <element name="delwp:rectificationNotes">
+    <label>Rectification Notes</label>
+    <description></description>
+  </element>
+  <element name="delwp:interval">
+    <label>Contour Interval</label>
+    <description></description>
+    <helper relAtt="uom">
+      <option value="10" title="m">10 m</option>
+      <option value="25" title="m">25 m</option>
+      <option value="50" title="m">50 m</option>
+      <option value="100" title="m">100 m</option>
+    </helper>
+  </element>
 </labels>

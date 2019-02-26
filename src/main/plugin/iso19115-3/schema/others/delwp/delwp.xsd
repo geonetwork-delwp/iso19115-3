@@ -176,6 +176,24 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
+  <element name="MD_ContourDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_ContourDetails_Type"/>
+
+  <complexType name="MD_ContourDetails_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_ContourDetails"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="MD_ContourDetails_Type">
+    <sequence minOccurs="0">
+      <element minOccurs="1" name="interval" type="gco:Measure_PropertyType">
+        <annotation>
+          <documentation>Description: Contour interval</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+
   <element name="MD_RasterDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_RasterDetails_Type"/>
 
   <complexType name="MD_RasterDetails_PropertyType">
@@ -189,6 +207,41 @@
       <element minOccurs="1" name="type" type="delwp:MD_RasterTypeCode_PropertyType">
         <annotation>
           <documentation>Description: Describes the type of raster data eg. aerial photo</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="seamlessness" type="delwp:MD_SeamlessnessCode_PropertyType">
+        <annotation>
+          <documentation>Description: Seamlessness</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="rectificationType" type="delwp:MD_RectificationTypeCode_PropertyType">
+        <annotation>
+          <documentation>Description: rectification type</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="numberOfBands" type="gco:Integer_PropertyType">
+        <annotation>
+          <documentation>Description: rectification type</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="bandList" type="delwp:MD_BandListCode_PropertyType">
+        <annotation>
+          <documentation>Description: band list</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="resamplingKernel" type="delwp:MD_ResamplingKernelCode_PropertyType">
+        <annotation>
+          <documentation>Description: band list</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="platform" type="delwp:MD_PlatformCode_PropertyType">
+        <annotation>
+          <documentation>Description: platform code</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="rectificationNotes" type="gco:CharacterString_PropertyType">
+        <annotation>
+          <documentation>Description: rectification notes</documentation>
         </annotation>
       </element>
     </sequence>
@@ -207,8 +260,8 @@
       <element name="rasterDetails" type="delwp:MD_RasterDetails_PropertyType"/>
       <!--
       <element name="pointCloudDetails" type="delwp:MD_PointCloudDetails_PropertyType"/>
-      <element name="contourDetails" type="delwp:MD_ContourDetails_PropertyType"/>
       -->
+      <element name="contourDetails" type="delwp:MD_ContourDetails_PropertyType"/>
     </choice>
   </complexType>
 

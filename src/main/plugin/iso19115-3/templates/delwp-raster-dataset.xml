@@ -244,6 +244,27 @@
                           <delwp:type>
                              <delwp:MD_RasterTypeCode codeList="codeListLocation#MD_RasterTypeCode" codeListValue="AerialPhoto"/>
                           </delwp:type>
+                          <delwp:seamlessness>
+                             <delwp:MD_SeamlessnessCode codeList="codeListLocation#MD_SeamlessnessCode" codeListValue="NotEntered"/>
+                          </delwp:seamlessness>
+                          <delwp:rectificationType>
+                             <delwp:MD_RectificationTypeCode codeList="codeListLocation#MD_RectificationTypeCode" codeListValue="NotEntered"/>
+                          </delwp:rectificationType>
+                          <delwp:numberOfBands>
+                             <gco:Integer/>
+                          </delwp:numberOfBands>
+                          <delwp:bandList>
+                             <delwp:MD_BandListCode codeList="codeListLocation#MD_BandListCode" codeListValue="NotEntered"/>
+                          </delwp:bandList>
+                          <delwp:resamplingKernel>
+                             <delwp:MD_RectificationTypeCode codeList="codeListLocation#MD_ResamplingKernelCode" codeListValue="NotEntered"/>
+                          </delwp:resamplingKernel>
+                          <delwp:platform>
+                             <delwp:MD_PlatformCode codeList="codeListLocation#MD_PlatformCode" codeListValue="NotEntered"/>
+                          </delwp:platform>
+                          <delwp:rectificationNotes>
+                             <gco:CharacterString/>
+                          </delwp:rectificationNotes>
                         </delwp:MD_RasterDetails>
                       </delwp:rasterDetails>
                     </delwp:MD_DataDetails>
