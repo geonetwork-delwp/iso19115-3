@@ -77,12 +77,22 @@
 
 		<for name="delwp:partner" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-            data-schema="iso19139.mcp"
+            data-schema="iso19115-3"
             data-template-add-action="true"
             data-search-action="true"
             data-popup-action="true"
             data-template-type="party"
-            data-filter='{"_root": "mcp:CI_Organisation"}'
+            data-filter='{"_root": "cit:CI_Organisation"}'
+            data-insert-modes="xlink"/>
+    </for>
+		<for name="mac:instrument" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+            data-schema="iso19115-3"
+            data-template-add-action="true"
+            data-search-action="true"
+            data-popup-action="true"
+            data-template-type="sensor"
+            data-filter='{"_root": "mac:MI_Sensor"}'
             data-insert-modes="xlink"/>
     </for>
     <for name="mdb:contact" addDirective="data-gn-directory-entry-selector">
@@ -525,6 +535,23 @@
 
         <!-- PointCloud (LiDAR) data details -->
         <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='pointcloud']) > 0">
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:pulseMode"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:returnTypes"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:scanRate"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:scanFrequency"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:scanAngle"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:footprintSize"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:pointDensityTarget"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:pointDensityActual"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:pointSpacingTarget"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:pointSpacingActual"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:ellipsoidProvided"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:ellipsoidVerticalDatum"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:ellipsoidFormat"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:geoidVerticalDatum"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:additionalAdjustments"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:environmentalConditions"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:tidalConditions"/>
 				</section>
 
         <!-- Contour data details -->
@@ -534,7 +561,24 @@
 			</tab>
       
       <tab id="surveyDetails" mode="flat">
-        <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='grid']) > 0">
+        <section name=" ">
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:level"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:instrument"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent"/>
+          <field xpath="/mdb:MD_Metadata/mdb:contentInfo/mrc:MD_ImageDescription/mrc:cloudCoverPercentage"/>
+        <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:platformType/delwp:MD_PlatformTypeCode[@codeListValue='Aerial']) > 0">
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:aerialSurveyDetails/delwp:MD_AerialSurveyDetails"/>
+					<action type="add" name="aerialSurveyDetails" or="aerialSurveyDetails" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails">
+            <template>
+              <snippet>
+                <delwp:aerialSurveyDetails>
+                  <delwp:MD_AerialSurveyDetails>
+                  </delwp:MD_AerialSurveyDetails>
+                </delwp:aerialSurveyDetails>
+              </snippet>
+            </template>
+              
+          </action>
 				</section>
 			</tab>
       <!-- Elements that should not use the "flat" mode -->
@@ -545,10 +589,7 @@
 				<for name="cit:CI_Individual"/>
 				<for name="cit:CI_Organisation"/>
 				<for name="mrl:LI_Lineage"/>
-				<for name="mac:instrument"/>
-				<for name="mac:operation"/>
-				<for name="mac:platform"/>
-				<for name="mac:environmentalConditions"/>
+        <for name="delwp:aerialSurveyDetails"/>
       </flatModeExceptions>
     </view>
 

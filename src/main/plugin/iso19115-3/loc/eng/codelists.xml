@@ -1576,75 +1576,75 @@
     </entry>
   </codelist>
   <codelist name="mcc:MD_ScopeCode">
-    <entry>
+    <entry hideInEditMode="true">
       <code>attribute</code>
       <label>Attribute</label>
       <description>Information applies to the attribute class</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>attributeType</code>
       <label>Attribute type</label>
       <description>Information applies to the characteristic of a feature
       </description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>collectionHardware</code>
       <label>Collection hardware</label>
       <description>Information applies to the collection hardware class
       </description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>collectionSession</code>
       <label>Collection session</label>
       <description>Information applies to the collection session</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>dataset</code>
       <label>Dataset</label>
       <description>Information applies to the dataset</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>series</code>
       <label>Series</label>
       <description>Information applies to the series</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>nonGeographicDataset</code>
       <label>Non geographic dataset</label>
       <description>Information applies to non-geographic data</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>dimensionGroup</code>
       <label>Dimension group</label>
       <description>Information applies to a dimension group</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>feature</code>
       <label>Feature</label>
       <description>Information applies to a feature</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>featureType</code>
       <label>Feature type</label>
       <description>Information applies to a feature type</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>propertyType</code>
       <label>Property type</label>
       <description>Information applies to a property type</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>fieldSession</code>
       <label>Field session</label>
       <description>Information applies to a field session</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>software</code>
       <label>Software</label>
       <description>Information applies to a computer program or routine
       </description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>service</code>
       <label>Service</label>
       <description>Information applies to a capability which a service provider
@@ -1652,67 +1652,67 @@
         interfaces that define a behaviour, such as a use case
       </description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>model</code>
       <label>Model</label>
       <description>Information applies to a copy or imitation of an existing or
         hypothetical object
       </description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>tile</code>
       <label>Tile</label>
       <description>Information applies to a tile, a spatial subset of geographic
         data
       </description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>metadata</code>
       <label>Metadata</label>
       <description>Information applies to metadata</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>initiative</code>
       <label>Initiative</label>
       <description>Information applies to an initiative</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>sample</code>
       <label>Sample</label>
       <description>Information applies to a sample</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>document</code>
       <label>Document</label>
       <description>Information applies to a document</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>repository</code>
       <label>Repository</label>
       <description>Information applies to a repository</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>aggregate</code>
       <label>Aggregate</label>
       <description>Information applies to an aggregate resource</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>product</code>
       <label>Product</label>
       <description>Metadata describing an ISO 19131 data product specification
       </description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>collection</code>
       <label>Collection</label>
       <description>Information applies to an unstructured set</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>coverage</code>
       <label>Coverage</label>
       <description>Information applies to a coverage</description>
     </entry>
-    <entry>
+    <entry hideInEditMode="true">
       <code>application</code>
       <label>Application</label>
       <description>Information resource hosted on a specific set of hardware and
@@ -1734,6 +1734,25 @@
       <code>interactiveMap</code>
       <label>Interactive map</label>
       <description></description>
+    </entry>
+    <!-- delwp extensions -->
+    <entry>
+      <code>project</code>
+      <label>Project</label>
+      <description>Information applies to a project
+      </description>
+    </entry>
+    <entry>
+      <code>mosaic</code>
+      <label>Mosaic</label>
+      <description>Information applies to a mosaic
+      </description>
+    </entry>
+    <entry>
+      <code>dataSource</code>
+      <label>Data Source</label>
+      <description>Information applies to a data source
+      </description>
     </entry>
   </codelist>
   <codelist name="mcc:MD_SpatialRepresentationTypeCode">
@@ -3635,6 +3654,92 @@
    <code>Bilinear</code>
    <label>Bilinear</label>
    <description>Bilinear</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_RunOrientationCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>E-W</code>
+   <label>E-W</label>
+   <description>E-W</description>
+</entry>
+<entry>
+   <code>E-WAndN-S</code>
+   <label>E-W and N-S</label>
+   <description>E-W and N-S</description>
+</entry>
+<entry>
+   <code>NE-SW</code>
+   <label>NE-SW</label>
+   <description>NE-SW</description>
+</entry>
+<entry>
+   <code>N-S</code>
+   <label>N-S</label>
+   <description>N-S</description>
+</entry>
+<entry>
+   <code>NW-SE</code>
+   <label>NW-SE</label>
+   <description>NW-SE</description>
+</entry>
+<entry>
+   <code>NE-SW,E-W</code>
+   <label>NE-SW, E-W</label>
+   <description>NE-SW, E-W</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
+</entry>
+<entry>
+   <code>Non-Cardinal</code>
+   <label>Non-Cardinal</label>
+   <description>Non-Cardinal</description>
+</entry>
+<entry>
+   <code>Various</code>
+   <label>Various</label>
+   <description>Various</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_FlyingHeightUnitCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>AglFeet</code>
+   <label>agl feet</label>
+   <description>agl feet</description>
+</entry>
+<entry>
+   <code>AglMetre</code>
+   <label>agl metre</label>
+   <description>agl metre</description>
+</entry>
+<entry>
+   <code>AslFeet</code>
+   <label>asl feet</label>
+   <description>asl feet</description>
+</entry>
+<entry>
+   <code>AslMetre</code>
+   <label>asl metre</label>
+   <description>asl metre</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
 </entry>
 </codelist>
 

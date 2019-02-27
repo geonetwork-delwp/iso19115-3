@@ -179,6 +179,13 @@
       </mri:defaultLocale>
     </mri:MD_DataIdentification>
   </mdb:identificationInfo>
+  <mdb:contentInfo>
+    <mrc:MD_ImageDescription>
+      <mrc:cloudCoverPercentage>
+        <gco:Real></gco:Real>
+      </mrc:cloudCoverPercentage>
+    </mrc:MD_ImageDescription>
+  </mdb:contentInfo>
   <mdb:resourceLineage>
     <mrl:LI_Lineage>
       <mrl:statement>
@@ -188,6 +195,38 @@
   </mdb:resourceLineage>
   <mdb:acquisitionInformation>
     <mac:MI_AcquisitionInformation>
+      <mac:scope>
+        <mcc:MD_Scope>
+          <mcc:level>
+            <mcc:MD_ScopeCode codeList="codeListLocation#MD_ScopeCode" codeListValue=""></mcc:MD_ScopeCode>
+          </mcc:level>
+          <mcc:extent>
+            <gex:EX_Extent>
+              <gex:temporalElement>
+                <gex:EX_TemporalExtent>
+                  <gex:extent>
+                    <gml:TimePeriod gml:id="A1234">
+                      <gml:beginPosition>
+                      </gml:beginPosition>
+                      <gml:endPosition>
+                      </gml:endPosition>
+                    </gml:TimePeriod>
+                  </gex:extent>
+                </gex:EX_TemporalExtent>
+              </gex:temporalElement>
+            </gex:EX_Extent>
+          </mcc:extent>
+          <mcc:levelDescription>
+            <mcc:MD_ScopeDescription>
+              <mcc:other>
+                <gco:CharacterString>Mosaic, Datasource, Township, Project?</gco:CharacterString>
+              </mcc:other>
+            </mcc:MD_ScopeDescription>
+          </mcc:levelDescription>
+        </mcc:MD_Scope>
+      </mac:scope>
+      <!-- The following will be used to prompt for a sensor fragment based on the platform type -->
+      <mac:instrument/>
       <mac:operation>
         <mac:MI_Operation>
           <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_Type'])"/>

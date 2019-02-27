@@ -369,13 +369,15 @@
     </sequence>
   </complexType>
 
+  <element name="platformType" type="delwp:MD_PlatformTypeCode_PropertyType">
+    <annotation>
+      <documentation>Description: Describes the type of platform that was used to collect the data. This element is used in a number of complex types</documentation>
+    </annotation>
+  </element>
+  
   <complexType name="MD_DatasetDetails_Type">
     <sequence minOccurs="0">
-      <element minOccurs="1" name="platformType" type="delwp:MD_PlatformTypeCode_PropertyType">
-        <annotation>
-          <documentation>Description: Describes the type of platform that was used to collect the data</documentation>
-        </annotation>
-      </element>
+      <element ref="delwp:platformType" minOccurs="1"/> 
       <element minOccurs="1" name="assembly" type="delwp:MD_AssemblyCode_PropertyType">
         <annotation>
           <documentation>Description: Describes the way in which the data has been assembled</documentation>
@@ -394,6 +396,82 @@
     </sequence>
   </complexType>
 
+  <element name="MD_RunOrientationCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_RunOrientationCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_RunOrientationCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
+  <element name="MD_FlyingHeightUnitCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_FlyingHeightUnitCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_FlyingHeightUnitCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
+  <element name="MD_AerialSurveyDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_AerialSurveyDetails_Type"/>
+
+  <complexType name="MD_AerialSurveyDetails_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_AerialSurveyDetails"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="MD_AerialSurveyDetails_Type">
+    <sequence minOccurs="0">
+      <element minOccurs="0" name="runs" type="gco:Integer_PropertyType">
+        <annotation>
+          <documentation>Description: Number of runs</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="runOrientation" type="delwp:MD_RunOrientationCode_PropertyType">
+        <annotation>
+          <documentation>Description: Run Orientation</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="swathWidth" type="gco:Integer_PropertyType">
+        <annotation>
+          <documentation>Description: Swath Width</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="sideOverlap" type="gco:Integer_PropertyType">
+        <annotation>
+          <documentation>Description: Side Overlap Percentage</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forwardOverlap" type="gco:Integer_PropertyType">
+        <annotation>
+          <documentation>Description: Forward Overlap Percentage</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="flyingHeightUnit" type="delwp:MD_FlyingHeightUnitCode_PropertyType">
+        <annotation>
+          <documentation>Description: Flying Height Unit</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="flyingHeight" type="gco:Integer_PropertyType">
+        <annotation>
+          <documentation>Description: Flight Height</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="gpsControlled" type="gco:Boolean_PropertyType">
+        <annotation>
+          <documentation>Description: GPS Controlled</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="INS" type="gco:Boolean_PropertyType">
+        <annotation>
+          <documentation>Description: INS?</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+
   <complexType name="MD_OperationProperties_Type">
     <annotation>
       <documentation>Description: Describes the DELWP operation properties that don't fit within in the standard</documentation>
@@ -401,7 +479,15 @@
     <choice>
        <element name="projectDetails" type="delwp:MD_ProjectDetails_PropertyType"/>
        <element name="datasetDetails" type="delwp:MD_DatasetDetails_PropertyType"/>
+       <element name="aerialSurveyDetails" type="delwp:MD_AerialSurveyDetails_PropertyType"/>
     </choice>
+  </complexType>
+
+  <!-- This type is used in mac:MI_Sensor/mac:otherProperty -->
+  <complexType name="MD_SensorProperties_Type">
+    <sequence minOccurs="0">
+      <element ref="delwp:platformType" minOccurs="1"/> 
+    </sequence>
   </complexType>
 
 </schema>

@@ -5712,4 +5712,36 @@
     <label>Tidal Conditions</label>
     <description></description>
   </element>
+  <element name="delwp:runs">
+    <label>Runs</label>
+    <description></description>
+  </element>
+  <element name="delwp:runOrientation">
+    <label>Run Orientation</label>
+    <description></description>
+  </element>
+  <element name="delwp:sideOverlap">
+    <label>Side Overlap</label>
+    <description></description>
+  </element>
+  <element name="delwp:forwardOverlap">
+    <label>Forward Overlap</label>
+    <description></description>
+  </element>
+  <element name="delwp:flyingHeightUnit">
+    <label>Flying Height Unit</label>
+    <description></description>
+  </element>
+  <element name="delwp:flyingHeigh">
+    <label>Flying Height</label>
+    <description></description>
+  </element>
+  <element name="delwp:gpsControlled">
+    <label>GPS Controlled</label>
+    <description></description>
+  </element>
+  <element name="delwp:ins">
+    <label>INS</label>
+    <description></description>
+  </element>
 </labels>
