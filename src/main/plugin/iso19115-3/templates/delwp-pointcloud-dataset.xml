@@ -12,6 +12,7 @@
   xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
   xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
   xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
+  xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0"
   xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
   xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0"
   xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0"
@@ -96,7 +97,7 @@
         <mcc:MD_ProgressCode codeList="codeListLocation#MD_ProgressCode" codeListValue=""/>
       </mri:status>
       <mri:spatialRepresentationType>
-        <mcc:MD_SpatialRepresentationTypeCode codeList="codeListLocation#MD_SpatialRepresentationTypeCode" codeListValue="pointcloud"/>
+        <mcc:MD_SpatialRepresentationTypeCode codeList="codeListLocation#MD_SpatialRepresentationTypeCode" codeListValue="pointCloud"/>
       </mri:spatialRepresentationType>
       <mri:spatialResolution>
         <mri:MD_Resolution>

@@ -8,6 +8,7 @@
   xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
   xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
   xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0"
+  xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0"
   xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
   xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
   xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
@@ -281,7 +282,7 @@
                       <delwp:rasterDetails>
                         <delwp:MD_RasterDetails>
                           <delwp:type>
-                             <delwp:MD_RasterTypeCode codeList="codeListLocation#MD_RasterTypeCode" codeListValue="AerialPhoto"/>
+                             <delwp:MD_RasterTypeCode codeList="codeListLocation#MD_RasterTypeCode" codeListValue="NotEntered"/>
                           </delwp:type>
                           <delwp:seamlessness>
                              <delwp:MD_SeamlessnessCode codeList="codeListLocation#MD_SeamlessnessCode" codeListValue="NotEntered"/>
@@ -296,7 +297,7 @@
                              <delwp:MD_BandListCode codeList="codeListLocation#MD_BandListCode" codeListValue="NotEntered"/>
                           </delwp:bandList>
                           <delwp:resamplingKernel>
-                             <delwp:MD_RectificationTypeCode codeList="codeListLocation#MD_ResamplingKernelCode" codeListValue="NotEntered"/>
+                             <delwp:MD_ResamplingKernelCode codeList="codeListLocation#MD_ResamplingKernelCode" codeListValue="NotEntered"/>
                           </delwp:resamplingKernel>
                           <delwp:platform>
                              <delwp:MD_PlatformCode codeList="codeListLocation#MD_PlatformCode" codeListValue="NotEntered"/>

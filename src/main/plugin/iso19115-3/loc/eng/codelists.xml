@@ -1793,7 +1793,7 @@
     </entry>
     <!-- DELWP extensions -->
     <entry>
-      <code>pointcloud</code>
+      <code>pointCloud</code>
       <label>Point Cloud</label>
       <description>Point cloud data from scanners such as LIDAR</description>
     </entry>

@@ -15,6 +15,7 @@
   xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
   xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0"
   xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0"
+  xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0"
   xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
   xmlns:gmw="http://standards.iso.org/iso/19115/-3/gmw/1.0"
   xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"

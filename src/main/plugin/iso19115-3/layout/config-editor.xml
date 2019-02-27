@@ -539,22 +539,22 @@
         </section>
 
           <!-- Aerial Photo data details -->
-          <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[@codeListValue='AerialPhoto']) > 0"/>
+          <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[@codeListValue='AerialPhoto']) > 0">
             <!-- TODO: Add aerial photo details and and analogue or digital aerial photo details -->
 				  </section>
   
           <!-- Satellite data details -->
-          <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[@codeListValue='Satellite']) > 0"/>
+          <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[@codeListValue='Satellite']) > 0">
             <!-- TODO: Add satellite data details elements -->
 				  </section>
   
           <!-- Everything else uses DEM data details -->
-          <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[not(@codeListValue=('Satellite','AerialPhoto')]) > 0"/>
+          <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[not(@codeListValue=('Satellite','AerialPhoto'))]) > 0">
             <!-- TODO: Add DEM data details elements -->
 				  </section>
   
         <!-- PointCloud (LiDAR) data details -->
-        <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='pointcloud']) > 0">
+        <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='pointCloud']) > 0">
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:pulseMode"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:returnTypes"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:scanRate"/>
@@ -586,6 +586,7 @@
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:instrument"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent"/>
           <field xpath="/mdb:MD_Metadata/mdb:contentInfo/mrc:MD_ImageDescription/mrc:cloudCoverPercentage"/>
+				</section>
         <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:platformType/delwp:MD_PlatformTypeCode[@codeListValue='Aerial']) > 0">
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:aerialSurveyDetails/delwp:MD_AerialSurveyDetails"/>
 					<action type="add" name="aerialSurveyDetails" or="aerialSurveyDetails" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails">

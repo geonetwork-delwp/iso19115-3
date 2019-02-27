@@ -88,7 +88,7 @@
     <condition></condition>
   </element>
   <element name="mac:instrument">
-    <label>Instrument</label>
+    <label>Sensor</label>
     <description></description>
     <condition></condition>
   </element>
@@ -5742,6 +5742,18 @@
   </element>
   <element name="delwp:ins">
     <label>INS</label>
+    <description></description>
+  </element>
+  <element name="delwp:aerialSurveyDetails">
+    <label>Aerial Survey Details</label>
+    <description></description>
+  </element>
+  <element name="delwp:MD_AerialSurveyDetails">
+    <label>Aerial Survey Details</label>
+    <description></description>
+  </element>
+  <element name="mrc:cloudCoverPercentage">
+    <label>Cloud Cover Percentage</label>
     <description></description>
   </element>
 </labels>
