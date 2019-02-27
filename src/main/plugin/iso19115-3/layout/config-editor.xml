@@ -84,6 +84,8 @@
             data-template-type="party"
             data-filter='{"_root": "cit:CI_Organisation"}'
             data-insert-modes="xlink"/>
+       <!-- search needs to be added to the data-filter to isolate stakeholdertype
+            purchase partner -->
     </for>
 		<for name="mac:instrument" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
@@ -518,11 +520,12 @@
         <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='grid']) > 0">
           <!-- delwp:type = rastermeta RasterType -->
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type"/>
+          <!-- Data details common to all rasters -->
           <field name="xPixelResolution" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_Georectified/msr:axisDimensionProperties[1]/msr:MD_Dimension/msr:resolution"/>
           <field name="columns" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_Georectified/msr:axisDimensionProperties[1]/msr:MD_Dimension/msr:dimensionSize"/>
           <field name="yPixelResolution" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_Georectified/msr:axisDimensionProperties[2]/msr:MD_Dimension/msr:resolution"/>
           <field name="rows" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_Georectified/msr:axisDimensionProperties[2]/msr:MD_Dimension/msr:dimensionSize"/>
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type"/>
+  
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:seamlessness"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rectificationType"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:numberOfBands"/>
@@ -530,9 +533,26 @@
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:resamplingKernel"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:platform"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rectificationNotes"/>
-          <!-- TODO: New fields based on RasterType -->
-				</section>
+          <!-- Add help text to tell user to save the record after filling this out so 
+               that we can show either aerial photo details, satellite details or 
+               DEM details -->
+        </section>
 
+          <!-- Aerial Photo data details -->
+          <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[@codeListValue='AerialPhoto']) > 0"/>
+            <!-- TODO: Add aerial photo details and and analogue or digital aerial photo details -->
+				  </section>
+  
+          <!-- Satellite data details -->
+          <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[@codeListValue='Satellite']) > 0"/>
+            <!-- TODO: Add satellite data details elements -->
+				  </section>
+  
+          <!-- Everything else uses DEM data details -->
+          <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[not(@codeListValue=('Satellite','AerialPhoto')]) > 0"/>
+            <!-- TODO: Add DEM data details elements -->
+				  </section>
+  
         <!-- PointCloud (LiDAR) data details -->
         <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='pointcloud']) > 0">
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:pulseMode"/>
@@ -577,7 +597,6 @@
                 </delwp:aerialSurveyDetails>
               </snippet>
             </template>
-              
           </action>
 				</section>
 			</tab>
@@ -589,7 +608,7 @@
 				<for name="cit:CI_Individual"/>
 				<for name="cit:CI_Organisation"/>
 				<for name="mrl:LI_Lineage"/>
-        <for name="delwp:aerialSurveyDetails"/>
+        <for name="delwp:MD_AerialSurveyDetails"/>
       </flatModeExceptions>
     </view>
 
