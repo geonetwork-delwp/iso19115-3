@@ -79,19 +79,17 @@
 		<for name="delwp:partner" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
             data-schema="iso19115-3"
-            data-template-add-action="true"
+            data-template-add-action="false"
             data-search-action="true"
             data-popup-action="true"
             data-template-type="party"
             data-filter='{"_root": "cit:CI_Organisation"}'
             data-insert-modes="xlink"/>
-       <!-- search needs to be added to the data-filter to isolate stakeholdertype
-            purchase partner -->
     </for>
 		<for name="mac:instrument" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
             data-schema="iso19115-3"
-            data-template-add-action="true"
+            data-template-add-action="false"
             data-search-action="true"
             data-popup-action="true"
             data-template-type="sensor"
@@ -589,9 +587,10 @@
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent"/>
           <field xpath="/mdb:MD_Metadata/mdb:contentInfo/mrc:MD_ImageDescription/mrc:cloudCoverPercentage"/>
 				</section>
+<!--
         <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:platformType/delwp:MD_PlatformTypeCode[@codeListValue='Aerial']) > 0">
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:aerialSurveyDetails/delwp:MD_AerialSurveyDetails"/>
-					<action type="add" name="aerialSurveyDetails" or="aerialSurveyDetails" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails">
+					<action type="add" if="true()" name="aerialSurveyDetails" or="aerialSurveyDetails" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails">
             <template>
               <snippet>
                 <delwp:aerialSurveyDetails>
@@ -602,6 +601,7 @@
             </template>
           </action>
 				</section>
+-->
 			</tab>
       <!-- Elements that should not use the "flat" mode -->
       <flatModeExceptions>
