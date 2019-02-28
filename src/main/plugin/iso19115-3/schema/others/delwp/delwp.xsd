@@ -300,6 +300,51 @@
     </sequence>
   </complexType>
 
+  <element name="MD_ResamplingKernelCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_ResamplingKernelCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_ResamplingKernelCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
+  <element name="MD_PlatformCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_PlatformCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_PlatformCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
+  <element name="MD_BandListCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_BandListCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_BandListCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
+  <element name="MD_RectificationTypeCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_RectificationTypeCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_RectificationTypeCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
+  <element name="MD_SeamlessnessCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_SeamlessnessCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_SeamlessnessCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
   <complexType name="MD_RasterDetails_Type">
     <sequence minOccurs="0">
       <element minOccurs="1" name="type" type="delwp:MD_RasterTypeCode_PropertyType">

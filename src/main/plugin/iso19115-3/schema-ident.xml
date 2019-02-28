@@ -30,6 +30,7 @@ Metadata Profile of ISO19115-3 (2018) for Victorian Government Department of Env
     <elements type="root">
       <mdb:MD_Metadata/>
       <cit:CI_Responsibility/>
+      <cit:CI_Organisation/>
       <mcc:MD_BrowseGraphic/>
       <mrd:MD_Format/>
       <mdq:DQ_DomainConsistency/>
