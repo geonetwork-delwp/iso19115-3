@@ -8,6 +8,7 @@
                 xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
                 xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
                 xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0"
+                xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
                 xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
                 xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
                 xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
@@ -303,6 +304,10 @@
 
       <xsl:for-each select="mri:abstract">
         <xsl:copy-of select="gn-fn-iso19115-3:index-field('abstract', ., $langId)"/>
+      </xsl:for-each>
+
+      <xsl:for-each select="mri:spatialRepresentationType">
+        <xsl:copy-of select="gn-fn-iso19115-3:index-field('spatialRepresentationType', mcc:MD_SpatialRepresentationTypeCode/@codeListValue, $langId)"/>
       </xsl:for-each>
 
       <xsl:for-each select="mri:credit">
@@ -822,6 +827,10 @@
     </xsl:for-each>
 
 
+    <xsl:for-each select="$metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation">
+      <Field  name="rasterType" string="{mac:scope/mcc:MD_Scope/mcc:level/mcc:MD_ScopeCode/@codeListValue}" store="false" index="true"/>
+      <Field  name="platformType" string="{mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:platformType/delwp:MD_PlatformTypeCode/@codeListValue}" store="false" index="true"/>
+    </xsl:for-each>
 
 
     <!-- Metadata scope -->

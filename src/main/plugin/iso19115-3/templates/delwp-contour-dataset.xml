@@ -220,14 +220,12 @@
           <mcc:levelDescription>
             <mcc:MD_ScopeDescription>
               <mcc:other>
-                <gco:CharacterString>Mosaic, Datasource, Township, Project?</gco:CharacterString>
+                <gco:CharacterString>Description of mosaic, source, township - not covered by dataset title or abstract</gco:CharacterString>
               </mcc:other>
             </mcc:MD_ScopeDescription>
           </mcc:levelDescription>
         </mcc:MD_Scope>
       </mac:scope>
-      <!-- The following will be used to prompt for a sensor fragment based on the platform type -->
-      <mac:instrument/>
       <mac:operation>
         <mac:MI_Operation>
           <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_Type'])"/>

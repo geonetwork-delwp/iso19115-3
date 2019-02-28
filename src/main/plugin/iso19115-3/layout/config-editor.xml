@@ -71,9 +71,10 @@
     <for name="cit:country" use="data-gn-country-picker"/>
 
     <for name="mdb:referenceSystemInfo" addDirective="data-gn-crs-selector">
-       <directiveAttributes data-schema="iso19115-3"
-                            data-template-add-action="false"/>
+       <directiveAttributes data-schema="iso19115-3"/>
 		</for>
+                            <!-- doesn't work well at present 
+                           data-template-add-action="false"/> -->
 
 		<for name="delwp:partner" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
@@ -170,7 +171,7 @@
     <name>cit:individual</name>
     <name>cit:logo</name>
     <name>mrd:onLine</name>
-    <name>mdb:referenceSystemInfo</name>
+    <name>mdb:MD_ReferenceSystem</name>
     <name>mri:equivalentScale</name>
     <name>mri:graphicOverview</name>
     <name>mri:resourceConstraints</name>
@@ -583,7 +584,8 @@
       <tab id="surveyDetails" mode="flat">
         <section name=" ">
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:level"/>
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:instrument"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:levelDescription/mcc:MD_ScopeDescription//mcc:other"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:instrument" or="instrument" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent"/>
           <field xpath="/mdb:MD_Metadata/mdb:contentInfo/mrc:MD_ImageDescription/mrc:cloudCoverPercentage"/>
 				</section>
