@@ -218,6 +218,13 @@
    </mdb:metadataConstraints>
    <mdb:acquisitionInformation>
     <mac:MI_AcquisitionInformation>
+      <mac:scope>
+            <mcc:MD_Scope>
+               <mcc:level>
+                  <mcc:MD_ScopeCode codeList="codeListLocation#MD_ScopeCode" codeListValue="project"/>
+               </mcc:level>
+            </mcc:MD_Scope>
+      </mac:scope>
       <mac:operation>
         <mac:MI_Operation>
           <mac:description>

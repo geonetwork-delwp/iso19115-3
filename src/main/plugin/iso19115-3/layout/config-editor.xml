@@ -629,6 +629,17 @@
 
     <!-- view configuration for projects -->
     <view name="project" displayIfRecord="count(mdb:MD_Metadata/mdb:metadataScope/mdb:MD_MetadataScope/mdb:resourceScope/mcc:MD_ScopeCode[@codeListValue='project']) > 0">
+      <sidePanel>
+        <directive data-gn-onlinesrc-list=""/>
+        <directive gn-geo-publisher=""
+                   data-ng-if="gnCurrentEdit.geoPublisherConfig"
+                   data-config="{{gnCurrentEdit.geoPublisherConfig}}"
+                   data-lang="lang"/>
+        <!-- <directive data-gn-validation-report=""/> -->
+        <!-- <directive data-gn-suggestion-list=""/> -->
+        <directive data-gn-need-help="user-guide/describing-information/creating-metadata.html"/> 
+      </sidePanel>
+
       <tab id="description" default="true" mode="flat">
         <section name=" ">
 					<!-- special template to render this field readonly - see layout-custom-fields.xsl -->
