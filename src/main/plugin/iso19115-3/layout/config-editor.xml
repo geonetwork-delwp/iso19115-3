@@ -86,6 +86,16 @@
             data-filter='{"_root": "cit:CI_Organisation"}'
             data-insert-modes="xlink"/>
     </for>
+		<for name="cit:party" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+            data-schema="iso19115-3"
+            data-template-add-action="false"
+            data-search-action="true"
+            data-popup-action="true"
+            data-template-type="party"
+            data-filter='{"_root": "cit:CI_Organisation"}'
+            data-insert-modes="xlink"/>
+    </for>
 		<for name="mac:instrument" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
             data-schema="iso19115-3"
