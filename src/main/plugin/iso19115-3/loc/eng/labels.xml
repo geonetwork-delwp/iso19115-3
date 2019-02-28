@@ -5756,4 +5756,8 @@
     <label>Cloud Cover Percentage</label>
     <description></description>
   </element>
+  <element name="mac:MI_Sensor">
+    <label>Sensor</label>
+    <description></description>
+  </element>
 </labels>

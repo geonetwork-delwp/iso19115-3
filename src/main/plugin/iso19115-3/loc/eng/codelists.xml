@@ -506,6 +506,12 @@
         resource
       </description>
     </entry>
+    <!-- DELWP extensions -->
+    <entry>
+      <code>supplier</code>
+      <label>Supplier</label>
+      <description>Party who supplied the data</description>
+    </entry>
   </codelist>
   <codelist name="mdq:DQ_EvaluationMethodTypeCode">
     <entry>

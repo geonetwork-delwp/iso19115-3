@@ -113,4 +113,6 @@
   <columns>Number Columns</columns>
   <rows>Number Rows</rows>
 
+  <supplier>Supplier</supplier>
+
 </strings>

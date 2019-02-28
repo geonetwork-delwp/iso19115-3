@@ -189,6 +189,8 @@
     <name>mri:associatedResource</name>
 		<name>mrl:source</name>
 		<name>srv:parameter</name>
+    <name>mac:MI_Sensor</name>
+    <name>delwp:MD_ProjectPartner</name>
   </fieldsWithFieldset>
 
   <multilingualFields>
@@ -631,8 +633,7 @@
 
       <tab id="projectContacts" mode="flat">
         <section name=" ">
-          <!-- Template has Custodian, Owner can be added if required -->
-					<field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:citedResponsibleParty" or="citedResponsibleParty" in="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation"/>
+					<field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:citedResponsibleParty"/>
 				</section>
 			</tab>
 
@@ -648,15 +649,6 @@
       <tab id="projectMaintenance" mode="flat">
         <section name=" ">
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceMaintenance"/>
-				</section>
-			</tab>
- 
-      <tab id="projectContacts" mode="flat">
-        <section name=" ">
-          <!-- TODO: make sure that current user is added as the metadata creator.
-               If already a creator then add the current user as an editor, it is
-               effectively read only as the creator is s  -->
-          <field xpath="/mdb:MD_Metadata/mdb:contact" or="contact" in="/mdb:MD_Metadata"/>
 				</section>
 			</tab>
  
@@ -693,7 +685,7 @@
           </field>
           <!-- Acquistion details supplier - this is a lookup of a fragment containing the
                supplier details -->
-					<field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation/cit:citedResponsibleParty" or="citedResponsibleParty" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation"/>
+					<field name="supplier" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation/cit:citedResponsibleParty"/>
 					<!-- offer a mac:identifier for schedule number --> 
           <field name="projectScheduleNumber" templateModeOnly="true" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:identifier[mcc:MD_Identifier/mcc:codeSpace/gco:CharacterString='delwp-sequenceNumber']" del=".">
             <template>

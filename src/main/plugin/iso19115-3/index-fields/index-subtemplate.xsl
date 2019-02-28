@@ -113,8 +113,8 @@
   </xsl:template>
 
   <xsl:template mode="index" match="mac:MI_Sensor">
-    <xsl:variable name="platformType" select="mac:otherProperty/gco:Record/delwp:platformType/delwp:MD_PlatformTypeCode/@codeListValue"/>
-    <xsl:variable name="sensorName" select="mac:identifier/mcc:MD_Identifier/mcc:code/gco:CharacterString"/>
+    <xsl:variable name="platformType" select="mac:identifier/mcc:MD_Identifier/mcc:code/gco:CharacterString"/>
+    <xsl:variable name="sensorName" select="mac:citation/cit:CI_Citation/cit:title/gco:CharacterString"/>
     <Field name="sensorName" string="{$sensorName}" store="true" index="true"/>
     <Field name="platformType" string="{$platformType}" store="true" index="true"/>
     <Field name="sensorType" string="{mac:type/gco:CharacterString}" store="true" index="true"/>

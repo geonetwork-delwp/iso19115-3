@@ -39,7 +39,6 @@
       </mdb:name>
     </mdb:MD_MetadataScope>
   </mdb:metadataScope>
-	<mdb:contact xlink:href="local://xml.metadata.get?uuid=urn:delwp-contacts:11&amp;process=cit:role/cit:CI_RoleCode/@codeListValue~author"/>
   <mdb:metadataStandard>
     <cit:CI_Citation>
       <cit:title>
@@ -81,28 +80,21 @@
               </cit:dateType>
             </cit:CI_Date>
           </cit:date>
-          <cit:identifier>
-             <mcc:MD_Identifier>
-                <mcc:code>
-                   <gco:CharacterString>Link to be added by administrator</gco:CharacterString>
-                </mcc:code>
-                <mcc:codeSpace>
-                   <gco:CharacterString>delwp-dataSetURI</gco:CharacterString>
-                </mcc:codeSpace>
-             </mcc:MD_Identifier>
-          </cit:identifier>
-		<cit:series>
-			<cit:CI_Series>
-        <!-- Remove name field until picklist can be applied with it 
-				<cit:name>
-					<gco:CharacterString></gco:CharacterString>
-				</cit:name> -->
-				<cit:issueIdentification>
-					<gco:CharacterString></gco:CharacterString>
-				</cit:issueIdentification>
-			</cit:CI_Series>
-		</cit:series>
-	</cit:CI_Citation>
+          <cit:citedResponsibleParty>
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="owner"/>
+              </cit:role>
+            </cit:CI_Responsibility>
+			    </cit:citedResponsibleParty>
+          <cit:citedResponsibleParty>
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="custodian"/>
+              </cit:role>
+            </cit:CI_Responsibility>
+			    </cit:citedResponsibleParty>
+	      </cit:CI_Citation>
       </mri:citation>
       <mri:abstract>
         <gco:CharacterString></gco:CharacterString>
@@ -113,11 +105,6 @@
       <mri:status>
         <mcc:MD_ProgressCode codeList="codeListLocation#MD_ProgressCode" codeListValue=""/>
       </mri:status>
-			<mri:pointOfContact xlink:href="local://xml.metadata.get?uuid=urn:delwp-contacts:11&amp;process=cit:role/cit:CI_RoleCode/@codeListValue~pointOfContact"/>
-      <mri:spatialRepresentationType>
-        <mcc:MD_SpatialRepresentationTypeCode codeList="codeListLocation#MD_SpatialRepresentationTypeCode"
-          codeListValue=""/>
-      </mri:spatialRepresentationType>
       <mri:spatialResolution>
         <mri:MD_Resolution>
           <mri:levelOfDetail>
@@ -238,6 +225,13 @@
           </mac:description>
           <mac:citation>
             <cit:CI_Citation>
+              <cit:citedResponsibleParty>
+                <cit:CI_Responsibility>
+                  <cit:role>
+                    <cit:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="supplier"/>
+                  </cit:role>
+                </cit:CI_Responsibility>
+			        </cit:citedResponsibleParty>
             </cit:CI_Citation>
           </mac:citation>
           <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_Type'])"/>
