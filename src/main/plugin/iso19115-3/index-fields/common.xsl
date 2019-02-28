@@ -829,6 +829,7 @@
 
     <xsl:for-each select="$metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation">
       <Field  name="rasterType" string="{mac:scope/mcc:MD_Scope/mcc:level/mcc:MD_ScopeCode/@codeListValue}" store="false" index="true"/>
+      <Field  name="sensorType" string="{mac:instrument/mac:MI_Sensor/mac:type/text()}" store="false" index="true"/>
       <Field  name="platformType" string="{mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:platformType/delwp:MD_PlatformTypeCode/@codeListValue}" store="false" index="true"/>
     </xsl:for-each>
 
