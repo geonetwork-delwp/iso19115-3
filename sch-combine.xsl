@@ -4,13 +4,13 @@
 
   <xsl:output method="xml" indent="yes"/>
 
-  <xsl:variable name="cit" select="document('src/main/plugin/iso19115-3/schema/standards.iso.org/19115/-3/cit/1.0/cit.sch')"/>
+  <xsl:variable name="cit" select="document('src/main/plugin/iso19115-3/schema/standards.iso.org/19115/-3/cit/2.0/cit.sch')"/>
   <xsl:variable name="gex" select="document('src/main/plugin/iso19115-3/schema/standards.iso.org/19115/-3/gex/1.0/gex.sch')"/>
   <xsl:variable name="mco" select="document('src/main/plugin/iso19115-3/schema/standards.iso.org/19115/-3/mco/1.0/mco.sch')"/>
-  <xsl:variable name="mdb" select="document('src/main/plugin/iso19115-3/schema/standards.iso.org/19115/-3/mdb/1.0/mdb.sch')"/>
+  <xsl:variable name="mdb" select="document('src/main/plugin/iso19115-3/schema/standards.iso.org/19115/-3/mdb/2.0/mdb.sch')"/>
   <xsl:variable name="mex" select="document('src/main/plugin/iso19115-3/schema/standards.iso.org/19115/-3/mex/1.0/mex.sch')"/>
   <xsl:variable name="mmi" select="document('src/main/plugin/iso19115-3/schema/standards.iso.org/19115/-3/mmi/1.0/mmi.sch')"/>
-  <xsl:variable name="mrc" select="document('src/main/plugin/iso19115-3/schema/standards.iso.org/19115/-3/mrc/1.0/mrc.sch')"/>
+  <xsl:variable name="mrc" select="document('src/main/plugin/iso19115-3/schema/standards.iso.org/19115/-3/mrc/2.0/mrc.sch')"/>
   <xsl:variable name="mrd" select="document('src/main/plugin/iso19115-3/schema/standards.iso.org/19115/-3/mrd/1.0/mrd.sch')"/>
   <xsl:variable name="mri" select="document('src/main/plugin/iso19115-3/schema/standards.iso.org/19115/-3/mri/1.0/mri.sch')"/>
   <xsl:variable name="mrs" select="document('src/main/plugin/iso19115-3/schema/standards.iso.org/19115/-3/mrs/1.0/mrs.sch')"/>
@@ -32,14 +32,14 @@
       <sch:ns prefix="srv" uri="http://standards.iso.org/iso/19115/-3/srv/2.0"/>
 
 
-      <sch:ns prefix="cit" uri="http://standards.iso.org/iso/19115/-3/cit/1.0"/>
+      <sch:ns prefix="cit" uri="http://standards.iso.org/iso/19115/-3/cit/2.0"/>
       <sch:ns prefix="gex" uri="http://standards.iso.org/iso/19115/-3/gex/1.0"/>
       <sch:ns prefix="mco" uri="http://standards.iso.org/iso/19115/-3/mco/1.0"/>
-      <sch:ns prefix="mdb" uri="http://standards.iso.org/iso/19115/-3/mdb/1.0"/>
+      <sch:ns prefix="mdb" uri="http://standards.iso.org/iso/19115/-3/mdb/2.0"/>
       <sch:ns prefix="mex" uri="http://standards.iso.org/iso/19115/-3/mex/1.0"/>
       <sch:ns prefix="mmi" uri="http://standards.iso.org/iso/19115/-3/mmi/1.0"/>
       <sch:ns prefix="gmw" uri="http://standards.iso.org/iso/19115/-3/gmw/1.0"/>
-      <sch:ns prefix="mrc" uri="http://standards.iso.org/iso/19115/-3/mrc/1.0"/>
+      <sch:ns prefix="mrc" uri="http://standards.iso.org/iso/19115/-3/mrc/2.0"/>
       <sch:ns prefix="mrd" uri="http://standards.iso.org/iso/19115/-3/mrd/1.0"/>
       <sch:ns prefix="mri" uri="http://standards.iso.org/iso/19115/-3/mri/1.0"/>
       <sch:ns prefix="mrs" uri="http://standards.iso.org/iso/19115/-3/mrs/1.0"/>
