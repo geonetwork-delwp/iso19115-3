@@ -15,10 +15,10 @@
 
 
   <!-- Thumbnail base url (mandatory) -->
-  <xsl:param name="thumbnail_url"/>
+  <xsl:param name="url"/>
   <!-- Element to use for the file name. -->
-  <xsl:param name="thumbnail_desc" select="''"/>
-  <xsl:param name="thumbnail_type" select="''"/>
+  <xsl:param name="desc" select="''"/>
+  <xsl:param name="type" select="''"/>
 
   <!-- Target element to update. The key is based on the concatenation
   of URL+Name -->
@@ -27,7 +27,7 @@
   <xsl:variable name="separator" select="'\|'"/>
 
   <xsl:variable name="mainLang"
-                select="/mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue"
+                select="if (/mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue) then /mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue else 'eng'"
                 as="xs:string"/>
 
   <xsl:variable name="useOnlyPTFreeText"
@@ -85,14 +85,14 @@
 
 
     <xsl:template name="fill">
-    <xsl:if test="$thumbnail_url != ''">
+    <xsl:if test="$url != ''">
       <mri:graphicOverview>
         <mcc:MD_BrowseGraphic>
           <mcc:fileName>
             <xsl:choose>
               <!--Multilingual-->
-              <xsl:when test="contains($thumbnail_url, '|')">
-                <xsl:for-each select="tokenize($thumbnail_url, $separator)">
+              <xsl:when test="contains($url, '|')">
+                <xsl:for-each select="tokenize($url, $separator)">
                   <xsl:variable name="nameLang"
                                 select="substring-before(., '#')"></xsl:variable>
                   <xsl:variable name="nameValue"
@@ -106,7 +106,7 @@
                 </xsl:for-each>
 
                 <lan:PT_FreeText>
-                  <xsl:for-each select="tokenize($thumbnail_url, $separator)">
+                  <xsl:for-each select="tokenize($url, $separator)">
                     <xsl:variable name="nameLang"
                                   select="substring-before(., '#')"></xsl:variable>
                     <xsl:variable name="nameValue"
@@ -125,21 +125,21 @@
               </xsl:when>
               <xsl:otherwise>
                 <gco:CharacterString>
-                  <xsl:value-of select="$thumbnail_url"/>
+                  <xsl:value-of select="$url"/>
                 </gco:CharacterString>
               </xsl:otherwise>
             </xsl:choose>
           </mcc:fileName>
-          <xsl:if test="$thumbnail_desc!=''">
+          <xsl:if test="$desc!=''">
             <mcc:fileDescription>
               <xsl:copy-of
-                      select="gn-fn-iso19115-3:fillTextElement($thumbnail_desc, $mainLang, $useOnlyPTFreeText)"/>
+                      select="gn-fn-iso19115-3:fillTextElement($desc, $mainLang, $useOnlyPTFreeText)"/>
             </mcc:fileDescription>
           </xsl:if>
-          <xsl:if test="$thumbnail_type!=''">
+          <xsl:if test="$type!=''">
             <mcc:fileType>
               <gco:CharacterString>
-                <xsl:value-of select="$thumbnail_type"/>
+                <xsl:value-of select="$type"/>
               </gco:CharacterString>
             </mcc:fileType>
           </xsl:if>

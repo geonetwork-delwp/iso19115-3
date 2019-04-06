@@ -30,7 +30,7 @@ by adding a reference to the distribution section.
   <xsl:param name="siteUrl"/>
 
   <xsl:variable name="mainLang"
-                select="/mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue"
+                select="if (/mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue) then /mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue else 'eng'"
                 as="xs:string"/>
 
   <xsl:variable name="useOnlyPTFreeText"
