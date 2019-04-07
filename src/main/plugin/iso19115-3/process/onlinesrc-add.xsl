@@ -236,11 +236,13 @@
                 </cit:applicationProfile>
               </xsl:if>
 
-              <xsl:if test="normalize-space($name) != ''">
-                <cit:name>
-                  <xsl:copy-of select="gn-fn-iso19115-3:fillTextElement($name, $mainLang, $useOnlyPTFreeText)"/>
-                </cit:name>
-              </xsl:if>
+              <!-- if no name supplied, then get the last part of the 
+                   url path -->
+              <xsl:variable name="defaultName" select="if (normalize-space($name)='') then tokenize($url,'/')[last()] else $name"/>
+
+              <cit:name>
+                <xsl:copy-of select="gn-fn-iso19115-3:fillTextElement($defaultName, $mainLang, $useOnlyPTFreeText)"/>
+              </cit:name>
 
               <xsl:if test="$desc != ''">
                 <cit:description>
