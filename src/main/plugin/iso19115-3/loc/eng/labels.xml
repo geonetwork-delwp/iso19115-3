@@ -3858,6 +3858,7 @@
     <label>Protocol</label>
     <description>Connection protocol to be used</description>
     <helper sort="true">
+<!--
       <option value="OGC:CSW">OGC-CSW Catalogue Service for the Web
       </option>
       <option value="OGC:KML">OGC-KML Keyhole Markup Language
@@ -3875,23 +3876,29 @@
       <option value="OGC:SAS">OGC-SAS Sensor Alert Service</option>
       <option value="OGC:WCS">OGC-WCS Web Coverage Service</option>
       <option value="OGC:WCTS">OGC-WCTS Web Coordinate Transformation Service</option>
+-->
       <option value="OGC:WFS">OGC-WFS Web Feature Service</option>
       <option value="OGC:WMS">OGC-WMS Web Map Service</option>
+<!--
       <option value="OGC:WMTS">OGC-WMS Web Map Tile Service</option>
       <option value="OGC:WNS">OGC-WNS Web Notification Service</option>
       <option value="OGC:WPS">OGC-WPS Web Processing Service</option>
+-->
       <option value="WWW:DOWNLOAD-1.0-ftp--download">File for download through FTP</option>
       <option value="WWW:DOWNLOAD-1.0-http--download">File for download</option>
+<!--
       <option value="ESRI:REST">ESRI REST Service</option>
       <option value="FILE:GEO">GIS file</option>
       <option value="FILE:RASTER">GIS RASTER file</option>
-      <option value="WWW:LINK-1.0-http--link" default="">Web address (URL)</option>
-      <option value="WWW:LINK-1.0-http--rss">RSS News feed (URL)</option>
+-->
+      <option value="WWW:LINK-1.0-http--link" default="">Web address of a resource (URL)</option>
+      <option value="WWW:LINK-1.0-http--download-raster-footprint" default="">Raster Footprint (URL)</option>
+<!--
       <option value="DB:POSTGIS">PostGIS database table</option>
       <option value="DB:ORACLE">ORACLE database table</option>
-      <option value="WWW:LINK-1.0-http--opendap">OPeNDAP URL</option>
       <option value="RBNB:DATATURBINE">Data Turbine</option>
       <option value="UKST">Unknown Service Type</option>
+-->
     </helper>
   </element>
   <element name="mri:purpose" id="26.0">
