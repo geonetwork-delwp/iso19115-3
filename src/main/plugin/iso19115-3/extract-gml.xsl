@@ -6,6 +6,7 @@
   xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
   xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
   xmlns:gml="http://www.opengis.net/gml"
+  xmlns:gml32="http://www.opengis.net/gml/3.2"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <xsl:output indent="no" method="xml"/>
@@ -25,8 +26,8 @@
   <xsl:template
     match="gex:EX_BoundingPolygon[string(gex:extentTypeCode/gco:Boolean) != 'false' and string(gex:extentTypeCode/gco:Boolean) != '0']"
     priority="2">
-    <xsl:for-each select="gex:polygon/gml:*">
-      <xsl:copy-of select="."/>
+    <xsl:for-each select="gex:polygon/gml32:*">
+      <xsl:apply-templates select="."/>
     </xsl:for-each>
   </xsl:template>
 
@@ -44,5 +45,25 @@
         </gml:exterior>
       </gml:Polygon>
     </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="@*[namespace-uri()='http://www.opengis.net/gml/3.2']">
+    <xsl:variable name="name" select="concat('gml:',local-name())"/>
+    <xsl:attribute name="{$name}"><xsl:value-of select="."/></xsl:attribute>
+  </xsl:template>
+  
+  <xsl:template match="*[namespace-uri()='http://www.opengis.net/gml/3.2']">
+    <xsl:variable name="name" select="concat('gml:',local-name())"/>
+    <xsl:element name="{$name}">
+      <xsl:apply-templates select="@*"/>
+      <xsl:choose>
+         <xsl:when test="count(*)>0">
+           <xsl:apply-templates select="@*|*"/>
+         </xsl:when>
+         <xsl:otherwise>
+           <xsl:value-of select="."/>
+         </xsl:otherwise>
+      </xsl:choose>
+    </xsl:element>
   </xsl:template>
 </xsl:stylesheet>
