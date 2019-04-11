@@ -22,7 +22,7 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
       <sch:title xmlns="http://www.w3.org/2001/XMLSchema"
-                 xml:lang="en">Schematron validation for ISO 19115-1:2014 standard</sch:title>
+                 xml:lang="en">Schematron validation for ISO 19115-1:2018 standard (DELWP profile)</sch:title>
       <sch:title xmlns="http://www.w3.org/2001/XMLSchema"
                  xml:lang="fr">Règles de validation pour le standard ISO 19115-1:2014</sch:title>
 

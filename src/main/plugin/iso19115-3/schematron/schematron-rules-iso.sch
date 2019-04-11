@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
   <sch:title xmlns="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schematron
-    validation for ISO 19115-1:2014 standard
+    validation for ISO 19115-1:2018 standard (DELWP Profile)
   </sch:title>
   <sch:title xmlns="http://www.w3.org/2001/XMLSchema" xml:lang="fr">Règles de
-    validation pour le standard ISO 19115-1:2014
+    validation pour le standard ISO 19115-1:2018
   </sch:title>
   <sch:ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
   <sch:ns prefix="srv" uri="http://standards.iso.org/iso/19115/-3/srv/2.0"/>
-  <sch:ns prefix="cit" uri="http://standards.iso.org/iso/19115/-3/cit/1.0"/>
+  <sch:ns prefix="cit" uri="http://standards.iso.org/iso/19115/-3/cit/2.0"/>
   <sch:ns prefix="gex" uri="http://standards.iso.org/iso/19115/-3/gex/1.0"/>
   <sch:ns prefix="mco" uri="http://standards.iso.org/iso/19115/-3/mco/1.0"/>
-  <sch:ns prefix="mdb" uri="http://standards.iso.org/iso/19115/-3/mdb/1.0"/>
+  <sch:ns prefix="mdb" uri="http://standards.iso.org/iso/19115/-3/mdb/2.0"/>
   <sch:ns prefix="mex" uri="http://standards.iso.org/iso/19115/-3/mex/1.0"/>
   <sch:ns prefix="mmi" uri="http://standards.iso.org/iso/19115/-3/mmi/1.0"/>
   <sch:ns prefix="gmw" uri="http://standards.iso.org/iso/19115/-3/gmw/1.0"/>
-  <sch:ns prefix="mrc" uri="http://standards.iso.org/iso/19115/-3/mrc/1.0"/>
+  <sch:ns prefix="mrc" uri="http://standards.iso.org/iso/19115/-3/mrc/2.0"/>
   <sch:ns prefix="mrd" uri="http://standards.iso.org/iso/19115/-3/mrd/1.0"/>
   <sch:ns prefix="mri" uri="http://standards.iso.org/iso/19115/-3/mri/1.0"/>
   <sch:ns prefix="mrs" uri="http://standards.iso.org/iso/19115/-3/mrs/1.0"/>
@@ -577,12 +577,12 @@
 
     <sch:p xml:lang="en">A metadata instance document conforming to
       this specification SHALL have a root MD_Metadata element
-      defined in the http://standards.iso.org/iso/19115/-3/mdb/1.0 namespace.
+      defined in the http://standards.iso.org/iso/19115/-3/mdb/2.0 namespace.
     </sch:p>
 
     <sch:p xml:lang="fr">Une fiche de métadonnées conforme au standard
       ISO19115-1 DOIT avoir un élément racine MD_Metadata (défini dans l'espace
-      de nommage http://standards.iso.org/iso/19115/-3/mdb/1.0).
+      de nommage http://standards.iso.org/iso/19115/-3/mdb/2.0).
     </sch:p>
 
     <sch:rule context="/">
