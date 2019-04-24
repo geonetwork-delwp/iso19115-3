@@ -89,7 +89,7 @@
 
 -->
 
-  <element name="MD_MethodCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type">
+  <element name="MD_MethodCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type">
     <annotation>
       <documentation>Description: Describes the method code used to collect the imagery in the project</documentation>
     </annotation>
@@ -103,10 +103,14 @@
   </complexType>
 
   <complexType name="MD_ProjectPartner_Type">
-    <sequence>
-      <element minOccurs="1" maxOccurs="unbounded" name="partner"  type="cit:AbstractCI_Party_PropertyType"/>
-      <element minOccurs="0" name="purpose" type="gco:CharacterString_PropertyType"/>
-    </sequence>
+    <complexContent>
+      <extension base="gco:AbstractObject_Type">
+        <sequence>
+          <element minOccurs="1" maxOccurs="unbounded" name="partner"  type="cit:AbstractCI_Party_PropertyType"/>
+          <element minOccurs="0" name="purpose" type="gco:CharacterString_PropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
   </complexType>
 
   <element name="MD_ProjectPartner" substitutionGroup="gco:AbstractObject" type="delwp:MD_ProjectPartner_Type"/>
@@ -115,9 +119,11 @@
     <sequence minOccurs="0">
       <element ref="delwp:MD_ProjectPartner"/>
     </sequence>
+    <attributeGroup ref="gco:ObjectReference"/>
+    <attribute ref="gco:nilReason"/>
   </complexType>
 
-  <element name="MD_PlatformTypeCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+  <element name="MD_PlatformTypeCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
 
   <complexType name="MD_PlatformTypeCode_PropertyType">
     <sequence minOccurs="0">
@@ -126,7 +132,7 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
-  <element name="MD_AssemblyCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+  <element name="MD_AssemblyCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
 
   <complexType name="MD_AssemblyCode_PropertyType">
     <sequence minOccurs="0">
@@ -135,7 +141,7 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
-  <element name="MD_TileSizeCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+  <element name="MD_TileSizeCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
 
   <complexType name="MD_TileSizeCode_PropertyType">
     <sequence minOccurs="0">
@@ -150,9 +156,13 @@
     <sequence minOccurs="0">
       <element ref="delwp:MD_ProjectDetails"/>
     </sequence>
+    <attributeGroup ref="gco:ObjectReference"/>
+    <attribute ref="gco:nilReason"/>
   </complexType>
 
   <complexType name="MD_ProjectDetails_Type">
+    <complexContent>
+      <extension base="gco:AbstractObject_Type">
     <sequence minOccurs="0">
       <element minOccurs="1" name="method" type="delwp:MD_MethodCode_PropertyType">
         <annotation>
@@ -165,9 +175,11 @@
         </annotation>
       </element>
     </sequence>
+      </extension>
+    </complexContent>
   </complexType>
 
-  <element name="MD_RasterTypeCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+  <element name="MD_RasterTypeCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
 
   <complexType name="MD_RasterTypeCode_PropertyType">
     <sequence minOccurs="0">
@@ -182,9 +194,13 @@
     <sequence minOccurs="0">
       <element ref="delwp:MD_ContourDetails"/>
     </sequence>
+    <attributeGroup ref="gco:ObjectReference"/>
+    <attribute ref="gco:nilReason"/>
   </complexType>
 
   <complexType name="MD_ContourDetails_Type">
+    <complexContent>
+      <extension base="gco:AbstractObject_Type">
     <sequence minOccurs="0">
       <element minOccurs="1" name="interval" type="gco:Measure_PropertyType">
         <annotation>
@@ -192,6 +208,35 @@
         </annotation>
       </element>
     </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="MD_EllipsoidVerticalDatumCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_EllipsoidVerticalDatumCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_EllipsoidVerticalDatumCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
+  <element name="MD_EllipsoidFormatCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_EllipsoidFormatCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_EllipsoidFormatCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
+  <element name="MD_GeoidVerticalDatumCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+  <complexType name="MD_GeoidVerticalDatumCode_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_GeoidVerticalDatumCode"/>
+    </sequence>
+    <attribute ref="gco:nilReason"/>
   </complexType>
 
   <element name="MD_PointCloudDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_PointCloudDetails_Type"/>
@@ -200,9 +245,13 @@
     <sequence minOccurs="0">
       <element ref="delwp:MD_PointCloudDetails"/>
     </sequence>
+    <attributeGroup ref="gco:ObjectReference"/>
+    <attribute ref="gco:nilReason"/>
   </complexType>
 
   <complexType name="MD_PointCloudDetails_Type">
+    <complexContent>
+      <extension base="gco:AbstractObject_Type">
     <sequence minOccurs="0">
       <element minOccurs="0" name="pulseMode" type="gco:CharacterString_PropertyType">
         <annotation>
@@ -290,6 +339,8 @@
         </annotation>
       </element>
     </sequence>
+      </extension>
+    </complexContent>
   </complexType>
 
   <element name="MD_RasterDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_RasterDetails_Type"/>
@@ -298,9 +349,11 @@
     <sequence minOccurs="0">
       <element ref="delwp:MD_RasterDetails"/>
     </sequence>
+    <attributeGroup ref="gco:ObjectReference"/>
+    <attribute ref="gco:nilReason"/>
   </complexType>
 
-  <element name="MD_ResamplingKernelCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+  <element name="MD_ResamplingKernelCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
 
   <complexType name="MD_ResamplingKernelCode_PropertyType">
     <sequence minOccurs="0">
@@ -309,7 +362,7 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
-  <element name="MD_PlatformCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+  <element name="MD_PlatformCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
 
   <complexType name="MD_PlatformCode_PropertyType">
     <sequence minOccurs="0">
@@ -318,7 +371,7 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
-  <element name="MD_BandListCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+  <element name="MD_BandListCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
 
   <complexType name="MD_BandListCode_PropertyType">
     <sequence minOccurs="0">
@@ -327,7 +380,7 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
-  <element name="MD_RectificationTypeCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+  <element name="MD_RectificationTypeCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
 
   <complexType name="MD_RectificationTypeCode_PropertyType">
     <sequence minOccurs="0">
@@ -336,7 +389,7 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
-  <element name="MD_SeamlessnessCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+  <element name="MD_SeamlessnessCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
 
   <complexType name="MD_SeamlessnessCode_PropertyType">
     <sequence minOccurs="0">
@@ -346,6 +399,8 @@
   </complexType>
 
   <complexType name="MD_RasterDetails_Type">
+    <complexContent>
+      <extension base="gco:AbstractObject_Type">
     <sequence minOccurs="0">
       <element minOccurs="1" name="type" type="delwp:MD_RasterTypeCode_PropertyType">
         <annotation>
@@ -388,6 +443,8 @@
         </annotation>
       </element>
     </sequence>
+      </extension>
+    </complexContent>
   </complexType>
 
   <element name="MD_DataDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_DataDetails_Type"/>
@@ -396,14 +453,20 @@
     <sequence minOccurs="0">
       <element ref="delwp:MD_DataDetails"/>
     </sequence>
+    <attributeGroup ref="gco:ObjectReference"/>
+    <attribute ref="gco:nilReason"/>
   </complexType>
 
   <complexType name="MD_DataDetails_Type">
+    <complexContent>
+      <extension base="gco:AbstractObject_Type">
     <choice>
       <element name="rasterDetails" type="delwp:MD_RasterDetails_PropertyType"/>
       <element name="pointCloudDetails" type="delwp:MD_PointCloudDetails_PropertyType"/>
       <element name="contourDetails" type="delwp:MD_ContourDetails_PropertyType"/>
     </choice>
+      </extension>
+    </complexContent>
   </complexType>
 
   <element name="MD_DatasetDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_DatasetDetails_Type"/>
@@ -412,6 +475,8 @@
     <sequence minOccurs="0">
       <element ref="delwp:MD_DatasetDetails"/>
     </sequence>
+    <attributeGroup ref="gco:ObjectReference"/>
+    <attribute ref="gco:nilReason"/>
   </complexType>
 
   <element name="platformType" type="delwp:MD_PlatformTypeCode_PropertyType">
@@ -421,6 +486,8 @@
   </element>
   
   <complexType name="MD_DatasetDetails_Type">
+    <complexContent>
+      <extension base="gco:AbstractObject_Type">
     <sequence minOccurs="0">
       <element ref="delwp:platformType" minOccurs="1"/> 
       <element minOccurs="1" name="assembly" type="delwp:MD_AssemblyCode_PropertyType">
@@ -439,9 +506,11 @@
         </annotation>
       </element>
     </sequence>
+      </extension>
+    </complexContent>
   </complexType>
 
-  <element name="MD_RunOrientationCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+  <element name="MD_RunOrientationCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
 
   <complexType name="MD_RunOrientationCode_PropertyType">
     <sequence minOccurs="0">
@@ -450,7 +519,7 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
-  <element name="MD_FlyingHeightUnitCode" substitionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+  <element name="MD_FlyingHeightUnitCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
 
   <complexType name="MD_FlyingHeightUnitCode_PropertyType">
     <sequence minOccurs="0">
@@ -465,9 +534,13 @@
     <sequence minOccurs="0">
       <element ref="delwp:MD_AerialSurveyDetails"/>
     </sequence>
+    <attributeGroup ref="gco:ObjectReference"/>
+    <attribute ref="gco:nilReason"/>
   </complexType>
 
   <complexType name="MD_AerialSurveyDetails_Type">
+    <complexContent>
+      <extension base="gco:AbstractObject_Type">
     <sequence minOccurs="0">
       <element minOccurs="0" name="runs" type="gco:Integer_PropertyType">
         <annotation>
@@ -515,9 +588,13 @@
         </annotation>
       </element>
     </sequence>
+      </extension>
+    </complexContent>
   </complexType>
 
   <complexType name="MD_OperationProperties_Type">
+    <complexContent>
+      <extension base="gco:AbstractObject_Type">
     <annotation>
       <documentation>Description: Describes the DELWP operation properties that don't fit within in the standard</documentation>
     </annotation>
@@ -526,13 +603,19 @@
        <element name="datasetDetails" type="delwp:MD_DatasetDetails_PropertyType"/>
        <element name="aerialSurveyDetails" type="delwp:MD_AerialSurveyDetails_PropertyType"/>
     </choice>
+      </extension> 
+    </complexContent>
   </complexType>
 
   <!-- This type is used in mac:MI_Sensor/mac:otherProperty -->
   <complexType name="MD_SensorProperties_Type">
+    <complexContent>
+      <extension base="gco:AbstractObject_Type">
     <sequence minOccurs="0">
       <element ref="delwp:platformType" minOccurs="1"/> 
     </sequence>
+      </extension> 
+    </complexContent>
   </complexType>
 
 </schema>
