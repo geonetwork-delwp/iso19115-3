@@ -618,6 +618,82 @@
     </complexContent>
   </complexType>
 
+  <!-- Extensions for MetaShare below - column details in contentInfo -->
+
+  <complexType name="MD_Attribute_Type">
+    <complexContent>
+      <extension base="gco:AbstractObject_Type">
+        <sequence minOccurs="0">
+          <element minOccurs="1" maxOccurs="1" name="name" type="gco:CharacterString_PropertyType">
+            <annotation>
+              <documentation>Description: Name of column in dataset</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="1" maxOccurs="1" name="obligation" type="gco:CharacterString_PropertyType">
+            <annotation>
+              <documentation>Description: Obligation of column in dataset</documentation>
+            </annotation>
+          </element>
+          <!-- TODO: could use gco:Boolean_PropertyType here? -->
+          <element minOccurs="1" maxOccurs="1" name="unique" type="gco:CharacterString_PropertyType">
+            <annotation>
+              <documentation>Description: Uniqueness of column in dataset</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="1" maxOccurs="1" name="dataType" type="gco:CharacterString_PropertyType">
+            <annotation>
+              <documentation>Description: Type of column in dataset</documentation>
+            </annotation>
+          </element>
+          <!-- TODO: could use gco:Integer_PropertyType here? -->
+          <element minOccurs="1" maxOccurs="1" name="dataLength" type="gco:CharacterString_PropertyType">
+            <annotation>
+              <documentation>Description: Length of column in dataset</documentation>
+            </annotation>
+          </element>
+          <!-- TODO: could use gco:Integer_PropertyType here? -->
+          <element minOccurs="0" maxOccurs="1" name="dataPrecision" type="gco:CharacterString_PropertyType">
+            <annotation>
+              <documentation>Description: Precision of column in dataset</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" maxOccurs="1" name="refTabOwnerName" type="gco:CharacterString_PropertyType">
+            <annotation>
+              <documentation>Description: Reference Table Owner Name?</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" maxOccurs="1" name="refTabTableName" type="gco:CharacterString_PropertyType">
+            <annotation>
+              <documentation>Description: Reference Table Name?</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" maxOccurs="1" name="refTabCodeColumnName" type="gco:CharacterString_PropertyType">
+            <annotation>
+              <documentation>Description: Reference Table Code Column Name?</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" maxOccurs="1" name="comments" type="gco:CharacterString_PropertyType">
+            <annotation>
+              <documentation>Description: Comments about this dataset column</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension> 
+    </complexContent>
+  </complexType>
+
+  <!-- This type is used in mrc:MD_SampleDimension/mrc:otherProperty to
+       hold column (attribute) details about MetaShare datasets -->
+  <complexType name="MD_Attribute_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_Attribute"/>
+    </sequence>
+    <attributeGroup ref="gco:ObjectReference"/>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
+  <element name="MD_Attribute" substitutionGroup="gco:AbstractObject" type="delwp:MD_Attribute_Type"/>
+
 </schema>
 
 
