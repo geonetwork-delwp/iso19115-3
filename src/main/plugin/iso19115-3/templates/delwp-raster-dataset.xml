@@ -64,7 +64,7 @@
     </cit:CI_Citation>
   </mdb:metadataStandard>
   <mdb:spatialRepresentationInfo>
-    <msr:MD_Georectified>
+    <msr:MD_GridSpatialRepresentation>
       <msr:numberOfDimensions>
         <gco:Integer>2</gco:Integer>
       </msr:numberOfDimensions>
@@ -94,7 +94,13 @@
           </msr:resolution>
         </msr:MD_Dimension>
       </msr:axisDimensionProperties>
-    </msr:MD_Georectified>
+      <msr:cellGeometry>
+       <msr:MD_CellGeometryCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_DimensionNameTypeCode" codeListValue="area"/>
+      </msr:cellGeometry>
+      <msr:transformationParameterAvailability>
+       <gco:Boolean>1</gco:Boolean>
+      </msr:transformationParameterAvailability>
+    </msr:MD_GridSpatialRepresentation>
   </mdb:spatialRepresentationInfo>
   <mdb:identificationInfo>
     <mri:MD_DataIdentification>

@@ -258,7 +258,7 @@
           <documentation>Description: Lidar details pulse mode</documentation>
         </annotation>
       </element>
-      <element minOccurs="0" name="returnTypes" type="gco:CharacterString_PropertyType">
+      <element minOccurs="0" name="returnType" type="gco:CharacterString_PropertyType">
         <annotation>
           <documentation>Description: Lidar details return types</documentation>
         </annotation>
@@ -308,17 +308,17 @@
           <documentation>Description: Lidar details ellipsoid provided</documentation>
         </annotation>
       </element>
-      <element minOccurs="1" name="ellipsoidVerticalDatum" type="delwp:MD_EllipsoidVerticalDatumCode_PropertyType">
+      <element minOccurs="0" name="ellipsoidVerticalDatum" type="delwp:MD_EllipsoidVerticalDatumCode_PropertyType">
         <annotation>
           <documentation>Description: Describes the ellipsoid vertical datum</documentation>
         </annotation>
       </element>
-      <element minOccurs="1" name="ellipsoidFormat" type="delwp:MD_EllipsoidFormatCode_PropertyType">
+      <element minOccurs="0" name="ellipsoidFormat" type="delwp:MD_EllipsoidFormatCode_PropertyType">
         <annotation>
           <documentation>Description: Describes the ellipsoid format</documentation>
         </annotation>
       </element>
-      <element minOccurs="1" name="geoidVerticalDatum" type="delwp:MD_GeoidVerticalDatumCode_PropertyType">
+      <element minOccurs="0" name="geoidVerticalDatum" type="delwp:MD_GeoidVerticalDatumCode_PropertyType">
         <annotation>
           <documentation>Description: Describes the geoid vertical datum</documentation>
         </annotation>
