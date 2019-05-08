@@ -4,11 +4,13 @@
         xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0" 
         xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018" 
         xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" 
+        xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0" 
         elementFormDefault="qualified" 
         targetNamespace="https://github.com/geonetwork-delwp/iso19115-3.2018" 
         version="1.0">
   <import namespace="http://standards.iso.org/iso/19115/-3/gco/1.0" schemaLocation="https://schemas.isotc211.org/19115/-3/gco/1.0/gco.xsd"/>
   <import namespace="http://standards.iso.org/iso/19115/-3/cit/2.0" schemaLocation="https://schemas.isotc211.org/19115/-3/cit/2.0/cit.xsd"/>
+  <import namespace="http://standards.iso.org/iso/19115/-3/mrd/1.0" schemaLocation="https://schemas.isotc211.org/19115/-3/mrd/1.0/mrd.xsd"/>
 
 <!-- A gco:Record type that can be used as a child of elements
      such as mac:otherProperty 
@@ -449,11 +451,6 @@
                 <documentation>Description: lens</documentation>
               </annotation>
             </element>
-            <element minOccurs="1" name="aerialSurveyDetails" type="delwp:MD_AerialSurveyDetails_PropertyType">
-              <annotation>
-                <documentation>Description: survey details for aerial photo rasters</documentation>
-              </annotation>
-            </element>
           </sequence>
         </extension>
       </complexContent>
@@ -495,7 +492,7 @@
       <complexContent>
         <extension base="gco:AbstractObject_Type">
           <sequence minOccurs="0">
-            <element minOccurs="0" name="nadir" type="gco:CharacterString_PropertyType">
+            <element minOccurs="0" name="nadir" type="gco:Real_PropertyType">
               <annotation>
                 <documentation>Description: nadir</documentation>
               </annotation>
@@ -503,6 +500,21 @@
             <element minOccurs="0" name="controlPoints" type="gco:CharacterString_PropertyType">
               <annotation>
                 <documentation>Description: control points</documentation>
+              </annotation>
+            </element>
+            <element minOccurs="0" name="rawImageFormat" type="mrd:MD_Format_PropertyType">
+              <annotation>
+                <documentation>Description: raw image format</documentation>
+              </annotation>
+            </element>
+            <element minOccurs="0" name="rectifiedImageFormat" type="mrd:MD_Format_PropertyType">
+              <annotation>
+                <documentation>Description: raw image format</documentation>
+              </annotation>
+            </element>
+            <element minOccurs="0" name="unrectifiedImageFormat" type="mrd:MD_Format_PropertyType">
+              <annotation>
+                <documentation>Description: raw image format</documentation>
               </annotation>
             </element>
             <element minOccurs="0" name="atmosphericCorrection" type="delwp:MD_AtmosphericCorrectionCode_PropertyType">
@@ -728,6 +740,11 @@
           <documentation>Description: Describes the details of the raster data collected in this operation</documentation>
         </annotation>
       </element>
+      <element minOccurs="0" name="aerialSurveyDetails" type="delwp:MD_AerialSurveyDetails_PropertyType">
+        <annotation>
+          <documentation>Description: (extra) survey details for platform type aerial</documentation>
+         </annotation>
+       </element>
     </sequence>
       </extension>
     </complexContent>
