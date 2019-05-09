@@ -534,13 +534,50 @@
 
     <!-- END MD_Satellite -->
 
+    <!-- MD_DEM -->
+
+    <element name="MD_DEM" substitutionGroup="gco:AbstractObject" type="delwp:MD_DEM_Type"/>
+
+    <complexType name="MD_DEM_PropertyType">
+      <sequence minOccurs="0">
+        <element ref="delwp:MD_DEM"/>
+      </sequence>
+      <attributeGroup ref="gco:ObjectReference"/>
+      <attribute ref="gco:nilReason"/>
+    </complexType>
+
+      <element name="MD_DEMCreatorCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
+
+      <complexType name="MD_DEMCreatorCode_PropertyType">
+        <sequence minOccurs="0">
+          <element ref="delwp:MD_DEMCreatorCode"/>
+        </sequence>
+        <attribute ref="gco:nilReason"/>
+      </complexType>
+
+    <complexType name="MD_DEM_Type">
+      <complexContent>
+        <extension base="gco:AbstractObject_Type">
+          <sequence minOccurs="0">
+            <element minOccurs="0" name="demCreator" type="delwp:MD_DEMCreatorCode_PropertyType">
+              <annotation>
+                <documentation>Description: dem creator code</documentation>
+              </annotation>
+            </element>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+
+    <!-- END MD_DEM -->
+
   <complexType name="MD_RasterPlatformSpecificProperties_Type">
     <complexContent>
       <extension base="gco:AbstractObject_Type">
     <choice>
       <element name="aerialPhoto" type="delwp:MD_AerialPhoto_PropertyType"/>
       <element name="satellite" type="delwp:MD_Satellite_PropertyType"/>
-      <!-- Could there be another here? DEM specifics? -->
+      <element name="dem" type="delwp:MD_DEM_PropertyType"/>
     </choice>
       </extension>
     </complexContent>
