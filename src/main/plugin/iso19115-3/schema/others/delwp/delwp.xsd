@@ -390,7 +390,7 @@
             <documentation>Description: Flying Height Unit</documentation>
           </annotation>
         </element>
-        <element minOccurs="0" name="flyingHeight" type="gco:Integer_PropertyType">
+        <element minOccurs="0" name="flightHeight" type="gco:Integer_PropertyType">
           <annotation>
             <documentation>Description: Flight Height</documentation>
           </annotation>
@@ -675,6 +675,31 @@
 
   <!-- END MD_DataDetails -->
 
+  <!-- MD_SurveyDetails -->
+
+  <element name="MD_SurveyDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_SurveyDetails_Type"/>
+
+  <complexType name="MD_SurveyDetails_PropertyType">
+    <sequence minOccurs="0">
+      <element ref="delwp:MD_SurveyDetails"/>
+    </sequence>
+    <attributeGroup ref="gco:ObjectReference"/>
+    <attribute ref="gco:nilReason"/>
+  </complexType>
+
+  <complexType name="MD_SurveyDetails_Type">
+    <complexContent>
+      <extension base="gco:AbstractObject_Type">
+        <sequence minOccurs="0">
+          <element minOccurs="0" name="aerialSurveyDetails" type="delwp:MD_AerialSurveyDetails_PropertyType"/>
+          <!-- can add other platform type specific survey details as required here -->
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <!-- END MD_SurveyDetails -->
+
   <!-- MD_DatasetDetails -->
 
   <element name="MD_DatasetDetails" substitutionGroup="gco:AbstractObject" type="delwp:MD_DatasetDetails_Type"/>
@@ -740,9 +765,9 @@
           <documentation>Description: Describes the details of the raster data collected in this operation</documentation>
         </annotation>
       </element>
-      <element minOccurs="0" name="aerialSurveyDetails" type="delwp:MD_AerialSurveyDetails_PropertyType">
+      <element minOccurs="0" name="surveyDetails" type="delwp:MD_SurveyDetails_PropertyType">
         <annotation>
-          <documentation>Description: (extra) survey details for platform type aerial</documentation>
+          <documentation>Description: (extra) survey details for specific platform types</documentation>
          </annotation>
        </element>
     </sequence>
