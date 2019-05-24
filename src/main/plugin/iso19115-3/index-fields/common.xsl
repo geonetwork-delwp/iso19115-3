@@ -242,8 +242,13 @@
     <xsl:for-each select="$metadata/mdb:identificationInfo/*">
 
       <xsl:for-each select="mri:citation/*">
-        <xsl:for-each select="mcc:identifier/mcc:MD_Identifier/mcc:code">
+        <xsl:for-each select="cit:identifier/mcc:MD_Identifier/mcc:code">
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('identifier', ., $langId)"/>
+        </xsl:for-each>
+
+        <!-- Add ANZLIC ID as a separate field -->
+        <xsl:for-each select="cit:identifier/mcc:MD_Identifier[mcc:authority/cit:CI_Citation/cit:title/gco:CharacterString='ANZLIC Dataset Identifier']/mcc:code">
+          <xsl:copy-of select="gn-fn-iso19115-3:index-field('anzlicid', ., $langId)"/>
         </xsl:for-each>
 
         <xsl:for-each select="cit:title">
