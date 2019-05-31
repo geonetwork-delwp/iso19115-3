@@ -222,6 +222,15 @@
 
   <!-- View configuration -->
   <views>
+    <!-- CI_Organisation subtemplates -->
+    <view name="default" displayIfRecord="count(cit:CI_Organisation) > 0">
+      <tab id="simple" default="true">
+        <section name=" ">
+          <field xpath="cit:CI_Organisation"/>
+        </section>
+      </tab>
+    </view>
+
     <!-- datasets with spatialRepresentation = grid, pointCloud or contour -->
     <view name="default" displayIfRecord="(count(mdb:MD_Metadata/mdb:metadataScope/mdb:MD_MetadataScope/mdb:resourceScope/mcc:MD_ScopeCode[@codeListValue=('','dataset')]) + count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue=('grid','pointCloud','contour')])) = 2">
       <sidePanel>

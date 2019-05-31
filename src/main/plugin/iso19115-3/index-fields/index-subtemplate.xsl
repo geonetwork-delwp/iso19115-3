@@ -106,9 +106,7 @@
 
     <Field name="_title" string="{concat($name,' @ ',$org)}" store="true" index="true"/>
 
-    <Field name="orgName" string="{$org}" store="true" index="true"/>
-    <Field name="stakeholderType" string="cit:partyIdentifier/mcc:MD_Identifier[mcc:codeSpace/gco:CharacterString='delwp-stakeholderType']/mcc:code/gco:CharacterString" store="true" index="true"/>
-
+    <Field name="personOrganisation" string="{concat($name,' @ ',$org)}" store="true" index="true"/>
     <xsl:call-template name="subtemplate-common-fields"/>
   </xsl:template>
 
