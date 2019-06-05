@@ -174,6 +174,9 @@
   <system systemId="http://standards.iso.org/iso/19115/-3/cat/1.0/cat.xsd"
           uri="schema/standards.iso.org/19115/-3/cat/1.0/cat.xsd"/>
 
+  <system systemId="http://standards.iso.org/iso/19115/-3/msr/2.0/msr.xsd"
+          uri="schema/standards.iso.org/19115/-3/msr/2.0/msr.xsd"/>
+
   <system systemId="http://standards.iso.org/iso/19157/-2/mdq/1.0/mdq.xsd"
           uri="schema/standards.iso.org/19157/-2/mdq/1.0/mdq.xsd"/>
 
