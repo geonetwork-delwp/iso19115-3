@@ -339,17 +339,6 @@
         </section>
       </tab>
 
-      <tab id="resourceAcquisitionInfo" mode="flat">
-        <section name=" ">
-          <!-- mac:platformType = rastermeta platform -->
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:platformType"/>
-          <!-- mac:assembly = rastermeta assembly -->
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:assembly"/>
-          <!-- mac:tileSize = rastermeta tileSize -->
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:tileSize"/>
-				</section>
-			</tab>
-
       <tab id="resourceLineage" mode="flat">
         <section name=" ">
           <field xpath="/mdb:MD_Metadata/mdb:resourceLineage/mrl:LI_Lineage/mrl:statement"/>
@@ -418,10 +407,6 @@
           <field name="completenessOmission" templateModeOnly="true" isMissingLabel="notEvaluated" xpath="/mdb:MD_Metadata/mdb:dataQualityInfo/mdq:DQ_DataQuality/mdq:report[mdq:DQ_CompletenessOmission]" del=".">
             <template>
               <values>
-                <key label="conformity_title" xpath="mdq:DQ_CompletenessOmission/mdq:result/mdq:DQ_ConformanceResult/mdq:specification/cit:CI_Citation/cit:title/gco:CharacterString" tooltip="mdq:pass">
-                  <helper name="cit:title" context="/mdb:MD_Metadata/mdb:dataQualityInfo/mdq:DQ_DataQuality/mdq:report/mdq:DQ_CompletenessOmission/mdq:result/mdq:DQ_ConformanceResult/mdq:specification/cit:CI_Citation/cit:title"></helper>
-                </key>
-                <key label="conformity_date" xpath="mdq:DQ_CompletenessOmission/mdq:result/mdq:DQ_ConformanceResult/mdq:specification/cit:CI_Citation/cit:date/cit:CI_Date/cit:date/gco:Date" use="date"/>
                 <key label="explanation" xpath="mdq:DQ_CompletenessOmission/mdq:result/mdq:DQ_ConformanceResult/mdq:explanation/gco:CharacterString" use="textarea"/>
               </values>
               <snippet>
@@ -432,22 +417,9 @@
                   <mdq:DQ_ConformanceResult>
                     <mdq:specification>
                       <cit:CI_Citation>
-                        <cit:title>
-                          <gco:CharacterString>{{conformity_title}}</gco:CharacterString>
-                        </cit:title>
+                        <cit:title gco:nilReason="inapplicable"/>
                         <gn:copy select="cit:alternateTitle"/>
-                        <cit:date>
-                          <cit:CI_Date>
-                            <cit:date>
-                              <gco:Date>{{conformity_date}}</gco:Date>
-                            </cit:date>
-                            <cit:dateType>
-                              <cit:CI_DateTypeCode
-                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode"
-                                codeListValue="publication"/>
-                            </cit:dateType>
-                          </cit:CI_Date>
-                        </cit:date>
+                        <gn:copy select="cit:date"/>
                         <gn:copy select="cit:edition"/>
                         <gn:copy select="cit:editionDate"/>
                         <gn:copy select="cit:identifier"/>
@@ -477,10 +449,6 @@
           <field name="logicalConsistency" templateModeOnly="true" isMissingLabel="notEvaluated" xpath="/mdb:MD_Metadata/mdb:dataQualityInfo/mdq:DQ_DataQuality/mdq:report[mdq:DQ_DomainConistency]" del=".">
             <template>
               <values>
-                <key label="conformity_title" xpath="mdq:DQ_DomainConsistency/mdq:result/mdq:DQ_ConformanceResult/mdq:specification/cit:CI_Citation/cit:title/gco:CharacterString" tooltip="mdq:pass">
-                  <helper name="cit:title" context="/mdb:MD_Metadata/mdb:dataQualityInfo/mdq:DQ_DataQuality/mdq:report/mdq:DQ_DomainConsistency/mdq:result/mdq:DQ_ConformanceResult/mdq:specification/cit:CI_Citation/cit:title"></helper>
-                </key>
-                <key label="conformity_date" xpath="mdq:DQ_DomainConsistency/mdq:result/mdq:DQ_ConformanceResult/mdq:specification/cit:CI_Citation/cit:date/cit:CI_Date/cit:date/gco:Date" use="date"/>
                 <key label="explanation" xpath="mdq:DQ_DomainConsistency/mdq:result/mdq:DQ_ConformanceResult/mdq:explanation/gco:CharacterString" use="textarea"/>
               </values>
               <snippet>
@@ -491,22 +459,9 @@
                   <mdq:DQ_ConformanceResult>
                     <mdq:specification>
                       <cit:CI_Citation>
-                        <cit:title>
-                          <gco:CharacterString>{{conformity_title}}</gco:CharacterString>
-                        </cit:title>
+                        <cit:title gco:nilReason="inapplicable"/>
                         <gn:copy select="cit:alternateTitle"/>
-                        <cit:date>
-                          <cit:CI_Date>
-                            <cit:date>
-                              <gco:Date>{{conformity_date}}</gco:Date>
-                            </cit:date>
-                            <cit:dateType>
-                              <cit:CI_DateTypeCode
-                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode"
-                                codeListValue="publication"/>
-                            </cit:dateType>
-                          </cit:CI_Date>
-                        </cit:date>
+                        <gn:copy select="cit:date"/>
                         <gn:copy select="cit:edition"/>
                         <gn:copy select="cit:editionDate"/>
                         <gn:copy select="cit:identifier"/>
@@ -534,17 +489,28 @@
         </section>
       </tab>
 
-      <tab id="resourceDataDetails" mode="flat">
+      <tab id="resourceAcquisitionInfo" mode="flat">
+        <section name=" ">
+          <!-- Data details common to all rastermeta datasets -->
+          <!-- mac:platformType = rastermeta platform -->
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:platformType"/>
+          <!-- mac:assembly = rastermeta assembly -->
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:assembly"/>
+          <!-- mac:tileSize = rastermeta tileSize -->
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:tileSize"/>
+				</section>
+			</tab>
+
+      <tab id="rasterDataDetails" mode="flat" displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='grid']) > 0">
         <!-- Raster data details -->
-        <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='grid']) > 0">
-          <!-- delwp:type = rastermeta RasterType -->
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type"/>
+        <section name=" ">
           <!-- Data details common to all rasters -->
           <field name="xPixelResolution" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_Georectified/msr:axisDimensionProperties[1]/msr:MD_Dimension/msr:resolution"/>
           <field name="columns" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_Georectified/msr:axisDimensionProperties[1]/msr:MD_Dimension/msr:dimensionSize"/>
           <field name="yPixelResolution" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_Georectified/msr:axisDimensionProperties[2]/msr:MD_Dimension/msr:resolution"/>
           <field name="rows" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_Georectified/msr:axisDimensionProperties[2]/msr:MD_Dimension/msr:dimensionSize"/>
-  
+          <!-- delwp:type = RasterType -->
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:seamlessness"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rectificationType"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:numberOfBands"/>
@@ -556,7 +522,10 @@
                that we can show either aerial photo details, satellite details or 
                DEM details -->
         </section>
+			</tab>
 
+      <!-- Raster platform details: only applies to spatial rep type = grid -->
+      <tab id="rasterPlatformDetails" mode="flat" displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='grid']) > 0">
           <!-- Aerial Photo data details -->
           <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[@codeListValue='AerialPhoto']) > 0">
             <!-- TODO: Add aerial photo details and and analogue or digital aerial photo details -->
@@ -571,9 +540,11 @@
           <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[not(@codeListValue=('Satellite','AerialPhoto'))]) > 0">
             <!-- TODO: Add DEM data details elements -->
 				  </section>
+			</tab>
   
-        <!-- PointCloud (LiDAR) data details -->
-        <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='pointCloud']) > 0">
+      <!-- PointCloud (LiDAR) data details -->
+      <tab id="pointCloudDataDetails" mode="flat" displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='pointCloud']) > 0">
+        <section name=" ">
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:pulseMode"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:returnTypes"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:scanRate"/>
@@ -592,37 +563,23 @@
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:environmentalConditions"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:pointCloudDetails/delwp:MD_PointCloudDetails/delwp:tidalConditions"/>
 				</section>
+			</tab>
 
+      <tab id="contourDataDetails" mode="flat" displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='contour']) > 0">
         <!-- Contour data details -->
-        <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='contour']) > 0">
+        <section name=" ">
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:contourDetails/delwp:MD_ContourDetails/delwp:interval"/>
 				</section>
 			</tab>
       
       <tab id="surveyDetails" mode="flat">
         <section name=" ">
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:level"/>
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:levelDescription/mcc:MD_ScopeDescription//mcc:other"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:instrument" or="instrument" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation"/>
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent"/>
           <field xpath="/mdb:MD_Metadata/mdb:contentInfo/mrc:MD_ImageDescription/mrc:cloudCoverPercentage"/>
 				</section>
-<!--
-        <section name=" " displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:platformType/delwp:MD_PlatformTypeCode[@codeListValue='Aerial']) > 0">
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:aerialSurveyDetails/delwp:MD_AerialSurveyDetails"/>
-					<action type="add" if="true()" name="aerialSurveyDetails" or="aerialSurveyDetails" in="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails">
-            <template>
-              <snippet>
-                <delwp:aerialSurveyDetails>
-                  <delwp:MD_AerialSurveyDetails>
-                  </delwp:MD_AerialSurveyDetails>
-                </delwp:aerialSurveyDetails>
-              </snippet>
-            </template>
-          </action>
-				</section>
--->
 			</tab>
+
       <!-- Elements that should not use the "flat" mode -->
       <flatModeExceptions>
         <for name="cit:date" />
