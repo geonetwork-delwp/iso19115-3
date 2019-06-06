@@ -47,12 +47,12 @@
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="@*[namespace-uri()='http://www.opengis.net/gml/3.2']">
+  <xsl:template match="@*[namespace-uri()='http://www.opengis.net/gml/3.2' and ancestor::gex:EX_BoundingPolygon]">
     <xsl:variable name="name" select="concat('gml:',local-name())"/>
     <xsl:attribute name="{$name}"><xsl:value-of select="."/></xsl:attribute>
   </xsl:template>
   
-  <xsl:template match="*[namespace-uri()='http://www.opengis.net/gml/3.2']">
+  <xsl:template match="*[namespace-uri()='http://www.opengis.net/gml/3.2' and ancestor::gex:EX_BoundingPolygon]">
     <xsl:variable name="name" select="concat('gml:',local-name())"/>
     <xsl:element name="{$name}">
       <xsl:apply-templates select="@*"/>
