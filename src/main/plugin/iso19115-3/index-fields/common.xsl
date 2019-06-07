@@ -114,7 +114,10 @@
               <xsl:value-of select="normalize-space(//node()[@locale=$langId])"/>
             </xsl:when>
             <xsl:otherwise>
-              <xsl:value-of select="normalize-space(string(.))"/>
+              <!-- <xsl:value-of select="normalize-space(string(.))"/> -->
+              <xsl:for-each select="//text()[not(ancestor::gex:EX_BoundingPolygon) and normalize-space()!='']">
+                 <xsl:value-of select="concat(.,' ')"/>
+              </xsl:for-each>
             </xsl:otherwise>
           </xsl:choose>
           <xsl:text> </xsl:text>
