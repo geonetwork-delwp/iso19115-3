@@ -674,7 +674,7 @@
           <!-- mac:method = rastermeta Method -->
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:projectDetails/delwp:MD_ProjectDetails/delwp:method"/>
           <!-- mac:scope/mcc:extent/gex:EX_Extent/gex:temporalExtent = rastermeta Year of Acquisition -->
-          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent">
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent"/>
           <!-- Acquisition details supplier - this is a lookup of a fragment containing the
                supplier details? TODO: Should be a role: resourceProvider and lookup at
                CI_Organisation -->
