@@ -358,13 +358,13 @@
     <attribute ref="gco:nilReason"/>
   </complexType>
 
-    <!-- MD_RasterPlatformSpecificProperties -->
+    <!-- MD_RasterTypeSpecificProperties -->
 
-    <element name="MD_RasterPlatformSpecificProperties" substitutionGroup="gco:AbstractObject" type="delwp:MD_RasterPlatformSpecificProperties_Type"/>
+    <element name="MD_RasterTypeSpecificProperties" substitutionGroup="gco:AbstractObject" type="delwp:MD_RasterTypeSpecificProperties_Type"/>
 
-    <complexType name="MD_RasterPlatformSpecificProperties_PropertyType">
+    <complexType name="MD_RasterTypeSpecificProperties_PropertyType">
       <sequence minOccurs="0">
-        <element ref="delwp:MD_RasterPlatformSpecificProperties"/>
+        <element ref="delwp:MD_RasterTypeSpecificProperties"/>
       </sequence>
       <attributeGroup ref="gco:ObjectReference"/>
       <attribute ref="gco:nilReason"/>
@@ -615,7 +615,7 @@
 
     <!-- END MD_DEM -->
 
-  <complexType name="MD_RasterPlatformSpecificProperties_Type">
+  <complexType name="MD_RasterTypeSpecificProperties_Type">
     <complexContent>
       <extension base="gco:AbstractObject_Type">
     <choice>
@@ -627,7 +627,7 @@
     </complexContent>
   </complexType>
 
-  <!-- END MD_RasterPlatformSpecificProperties -->
+  <!-- END MD_RasterTypeSpecificProperties -->
 
   <element name="MD_ResamplingKernelCode" substitutionGroup="gco:CharacterString" type="gco:CodeListValue_Type"/>
 
@@ -718,9 +718,9 @@
           <documentation>Description: rectification notes</documentation>
         </annotation>
       </element>
-      <element minOccurs="1" name="rasterPlatformSpecificProperties" type="delwp:MD_RasterPlatformSpecificProperties_PropertyType">
+      <element minOccurs="1" name="rasterTypeSpecificProperties" type="delwp:MD_RasterTypeSpecificProperties_PropertyType">
         <annotation>
-          <documentation>Description: satellite or aerial photo properties for raster datasets</documentation>
+          <documentation>Description: satellite or aerial photo or DEM properties for raster datasets</documentation>
         </annotation>
       </element>
     </sequence>
