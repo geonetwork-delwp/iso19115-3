@@ -834,6 +834,17 @@
       <Field  name="hassource" string="{string(@uuidref)}" store="false" index="true"/>
     </xsl:for-each>
 
+    <!-- Metadata scope -->
+    <xsl:variable name="isDataset"
+                  select="count($metadata/mdb:metadataScope[mdb:MD_MetadataScope/mdb:resourceScope/mcc:MD_ScopeCode/@codeListValue='dataset']) > 0"/>
+
+
+    <xsl:variable name="isProject"
+                  select="count($metadata/mdb:metadataScope[mdb:MD_MetadataScope/mdb:resourceScope/mcc:MD_ScopeCode/@codeListValue='project']) > 0"/>
+
+    <xsl:if test="$isProject and count($metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation) = 0">
+      <Field  name="rasterType" string="project without acquisition details" store="false" index="true"/>
+    </xsl:if>
 
     <xsl:for-each select="$metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation">
       <xsl:variable name="assembly" select="mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:assembly/delwp:MD_AssemblyCode/@codeListValue"/>
@@ -844,11 +855,6 @@
       <Field  name="sensorType" string="{mac:instrument/mac:MI_Sensor/mac:type/text()}" store="false" index="true"/>
       <Field  name="platformType" string="{mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:platformType/delwp:MD_PlatformTypeCode/@codeListValue}" store="false" index="true"/>
     </xsl:for-each>
-
-
-    <!-- Metadata scope -->
-    <xsl:variable name="isDataset"
-                  select="count($metadata/mdb:metadataScope[mdb:MD_MetadataScope/mdb:resourceScope/mcc:MD_ScopeCode/@codeListValue='dataset']) > 0"/>
 
 
     <!-- A map is identified when presentation form is mapDigital
