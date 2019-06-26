@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0"
+  xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1"
   xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0"
   xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
-  xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
   xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
   xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0"
   xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
@@ -16,7 +15,6 @@
   xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
   xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
   xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
-                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
   xmlns:gn="http://www.fao.org/geonetwork"
   xmlns:gn-fn-core="http://geonetwork-opensource.org/xsl/functions/core"
   xmlns:gn-fn-iso19139="http://geonetwork-opensource.org/xsl/functions/profiles/iso19139"
@@ -48,13 +46,45 @@
     </abstract>
   </xsl:template>
 
-  <xsl:template name="iso19115-3Brief">
+
+  <!-- Templates used for RSS -->
+  <xsl:template name="iso19115-3.2018Brief">
     <metadata>
-      <xsl:call-template name="iso19139-brief"/>
+      <xsl:call-template name="iso19115-3.2018-brief"/>
     </metadata>
   </xsl:template>
 
-  <xsl:template name="iso19115-3-brief">
-    <xsl:call-template name="iso19139-brief"/>
+  <xsl:template name="iso19115-3.2018-brief">
+    <xsl:variable name="info" select="gn:info"/>
+    <xsl:variable name="id" select="$info/id"/>
+    <xsl:variable name="uuid" select="$info/uuid"/>
+
+    <xsl:variable name="langId" select="gn-fn-iso19139:getLangId(., $lang)"/>
+
+    <title>
+      <xsl:apply-templates mode="localised"
+                           select="mdb:identificationInfo/*/mri:citation/*/cit:title">
+        <xsl:with-param name="langId" select="$langId"/>
+      </xsl:apply-templates>
+    </title>
+    <abstract>
+      <xsl:apply-templates mode="localised" select="mdb:identificationInfo/*/mri:abstract">
+        <xsl:with-param name="langId" select="$langId"/>
+      </xsl:apply-templates>
+    </abstract>
+
+
+    <xsl:variable name="overviews"
+                  select="mdb:identificationInfo/*/mri:graphicOverview/mcc:MD_BrowseGraphic/
+                                mcc:fileName/gco:CharacterString[. != '']"/>
+    <xsl:for-each select="$overviews">
+      <image>
+        <xsl:value-of select="."/>
+      </image>
+    </xsl:for-each>
+
+    <metadatacreationdate>
+      <xsl:value-of select="mdb:dateInfo/*[cit:dateType/*/@codeListValue = 'revision']/cit:date/gco:DateTime"/>
+    </metadatacreationdate>
   </xsl:template>
 </xsl:stylesheet>

@@ -5,14 +5,12 @@
                 xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
                 xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
                 xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
-  xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
                 xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
                 xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
                 xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
                 xmlns:gml="http://www.opengis.net/gml/3.2"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:gn="http://www.fao.org/geonetwork"
                 xmlns:gn-fn-metadata="http://geonetwork-opensource.org/xsl/functions/metadata"
@@ -45,23 +43,23 @@
   Swallow the complex element having CI_Date
   to simplify the editor for dates
   -->
-  <xsl:template mode="mode-iso19115-3" match="*[cit:CI_Date]" priority="2000">
+  <xsl:template mode="mode-iso19115-3.2018" match="*[cit:CI_Date]" priority="2000">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
 
-    <xsl:apply-templates mode="mode-iso19115-3" select="*/cit:*">
+    <xsl:apply-templates mode="mode-iso19115-3.2018" select="*/cit:*">
       <xsl:with-param name="schema" select="$schema"/>
       <xsl:with-param name="labels" select="$labels"/>
     </xsl:apply-templates>
   </xsl:template>
 
   <!-- Date type is handled in next template -->
-  <xsl:template mode="mode-iso19115-3" match="cit:dateType" priority="2000"/>
+  <xsl:template mode="mode-iso19115-3.2018" match="cit:dateType" priority="2000"/>
 
   <!-- Rendering date type as a dropdown to select type
   and the calendar next to it.
   -->
-  <xsl:template mode="mode-iso19115-3"
+  <xsl:template mode="mode-iso19115-3.2018"
                 priority="2000"
                 match="cit:CI_Date/cit:date[../cit:dateType]">
     <xsl:param name="schema" select="$schema" required="no"/>
@@ -136,7 +134,7 @@
   Date with not date type.
    eg. cit:editionDate
   -->
-  <xsl:template mode="mode-iso19115-3"
+  <xsl:template mode="mode-iso19115-3.2018"
                 priority="2000"
                 match="*[(gco:Date|gco:DateTime) and not(../cit:dateType)]">
     <xsl:param name="schema" select="$schema" required="no"/>

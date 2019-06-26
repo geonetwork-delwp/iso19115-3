@@ -3,14 +3,12 @@
   xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
   xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
   xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
-  xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
   xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
   xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
   xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
   xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0"
   xmlns:gts="http://www.isotc211.org/2005/gts"
   xmlns:gml="http://www.opengis.net/gml/3.2"
-                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
   xmlns:gn="http://www.fao.org/geonetwork"
   xmlns:gn-fn-metadata="http://geonetwork-opensource.org/xsl/functions/metadata"
   xmlns:java-xsl-util="java:org.fao.geonet.util.XslUtil"
@@ -25,7 +23,7 @@
                       mds:dateInfo/cit:CI_Date[cit:dateType/cit:CI_DateTypeCode
                         /@codeListValue='revision']
 -->
-  <xsl:template mode="mode-iso19115-3"
+  <xsl:template mode="mode-iso19115-3.2018"
                 match="mdb:metadataIdentifier/mcc:MD_Identifier/mcc:code|
                        mdb:metadataIdentifier/mcc:MD_Identifier/mcc:codeSpace|
                        mdb:metadataIdentifier/mcc:MD_Identifier/mcc:description|
@@ -35,12 +33,14 @@
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
 
+    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
+
     <xsl:call-template name="render-element">
       <xsl:with-param name="label" select="gn-fn-metadata:getLabel($schema, name(), $labels)/label"/>
       <xsl:with-param name="value" select="*"/>
       <xsl:with-param name="cls" select="local-name()"/>
       <xsl:with-param name="xpath" select="gn-fn-metadata:getXPath(.)"/>
-      <xsl:with-param name="type" select="gn-fn-metadata:getFieldType($editorConfig, name(), '')"/>
+      <xsl:with-param name="type" select="gn-fn-metadata:getFieldType($editorConfig, name(), '', $xpath)"/>
       <xsl:with-param name="name" select="''"/>
       <xsl:with-param name="editInfo" select="*/gn:element"/>
       <xsl:with-param name="parentEditInfo" select="gn:element"/>
@@ -52,7 +52,7 @@
 
 
   <!-- Set CRS system type before the CRS -->
-  <xsl:template mode="mode-iso19115-3"
+  <xsl:template mode="mode-iso19115-3.2018"
                 priority="2000"
                 match="mrs:MD_ReferenceSystem">
     <xsl:param name="schema" select="$schema" required="no"/>
@@ -89,16 +89,16 @@
       <xsl:with-param name="attributesSnippet" select="$attributes"/>
       <xsl:with-param name="subTreeSnippet">
 
-        <xsl:apply-templates mode="mode-iso19115-3"
+        <xsl:apply-templates mode="mode-iso19115-3.2018"
                              select="mrs:referenceSystemType"/>
 
-        <xsl:apply-templates mode="mode-iso19115-3"
+        <xsl:apply-templates mode="mode-iso19115-3.2018"
                              select="gn:*[@name = 'referenceSystemType']"/>
 
-        <xsl:apply-templates mode="mode-iso19115-3"
+        <xsl:apply-templates mode="mode-iso19115-3.2018"
                              select="mrs:referenceSystemIdentifier"/>
 
-        <xsl:apply-templates mode="mode-iso19115-3"
+        <xsl:apply-templates mode="mode-iso19115-3.2018"
                              select="gn:*[@name = 'referenceSystemIdentifier']"/>
       </xsl:with-param>
     </xsl:call-template>
@@ -107,10 +107,11 @@
 
 
   <!-- Measure elements, gco:Distance, gco:Angle, gco:Scale, gco:Length, ... -->
-  <xsl:template mode="mode-iso19115-3" priority="2000" match="mri:*[gco:*/@uom]">
+  <xsl:template mode="mode-iso19115-3.2018" priority="2000" match="mri:*[gco:*/@uom]">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="refToDelete" select="''" required="no"/>
+    <xsl:param name="overrideLabel" select="''" required="no"/>
 
     <!--Avoid CHOICEELEMENT level for parent name -->
     <xsl:variable name="labelConfig"
@@ -121,14 +122,15 @@
                   select="gn-fn-metadata:getLabel($schema, name(gco:*), $labels, name(), '', '')"/>
     <xsl:variable name="isRequired" select="gn:element/@min = 1 and gn:element/@max = 1"/>
 
-    <xsl:variable name="parentEditInfo" select="if (exists($refToDelete)) then $refToDelete else gn:element"/>
+    <xsl:variable name="parentEditInfo" select="if ($refToDelete) then $refToDelete else gn:element"/>
 
     <div class="form-group gn-field gn-title {if ($isRequired) then 'gn-required' else ''}"
          id="gn-el-{*/gn:element/@ref}"
          data-gn-field-highlight="">
       <label class="col-sm-2 control-label">
-        <xsl:value-of select="$labelConfig/label"/>
-        <xsl:if test="$labelMeasureType != '' and
+        <xsl:value-of select="if ($overrideLabel) then $overrideLabel else $labelConfig/label"/>
+        <xsl:if test="$overrideLabel = '' and
+                      $labelMeasureType != '' and
                       $labelMeasureType/label != $labelConfig/label">&#10;
           (<xsl:value-of select="$labelMeasureType/label"/>)
         </xsl:if>
@@ -156,7 +158,7 @@
     </div>
   </xsl:template>
 
- <!-- <xsl:template mode="mode-iso19115-3"
+ <!-- <xsl:template mode="mode-iso19115-3.2018"
                 match="cit:CI_Date"
                 priority="2000">
     <xsl:param name="schema" select="$schema" required="no"/>
@@ -164,13 +166,13 @@
 
     <div class="row">
       <div class="col-md-8">
-        <xsl:apply-templates mode="mode-iso19115-3" select="cit:date">
+        <xsl:apply-templates mode="mode-iso19115-3.2018" select="cit:date">
           <xsl:with-param name="schema" select="$schema"/>
           <xsl:with-param name="labels" select="$labels"/>
         </xsl:apply-templates>
       </div>
       <div class="col-md-4">
-        <xsl:apply-templates mode="mode-iso19115-3" select="cit:dateType">
+        <xsl:apply-templates mode="mode-iso19115-3.2018" select="cit:dateType">
           <xsl:with-param name="schema" select="$schema"/>
           <xsl:with-param name="labels" select="$labels"/>
         </xsl:apply-templates>
@@ -179,47 +181,12 @@
   </xsl:template>-->
 
 
-  <!-- Duration
-
-       xsd:duration elements use the following format:
-
-       Format: PnYnMnDTnHnMnS
-
-       *  P indicates the period (required)
-       * nY indicates the number of years
-       * nM indicates the number of months
-       * nD indicates the number of days
-       * T indicates the start of a time section (required if you are going to specify hours, minutes, or seconds)
-       * nH indicates the number of hours
-       * nM indicates the number of minutes
-       * nS indicates the number of seconds
-
-       A custom directive is created.
-  -->
-  <xsl:template mode="mode-iso19115-3"
-                match="gco:TM_PeriodDuration|gml:duration"
-                priority="2000">
-
-    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
-    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
-
-    <xsl:call-template name="render-element">
-      <xsl:with-param name="label"
-                      select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)/label"/>
-      <xsl:with-param name="value" select="."/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <xsl:with-param name="xpath" select="$xpath"/>
-      <xsl:with-param name="directive" select="'gn-field-duration'"/>
-      <xsl:with-param name="editInfo" select="gn:element"/>
-    </xsl:call-template>
-
-  </xsl:template>
 
   <!-- ===================================================================== -->
   <!-- gml:TimePeriod (format = %Y-%m-%dThh:mm:ss) -->
   <!-- ===================================================================== -->
 
-  <xsl:template mode="mode-iso19115-3" match="gml:beginPosition|gml:endPosition|gml:timePosition"
+  <xsl:template mode="mode-iso19115-3.2018" match="gml:beginPosition|gml:endPosition|gml:timePosition"
                 priority="200">
 
 
@@ -265,7 +232,7 @@
     </xsl:call-template>
   </xsl:template>
 
-  <xsl:template mode="mode-iso19115-3"
+  <xsl:template mode="mode-iso19115-3.2018"
                 match="gex:EX_GeographicBoundingBox"
                 priority="2000">
     <xsl:param name="schema" select="$schema" required="no"/>
@@ -291,20 +258,168 @@
     </xsl:call-template>
   </xsl:template>
 
-  <xsl:template mode="mode-iso19115-3"
+  <xsl:template mode="mode-iso19115-3.2018"
           match="gml:Polygon"
           priority="2000">
-    Here is a polygon
+    Not supported
     <textarea>
       <xsl:copy-of select="."/>
     </textarea>
   </xsl:template>
 
   <!-- Those elements MUST be ignored in the editor layout -->
-  <xsl:template mode="mode-iso19115-3"
+  <xsl:template mode="mode-iso19115-3.2018"
                 match="*[contains(name(), 'GROUP_ELEMENT')]"
                 priority="2000">
-    <xsl:apply-templates mode="mode-iso19115-3" select="*"/>
+    <xsl:apply-templates mode="mode-iso19115-3.2018" select="*"/>
+  </xsl:template>
+
+  
+  <!--
+    Display contact as table when mode is flat (eg. simple view) or if using xsl mode
+    Match first node (or added one)
+  -->
+  <xsl:template mode="mode-iso19115-3.2018"
+                match="*[
+                        *[1]/name() = $editorConfig/editor/tableFields/table/@for and
+                        (1 or @gn:addedObj = 'true') and
+                        $isFlatMode]"
+                priority="2000">
+    <xsl:call-template name="iso19115-3.2018-table"/>
+  </xsl:template>
+
+  <!-- Ignore the following -->
+  <xsl:template mode="mode-iso19115-3.2018"
+                match="*[
+                        *[1]/name() = $editorConfig/editor/tableFields/table/@for and
+                        preceding-sibling::*[1]/name() = name() and
+                        not(@gn:addedObj) and
+                        $isFlatMode]"
+                priority="2000"/>
+
+  <!-- Define table layout -->
+  <xsl:template name="iso19115-3.2018-table">
+    <xsl:variable name="name" select="name()"/>
+    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
+    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
+
+    <xsl:variable name="childName"
+                  select="*[1]/name()"/>
+
+    <xsl:variable name="isEmbeddedMode"
+                  select="@gn:addedObj = 'true'"/>
+    <xsl:variable name="isFirstOfItsKind"
+                  select="preceding-sibling::*[1]/name() != $name"/>
+
+    <xsl:variable name="tableConfig"
+                  select="$editorConfig/editor/tableFields/table[@for = $childName]"/>
+
+    <xsl:variable name="values">
+      <xsl:if test="not($isEmbeddedMode) or ($isEmbeddedMode and $isFirstOfItsKind)">
+        <header>
+          <xsl:for-each select="$tableConfig/header/col">
+            <col>
+              <xsl:copy-of select="@*"/>
+              <xsl:if test="@label">
+                <!-- TODO: column names may comes from strings.xml -->
+                <xsl:value-of select="gn-fn-metadata:getLabel($schema, @label, $labels, '', $isoType, $xpath)/label"/>
+              </xsl:if>
+            </col>
+          </xsl:for-each>
+        </header>
+      </xsl:if>
+      <xsl:for-each select="(.|following-sibling::*[name() = $name])/*[name() = $childName]">
+
+        <xsl:variable name="base"
+                      select="."/>
+        <xsl:for-each select="$tableConfig/row">
+          <row>
+            <xsl:for-each select="col">
+              <col>
+                <xsl:if test="@del != ''">
+                  <xsl:attribute name="remove" select="'true'"/>
+
+                  <saxon:call-template name="{concat('evaluate-', $schema)}">
+                    <xsl:with-param name="base" select="$base"/>
+                    <xsl:with-param name="in"
+                                    select="concat('/', @del, '/gn:element')"/>
+                  </saxon:call-template>
+                </xsl:if>
+
+                <xsl:if test="@xpath != ''">
+                  <saxon:call-template name="{concat('evaluate-', $schema)}">
+                    <xsl:with-param name="base" select="$base"/>
+                    <xsl:with-param name="in"
+                                    select="concat('/', @xpath)"/>
+                  </saxon:call-template>
+                </xsl:if>
+              </col>
+            </xsl:for-each>
+          </row>
+
+          <xsl:for-each select="section[@xpath]">
+            <row>
+              <col colspan="{count(../col)}" type="form" withLabel="true">
+                <xsl:apply-templates mode="form-builder" select=".">
+                  <xsl:with-param name="base" select="$base"/>
+                </xsl:apply-templates>
+                <!--<xsl:variable name="nodes">
+
+                <saxon:call-template name="{concat('evaluate-', $schema)}">
+                  <xsl:with-param name="base" select="$base"/>
+                  <xsl:with-param name="in"
+                                  select="concat('/', @xpath)"/>
+                </saxon:call-template>
+                </xsl:variable>
+
+                <xsl:for-each select="$nodes">
+                  <saxon:call-template name="{concat('dispatch-', $schema)}">
+                    <xsl:with-param name="base" select="."/>
+                  </saxon:call-template>
+                </xsl:for-each>
+
+                <xsl:if test="@or and @in">
+                  <saxon:call-template name="{concat('evaluate-', $schema)}">
+                    <xsl:with-param name="base" select="$base"/>
+                    <xsl:with-param name="in"
+                                    select="concat('/../', @in, '/gn:child[@name=''', @or, ''']')"/>
+                  </saxon:call-template>
+                </xsl:if>-->
+              </col>
+            </row>
+          </xsl:for-each>
+        </xsl:for-each>
+      </xsl:for-each>
+    </xsl:variable>
+
+
+    <!-- Return only the new row in embed mode. -->
+    <xsl:choose>
+      <xsl:when test="$isEmbeddedMode and not($isFirstOfItsKind)">
+        <xsl:call-template name="render-table">
+          <xsl:with-param name="values" select="$values"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+
+        <xsl:variable name="tableTitle" select="if (($tableConfig/@label) and (string($strings/*[name() = $tableConfig/@label])))
+              then $strings/*[name() = $tableConfig/@label]
+              else gn-fn-metadata:getLabel($schema, $name, $labels, name(..), $isoType, $xpath)/label" />
+
+        <xsl:call-template name="render-boxed-element">
+          <xsl:with-param name="label"
+                          select="$tableTitle"/>
+          <xsl:with-param name="cls" select="local-name()"/>
+          <xsl:with-param name="subTreeSnippet">
+
+            <xsl:call-template name="render-table">
+              <xsl:with-param name="values" select="$values"/>
+            </xsl:call-template>
+
+          </xsl:with-param>
+        </xsl:call-template>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
 </xsl:stylesheet>

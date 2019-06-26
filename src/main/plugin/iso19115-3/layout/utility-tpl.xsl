@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0"
+  xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1"
   xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0"
   xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
-  xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
   xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
   xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0"
   xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
@@ -16,22 +15,21 @@
   xmlns:dqm="http://standards.iso.org/iso/19157/-2/dqm/1.0"
   xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
   xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
-                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
   xmlns:gn="http://www.fao.org/geonetwork"
   xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="#all">
 
   <xsl:include href="utility-tpl-multilingual.xsl"/>
 
-  <xsl:template name="get-iso19115-3-is-service">
+  <xsl:template name="get-iso19115-3.2018-is-service">
     <xsl:value-of
             select="count($metadata/mdb:identificationInfo/srv:SV_ServiceIdentification) > 0"/>
   </xsl:template>
 
-  <xsl:template name="get-iso19115-3-title">
+  <xsl:template name="get-iso19115-3.2018-title">
     <xsl:value-of select="$metadata/mdb:identificationInfo/*/mri:citation/*/cit:title/gco:CharacterString"/>
   </xsl:template>
 
-  <xsl:template name="get-iso19115-3-extents-as-json">[
+  <xsl:template name="get-iso19115-3.2018-extents-as-json">[
    <xsl:for-each select="//mdb:identificationInfo/*/mri:extent
                           //gex:geographicElement/gex:EX_GeographicBoundingBox[
             number(gex:westBoundLongitude/gco:Decimal)
@@ -56,7 +54,7 @@
     ]
   </xsl:template>
 
-  <xsl:template name="get-iso19115-3-online-source-config">
+  <xsl:template name="get-iso19115-3.2018-online-source-config">
     <xsl:param name="pattern"/>
     <config>
       <xsl:for-each select="$metadata/descendant::mrd:onLine[
