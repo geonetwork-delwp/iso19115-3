@@ -32,7 +32,7 @@
   xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
   xmlns:gn="http://www.fao.org/geonetwork"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:gn-fn-iso19115-3="http://geonetwork-opensource.org/xsl/functions/profiles/iso19115-3"
+  xmlns:gn-fn-iso19115-3.2018="http://geonetwork-opensource.org/xsl/functions/profiles/iso19115-3.2018"
   exclude-result-prefixes="#all">
 
   <xsl:import href="../layout/utility-fn.xsl"/>
@@ -42,7 +42,7 @@
 
 
   <xsl:variable name="mainLang"
-                select="if (/mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue) then /mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue else 'eng'"
+                select="/mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue"
                 as="xs:string"/>
 
   <xsl:variable name="useOnlyPTFreeText"
@@ -76,12 +76,12 @@
           <mrc:featureCatalogueCitation>
             <cit:CI_Citation>
               <cit:title>
-                <xsl:copy-of select="gn-fn-iso19115-3:fillTextElement($name, $mainLang, $useOnlyPTFreeText)"/>
+                <xsl:copy-of select="gn-fn-iso19115-3.2018:fillTextElement($name, $mainLang, $useOnlyPTFreeText)"/>
               </cit:title>
               <cit:onlineResource>
                 <cit:CI_OnlineResource>
                   <cit:linkage>
-                    <xsl:copy-of select="gn-fn-iso19115-3:fillTextElement($url, $mainLang, $useOnlyPTFreeText)"/>
+                    <xsl:copy-of select="gn-fn-iso19115-3.2018:fillTextElement($url, $mainLang, $useOnlyPTFreeText)"/>
                   </cit:linkage>
                 </cit:CI_OnlineResource>
               </cit:onlineResource>

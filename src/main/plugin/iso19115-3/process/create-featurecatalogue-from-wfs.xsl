@@ -9,11 +9,11 @@
                 xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
                 xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
                 xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
-                xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0"
+                xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1"
                 xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0"
                 xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
                 xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
-                xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0"
+                xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0"
                 xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0"
                 xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/2.0"
                 xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0"
@@ -121,7 +121,7 @@
                 mdb:metadataExtensionInfo|
                 mdb:identificationInfo"/>
 
-      <xsl:copy-of select="geonet:make-iso19115-3-featurecatalogue-from-wfs($featureCatWfsUrl)"/>
+      <xsl:copy-of select="geonet:make-iso19115-3.2018-featurecatalogue-from-wfs($featureCatWfsUrl)"/>
 
       <xsl:if test="not($featureCatIsReplacedBy)">
         <xsl:apply-templates
@@ -147,7 +147,7 @@
   <!-- Get WFS DescribeFeatureType
    eg. http://visi-sextant.ifremer.fr/cgi-bin/sextant/wfs/bgmb?SERVICE=WFS&VERSION=1.0.0&REQUEST=DescribeFeatureType&TYPENAME=SISMER_mesures
    -->
-  <xsl:function name="geonet:make-iso19115-3-featurecatalogue-from-wfs" as="node()?">
+  <xsl:function name="geonet:make-iso19115-3.2018-featurecatalogue-from-wfs" as="node()?">
     <xsl:param name="featureCatWfsUrl" as="xs:string"/>
 
     <xsl:message><xsl:value-of select="$featureCatWfsUrl"/> </xsl:message>

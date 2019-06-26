@@ -9,7 +9,7 @@
   xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
   xmlns:gn="http://www.fao.org/geonetwork"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:gn-fn-iso19115-3="http://geonetwork-opensource.org/xsl/functions/profiles/iso19115-3"
+  xmlns:gn-fn-iso19115-3.2018="http://geonetwork-opensource.org/xsl/functions/profiles/iso19115-3.2018"
   exclude-result-prefixes="#all">
 
   <xsl:import href="../layout/utility-fn.xsl"/>
@@ -40,7 +40,7 @@
 
 
   <xsl:variable name="mainLang"
-                select="if (/mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue) then /mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue else 'eng'"
+                select="/mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue"
                 as="xs:string"/>
 
   <xsl:variable name="useOnlyPTFreeText"
@@ -171,7 +171,7 @@
             <mrd:onLine>
               <cit:CI_OnlineResource>
                 <cit:linkage>
-                  <xsl:copy-of select="gn-fn-iso19115-3:fillTextElement($url, $mainLang, $useOnlyPTFreeText)"/>
+                  <xsl:copy-of select="gn-fn-iso19115-3.2018:fillTextElement($url, $mainLang, $useOnlyPTFreeText)"/>
                 </cit:linkage>
 
                 <xsl:if test="$protocol != ''">
@@ -192,14 +192,14 @@
 
                 <xsl:if test="normalize-space(.) != ''">
                   <cit:name>
-                    <xsl:copy-of select="gn-fn-iso19115-3:fillTextElement(., $mainLang, $useOnlyPTFreeText)"/>
+                    <xsl:copy-of select="gn-fn-iso19115-3.2018:fillTextElement(., $mainLang, $useOnlyPTFreeText)"/>
                   </cit:name>
                 </xsl:if>
                 <xsl:variable name="pos" select="position()"/>
                 <xsl:variable name="description" select="tokenize($desc, ',')[position() = $pos]"/>
                 <xsl:if test="$description != ''">
                   <cit:description>
-                    <xsl:copy-of select="gn-fn-iso19115-3:fillTextElement($description, $mainLang, $useOnlyPTFreeText)"/>
+                    <xsl:copy-of select="gn-fn-iso19115-3.2018:fillTextElement($description, $mainLang, $useOnlyPTFreeText)"/>
                   </cit:description>
                 </xsl:if>
 
@@ -217,7 +217,7 @@
           <mrd:onLine>
             <cit:CI_OnlineResource>
               <cit:linkage>
-                <xsl:copy-of select="gn-fn-iso19115-3:fillTextElement($url, $mainLang, $useOnlyPTFreeText)"/>
+                <xsl:copy-of select="gn-fn-iso19115-3.2018:fillTextElement($url, $mainLang, $useOnlyPTFreeText)"/>
               </cit:linkage>
 
               <xsl:if test="$protocol != ''">
@@ -236,17 +236,15 @@
                 </cit:applicationProfile>
               </xsl:if>
 
-              <!-- if no name supplied, then get the last part of the 
-                   url path -->
-              <xsl:variable name="defaultName" select="if (normalize-space($name)='') then tokenize($url,'/')[last()] else $name"/>
-
-              <cit:name>
-                <xsl:copy-of select="gn-fn-iso19115-3:fillTextElement($defaultName, $mainLang, $useOnlyPTFreeText)"/>
-              </cit:name>
+              <xsl:if test="normalize-space($name) != ''">
+                <cit:name>
+                  <xsl:copy-of select="gn-fn-iso19115-3.2018:fillTextElement($name, $mainLang, $useOnlyPTFreeText)"/>
+                </cit:name>
+              </xsl:if>
 
               <xsl:if test="$desc != ''">
                 <cit:description>
-                  <xsl:copy-of select="gn-fn-iso19115-3:fillTextElement($desc, $mainLang, $useOnlyPTFreeText)"/>
+                  <xsl:copy-of select="gn-fn-iso19115-3.2018:fillTextElement($desc, $mainLang, $useOnlyPTFreeText)"/>
                 </cit:description>
               </xsl:if>
 

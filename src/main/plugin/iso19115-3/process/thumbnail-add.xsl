@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0"
+                xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1"
                 xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
                 xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
                 xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
@@ -8,17 +8,17 @@
                 xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:gn="http://www.fao.org/geonetwork"
-                xmlns:gn-fn-iso19115-3="http://geonetwork-opensource.org/xsl/functions/profiles/iso19115-3"
+                xmlns:gn-fn-iso19115-3.2018="http://geonetwork-opensource.org/xsl/functions/profiles/iso19115-3.2018"
                 exclude-result-prefixes="#all" version="2.0">
 
   <xsl:import href="../layout/utility-fn.xsl"/>
 
 
   <!-- Thumbnail base url (mandatory) -->
-  <xsl:param name="url"/>
+  <xsl:param name="thumbnail_url"/>
   <!-- Element to use for the file name. -->
-  <xsl:param name="desc" select="''"/>
-  <xsl:param name="type" select="''"/>
+  <xsl:param name="thumbnail_desc" select="''"/>
+  <xsl:param name="thumbnail_type" select="''"/>
 
   <!-- Target element to update. The key is based on the concatenation
   of URL+Name -->
@@ -27,7 +27,7 @@
   <xsl:variable name="separator" select="'\|'"/>
 
   <xsl:variable name="mainLang"
-                select="if (/mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue) then /mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue else 'eng'"
+                select="/mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue"
                 as="xs:string"/>
 
   <xsl:variable name="useOnlyPTFreeText"
@@ -85,14 +85,14 @@
 
 
     <xsl:template name="fill">
-    <xsl:if test="$url != ''">
+    <xsl:if test="$thumbnail_url != ''">
       <mri:graphicOverview>
         <mcc:MD_BrowseGraphic>
           <mcc:fileName>
             <xsl:choose>
               <!--Multilingual-->
-              <xsl:when test="contains($url, '|')">
-                <xsl:for-each select="tokenize($url, $separator)">
+              <xsl:when test="contains($thumbnail_url, '|')">
+                <xsl:for-each select="tokenize($thumbnail_url, $separator)">
                   <xsl:variable name="nameLang"
                                 select="substring-before(., '#')"></xsl:variable>
                   <xsl:variable name="nameValue"
@@ -106,7 +106,7 @@
                 </xsl:for-each>
 
                 <lan:PT_FreeText>
-                  <xsl:for-each select="tokenize($url, $separator)">
+                  <xsl:for-each select="tokenize($thumbnail_url, $separator)">
                     <xsl:variable name="nameLang"
                                   select="substring-before(., '#')"></xsl:variable>
                     <xsl:variable name="nameValue"
@@ -125,21 +125,21 @@
               </xsl:when>
               <xsl:otherwise>
                 <gco:CharacterString>
-                  <xsl:value-of select="$url"/>
+                  <xsl:value-of select="$thumbnail_url"/>
                 </gco:CharacterString>
               </xsl:otherwise>
             </xsl:choose>
           </mcc:fileName>
-          <xsl:if test="$desc!=''">
+          <xsl:if test="$thumbnail_desc!=''">
             <mcc:fileDescription>
               <xsl:copy-of
-                      select="gn-fn-iso19115-3:fillTextElement($desc, $mainLang, $useOnlyPTFreeText)"/>
+                      select="gn-fn-iso19115-3.2018:fillTextElement($thumbnail_desc, $mainLang, $useOnlyPTFreeText)"/>
             </mcc:fileDescription>
           </xsl:if>
-          <xsl:if test="$type!=''">
+          <xsl:if test="$thumbnail_type!=''">
             <mcc:fileType>
               <gco:CharacterString>
-                <xsl:value-of select="$type"/>
+                <xsl:value-of select="$thumbnail_type"/>
               </gco:CharacterString>
             </mcc:fileType>
           </xsl:if>

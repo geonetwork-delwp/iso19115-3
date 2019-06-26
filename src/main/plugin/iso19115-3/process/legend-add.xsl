@@ -48,7 +48,7 @@
   <xsl:param name="updateKey"/>
 
   <xsl:variable name="mainLang"
-                select="if (/mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue) then /mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue else 'eng'"
+                select="/mdb:MD_Metadata/mdb:defaultLocale/*/lan:language/*/@codeListValue"
                 as="xs:string"/>
 
   <xsl:variable name="useOnlyPTFreeText"
