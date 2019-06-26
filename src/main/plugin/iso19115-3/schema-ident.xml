@@ -2,8 +2,8 @@
 <schema xmlns="http://geonetwork-opensource.org/schemas/schema-ident"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://geonetwork-opensource.org/schemas/schema-ident http://geonetwork-opensource.org/schemas/schema-ident/schema-ident.xsd">
-  <name>iso19115-3</name>
-  <id>00c26e3d-560a-49e8-9d10-49705b6ac863</id>
+  <name>iso19115-3.2018</name>
+  <id>648dbb3c-66ca-4b75-9e8b-760307933365</id>
   <version>1.0</version>
   <appMinorVersionSupported>3.6.0</appMinorVersionSupported>
   <title xml:lang="en">Department of Environment, Land, Water and Planning (DELWP) ISO19115-3 2018 Metadata Profile</title>
