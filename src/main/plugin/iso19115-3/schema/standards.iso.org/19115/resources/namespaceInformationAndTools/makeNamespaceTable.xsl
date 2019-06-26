@@ -19,7 +19,7 @@
   </xd:doc>
   <!-- Parameter schemaRootDirectory:
     This is the root of the schema directories. 
-    Example: /Users/tedhabermann/GitRepositories/ISOTC211-XML/XML/schemas.isotc211.org/iso 
+    Example: /Users/tedhabermann/GitRepositories/ISOTC211-XML/XML/schemas.isotc211.org/iso
   -->
   <xsl:param name="schemaRootDirectory"/>
   <!-- Parameter standard:
@@ -54,7 +54,7 @@
       <body>
         <h1>ISO TC211 Namespace Summary</h1>
         <p>This table summarizes the namespaces used in the XML implementation of <a href="https://committee.iso.org/home/tc211">ISO TC211</a> Standards for Geospatial Metadata. The current official versions of these namespaces are located at <a href="http://schemas.isotc211.org">schemas.isotc211.org</a>. Working versions and information are at the <a href="https://github.com/ISO-TC211/XML">ISO
-            TC211 Git Repository</a>.</p>
+          TC211 Git Repository</a>.</p>
         <table border="1" cellpadding="3">
           <tr>
             <th>Standard Prefix</th>
@@ -160,8 +160,8 @@
                 </xsl:element>
               </td>
               <td>
-                <!-- XML Schema Included 
-                  These schema names are taken from includes in the schema files, 
+                <!-- XML Schema Included
+                  These schema names are taken from includes in the schema files,
                   i.e. for the cat schema they are taken from the includes in cat.xsd
                 -->
                 <xsl:variable name="otherSchemaList" as="xs:string*">
@@ -193,7 +193,7 @@
                         <xsl:sequence select="'gml'"/>
                       </xsl:when>
                       <xsl:otherwise>
-                        <!-- 
+                        <!--
                           the schemaLocation attribute of the import statement is tokenized on / and the
                           variable numberOfTokens gives the total number of tokens. The last token is the
                           name of the imported xsd file and the prefix is the part of that string before the .xsd.

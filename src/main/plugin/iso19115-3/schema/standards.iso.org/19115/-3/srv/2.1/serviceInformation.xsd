@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0" elementFormDefault="qualified" targetNamespace="http://standards.iso.org/iso/19115/-3/srv/2.0" version="2.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" 
+  xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1" elementFormDefault="qualified" 
+  targetNamespace="http://standards.iso.org/iso/19115/-3/srv/2.1" version="2.0">
   <include schemaLocation="srv.xsd"/>
   <import namespace="http://standards.iso.org/iso/19115/-3/gco/1.0" schemaLocation="../../../../19115/-3/gco/1.0/gco.xsd"/>
   <import namespace="http://standards.iso.org/iso/19115/-3/mcc/1.0" schemaLocation="../../../../19115/-3/mcc/1.0/mcc.xsd"/>
@@ -136,14 +139,17 @@
     <attributeGroup ref="gco:ObjectReference"/>
     <attribute ref="gco:nilReason"/>
   </complexType>
-  <element name="SV_Parameter" substitutionGroup="gco:AbstractObject" type="srv:SV_Parameter_Type">
+  <!--
+    SV_Parameter was added to mcc namespace in order to support the revision of ISO 19115-2
+  -->
+  <element name="SV_Parameter" substitutionGroup="mcc:Abstract_Parameter" type="srv:SV_Parameter_Type">
     <annotation>
       <documentation>parameter information</documentation>
     </annotation>
   </element>
   <complexType name="SV_Parameter_Type">
     <complexContent>
-      <extension base="gco:AbstractObject_Type">
+      <extension base="mcc:Abstract_Parameter_Type">
         <sequence>
           <element name="name" type="gco:MemberName_PropertyType">
             <annotation>
