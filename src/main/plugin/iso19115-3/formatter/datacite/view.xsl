@@ -21,7 +21,7 @@
   ~ Contact: Jeroen Ticheler - FAO - Viale delle Terme di Caracalla 2,
   ~ Rome - Italy. email: geonetwork@osgeo.org
   -->
-<!-- Conversion from ISO19115-3 to Datacite
+<!-- Conversion from iso19115-3.2018 to Datacite
 
 
     See http://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf
@@ -73,12 +73,12 @@
                 xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
                 xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
                 xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
-                xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0"
+                xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1"
                 xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
                 xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0"
                 xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
                 xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
-                xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0"
+                xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0"
                 xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
                 xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/2.0"
                 xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0"
@@ -306,15 +306,32 @@
   See Appendix for definitions and
   examples.
   -->
+  <xsl:variable name="scopeMapping">
+    <entry key="attribute">Model</entry>
+    <entry key="attributeType">Model</entry>
+    <entry key="featureType">Model</entry>
+    <entry key="propertyType">Model</entry>
+    <entry key="model">Model</entry>
+    <entry key="collectionHardware">Other</entry>
+    <entry key="collectionSession">Dataset</entry>
+    <entry key="dataset">Dataset</entry>
+    <entry key="tile">Image</entry>
+    <entry key="nonGeographicDataset">Dataset</entry>
+    <entry key="dimensionGroup">Other</entry>
+    <entry key="fieldSession">Event</entry>
+    <entry key="feature">PhysicalObject</entry>
+    <entry key="series">Dataset</entry>
+    <entry key="service">Service</entry>
+    <entry key="software">Software</entry>
+  </xsl:variable>
   <xsl:template mode="toDatacite"
                 match="mdb:metadataScope/*/mdb:resourceScope/*/@codeListValue">
-    <!-- Assuming datacite resource type correspond to ISO hierarchylevel
-    with an upper case first letter. Which is true for service and dataset which are
-    the main one used. -->
+    <xsl:variable name="key"
+                  select="."/>
     <xsl:variable name="type"
                   select="concat(upper-case(substring(.,1,1)), substring(., 2))"/>
-    <datacite:resourceType resourceTypeGeneral="{$type}">
-      <xsl:value-of select="$type"/>
+    <datacite:resourceType resourceTypeGeneral="{$scopeMapping//*[@key = $key]/text()}">
+      <xsl:value-of select="concat($key, '/', $type)"/>
     </datacite:resourceType>
   </xsl:template>
 

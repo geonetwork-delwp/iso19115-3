@@ -13,7 +13,7 @@
             xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0"
             xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0"
             xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
-            xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0"
+            xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1"
             xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
             xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
             xmlns:gfc="http://standards.iso.org/iso/19110/gfc/1.1"

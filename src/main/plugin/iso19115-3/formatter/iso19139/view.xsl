@@ -44,7 +44,7 @@
                 xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0"
                 xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
                 xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
-                xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0"
+                xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0"
                 xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
                 xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/2.0"
                 xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0"
@@ -73,7 +73,7 @@
               indent="yes"/>
 
   <xsl:variable name="metadata"
-                select="//gmd:MD_Metadata"/>
+                select="//mdb:MD_Metadata"/>
 
   <xsl:template match="/" priority="99">
     <xsl:for-each select="$metadata">
