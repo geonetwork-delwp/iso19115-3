@@ -34,35 +34,54 @@
       <mdb:resourceScope>
         <mcc:MD_ScopeCode codeList="codeListLocation#MD_ScopeCode" codeListValue="dataset">dataset</mcc:MD_ScopeCode>
       </mdb:resourceScope>
-      <mdb:name>
-        <gco:CharacterString></gco:CharacterString>
-      </mdb:name>
     </mdb:MD_MetadataScope>
   </mdb:metadataScope>
+  <mdb:contact>
+    <cit:CI_Responsibility>
+      <cit:role>
+        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#CI_RoleCode" codeListValue="pointOfContact" />
+      </cit:role>
+      <cit:party xlink:href="local://srv/api/registries/entries/urn:delwp:rastermeta:person:-1_person_organisation" />
+    </cit:CI_Responsibility>
+  </mdb:contact>
   <mdb:metadataStandard>
     <cit:CI_Citation>
       <cit:title>
-        <gco:CharacterString>AU/NZS ISO 19115-1:2018</gco:CharacterString>
+        <gco:CharacterString>ISO 19115-3:2018</gco:CharacterString>
       </cit:title>
     </cit:CI_Citation>
   </mdb:metadataStandard>
-  <mdb:metadataStandard>
+  <mdb:metadataProfile>
     <cit:CI_Citation>
       <cit:title>
-        <gco:CharacterString>ISO 19115-1:2018</gco:CharacterString>
+        <gco:CharacterString>DELWP Profile</gco:CharacterString>
       </cit:title>
+      <cit:date>
+        <cit:CI_Date>
+          <cit:date>
+            <gco:Date>2019-05-24</gco:Date>
+          </cit:date>
+          <cit:dateType>
+            <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation" />
+          </cit:dateType>
+        </cit:CI_Date>
+      </cit:date>
+      <cit:edition>
+        <gco:CharacterString>Version 1</gco:CharacterString>
+      </cit:edition>
+      <cit:editionDate>
+        <gco:DateTime>2019-05-24T00:00:00</gco:DateTime>
+      </cit:editionDate>
+      <cit:citedResponsibleParty>
+        <cit:CI_Responsibility>
+          <cit:role>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#CI_RoleCode" codeListValue="owner" />
+          </cit:role>
+          <cit:party xlink:href="local://srv/api/registries/entries/urn:delwp:rastermeta:person:-1_person_organisation" />
+        </cit:CI_Responsibility>
+      </cit:citedResponsibleParty>
     </cit:CI_Citation>
-  </mdb:metadataStandard>
-  <mdb:metadataStandard>
-    <cit:CI_Citation>
-      <cit:title>
-        <gco:CharacterString>ISO 19115-3 Schemas 2018</gco:CharacterString>
-      </cit:title>
-  		<cit:editionDate>
-       	<gco:DateTime>2018-12-01T00:00:00</gco:DateTime>
-  		</cit:editionDate>
-    </cit:CI_Citation>
-  </mdb:metadataStandard>
+  </mdb:metadataProfile>
   <mdb:identificationInfo>
     <mri:MD_DataIdentification>
       <mri:citation>
@@ -80,58 +99,19 @@
               </cit:dateType>
             </cit:CI_Date>
           </cit:date>
-          <cit:identifier>
-             <mcc:MD_Identifier>
-                <mcc:code>
-                   <gco:CharacterString>ANZLIC ID obtained from?</gco:CharacterString>
-                </mcc:code>
-                <mcc:codeSpace>
-                   <gco:CharacterString>delwp-anzlicId</gco:CharacterString>
-                </mcc:codeSpace>
-             </mcc:MD_Identifier>
-          </cit:identifier>
 	      </cit:CI_Citation>
       </mri:citation>
-      <mri:status>
-        <mcc:MD_ProgressCode codeList="codeListLocation#MD_ProgressCode" codeListValue=""/>
-      </mri:status>
-			<mri:pointOfContact>
+      <mri:abstract>
+        <gco:CharacterString></gco:CharacterString>
+      </mri:abstract>
+      <mri:pointOfContact>
         <cit:CI_Responsibility>
           <cit:role>
-            <cit:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
-            </cit:role>
-            <cit:party>
-              <cit:CI_Organisation>
-                <cit:name>
-                  <gco:CharacterString>DELWP - Coordinated Imagery Program</gco:CharacterString>
-                </cit:name>
-                <cit:contactInfo>
-                   <cit:CI_Contact>
-                    <cit:address>
-                       <cit:CI_Address>
-                          <cit:deliveryPoint>
-                             <gco:CharacterString>P.O Box 500</gco:CharacterString>
-                          </cit:deliveryPoint>
-                          <cit:city>
-                             <gco:CharacterString>Melbourne</gco:CharacterString>
-                          </cit:city>
-                          <cit:administrativeArea>
-                             <gco:CharacterString>VIC</gco:CharacterString>
-                          </cit:administrativeArea>
-                          <cit:postalCode>
-                             <gco:CharacterString>3000</gco:CharacterString>
-                          </cit:postalCode>
-                          <cit:country>
-                             <gco:CharacterString>Australia</gco:CharacterString>
-                          </cit:country>
-                       </cit:CI_Address>
-                    </cit:address>
-                 </cit:CI_Contact>
-               </cit:contactInfo>
-              </cit:CI_Organisation>
-            </cit:party>
-          </cit:CI_Responsibility>
-			</mri:pointOfContact>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#CI_RoleCode" codeListValue="pointOfContact" />
+          </cit:role>
+          <cit:party xlink:href="local://srv/api/registries/entries/urn:delwp:rastermeta:person:-1_person_organisation" />
+        </cit:CI_Responsibility>
+      </mri:pointOfContact>
       <mri:spatialRepresentationType>
         <mcc:MD_SpatialRepresentationTypeCode codeList="codeListLocation#MD_SpatialRepresentationTypeCode" codeListValue="contour"/>
       </mri:spatialRepresentationType>
@@ -152,37 +132,6 @@
       <mri:topicCategory>
         <mri:MD_TopicCategoryCode>elevation</mri:MD_TopicCategoryCode>
       </mri:topicCategory>
-      <mri:topicCategory>
-        <mri:MD_TopicCategoryCode>imageryBaseMapsEarthCover</mri:MD_TopicCategoryCode>
-      </mri:topicCategory>
-      <mri:extent>
-        <gex:EX_Extent>
-          <gex:geographicElement>
-            <gex:EX_GeographicBoundingBox>
-              <gex:westBoundLongitude>
-                <gco:Decimal>-180</gco:Decimal>
-              </gex:westBoundLongitude>
-              <gex:eastBoundLongitude>
-                <gco:Decimal>180</gco:Decimal>
-              </gex:eastBoundLongitude>
-              <gex:southBoundLatitude>
-                <gco:Decimal>-90</gco:Decimal>
-              </gex:southBoundLatitude>
-              <gex:northBoundLatitude>
-                <gco:Decimal>90</gco:Decimal>
-              </gex:northBoundLatitude>
-            </gex:EX_GeographicBoundingBox>
-          </gex:geographicElement>
-        </gex:EX_Extent>
-      </mri:extent>
-      <mri:resourceMaintenance>
-        <mmi:MD_MaintenanceInformation>
-          <mmi:maintenanceAndUpdateFrequency>
-            <mmi:MD_MaintenanceFrequencyCode codeListValue="complete"
-              codeList="./resources/codeList.xml#MD_MaintenanceFrequencyCode"/>
-          </mmi:maintenanceAndUpdateFrequency>
-        </mmi:MD_MaintenanceInformation>
-      </mri:resourceMaintenance>
       <mri:resourceFormat>
         <mrd:MD_Format>
           <mrd:formatSpecificationCitation>
@@ -190,9 +139,6 @@
               <cit:title>
                 <gco:CharacterString></gco:CharacterString>
               </cit:title>
-              <cit:edition>
-                <gco:CharacterString></gco:CharacterString>
-              </cit:edition>
             </cit:CI_Citation>
           </mrd:formatSpecificationCitation>
         </mrd:MD_Format>
@@ -200,14 +146,14 @@
       <mri:resourceConstraints>
         <mco:MD_SecurityConstraints>
           <mco:classification>
-            <mco:MD_ClassificationCode codeList="codeListLocation#MD_ClassificationCode" codeListValue="Departmental"/>
+            <mco:MD_ClassificationCode codeList="codeListLocation#MD_ClassificationCode" codeListValue="unclassified"/>
           </mco:classification>
         </mco:MD_SecurityConstraints>
       </mri:resourceConstraints>
       <mri:defaultLocale>
         <lan:PT_Locale>
           <lan:language>
-            <lan:MD_LanguageCode codeList="codeListLocation#MD_LanguageCode" codeListValue="eng"/>
+            <lan:LanguageCode codeList="codeListLocation#LanguageCode" codeListValue="eng"/>
           </lan:language>
           <lan:characterEncoding>
             <lan:MD_CharacterSetCode codeList="codeListLocation#MD_CharacterSetCode" codeListValue="utf8"/>
@@ -225,9 +171,13 @@
   </mdb:contentInfo>
   <mdb:resourceLineage>
     <mrl:LI_Lineage>
-      <mrl:statement>
-        <gco:CharacterString/>
-      </mrl:statement>
+      <mrl:processStep>
+        <mrl:LI_ProcessStep>
+          <mrl:description>
+            <gco:CharacterString></gco:CharacterString>
+          </mrl:description>
+        </mrl:LI_ProcessStep>
+      </mrl:processStep> 
     </mrl:LI_Lineage>
   </mdb:resourceLineage>
   <mdb:acquisitionInformation>
@@ -235,7 +185,7 @@
       <mac:scope>
         <mcc:MD_Scope>
           <mcc:level>
-            <mcc:MD_ScopeCode codeList="codeListLocation#MD_ScopeCode" codeListValue=""></mcc:MD_ScopeCode>
+            <mcc:MD_ScopeCode codeList="codeListLocation#MD_ScopeCode" codeListValue="dataset"></mcc:MD_ScopeCode>
           </mcc:level>
           <mcc:extent>
             <gex:EX_Extent>
@@ -243,28 +193,22 @@
                 <gex:EX_TemporalExtent>
                   <gex:extent>
                     <gml:TimePeriod gml:id="A1234">
-                      <gml:beginPosition>
-                      </gml:beginPosition>
-                      <gml:endPosition>
-                      </gml:endPosition>
+                      <gml:beginPosition></gml:beginPosition>
+                      <gml:endPosition></gml:endPosition>
                     </gml:TimePeriod>
                   </gex:extent>
                 </gex:EX_TemporalExtent>
               </gex:temporalElement>
             </gex:EX_Extent>
           </mcc:extent>
-          <mcc:levelDescription>
-            <mcc:MD_ScopeDescription>
-              <mcc:other>
-                <gco:CharacterString>Description of mosaic, source, township - not covered by dataset title or abstract</gco:CharacterString>
-              </mcc:other>
-            </mcc:MD_ScopeDescription>
-          </mcc:levelDescription>
         </mcc:MD_Scope>
       </mac:scope>
+      <mac:instrument/>
       <mac:operation>
         <mac:MI_Operation>
-          <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_Type'])"/>
+          <mac:status>
+            <mcc:MD_ProgressCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#MD_ProgressCode" codeListValue="complete" />
+          </mac:status>
           <mac:otherProperty>
             <gco:Record xsi:type="delwp:MD_OperationProperties_Type">
               <delwp:datasetDetails>
