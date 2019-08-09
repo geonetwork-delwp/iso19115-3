@@ -146,4 +146,5 @@
   <projectAcquisitionData>Project Acquisition Data</projectAcquisitionData>
   <contractNumber>Contract Number</contractNumber>
   <scheduleNumber>Schedule Number</scheduleNumber>
+  <format>Format</format>
 </strings>
