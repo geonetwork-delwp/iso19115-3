@@ -124,7 +124,8 @@
   <colResolution>Column Resolution</colResolution>
   <details>Details</details>
   <identifiersAndKeywords>Identifiers and Keywords</identifiersAndKeywords>
-  <resolutionAndReferenceSystem>Resolution and Reference System</resolutionAndReferenceSystem>
+  <resolution>Resolution</resolution>
+  <spatial>Spatial</spatial>
   <acquisitionDate>Acquisition Date</acquisitionDate>
   <acquisitionGeneralData>Acquisition Data (Common)</acquisitionGeneralData>
   <acquisitionRasterDetails>Raster Details</acquisitionRasterDetails>
@@ -142,4 +143,7 @@
   <instrumentType>Type</instrumentType>
   <platformType>Platform Type</platformType>
   <contacts>Contacts</contacts>
+  <projectAcquisitionData>Project Acquisition Data</projectAcquisitionData>
+  <contractNumber>Contract Number</contractNumber>
+  <scheduleNumber>Schedule Number</scheduleNumber>
 </strings>

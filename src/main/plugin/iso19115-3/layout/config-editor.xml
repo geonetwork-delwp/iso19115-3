@@ -781,13 +781,19 @@
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:topicCategory"/>
         </section>
 
-        <section name="resolutionAndReferenceSystem">
+        <section name="spatial">
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType"/>
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:description"/>
+          <field xpath="/mdb:MD_Metadata/mdb:referenceSystemInfo" or="referenceSystemInfo" in="/mdb:MD_Metadata"/>
+        </section>
+
+        <section name="resolution" displayIfRecord="
+(count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialResolution/mri:MD_Resolution) > 0)
+">
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialResolution/mri:MD_Resolution//mri:distance"/>
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialResolution/mri:MD_Resolution//mri:vertical"/>
           <field name="rowResolution" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_GridSpatialRepresentation/msr:axisDimensionProperties/msr:MD_Dimension[msr:dimensionName/msr:MD_DimensionNameTypeCode/@codeListValue='row']/msr:resolution"/>
           <field name="colResolution" xpath="/mdb:MD_Metadata/mdb:spatialRepresentationInfo/msr:MD_GridSpatialRepresentation/msr:axisDimensionProperties/msr:MD_Dimension[msr:dimensionName/msr:MD_DimensionNameTypeCode/@codeListValue='column']/msr:resolution"/>
-          <field xpath="/mdb:MD_Metadata/mdb:referenceSystemInfo" or="referenceSystemInfo" in="/mdb:MD_Metadata"/>
         </section>
 
         <section name="dataQualityInfo" displayIfRecord="
@@ -810,6 +816,21 @@
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent/gml:TimePeriod/gml:endPosition"/>
         </section>
 
+        <!-- For project metadata records -->
+        <section name="projectAcquisitionData" displayIfRecord="
+(count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:level/mcc:MD_ScopeCode[@codeListValue='project']) > 0)
+">
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:status"/>
+          <field name="contractNumber" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation/cit:identifier/mcc:MD_Identifier[mcc:description/gco:CharacterString='ContractNumber']/mcc:code"/>
+          <field name="scheduleNumber" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation/cit:identifier/mcc:MD_Identifier[mcc:description/gco:CharacterString='ScheduleNumber']/mcc:code"/>
+          <field name="supplier" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation/cit:citedResponsibleParty"/>
+          <!-- DEFAULT 
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:projectDetails/delwp:MD_ProjectDetails"/>
+          -->
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:projectDetails/delwp:MD_ProjectDetails/delwp:method"/>
+        </section>
+
+        <!-- For dataset metadata records -->
         <section name="acquisitionInstrument" displayIfRecord="
 (count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:instrument/mac:MI_Sensor) > 0)
 ">
@@ -818,7 +839,9 @@
           <field name="platformType" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:instrument/mac:MI_Sensor/mac:identifier/mcc:MD_Identifier/mcc:code"/>
         </section>
 
-        <section name="acquisitionGeneralData">
+        <section name="acquisitionGeneralData" displayIfRecord="
+(count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:scope/mcc:MD_Scope/mcc:level/mcc:MD_ScopeCode[@codeListValue='dataset']) > 0)
+">
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:status"/>
           <!-- DEFAULT 
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails"/>
