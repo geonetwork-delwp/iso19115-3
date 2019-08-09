@@ -128,6 +128,8 @@
   <acquisitionDate>Acquisition Date</acquisitionDate>
   <acquisitionGeneralData>Acquisition Data (Common)</acquisitionGeneralData>
   <acquisitionRasterDetails>Raster Details</acquisitionRasterDetails>
+  <acquisitionPointCloudDetails>Point Cloud Details</acquisitionPointCloudDetails>
+  <acquisitionContourDetails>Contour Details</acquisitionContourDetails>
   <acquisitionAerialPhotoDetails>Aerial Photo Details</acquisitionAerialPhotoDetails>
   <acquisitionInstrument>Instrument</acquisitionInstrument>
   <aerialSurveyDetails>Survey Details</aerialSurveyDetails>
@@ -136,4 +138,8 @@
   <metadataProfile>Profile Name</metadataProfile>
   <metadataProfileVersion>Profile Version</metadataProfileVersion>
   <metadataProfileDate>Profile Date</metadataProfileDate>
+  <instrumentName>Name</instrumentName>
+  <instrumentType>Type</instrumentType>
+  <platformType>Platform Type</platformType>
+  <contacts>Contacts</contacts>
 </strings>
