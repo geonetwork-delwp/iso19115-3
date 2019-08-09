@@ -51,6 +51,7 @@
 
   <resourceQuality>Quality</resourceQuality>
   <logicalConsistency>Logical Consistency</logicalConsistency>
+  <conceptualConsistency>Conceptual Consistency</conceptualConsistency>
   <completenessOmission>Completeness</completenessOmission>
   <conformity_title>Report Title</conformity_title>
   <conformity_date>Report Date</conformity_date>
@@ -118,4 +119,21 @@
 
   <supplier>Supplier</supplier>
 
+  <!-- viewer stuff -->
+  <rowResolution>Row Resolution</rowResolution>
+  <colResolution>Column Resolution</colResolution>
+  <details>Details</details>
+  <identifiersAndKeywords>Identifiers and Keywords</identifiersAndKeywords>
+  <resolutionAndReferenceSystem>Resolution and Reference System</resolutionAndReferenceSystem>
+  <acquisitionDate>Acquisition Date</acquisitionDate>
+  <acquisitionGeneralData>Acquisition Data (Common)</acquisitionGeneralData>
+  <acquisitionRasterDetails>Raster Details</acquisitionRasterDetails>
+  <acquisitionAerialPhotoDetails>Aerial Photo Details</acquisitionAerialPhotoDetails>
+  <acquisitionInstrument>Instrument</acquisitionInstrument>
+  <aerialSurveyDetails>Survey Details</aerialSurveyDetails>
+  <aboutTheMetadataRecord>About the Metadata Record</aboutTheMetadataRecord>
+  <metadataStandard>Standard Name</metadataStandard>
+  <metadataProfile>Profile Name</metadataProfile>
+  <metadataProfileVersion>Profile Version</metadataProfileVersion>
+  <metadataProfileDate>Profile Date</metadataProfileDate>
 </strings>

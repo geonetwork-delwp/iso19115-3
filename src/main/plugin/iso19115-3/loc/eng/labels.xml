@@ -107,6 +107,11 @@
     <description></description>
     <condition></condition>
   </element>
+  <element name="mac:status">
+    <label>Status</label>
+    <description></description>
+    <condition></condition>
+  </element>
   <element name="mac:acquisitionPlan">
     <label>Acquisition plan</label>
     <description></description>
@@ -5739,8 +5744,8 @@
     <label>Flying Height Unit</label>
     <description></description>
   </element>
-  <element name="delwp:flyingHeigh">
-    <label>Flying Height</label>
+  <element name="delwp:flightHeight">
+    <label>Flight Height</label>
     <description></description>
   </element>
   <element name="delwp:gpsControlled">
@@ -5757,6 +5762,18 @@
   </element>
   <element name="delwp:MD_AerialSurveyDetails">
     <label>Aerial Survey Details</label>
+    <description></description>
+  </element>
+  <element name="delwp:photoType">
+    <label>Photo Type</label>
+    <description></description>
+  </element>
+  <element name="delwp:lens">
+    <label>Lens</label>
+    <description></description>
+  </element>
+  <element name="delwp:filmNumber">
+    <label>Film Number</label>
     <description></description>
   </element>
   <element name="mrc:cloudCoverPercentage">

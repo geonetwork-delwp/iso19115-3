@@ -58,7 +58,7 @@
       <xsl:apply-templates select="@*"/>
       <xsl:choose>
          <xsl:when test="count(*)>0">
-           <xsl:apply-templates select="@*|*"/>
+           <xsl:apply-templates select="*"/>
          </xsl:when>
          <xsl:otherwise>
            <xsl:value-of select="."/>

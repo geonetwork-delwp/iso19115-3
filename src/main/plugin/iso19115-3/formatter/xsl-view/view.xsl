@@ -19,10 +19,11 @@
                 xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
                 xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
                 xmlns:gml="http://www.opengis.net/gml/3.2"
-                xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0"
+                xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1"
                 xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
                 xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
                 xmlns:gfc="http://standards.iso.org/iso/19110/gfc/1.1"
+                xmlns:util="java:org.fao.geonet.util.XslUtil"
                 xmlns:tr="java:org.fao.geonet.api.records.formatters.SchemaLocalizations"
                 xmlns:gn-fn-render="http://geonetwork-opensource.org/xsl/functions/render"
                 xmlns:gn-fn-iso19115-3="http://geonetwork-opensource.org/xsl/functions/profiles/iso19115-3"
@@ -104,10 +105,10 @@
     </h4>
 
     <xsl:for-each select="mdb:identificationInfo/*/mri:graphicOverview/*">
-      <img class="gn-img-thumbnail center-block"
-           src="{mcc:fileName/*}"/>
+      <img class="gn-img-thumbnail img-thumbnail center-block"
+           src="{mcc:fileName/*|mcc:linkage//cit:linkage/*}"/>
 
-      <xsl:for-each select="mcc:fileDescription">
+      <xsl:for-each select="mcc:fileDescription|mcc:linkage//cit:description">
         <div class="gn-img-thumbnail-caption">
           <xsl:call-template name="get-iso19115-3-localised">
             <xsl:with-param name="langId" select="$langId"/>
@@ -148,7 +149,9 @@
 
           <!-- Custodians -->
           <xsl:for-each select="mdb:identificationInfo/*/mri:pointOfContact/
-                                  *[cit:role/*/@codeListValue = ('custodian', 'author')]">
+                              *[cit:role/*/@codeListValue = ('custodian', 'author')]|
+                  mdb:identificationInfo/*/mri:citation/*/cit:citedResponsibleParty/
+                              *[cit:role/*/@codeListValue = ('custodian', 'author')]">
             <xsl:variable name="name"
                           select="normalize-space(.//cit:individual/*/cit:name[1])"/>
 
@@ -159,32 +162,32 @@
             <xsl:if test="position() != last()">&#160;-&#160;</xsl:if>
           </xsl:for-each>
 
-          <!-- Publication year -->
+          <!-- Publication or revision year -->
           <xsl:variable name="publicationDate"
-                        select="mri:identificationInfo/*/mri:citation/*/cit:date/*[
-                                    cit:dateType/*/@codeListValue = 'publication']/
-                                      cit:date/gco:*"/>
+                        select="mdb:identificationInfo/*/mri:citation/*/cit:date/*[
+                                cit:dateType/*/@codeListValue = ('publication','revision')]/
+                                  cit:date/gco:*"/>
 
           <xsl:if test="$publicationDate != ''">
             (<xsl:value-of select="substring($publicationDate, 1, 4)"/>)
           </xsl:if>
 
-          <xsl:text>. </xsl:text>
-
           <!-- Title -->
-          <xsl:for-each select="mri:identificationInfo/*/cit:citation/*/cit:title">
+          <xsl:for-each select="mdb:identificationInfo/*/mri:citation/*/cit:title">
+            <p><b>
             <xsl:call-template name="get-iso19115-3-localised">
               <xsl:with-param name="langId" select="$langId"/>
             </xsl:call-template>
+            </b></p>
           </xsl:for-each>
 
-          <xsl:text>. </xsl:text>
-
-          <!-- Publishers -->
-          <xsl:for-each select="mri:identificationInfo/*/mri:pointOfContact/
-                                  *[cit:role/*/@codeListValue = 'publisher']">
+          <!-- Point of contact -->
+          <xsl:for-each select="mdb:identificationInfo/*/mri:pointOfContact/
+                              *[cit:role/*/@codeListValue = 'pointOfContact']">
+            <p>
             <xsl:value-of select="cit:party/*/cit:name/*"/>
             <xsl:if test="position() != last()">&#160;-&#160;</xsl:if>
+            </p>
           </xsl:for-each>
 
           <!-- Link -->
@@ -354,7 +357,7 @@
       </h4>
       <div class="row">
         <div class="col-md-6">
-          <!-- Needs improvements as contact/org are more flexible in ISO19115-3 -->
+          <!-- Needs improvements as contact/org are more flexible in iso19115-3 -->
           <address itemprop="author"
                    itemscope="itemscope"
                    itemtype="http://schema.org/Organization">
@@ -409,7 +412,7 @@
                 </xsl:variable>
                 <i class="fa fa-fax">&#160;</i>
                 <a href="tel:{normalize-space($phoneNumber)}">
-                  <xsl:value-of select="normalize-space($phoneNumber)"/>
+                  <xsl:value-of select="normalize-space($phoneNumber)"/>&#160;
                 </a>
               </xsl:for-each>
               <xsl:for-each select="cit:onlineResource/*/cit:linkage[normalize-space(.) != '']">
@@ -417,10 +420,10 @@
                   <xsl:apply-templates mode="render-value" select="."/>
                 </xsl:variable>
                 <i class="fa fa-link">&#160;</i>
-                <a href="{normalize-space($linkage)}">
+                <a href="{normalize-space($linkage)}" target="_blank">
                   <xsl:value-of select="if (../cit:name)
                                         then ../cit:name/* else
-                                        normalize-space(linkage)"/>
+                                        normalize-space(linkage)"/>&#160;
                 </a>
               </xsl:for-each>
               <xsl:for-each select="cit:hoursOfService">
@@ -455,7 +458,7 @@
         <xsl:apply-templates mode="render-value" select="*"/>
         <xsl:apply-templates mode="render-value" select="@*"/>
 
-        <a class="btn btn-link" href="{$nodeUrl}api/records/{$metadataId}/formatters/xml">
+        <a class="btn btn-link" href="{$nodeUrl}api/records/{$metadataId}/formatters/xml" target="_blank">
           <i class="fa fa-file-code-o fa-2x">&#160;</i>
           <span><xsl:value-of select="$schemaStrings/metadataInXML"/></span>
         </a>
@@ -476,9 +479,9 @@
           <xsl:apply-templates mode="render-value"
                                select="*/cit:description"/>
         </xsl:variable>
-        <a href="{*/cit:linkage/*}">
+        <a href="{*/cit:linkage/*}" target="_blank">
           <xsl:apply-templates mode="render-value"
-                               select="*/cit:name"/>
+                               select="*/cit:name"/>&#160;
         </a>
         <p>
           <xsl:value-of select="normalize-space($linkDescription)"/>
@@ -512,6 +515,7 @@
       </dd>
     </dl>
   </xsl:template>
+
 
 
   <!-- Display thesaurus name and the list of keywords -->
@@ -684,7 +688,7 @@
         <dd>
           <ul>
             <xsl:for-each select="parent::node()/*[name() = $nodeName]">
-              <li><a href="#uuid={@uuidref}">
+              <li><a href="#uuid={@uuidref}" target="_blank">
                 <i class="fa fa-link">&#160;</i>
                 <xsl:value-of select="gn-fn-render:getMetadataTitle(@uuidref, $language)"/>
               </a></li>
@@ -731,7 +735,7 @@
         <!-- Replace hyperlink in text by an hyperlink -->
         <xsl:variable name="textWithLinks"
                       select="replace(., '([a-z][\w-]+:/{1,3}[^\s()&gt;&lt;]+[^\s`!()\[\]{};:'&apos;&quot;.,&gt;&lt;?«»“”‘’])',
-                                    '&lt;a href=''$1''&gt;$1&lt;/a&gt;')"/>
+                                    '&lt;a target=''_blank'' href=''$1''&gt;$1&lt;/a&gt;')"/>
 
         <xsl:if test="$textWithLinks != ''">
           <xsl:copy-of select="saxon:parse(
@@ -762,7 +766,7 @@
 
 
   <xsl:template mode="render-value"
-                match="gco:Distance">
+                match="gco:Distance|gco:Measure">
     <span><xsl:value-of select="."/>&#10;<xsl:value-of select="@uom"/></span>
   </xsl:template>
 
