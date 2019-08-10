@@ -169,7 +169,7 @@
                                   cit:date/gco:*"/>
 
           <xsl:if test="$publicationDate != ''">
-            (<xsl:value-of select="substring($publicationDate, 1, 4)"/>)
+            (<xsl:value-of select="substring($publicationDate[1], 1, 4)"/>)
           </xsl:if>
 
           <!-- Title -->

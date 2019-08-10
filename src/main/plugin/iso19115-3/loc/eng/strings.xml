@@ -152,4 +152,10 @@
   <unrectifiedImageFormat>Unrectified Image Format</unrectifiedImageFormat>
   <rectifiedImageFormat>Rectified Image Format</rectifiedImageFormat>
   <rawImageFormat>Raw Image Format</rawImageFormat>
+  <completenessCommission>Completeness Commission</completenessCommission>
+  <nonQuantitativeAttributeCorrectness>Non-quantitative Attribute Correctness</nonQuantitativeAttributeCorrectness>
+  <absoluteExternalPositionalAccuracy>Absolute External Positional Accuracy</absoluteExternalPositionalAccuracy>
+  <otherDatasetDetails>Other Dataset Details</otherDatasetDetails>
+  <constraintsOnMetadata>Metadata Constraints</constraintsOnMetadata>
+  <attributes>Attributes</attributes>
 </strings>

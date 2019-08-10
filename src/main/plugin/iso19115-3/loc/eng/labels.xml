@@ -5856,6 +5856,34 @@
     <label>Swath Width</label>
     <description></description>
   </element>
+  <element name="delwp:MD_Attribute">
+    <label>Attribute</label>
+    <description></description>
+  </element>
+  <element name="delwp:name">
+    <label>Column Name</label>
+    <description></description>
+  </element>
+  <element name="delwp:obligation">
+    <label>Obligation</label>
+    <description></description>
+  </element>
+  <element name="delwp:unique">
+    <label>Unique</label>
+    <description></description>
+  </element>
+  <element name="delwp:dataType">
+    <label>Data Type</label>
+    <description></description>
+  </element>
+  <element name="delwp:dataLength">
+    <label>Data Length</label>
+    <description></description>
+  </element>
+  <element name="delwp:dataPrecision">
+    <label>Data Precision</label>
+    <description></description>
+  </element>
   <element name="mrc:cloudCoverPercentage">
     <label>Cloud Cover Percentage</label>
     <description></description>
