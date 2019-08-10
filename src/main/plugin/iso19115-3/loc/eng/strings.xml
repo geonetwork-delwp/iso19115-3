@@ -133,7 +133,7 @@
   <acquisitionContourDetails>Contour Details</acquisitionContourDetails>
   <acquisitionAerialPhotoDetails>Aerial Photo Details</acquisitionAerialPhotoDetails>
   <acquisitionInstrument>Instrument</acquisitionInstrument>
-  <aerialSurveyDetails>Survey Details</aerialSurveyDetails>
+  <aerialSurveyDetails>Aerial Survey Details</aerialSurveyDetails>
   <aboutTheMetadataRecord>About the Metadata Record</aboutTheMetadataRecord>
   <metadataStandard>Standard Name</metadataStandard>
   <metadataProfile>Profile Name</metadataProfile>
@@ -147,4 +147,9 @@
   <contractNumber>Contract Number</contractNumber>
   <scheduleNumber>Schedule Number</scheduleNumber>
   <format>Format</format>
+  <acquisitionSatelliteDetails>Satellite Details</acquisitionSatelliteDetails>
+  <acquisitionDEMDetails>DEM Details</acquisitionDEMDetails>
+  <unrectifiedImageFormat>Unrectified Image Format</unrectifiedImageFormat>
+  <rectifiedImageFormat>Rectified Image Format</rectifiedImageFormat>
+  <rawImageFormat>Raw Image Format</rawImageFormat>
 </strings>

@@ -854,7 +854,9 @@
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:assembly"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:tileSize"/>
           <field name="format" xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:resourceFormat/mrd:MD_Format/mrd:formatSpecificationCitation/cit:CI_Citation/cit:title"/>
-          <!-- cloudCoverPercentage? -->
+          <!-- cloudCoverPercentage? probably should be with instrument and acquisition 
+               date in survey data section? -->
+          <field xpath="/mdb:MD_Metadata/mdb:contentInfo/mrc:MD_ImageDescription/mrc:cloudCoverPercentage"/>
         </section>
 
         <section name="acquisitionRasterDetails" displayIfRecord="
@@ -879,6 +881,28 @@
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:aerialPhoto/delwp:MD_AerialPhoto/delwp:photoType"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:aerialPhoto/delwp:MD_AerialPhoto/delwp:filmNumber"/>
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:aerialPhoto/delwp:MD_AerialPhoto/delwp:lens"/>
+        </section>
+
+        <section name="acquisitionSatelliteDetails" displayIfRecord="
+(count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:satellite/delwp:MD_Satellite) > 0)">
+          <!-- DEFAULT 
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:satellite/delwp:MD_Satellite"/>
+          -->
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:satellite/delwp:MD_Satellite/delwp:nadir"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:satellite/delwp:MD_Satellite/delwp:controlPoints"/>
+          <field name="rawImageFormat" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:satellite/delwp:MD_Satellite/delwp:rawImageFormat/mrd:MD_Format/mrd:formatSpecificationCitation/cit:CI_Citation/cit:title"/>
+          <field name="rectifiedImageFormat" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:satellite/delwp:MD_Satellite/delwp:rectifiedImageFormat/mrd:MD_Format/mrd:formatSpecificationCitation/cit:CI_Citation/cit:title"/>
+          <field name="unrectifiedImageFormat" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:satellite/delwp:MD_Satellite/delwp:unrectifiedImageFormat/mrd:MD_Format/mrd:formatSpecificationCitation/cit:CI_Citation/cit:title"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:satellite/delwp:MD_Satellite/delwp:atmosphericCorrection"/>
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:satellite/delwp:MD_Satellite/delwp:processingLevel"/>
+        </section>
+
+        <section name="acquisitionDEMDetails" displayIfRecord="
+(count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:dem/delwp:MD_DEM) > 0)">
+          <!-- DEFAULT 
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:dem/delwp:MD_DEM"/>
+          -->
+          <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record/delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails/delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:dem/delwp:MD_DEM/delwp:demCreator"/>
         </section>
 
         <section name="acquisitionPointCloudDetails" displayIfRecord="

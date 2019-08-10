@@ -5776,6 +5776,86 @@
     <label>Film Number</label>
     <description></description>
   </element>
+  <element name="delwp:atmosphericCorrection">
+    <label>Atmospheric Correction</label>
+    <description></description>
+  </element>
+  <element name="delwp:processingLevel">
+    <label>Processing Level</label>
+    <description></description>
+  </element>
+  <element name="delwp:nadir">
+    <label>Nadir</label>
+    <description></description>
+  </element>
+  <element name="delwp:MD_Classification">
+    <label>Classification</label>
+    <description></description>
+  </element>
+  <element name="delwp:classLevel">
+    <label>Class Level</label>
+    <description></description>
+  </element>
+  <element name="delwp:class0">
+    <label>Class 0</label>
+    <description></description>
+  </element>
+  <element name="delwp:class1">
+    <label>Class 1</label>
+    <description></description>
+  </element>
+  <element name="delwp:class2">
+    <label>Class 2</label>
+    <description></description>
+  </element>
+  <element name="delwp:class3">
+    <label>Class 3</label>
+    <description></description>
+  </element>
+  <element name="delwp:class4">
+    <label>Class 4</label>
+    <description></description>
+  </element>
+  <element name="delwp:class5">
+    <label>Class 5</label>
+    <description></description>
+  </element>
+  <element name="delwp:class6">
+    <label>Class 6</label>
+    <description></description>
+  </element>
+  <element name="delwp:class7">
+    <label>Class 7</label>
+    <description></description>
+  </element>
+  <element name="delwp:class8">
+    <label>Class 8</label>
+    <description></description>
+  </element>
+  <element name="delwp:class9">
+    <label>Class 9</label>
+    <description></description>
+  </element>
+  <element name="delwp:class10">
+    <label>Class 10</label>
+    <description></description>
+  </element>
+  <element name="delwp:class11">
+    <label>Class 11</label>
+    <description></description>
+  </element>
+  <element name="delwp:class12">
+    <label>Class 12</label>
+    <description></description>
+  </element>
+  <element name="delwp:demCreator">
+    <label>DEM Creator</label>
+    <description></description>
+  </element>
+  <element name="delwp:swathWidth">
+    <label>Swath Width</label>
+    <description></description>
+  </element>
   <element name="mrc:cloudCoverPercentage">
     <label>Cloud Cover Percentage</label>
     <description></description>
