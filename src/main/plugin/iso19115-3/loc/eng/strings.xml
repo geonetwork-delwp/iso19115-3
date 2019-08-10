@@ -158,4 +158,5 @@
   <otherDatasetDetails>Other Dataset Details</otherDatasetDetails>
   <constraintsOnMetadata>Metadata Constraints</constraintsOnMetadata>
   <attributes>Attributes</attributes>
+  <temporal>Temporal</temporal>
 </strings>
