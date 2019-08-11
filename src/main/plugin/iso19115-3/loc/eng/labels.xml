@@ -5788,6 +5788,10 @@
     <label>Nadir</label>
     <description></description>
   </element>
+  <element name="delwp:classification">
+    <label>Classification</label>
+    <description></description>
+  </element>
   <element name="delwp:MD_Classification">
     <label>Classification</label>
     <description></description>

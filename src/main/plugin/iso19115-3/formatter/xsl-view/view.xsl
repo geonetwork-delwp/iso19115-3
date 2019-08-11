@@ -617,6 +617,8 @@
                 match="mrd:distributionFormat[position() > 1]"
                 priority="100"/>
 
+  <!-- delwp specific stuff -->
+
   <xsl:template mode="render-field"
                 match="mrc:attributeGroup[descendant::delwp:MD_Attribute]"
                 priority="100">
@@ -632,7 +634,7 @@
         <!-- <xsl:value-of select="tr:node-label(tr:create($schema), name(), null)"/> -->
       </dt>
       <dd>
-        <table>
+        <table class="table table-bordered table-striped">
           <xsl:for-each select="descendant::delwp:MD_Attribute">
             <xsl:if test="position()=1">
               <tr>
@@ -652,6 +654,35 @@
             </tr>      
           </xsl:for-each>
         </table>
+      </dd>
+    </dl>
+  </xsl:template>
+
+  <xsl:template mode="render-field"
+                match="delwp:classification"
+                priority="100">
+
+    <dl class="gn-format">
+      <dt>
+        <xsl:value-of select="tr:node-label(tr:create($schema), name(), null)"/>
+      </dt>
+      <dd>
+       <table  class="table table-bordered table-striped">
+         <tr>
+           <xsl:for-each select="descendant::*[starts-with(name(),'delwp:class')]">
+             <th>
+               <xsl:value-of select="tr:node-label(tr:create($schema), name(), null)"/>
+             </th>
+           </xsl:for-each>
+         </tr>
+         <tr>
+           <xsl:for-each select="descendant::*[starts-with(name(),'delwp:class')]">
+             <td>
+               <xsl:value-of select="*"/> 
+             </td>
+           </xsl:for-each>
+         </tr>      
+       </table>
       </dd>
     </dl>
   </xsl:template>
