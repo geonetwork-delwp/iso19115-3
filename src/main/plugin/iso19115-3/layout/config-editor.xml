@@ -840,7 +840,7 @@
         <section name="attributes" displayIfRecord="
 (count(mdb:MD_Metadata/mdb:contentInfo/mrc:MD_CoverageDescription/mrc:attributeGroup/mrc:MD_AttributeGroup/mrc:attribute/*) > 0)
 ">
-          <field xpath="/mdb:MD_Metadata/mdb:contentInfo/mrc:MD_CoverageDescription/mrc:attributeGroup/mrc:MD_AttributeGroup/mrc:attribute/mrc:MD_SampleDimension/mrc:otherProperty/gco:Record/delwp:MD_Attribute"/>
+          <field xpath="/mdb:MD_Metadata/mdb:contentInfo/mrc:MD_CoverageDescription/mrc:attributeGroup"/>
         </section>
 
         <section name="acquisitionDate" displayIfRecord="

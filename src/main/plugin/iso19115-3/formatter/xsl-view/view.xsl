@@ -24,6 +24,7 @@
                 xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
                 xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
                 xmlns:gfc="http://standards.iso.org/iso/19110/gfc/1.1"
+                xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
                 xmlns:util="java:org.fao.geonet.util.XslUtil"
                 xmlns:tr="java:org.fao.geonet.api.records.formatters.SchemaLocalizations"
                 xmlns:gn-fn-render="http://geonetwork-opensource.org/xsl/functions/render"
@@ -616,6 +617,45 @@
                 match="mrd:distributionFormat[position() > 1]"
                 priority="100"/>
 
+  <xsl:template mode="render-field"
+                match="mrc:attributeGroup[descendant::delwp:MD_Attribute]"
+                priority="100">
+
+    <xsl:variable name="headers">
+      <xsl:for-each-group select="descendant::delwp:MD_Attribute/delwp:*" group-by="name()">
+        <xsl:copy-of select="."/>
+      </xsl:for-each-group>
+    </xsl:variable>
+
+    <dl class="gn-format">
+      <dt>
+        <!-- <xsl:value-of select="tr:node-label(tr:create($schema), name(), null)"/> -->
+      </dt>
+      <dd>
+        <table>
+          <xsl:for-each select="descendant::delwp:MD_Attribute">
+            <xsl:if test="position()=1">
+              <tr>
+                <xsl:for-each select="$headers/*">
+                  <th>
+                    <xsl:value-of select="tr:node-label(tr:create($schema), name(), null)"/>
+                  </th>
+                </xsl:for-each>
+              </tr>
+            </xsl:if>
+            <tr>
+              <xsl:for-each select="*">
+                <td>
+                  <xsl:value-of select="*"/> 
+                </td>
+              </xsl:for-each>
+            </tr>      
+          </xsl:for-each>
+        </table>
+      </dd>
+    </dl>
+  </xsl:template>
+
   <!-- Date -->
   <xsl:template mode="render-field"
                 match="cit:date|mdb:dateInfo|mmi:maintenanceDate"
@@ -872,6 +912,7 @@
                 priority="100">
     <i class="fa fa-lock text-warning" title="{{{{'withheld' | translate}}}}">&#160;</i>
   </xsl:template>
+
   <xsl:template mode="render-value"
                 match="@*"/>
 
