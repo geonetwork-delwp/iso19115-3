@@ -124,6 +124,10 @@
 
 
   <xsl:template mode="getMetadataHeader" match="mdb:MD_Metadata">
+    <div class="alert alert-info" style="text-transform:capitalize;text-align:center;font-weight:bold;">
+      <xsl:value-of select="mdb:metadataScope/*/mdb:resourceScope/mcc:MD_ScopeCode/@codeListValue"/>
+    </div>
+
     <div class="alert alert-info"
         itemprop="description"
         itemscope="itemscope"
