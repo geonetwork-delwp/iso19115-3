@@ -321,8 +321,7 @@
                 match="*[cit:CI_Responsibility]"
                 priority="100">
     <xsl:variable name="email">
-      <xsl:for-each select="*/cit:party/*/cit:contactInfo/
-                                      */cit:address/*/cit:electronicMailAddress[not(gco:nilReason)]">
+      <xsl:for-each select="*/cit:party/*/cit:contactInfo//cit:address/*/cit:electronicMailAddress[not(@gco:nilReason)]|*/cit:party//cit:CI_Individual/cit:contactInfo//cit:address/*/cit:electronicMailAddress[not(@gco:nilReason)]">
         <xsl:apply-templates mode="render-value" select="."/>
         <xsl:if test="position() != last()">, </xsl:if>
       </xsl:for-each>
@@ -333,20 +332,20 @@
       <xsl:choose>
         <xsl:when
                 test="*/cit:party/cit:CI_Organisation/cit:name and
-                      */cit:CI_Individual/cit:name">
+                      *//cit:CI_Individual/cit:name">
           <!-- Org name may be multilingual -->
           <xsl:apply-templates mode="render-value"
                                select="*/cit:party/cit:CI_Organisation/cit:name"/>
           -
-          <xsl:value-of select="*/cit:CI_Individual/cit:name"/>
-          <xsl:if test="*/cit:CI_Individual/cit:positionName">&#160;
+          <xsl:value-of select="*//cit:CI_Individual/cit:name"/>
+          <xsl:if test="*//cit:CI_Individual/cit:positionName">&#160;
             (<xsl:apply-templates mode="render-value"
-                                  select="*/cit:CI_Individual/cit:positionName"/>)
+                                  select="*//cit:CI_Individual/cit:positionName"/>)
           </xsl:if>
         </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="*/cit:party/cit:CI_Organisation/cit:name|
-                                */cit:CI_Individual/cit:name"/>
+                                *//cit:CI_Individual/cit:name"/>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
