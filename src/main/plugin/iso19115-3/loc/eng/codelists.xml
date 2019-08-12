@@ -697,7 +697,6 @@
     </entry>
   </codelist>
   <codelist name="mco:MD_ClassificationCode">
-    <!--
     <entry>
       <code>unclassified</code>
       <label>Unclassified</label>
@@ -750,38 +749,6 @@
       <code>limitedDistribution</code>
       <label>Limited Distribution</label>
       <description>Dissemination limited by designating body</description>
-    </entry>
-    -->
-    <!-- DELWP extensions -->
-    <entry>
-       <code>Unknown</code>
-       <label>Unknown</label>
-       <description>Unknown</description>
-    </entry>
-    <entry>
-       <code>Departmental</code>
-       <label>Departmental</label>
-       <description>Departmental</description>
-    </entry>
-    <entry>
-       <code>Restricted</code>
-       <label>Restricted</label>
-       <description>Restricted</description>
-    </entry>
-    <entry>
-       <code>General</code>
-       <label>General</label>
-       <description>General</description>
-    </entry>
-    <entry>
-       <code>DataVic</code>
-       <label>Data Vic</label>
-       <description>Data Vic</description>
-    </entry>
-    <entry>
-       <code>Withdrawn</code>
-       <label>Withdrawn</label>
-       <description>Withdrawn</description>
     </entry>
   </codelist>
   <codelist name="mrc:MD_CoverageContentTypeCode">
