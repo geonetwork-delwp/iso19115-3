@@ -495,6 +495,25 @@
     </dl>
   </xsl:template>
 
+  <xsl:template mode="render-field"
+                match="mco:MD_LegalConstraints[mco:graphic and mco:reference]"
+                priority="100">
+
+    <dl class="gn-link">
+      <dt>
+        <xsl:value-of select="mco:reference/cit:CI_Citation/cit:title/*"/>
+      </dt>
+      <dd>
+        <ul>
+          <xsl:if test="mco:graphic//cit:linkage/gco:CharacterString!=''">
+            <li style="list-style-type: none;"><img src="{mco:graphic//cit:linkage/gco:CharacterString}"/></li>
+          </xsl:if>
+          <li style="list-style-type: none;"><a href="{mco:reference//cit:linkage/gco:CharacterString}" target="_blank">License Text</a></li>
+        </ul>
+      </dd>
+    </dl>
+  </xsl:template>
+
   <!-- Identifier -->
   <xsl:template mode="render-field"
                 match="*[(mcc:RS_Identifier or mcc:MD_Identifier) and
