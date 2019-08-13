@@ -254,6 +254,16 @@
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('anzlicid', ., $langId)"/>
         </xsl:for-each>
 
+        <!-- Add vsdl schema as a separate field -->
+        <xsl:for-each select="cit:identifier/mcc:MD_Identifier[contains(mcc:description/gco:CharacterString,'VSDL')]/mcc:code">
+          <xsl:copy-of select="gn-fn-iso19115-3:index-field('vsdlschema', ., $langId)"/>
+        </xsl:for-each>
+
+        <!-- Add metashare jurisdiction as a separate field -->
+        <xsl:for-each select="cit:identifier/mcc:MD_Identifier[contains(mcc:description/gco:CharacterString,'Jurisdiction')]/mcc:code">
+          <xsl:copy-of select="gn-fn-iso19115-3:index-field('jurisdiction', ., $langId)"/>
+        </xsl:for-each>
+
         <xsl:for-each select="cit:title">
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('title', ., $langId)"/>
         </xsl:for-each>

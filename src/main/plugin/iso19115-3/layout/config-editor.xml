@@ -776,8 +776,9 @@
         </section>
 
         <section name="identifiersAndKeywords">
-          <field name="anzlicId" xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:identifier/mcc:MD_Identifier[mcc:authority/cit:CI_Citation/cit:title/gco:CharacterString='ANZLIC Dataset Identifier']/mcc:code" 
-               if="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:identifier/mcc:MD_Identifier/mcc:authority/cit:CI_Citation/cit:title/gco:CharacterString='ANZLIC Dataset Identifier')=1"/>
+          <field name="anzlicId" xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:identifier/mcc:MD_Identifier[mcc:authority/cit:CI_Citation/cit:title/gco:CharacterString='ANZLIC Dataset Identifier']/mcc:code"/>
+          <field name="vsdl" xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:identifier/mcc:MD_Identifier[contains(mcc:description/gco:CharacterString,'VSDL')]/mcc:code"/>
+          <field name="jurisdictionId" xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:identifier/mcc:MD_Identifier[contains(mcc:description/gco:CharacterString,'Jurisdiction')]/mcc:code"/>
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:topicCategory"/>
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:descriptiveKeywords"/>
         </section>

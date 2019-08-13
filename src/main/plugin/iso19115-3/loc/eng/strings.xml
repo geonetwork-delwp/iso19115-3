@@ -160,4 +160,6 @@
   <attributes>Attributes</attributes>
   <temporal>Temporal</temporal>
   <program>Program</program>
+  <jurisdictionId>Jurisdiction</jurisdictionId>
+  <vsdl>Victorian Spatial Data Library (VSDL) Schema</vsdl>
 </strings>
