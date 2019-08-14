@@ -19,7 +19,8 @@
                 xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
                 xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0"
                 xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
-                xmlns:gml="http://www.opengis.net/gml/3.2"
+                xmlns:gml="http://www.opengis.net/gml"
+                xmlns:gml32="http://www.opengis.net/gml/3.2"
                 xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1"
                 xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
                 xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
@@ -233,9 +234,9 @@
                        *[gco:Distance != '']|*[gco:Angle != '']|*[gco:Scale != '']|
                        *[gco:Record != '']|*[gco:RecordType != '']|
                        *[gco:LocalName != '']|*[lan:PT_FreeText != '']|
-                       *[gml:beginPosition != '']|*[gml:endPosition != '']|
+                       *[gml32:beginPosition != '']|*[gml32:endPosition != '']|
                        *[gco:Date != '']|*[gco:DateTime != '']|*[*/@codeListValue]|*[@codeListValue]|
-                       gml:beginPosition[. != '' or @indeterminatePosition]|gml:endPosition[. != '' or @indeterminatePosition]"
+                       gml32:beginPosition[. != '' or @indeterminatePosition]|gml32:endPosition[. != '' or @indeterminatePosition]"
                 priority="500">
     <xsl:param name="fieldName" select="''" as="xs:string"/>
 
@@ -255,7 +256,7 @@
           <xsl:when test="@indeterminatePosition"> <!-- gml times -->
             <span style="text-transform:capitalize;"><xsl:value-of select="@indeterminatePosition"/></span>
           </xsl:when>
-          <!-- Display the value for simple field eg. gml:beginPosition. -->
+          <!-- Display the value for simple field eg. gml32:beginPosition. -->
           <xsl:when test="count(*) = 0 and not(*/@codeListValue)">
             <xsl:apply-templates mode="render-value" select="text()"/>
           </xsl:when>
@@ -326,6 +327,57 @@
     <br/>
   </xsl:template>
 
+  <xsl:template mode="render-field" 
+                match="gex:EX_BoundingPolygon"
+                priority="100">
+    <xsl:variable name="gml31stuff">
+      <gml:MultiSurface srsName="EPSG:4326" srsDimension="2">
+        <xsl:for-each select=".//gml32:Polygon">
+          <gml:surfaceMember>
+            <xsl:apply-templates mode="gml32-to-gml" select="."/>
+          </gml:surfaceMember>
+        </xsl:for-each>
+      </gml:MultiSurface>
+    </xsl:variable>
+
+    <gn-bounding-polygon polygon-xml="{saxon:serialize($gml31stuff,
+                                                         'default-serialize-mode')}"
+                         identifier="{generate-id()}"
+                         read-only="{true()}"
+                         viewer-only="{true()}">
+    </gn-bounding-polygon>
+    <br/>
+    <br/>
+
+  </xsl:template>
+
+  <xsl:template mode="gml32-to-gml" match="@*">
+    <xsl:choose>
+      <xsl:when test="namespace-uri()='http://www.opengis.net/gml/3.2'">
+       <xsl:variable name="name" select="concat('gml:',local-name())"/>
+       <xsl:attribute name="{$name}"><xsl:value-of select="."/></xsl:attribute>
+      </xsl:when>
+      <xsl:otherwise>
+       <xsl:if test="name()!='srsName'"><xsl:copy-of select="."/></xsl:if>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+
+  <xsl:template mode="gml32-to-gml" match="*">
+    <xsl:variable name="name" select="concat('gml:',local-name())"/>
+    <xsl:element name="{$name}">
+      <xsl:apply-templates mode="gml32-to-gml" select="@*"/>
+      <xsl:choose>
+         <xsl:when test="count(*)>0">
+           <xsl:apply-templates mode="gml32-to-gml" select="*"/>
+         </xsl:when>
+         <xsl:otherwise>
+           <xsl:value-of select="."/>
+         </xsl:otherwise>
+      </xsl:choose>
+    </xsl:element> 
+  </xsl:template>
 
   <!-- A contact is displayed with its role as header -->
   <xsl:template mode="render-field"
@@ -830,7 +882,7 @@
                 match="gco:Integer|gco:Decimal|
                        gco:Boolean|gco:Real|gco:Measure|gco:Length|gco:Angle|
                        gco:Scale|gco:Record|gco:RecordType|
-                       gco:LocalName|gml:beginPosition|gml:endPosition">
+                       gco:LocalName|gml32:beginPosition|gml32:endPosition">
     <xsl:choose>
       <xsl:when test="contains(., 'http')">
         <!-- Replace hyperlink in text by an hyperlink -->
