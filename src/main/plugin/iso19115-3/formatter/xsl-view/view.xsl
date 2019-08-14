@@ -124,8 +124,12 @@
 
 
   <xsl:template mode="getMetadataHeader" match="mdb:MD_Metadata">
+    <xsl:variable name="scopeAndName" select="if (mdb:identificationInfo/*/mri:citation//cit:alternateTitle) then
+        concat(mdb:metadataScope/*/mdb:resourceScope/mcc:MD_ScopeCode/@codeListValue,': ',mdb:identificationInfo/*/mri:citation//cit:alternateTitle) else
+        mdb:metadataScope/*/mdb:resourceScope/mcc:MD_ScopeCode/@codeListValue"/>
+
     <div class="alert alert-info" style="text-transform:capitalize;text-align:center;font-weight:bold;">
-      <xsl:value-of select="mdb:metadataScope/*/mdb:resourceScope/mcc:MD_ScopeCode/@codeListValue"/>
+      <xsl:value-of select="$scopeAndName"/>
     </div>
 
     <div class="alert alert-info"
@@ -231,7 +235,7 @@
                        *[gco:LocalName != '']|*[lan:PT_FreeText != '']|
                        *[gml:beginPosition != '']|*[gml:endPosition != '']|
                        *[gco:Date != '']|*[gco:DateTime != '']|*[*/@codeListValue]|*[@codeListValue]|
-                       gml:beginPosition[. != '']|gml:endPosition[. != '']"
+                       gml:beginPosition[. != '' or @indeterminatePosition]|gml:endPosition[. != '' or @indeterminatePosition]"
                 priority="500">
     <xsl:param name="fieldName" select="''" as="xs:string"/>
 
@@ -247,6 +251,9 @@
           <xsl:when test="@codeListValue|*/@codeListValue">
             <!-- Do not render codeList text element. -->
             <xsl:apply-templates mode="render-value" select="@codeListValue|*/@codeListValue"/>
+          </xsl:when>
+          <xsl:when test="@indeterminatePosition"> <!-- gml times -->
+            <span style="text-transform:capitalize;"><xsl:value-of select="@indeterminatePosition"/></span>
           </xsl:when>
           <!-- Display the value for simple field eg. gml:beginPosition. -->
           <xsl:when test="count(*) = 0 and not(*/@codeListValue)">

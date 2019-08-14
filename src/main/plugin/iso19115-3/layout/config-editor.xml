@@ -804,6 +804,7 @@
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType"/>
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:description"/>
           <field xpath="/mdb:MD_Metadata/mdb:referenceSystemInfo" or="referenceSystemInfo" in="/mdb:MD_Metadata"/>
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:geographicElement/gex:EX_GeographicBoundingBox"/>
         </section>
 
         <section name="temporal" displayIfRecord="
