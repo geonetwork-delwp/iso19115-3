@@ -150,7 +150,7 @@
       <tr class="active">
         <td>
           <div class="pull-left text-muted">
-            <i class="fa fa-quote-left fa-4x">&#160;</i>
+            <i class="fa fa-quote-left fa-2x">&#160;</i>
           </div>
         </td>
         <td>
@@ -158,11 +158,11 @@
             <xsl:value-of select="$schemaStrings/citationProposal"/>
           </em><br/>
 
-          <!-- Custodians -->
+          <!-- Owners, Custodians or Authors -->
           <xsl:for-each select="mdb:identificationInfo/*/mri:pointOfContact/
-                              *[cit:role/*/@codeListValue = ('custodian', 'author')]|
+                              *[cit:role/*/@codeListValue = ('owner', 'author')]|
                   mdb:identificationInfo/*/mri:citation/*/cit:citedResponsibleParty/
-                              *[cit:role/*/@codeListValue = ('custodian', 'author')]">
+                              *[cit:role/*/@codeListValue = ('owner', 'author')]">
             <xsl:variable name="name"
                           select="normalize-space(.//cit:individual/*/cit:name[1])"/>
 
