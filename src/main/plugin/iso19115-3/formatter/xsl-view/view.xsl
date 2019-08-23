@@ -344,7 +344,8 @@
                                                          'default-serialize-mode')}"
                          identifier="{generate-id()}"
                          read-only="{true()}"
-                         viewer-only="{true()}">
+                         viewer-only="{true()}"
+                         style="pointer-events:auto;">
     </gn-bounding-polygon>
     <br/>
     <br/>
