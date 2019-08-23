@@ -414,7 +414,7 @@
       </xsl:choose>
     </xsl:variable>
 
-    <div class="gn-contact">
+    <div class="gn-contact" style="pointer-events:auto;">
       <h4>
         <i class="fa fa-envelope">&#160;</i>
         <xsl:apply-templates mode="render-value"
@@ -535,7 +535,7 @@
   <xsl:template mode="render-field"
                 match="*[cit:CI_OnlineResource and */cit:linkage/* != '']"
                 priority="100">
-    <dl class="gn-link">
+    <dl class="gn-link" style="pointer-events:auto;">
       <dt>
         <xsl:value-of select="tr:node-label(tr:create($schema), name(), null)"/>
       </dt>
@@ -559,7 +559,7 @@
                 match="mco:MD_LegalConstraints[mco:graphic and mco:reference]"
                 priority="100">
 
-    <dl class="gn-link">
+    <dl class="gn-link" style="pointer-events:auto;">
       <dt>
         <xsl:value-of select="mco:reference/cit:CI_Citation/cit:title/*"/>
       </dt>
@@ -835,7 +835,7 @@
     <xsl:variable name="isFirstOfItsKind"
                   select="count(preceding-sibling::node()[name() = $nodeName]) = 0"/>
     <xsl:if test="$isFirstOfItsKind">
-      <dl class="gn-md-associated-resources">
+      <dl class="gn-md-associated-resources" style="pointer-events:auto;">
         <dt>
           <xsl:value-of select="tr:node-label(tr:create($schema), name(), null)"/>
         </dt>
