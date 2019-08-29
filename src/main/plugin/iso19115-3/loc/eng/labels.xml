@@ -5888,6 +5888,10 @@
     <label>Data Precision</label>
     <description></description>
   </element>
+  <element name="delwp:dataScale">
+    <label>Data Scale</label>
+    <description></description>
+  </element>
   <element name="delwp:refTabOwnerName">
     <label>Reference Table Owner</label>
     <description></description>
@@ -5900,7 +5904,11 @@
     <label>Reference Table Code Column Name</label>
     <description></description>
   </element>
-  <element name="delwp:comments">
+  <element name="delwp:shortColumnName">
+    <label>Short Column Name</label>
+    <description></description>
+  </element>
+  <element name="delwp:definition">
     <label>Definition</label>
     <description></description>
   </element>
