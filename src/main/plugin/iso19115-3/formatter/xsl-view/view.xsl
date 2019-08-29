@@ -726,7 +726,9 @@
         <!-- <xsl:value-of select="tr:node-label(tr:create($schema), name(), null)"/> -->
       </dt>
       <dd>
-        <table class="table table-bordered table-striped">
+        <!-- <table class="table table-bordered table-striped"> -->
+        <!-- striped table somewhat wasteful of space -->
+        <table class="table table-bordered">
           <tr>
             <!-- HACK: this crazy variable is necessary because null is somehow context
                  dependent and doesn't like being used inside an iteration on a sequence!
@@ -771,6 +773,14 @@
   <xsl:template mode="render-field"
                 match="delwp:classification"
                 priority="100">
+
+    <xsl:if test="descendant::delwp:classLevel">
+      <xsl:apply-templates mode="render-field" select="descendant::delwp:classLevel"/>
+    </xsl:if>
+
+    <xsl:if test="descendant::delwp:classAccuracy">
+      <xsl:apply-templates mode="render-field" select="descendant::delwp:classAccuracy"/>
+    </xsl:if>
 
     <dl class="gn-format">
       <dt>
