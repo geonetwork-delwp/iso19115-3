@@ -705,11 +705,19 @@
                 match="mrc:attributeGroup[descendant::delwp:MD_Attribute]"
                 priority="100">
 
-    <xsl:variable name="headers">
-      <xsl:for-each-group select="descendant::delwp:MD_Attribute/delwp:*" group-by="name()">
-        <xsl:copy-of select="."/>
-      </xsl:for-each-group>
-    </xsl:variable>
+    <!-- We need this sequence to get the columns in the order we want them
+         Adjust the ordering here to suit user requirements if change is required -->
+    <xsl:variable name="aheaders" select="(
+       'delwp:name',
+       'delwp:obligation',
+       'delwp:unique',
+       'delwp:dataType',
+       'delwp:dataLength',
+       'delwp:dataPrecision',
+       'delwp:refTabOwnerName',
+       'delwp:refTabTableName',
+       'delwp:refTabCodeColumnName',
+       'delwp:comments')"/>
 
     <dl class="gn-format">
       <dt>
@@ -717,21 +725,39 @@
       </dt>
       <dd>
         <table class="table table-bordered table-striped">
+          <tr>
+            <!-- HACK: this crazy variable is necessary because null is somehow context
+                 dependent and doesn't like being used inside an iteration on a sequence!
+                 Wholly bizarre errors result and the line number reported is wrong! -->
+            <xsl:variable name="nullity" select="null"/>
+            <xsl:for-each select="$aheaders">
+              <xsl:variable name="name" select="."/>
+              <th>
+                <xsl:value-of select="tr:node-label(tr:create($schema), $name, $nullity)"/>
+              </th>
+            </xsl:for-each>
+          </tr>
           <xsl:for-each select="descendant::delwp:MD_Attribute">
-            <xsl:if test="position()=1">
-              <tr>
-                <xsl:for-each select="$headers/*">
-                  <th>
-                    <xsl:value-of select="tr:node-label(tr:create($schema), name(), null)"/>
-                  </th>
-                </xsl:for-each>
-              </tr>
-            </xsl:if>
             <tr>
-              <xsl:for-each select="*">
-                <td>
-                  <xsl:value-of select="*"/> 
-                </td>
+              <xsl:variable name="columns">
+                <columns>
+                  <xsl:for-each select="*">
+                    <td id="{name()}">
+                      <xsl:value-of select="."/> 
+                    </td>
+                  </xsl:for-each>
+                </columns>
+              </xsl:variable>
+              <xsl:for-each select="$aheaders">
+                <xsl:variable name="name" select="."/>
+                <xsl:choose>
+                  <xsl:when test="count($columns/columns/td[@id=$name])=1">
+                    <xsl:copy-of select="$columns/columns/td[@id=$name]"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <td></td>
+                  </xsl:otherwise>
+                </xsl:choose>
               </xsl:for-each>
             </tr>      
           </xsl:for-each>

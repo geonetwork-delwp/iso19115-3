@@ -5888,6 +5888,22 @@
     <label>Data Precision</label>
     <description></description>
   </element>
+  <element name="delwp:refTabOwnerName">
+    <label>Reference Table Owner</label>
+    <description></description>
+  </element>
+  <element name="delwp:refTabTableName">
+    <label>Reference Table Name</label>
+    <description></description>
+  </element>
+  <element name="delwp:refTabCodeColumnName">
+    <label>Reference Table Code Column Name</label>
+    <description></description>
+  </element>
+  <element name="delwp:comments">
+    <label>Definition</label>
+    <description></description>
+  </element>
   <element name="mrc:cloudCoverPercentage">
     <label>Cloud Cover Percentage</label>
     <description></description>
