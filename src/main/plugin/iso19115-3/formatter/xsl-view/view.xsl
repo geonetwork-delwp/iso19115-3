@@ -714,10 +714,12 @@
        'delwp:dataType',
        'delwp:dataLength',
        'delwp:dataPrecision',
+       'delwp:dataScale',
        'delwp:refTabOwnerName',
        'delwp:refTabTableName',
        'delwp:refTabCodeColumnName',
-       'delwp:comments')"/>
+       'delwp:shortColumnName',
+       'delwp:definition')"/>
 
     <dl class="gn-format">
       <dt>

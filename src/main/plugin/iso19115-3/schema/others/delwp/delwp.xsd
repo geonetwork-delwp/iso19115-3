@@ -918,7 +918,6 @@
               <documentation>Description: Obligation of column in dataset</documentation>
             </annotation>
           </element>
-          <!-- TODO: could use gco:Boolean_PropertyType here? -->
           <element minOccurs="1" maxOccurs="1" name="unique" type="gco:CharacterString_PropertyType">
             <annotation>
               <documentation>Description: Uniqueness of column in dataset</documentation>
@@ -929,16 +928,19 @@
               <documentation>Description: Type of column in dataset</documentation>
             </annotation>
           </element>
-          <!-- TODO: could use gco:Integer_PropertyType here? -->
-          <element minOccurs="1" maxOccurs="1" name="dataLength" type="gco:CharacterString_PropertyType">
+          <element minOccurs="1" maxOccurs="1" name="dataLength" type="gco:Integer_PropertyType">
             <annotation>
               <documentation>Description: Length of column in dataset</documentation>
             </annotation>
           </element>
-          <!-- TODO: could use gco:Integer_PropertyType here? -->
-          <element minOccurs="0" maxOccurs="1" name="dataPrecision" type="gco:CharacterString_PropertyType">
+          <element minOccurs="0" maxOccurs="1" name="dataPrecision" type="gco:Integer_PropertyType">
             <annotation>
               <documentation>Description: Precision of column in dataset</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" maxOccurs="1" name="dataScale" type="gco:Integer_PropertyType">
+            <annotation>
+              <documentation>Description: Scale of column in dataset</documentation>
             </annotation>
           </element>
           <element minOccurs="0" maxOccurs="1" name="refTabOwnerName" type="gco:CharacterString_PropertyType">
@@ -956,9 +958,14 @@
               <documentation>Description: Reference Table Code Column Name?</documentation>
             </annotation>
           </element>
-          <element minOccurs="0" maxOccurs="1" name="comments" type="gco:CharacterString_PropertyType">
+          <element minOccurs="0" maxOccurs="1" name="shortColumnName" type="gco:CharacterString_PropertyType">
             <annotation>
-              <documentation>Description: Comments about this dataset column</documentation>
+              <documentation>Description: short column name</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" maxOccurs="1" name="definition" type="gco:CharacterString_PropertyType">
+            <annotation>
+              <documentation>Description: Definition of the codes used</documentation>
             </annotation>
           </element>
         </sequence>
