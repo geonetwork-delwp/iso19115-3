@@ -269,7 +269,7 @@
         </xsl:for-each>
 
         <xsl:for-each select="cit:alternateTitle">
-          <xsl:copy-of select="gn-fn-iso19115-3:index-field('altTitle', ., $langId)"/>
+          <xsl:copy-of select="gn-fn-iso19115-3:index-field('altTitle', ., $langId, true(), true())"/>
         </xsl:for-each>
 
         <xsl:for-each select="cit:date/cit:CI_Date[cit:dateType/cit:CI_DateTypeCode/@codeListValue='revision']/cit:date">
