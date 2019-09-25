@@ -172,7 +172,7 @@
     <description></description>
     <condition></condition>
   </element>
-  <element name="cit:CI_Responsibility" context="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation/cit:citedResponsibleParty">
+  <element name="cit:citedResponsibleParty" context="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation/cit:citedResponsibleParty">
     <label>Supplier</label>
     <description>Party that supplied the data used in the project</description>
     <condition>mandatory</condition>
