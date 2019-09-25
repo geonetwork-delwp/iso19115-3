@@ -1,68 +1,88 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mdb:MD_Metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
-  xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
-  xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
-  xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0"
-  xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
-  xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
-  xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
-  xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0"
-  xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
-  xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
-  xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
-  xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
-  xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0"
-  xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
-  xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0"
-  xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0"
-  xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
-  xmlns:gmw="http://standards.iso.org/iso/19115/-3/gmw/1.0"
-  xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018"
-  xmlns:gml="http://www.opengis.net/gml/3.2"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/cat/1.0 http://standards.iso.org/iso/19115/-3/cat/1.0/cat.xsd http://standards.iso.org/iso/19115/-3/cit/2.0 http://standards.iso.org/iso/19115/-3/cit/2.0/cit.xsd http://standards.iso.org/iso/19115/-3/gcx/1.0 http://standards.iso.org/iso/19115/-3/gcx/1.0/gcx.xsd http://standards.iso.org/iso/19115/-3/gex/1.0 http://standards.iso.org/iso/19115/-3/gex/1.0/gex.xsd http://standards.iso.org/iso/19115/-3/lan/1.0 http://standards.iso.org/iso/19115/-3/lan/1.0/lan.xsd http://standards.iso.org/iso/19115/-3/srv/2.0 http://standards.iso.org/iso/19115/-3/srv/2.0/srv.xsd http://standards.iso.org/iso/19115/-3/mas/1.0 http://standards.iso.org/iso/19115/-3/mas/1.0/mas.xsd http://standards.iso.org/iso/19115/-3/mcc/1.0 http://standards.iso.org/iso/19115/-3/mcc/1.0/mcc.xsd http://standards.iso.org/iso/19115/-3/mco/1.0 http://standards.iso.org/iso/19115/-3/mco/1.0/mco.xsd http://standards.iso.org/iso/19115/-3/mda/2.0 http://standards.iso.org/iso/19115/-3/mda/2.0/mda.xsd http://standards.iso.org/iso/19115/-3/mdb/2.0 http://standards.iso.org/iso/19115/-3/mdb/2.0/mdb.xsd http://standards.iso.org/iso/19115/-3/mds/2.0 http://standards.iso.org/iso/19115/-3/mds/2.0/mds.xsd http://standards.iso.org/iso/19115/-3/mdt/2.0 http://standards.iso.org/iso/19115/-3/mdt/2.0/mdt.xsd http://standards.iso.org/iso/19115/-3/mex/1.0 http://standards.iso.org/iso/19115/-3/mex/1.0/mex.xsd http://standards.iso.org/iso/19115/-3/mmi/1.0 http://standards.iso.org/iso/19115/-3/mmi/1.0/mmi.xsd http://standards.iso.org/iso/19115/-3/mpc/1.0 http://standards.iso.org/iso/19115/-3/mpc/1.0/mpc.xsd http://standards.iso.org/iso/19115/-3/mrc/2.0 http://standards.iso.org/iso/19115/-3/mrc/2.0/mrc.xsd http://standards.iso.org/iso/19115/-3/mrd/1.0 http://standards.iso.org/iso/19115/-3/mrd/1.0/mrd.xsd http://standards.iso.org/iso/19115/-3/mri/1.0 http://standards.iso.org/iso/19115/-3/mri/1.0/mri.xsd http://standards.iso.org/iso/19115/-3/mrl/2.0 http://standards.iso.org/iso/19115/-3/mrl/2.0/mrl.xsd http://standards.iso.org/iso/19115/-3/mrs/1.0 http://standards.iso.org/iso/19115/-3/mrs/1.0/mrs.xsd http://standards.iso.org/iso/19115/-3/msr/2.0 http://standards.iso.org/iso/19115/-3/msr/2.0/msr.xsd http://standards.iso.org/iso/19157/-2/mdq/1.0 http://standards.iso.org/iso/19157/-2/mdq/1.0/mdq.xsd http://standards.iso.org/iso/19115/-3/mac/2.0 http://standards.iso.org/iso/19115/-3/mac/2.0/mac.xsd http://standards.iso.org/iso/19115/-3/gco/1.0 http://standards.iso.org/iso/19115/-3/gco/1.0/gco.xsd http://standards.iso.org/iso/19115/-3/gmw/1.0 http://standards.iso.org/iso/19115/-3/gmw/1.0/gmw.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.w3.org/1999/xlink http://www.w3.org/1999/xlink.xsd">
+<mdb:MD_Metadata xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0" xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0" xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0" xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0" xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0" xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0" xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0" xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0" xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0" xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0" xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0" xmlns:delwp="https://github.com/geonetwork-delwp/iso19115-3.2018" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/cat/1.0 http://standards.iso.org/iso/19115/-3/cat/1.0/cat.xsd http://standards.iso.org/iso/19115/-3/cit/2.0 http://standards.iso.org/iso/19115/-3/cit/2.0/cit.xsd http://standards.iso.org/iso/19115/-3/gcx/1.0 http://standards.iso.org/iso/19115/-3/gcx/1.0/gcx.xsd http://standards.iso.org/iso/19115/-3/gex/1.0 http://standards.iso.org/iso/19115/-3/gex/1.0/gex.xsd http://standards.iso.org/iso/19115/-3/lan/1.0 http://standards.iso.org/iso/19115/-3/lan/1.0/lan.xsd http://standards.iso.org/iso/19115/-3/srv/2.0 http://standards.iso.org/iso/19115/-3/srv/2.0/srv.xsd http://standards.iso.org/iso/19115/-3/mas/1.0 http://standards.iso.org/iso/19115/-3/mas/1.0/mas.xsd http://standards.iso.org/iso/19115/-3/mcc/1.0 http://standards.iso.org/iso/19115/-3/mcc/1.0/mcc.xsd http://standards.iso.org/iso/19115/-3/mco/1.0 http://standards.iso.org/iso/19115/-3/mco/1.0/mco.xsd http://standards.iso.org/iso/19115/-3/mda/2.0 http://standards.iso.org/iso/19115/-3/mda/2.0/mda.xsd http://standards.iso.org/iso/19115/-3/mdb/2.0 http://standards.iso.org/iso/19115/-3/mdb/2.0/mdb.xsd http://standards.iso.org/iso/19115/-3/mds/2.0 http://standards.iso.org/iso/19115/-3/mds/2.0/mds.xsd http://standards.iso.org/iso/19115/-3/mdt/2.0 http://standards.iso.org/iso/19115/-3/mdt/2.0/mdt.xsd http://standards.iso.org/iso/19115/-3/mex/1.0 http://standards.iso.org/iso/19115/-3/mex/1.0/mex.xsd http://standards.iso.org/iso/19115/-3/mmi/1.0 http://standards.iso.org/iso/19115/-3/mmi/1.0/mmi.xsd http://standards.iso.org/iso/19115/-3/mpc/1.0 http://standards.iso.org/iso/19115/-3/mpc/1.0/mpc.xsd http://standards.iso.org/iso/19115/-3/mrc/2.0 http://standards.iso.org/iso/19115/-3/mrc/2.0/mrc.xsd http://standards.iso.org/iso/19115/-3/mrd/1.0 http://standards.iso.org/iso/19115/-3/mrd/1.0/mrd.xsd http://standards.iso.org/iso/19115/-3/mri/1.0 http://standards.iso.org/iso/19115/-3/mri/1.0/mri.xsd http://standards.iso.org/iso/19115/-3/mrl/2.0 http://standards.iso.org/iso/19115/-3/mrl/2.0/mrl.xsd http://standards.iso.org/iso/19115/-3/mrs/1.0 http://standards.iso.org/iso/19115/-3/mrs/1.0/mrs.xsd http://standards.iso.org/iso/19115/-3/msr/2.0 http://standards.iso.org/iso/19115/-3/msr/2.0/msr.xsd http://standards.iso.org/iso/19157/-2/mdq/1.0 http://standards.iso.org/iso/19157/-2/mdq/1.0/mdq.xsd http://standards.iso.org/iso/19115/-3/mac/2.0 http://standards.iso.org/iso/19115/-3/mac/2.0/mac.xsd http://standards.iso.org/iso/19115/-3/gco/1.0 http://standards.iso.org/iso/19115/-3/gco/1.0/gco.xsd http://standards.iso.org/iso/19115/-3/gmw/1.0 http://standards.iso.org/iso/19115/-3/gmw/1.0/gmw.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.w3.org/1999/xlink http://www.w3.org/1999/xlink.xsd">
   <mdb:metadataIdentifier>
     <mcc:MD_Identifier>
       <mcc:code>
-        <gco:CharacterString/>
+        <gco:CharacterString></gco:CharacterString>
       </mcc:code>
     </mcc:MD_Identifier>
   </mdb:metadataIdentifier>
   <mdb:metadataScope>
     <mdb:MD_MetadataScope>
       <mdb:resourceScope>
-        <mcc:MD_ScopeCode codeList="codeListLocation#MD_ScopeCode" codeListValue="dataset">dataset</mcc:MD_ScopeCode>
+        <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset" />
       </mdb:resourceScope>
-      <mdb:name>
-        <gco:CharacterString></gco:CharacterString>
-      </mdb:name>
     </mdb:MD_MetadataScope>
   </mdb:metadataScope>
+  <mdb:contact>
+    <cit:CI_Responsibility>
+      <cit:role>
+        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#CI_RoleCode" codeListValue="pointOfContact" />
+      </cit:role>
+      <cit:party xlink:href="local://srv/api/registries/entries/urn:delwp:rastermeta:person:-1_person_organisation" />
+    </cit:CI_Responsibility>
+  </mdb:contact>
+  <mdb:dateInfo>
+    <cit:CI_Date>
+      <cit:date>
+        <gco:DateTime>2019-08-16T10:23:33</gco:DateTime>
+      </cit:date>
+      <cit:dateType>
+        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision" />
+      </cit:dateType>
+    </cit:CI_Date>
+  </mdb:dateInfo>
   <mdb:metadataStandard>
     <cit:CI_Citation>
       <cit:title>
-        <gco:CharacterString>AU/NZS ISO 19115-1:2018</gco:CharacterString>
+        <gco:CharacterString>ISO 19115-3:2018</gco:CharacterString>
       </cit:title>
     </cit:CI_Citation>
   </mdb:metadataStandard>
-  <mdb:metadataStandard>
+  <mdb:metadataProfile>
     <cit:CI_Citation>
       <cit:title>
-        <gco:CharacterString>ISO 19115-1:2018</gco:CharacterString>
+        <gco:CharacterString>DELWP Profile</gco:CharacterString>
       </cit:title>
+      <cit:date>
+        <cit:CI_Date>
+          <cit:date>
+            <gco:Date>2019-05-24</gco:Date>
+          </cit:date>
+          <cit:dateType>
+            <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation" />
+          </cit:dateType>
+        </cit:CI_Date>
+      </cit:date>
+      <cit:edition>
+        <gco:CharacterString>Version 1</gco:CharacterString>
+      </cit:edition>
+      <cit:editionDate>
+        <gco:DateTime>2019-05-24T00:00:00</gco:DateTime>
+      </cit:editionDate>
+      <cit:citedResponsibleParty>
+        <cit:CI_Responsibility>
+          <cit:role>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#CI_RoleCode" codeListValue="owner" />
+          </cit:role>
+          <cit:party xlink:href="local://srv/api/registries/entries/urn:delwp:rastermeta:person:-1_person_organisation" />
+        </cit:CI_Responsibility>
+      </cit:citedResponsibleParty>
     </cit:CI_Citation>
-  </mdb:metadataStandard>
-  <mdb:metadataStandard>
-    <cit:CI_Citation>
-      <cit:title>
-        <gco:CharacterString>ISO 19115-3 Schemas 2018</gco:CharacterString>
-      </cit:title>
-  		<cit:editionDate>
-       	<gco:DateTime>2018-12-01T00:00:00</gco:DateTime>
-  		</cit:editionDate>
-    </cit:CI_Citation>
-  </mdb:metadataStandard>
+  </mdb:metadataProfile>
+  <mdb:referenceSystemInfo>
+    <mrs:MD_ReferenceSystem>
+      <mrs:referenceSystemIdentifier>
+        <mcc:MD_Identifier>
+          <mcc:code>
+            <gco:CharacterString></gco:CharacterString>
+          </mcc:code>
+          <mcc:description>
+            <gco:CharacterString>EPSG Geodetic Parameter</gco:CharacterString>
+          </mcc:description>
+        </mcc:MD_Identifier>
+      </mrs:referenceSystemIdentifier>
+    </mrs:MD_ReferenceSystem>
+  </mdb:referenceSystemInfo>
   <mdb:identificationInfo>
     <mri:MD_DataIdentification>
       <mri:citation>
@@ -70,82 +90,36 @@
           <cit:title>
             <gco:CharacterString>DELWP Template for pointcloud datasets</gco:CharacterString>
           </cit:title>
-          <cit:date>
-            <cit:CI_Date>
-              <cit:date>
-                <gco:DateTime/>
-              </cit:date>
-              <cit:dateType>
-                <cit:CI_DateTypeCode codeList="codeListLocation#CI_DateTypeCode" codeListValue="creation"/>
-              </cit:dateType>
-            </cit:CI_Date>
-          </cit:date>
-          <cit:identifier>
-             <mcc:MD_Identifier>
-                <mcc:code>
-                   <gco:CharacterString>ANZLIC ID obtained from?</gco:CharacterString>
-                </mcc:code>
-                <mcc:codeSpace>
-                   <gco:CharacterString>delwp-anzlicId</gco:CharacterString>
-                </mcc:codeSpace>
-             </mcc:MD_Identifier>
-          </cit:identifier>
-	      </cit:CI_Citation>
+          <cit:alternateTitle>
+            <gco:CharacterString></gco:CharacterString>
+          </cit:alternateTitle>
+        </cit:CI_Citation>
       </mri:citation>
-      <mri:status>
-        <mcc:MD_ProgressCode codeList="codeListLocation#MD_ProgressCode" codeListValue=""/>
-      </mri:status>
-			<mri:pointOfContact>
+      <mri:abstract>
+        <gco:CharacterString></gco:CharacterString>
+      </mri:abstract>
+      <mri:pointOfContact>
         <cit:CI_Responsibility>
           <cit:role>
-            <cit:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
-            </cit:role>
-            <cit:party>
-              <cit:CI_Organisation>
-                <cit:name>
-                  <gco:CharacterString>DELWP - Coordinated Imagery Program</gco:CharacterString>
-                </cit:name>
-                <cit:contactInfo>
-                   <cit:CI_Contact>
-                    <cit:address>
-                       <cit:CI_Address>
-                          <cit:deliveryPoint>
-                             <gco:CharacterString>P.O Box 500</gco:CharacterString>
-                          </cit:deliveryPoint>
-                          <cit:city>
-                             <gco:CharacterString>Melbourne</gco:CharacterString>
-                          </cit:city>
-                          <cit:administrativeArea>
-                             <gco:CharacterString>VIC</gco:CharacterString>
-                          </cit:administrativeArea>
-                          <cit:postalCode>
-                             <gco:CharacterString>3000</gco:CharacterString>
-                          </cit:postalCode>
-                          <cit:country>
-                             <gco:CharacterString>Australia</gco:CharacterString>
-                          </cit:country>
-                       </cit:CI_Address>
-                    </cit:address>
-                 </cit:CI_Contact>
-               </cit:contactInfo>
-              </cit:CI_Organisation>
-            </cit:party>
-          </cit:CI_Responsibility>
-			</mri:pointOfContact>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#CI_RoleCode" codeListValue="pointOfContact" />
+          </cit:role>
+          <cit:party xlink:href="local://srv/api/registries/entries/urn:delwp:rastermeta:person:-1_person_organisation" />
+        </cit:CI_Responsibility>
+      </mri:pointOfContact>
       <mri:spatialRepresentationType>
-        <mcc:MD_SpatialRepresentationTypeCode codeList="codeListLocation#MD_SpatialRepresentationTypeCode" codeListValue="pointCloud"/>
+        <mcc:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="pointCloud" />
       </mri:spatialRepresentationType>
       <mri:spatialResolution>
         <mri:MD_Resolution>
           <mri:distance>
-        		<gco:Distance/>
+            <gco:Distance uom="m"></gco:Distance>
           </mri:distance>
         </mri:MD_Resolution>
       </mri:spatialResolution>
       <mri:spatialResolution>
         <mri:MD_Resolution>
           <mri:vertical>
-        		<gco:Distance/>
+            <gco:Distance uom="m"></gco:Distance>
           </mri:vertical>
         </mri:MD_Resolution>
       </mri:spatialResolution>
@@ -155,34 +129,6 @@
       <mri:topicCategory>
         <mri:MD_TopicCategoryCode>imageryBaseMapsEarthCover</mri:MD_TopicCategoryCode>
       </mri:topicCategory>
-      <mri:extent>
-        <gex:EX_Extent>
-          <gex:geographicElement>
-            <gex:EX_GeographicBoundingBox>
-              <gex:westBoundLongitude>
-                <gco:Decimal>-180</gco:Decimal>
-              </gex:westBoundLongitude>
-              <gex:eastBoundLongitude>
-                <gco:Decimal>180</gco:Decimal>
-              </gex:eastBoundLongitude>
-              <gex:southBoundLatitude>
-                <gco:Decimal>-90</gco:Decimal>
-              </gex:southBoundLatitude>
-              <gex:northBoundLatitude>
-                <gco:Decimal>90</gco:Decimal>
-              </gex:northBoundLatitude>
-            </gex:EX_GeographicBoundingBox>
-          </gex:geographicElement>
-        </gex:EX_Extent>
-      </mri:extent>
-      <mri:resourceMaintenance>
-        <mmi:MD_MaintenanceInformation>
-          <mmi:maintenanceAndUpdateFrequency>
-            <mmi:MD_MaintenanceFrequencyCode codeListValue="complete"
-              codeList="./resources/codeList.xml#MD_MaintenanceFrequencyCode"/>
-          </mmi:maintenanceAndUpdateFrequency>
-        </mmi:MD_MaintenanceInformation>
-      </mri:resourceMaintenance>
       <mri:resourceFormat>
         <mrd:MD_Format>
           <mrd:formatSpecificationCitation>
@@ -190,32 +136,43 @@
               <cit:title>
                 <gco:CharacterString></gco:CharacterString>
               </cit:title>
-              <cit:edition>
-                <gco:CharacterString></gco:CharacterString>
-              </cit:edition>
             </cit:CI_Citation>
           </mrd:formatSpecificationCitation>
         </mrd:MD_Format>
-      </mri:resourceFormat>		
+      </mri:resourceFormat>
       <mri:resourceConstraints>
         <mco:MD_SecurityConstraints>
+          <mco:useLimitation>
+            <gco:CharacterString></gco:CharacterString>
+          </mco:useLimitation>
           <mco:classification>
-            <mco:MD_ClassificationCode codeList="codeListLocation#MD_ClassificationCode" codeListValue="Departmental"/>
+            <mco:MD_ClassificationCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#MD_ClassificationCode" codeListValue="limitedDistribution" />
           </mco:classification>
         </mco:MD_SecurityConstraints>
       </mri:resourceConstraints>
       <mri:defaultLocale>
         <lan:PT_Locale>
           <lan:language>
-            <lan:MD_LanguageCode codeList="codeListLocation#MD_LanguageCode" codeListValue="eng"/>
+            <lan:LanguageCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#LanguageCode" codeListValue="eng" />
           </lan:language>
           <lan:characterEncoding>
-            <lan:MD_CharacterSetCode codeList="codeListLocation#MD_CharacterSetCode" codeListValue="utf8"/>
+            <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8" />
           </lan:characterEncoding>
         </lan:PT_Locale>
       </mri:defaultLocale>
     </mri:MD_DataIdentification>
   </mdb:identificationInfo>
+  <mdb:dataQualityInfo>
+    <mdq:DQ_DataQuality>
+      <mdq:scope>
+        <mcc:MD_Scope>
+          <mcc:level>
+            <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset" />
+          </mcc:level>
+        </mcc:MD_Scope>
+      </mdq:scope>
+    </mdq:DQ_DataQuality>
+  </mdb:dataQualityInfo>
   <mdb:contentInfo>
     <mrc:MD_ImageDescription>
       <mrc:cloudCoverPercentage>
@@ -225,9 +182,13 @@
   </mdb:contentInfo>
   <mdb:resourceLineage>
     <mrl:LI_Lineage>
-      <mrl:statement>
-        <gco:CharacterString/>
-      </mrl:statement>
+      <mrl:processStep>
+        <mrl:LI_ProcessStep>
+          <mrl:description>
+            <gco:CharacterString></gco:CharacterString>
+          </mrl:description>
+        </mrl:LI_ProcessStep>
+      </mrl:processStep>
     </mrl:LI_Lineage>
   </mdb:resourceLineage>
   <mdb:acquisitionInformation>
@@ -235,114 +196,155 @@
       <mac:scope>
         <mcc:MD_Scope>
           <mcc:level>
-            <mcc:MD_ScopeCode codeList="codeListLocation#MD_ScopeCode" codeListValue=""></mcc:MD_ScopeCode>
+            <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset" />
           </mcc:level>
           <mcc:extent>
             <gex:EX_Extent>
               <gex:temporalElement>
                 <gex:EX_TemporalExtent>
                   <gex:extent>
-                    <gml:TimePeriod gml:id="A1234">
-                      <gml:beginPosition>
-                      </gml:beginPosition>
-                      <gml:endPosition>
-                      </gml:endPosition>
+                    <gml:TimePeriod gml:id="temporalExtent">
+                      <gml:beginPosition></gml:beginPosition>
+                      <gml:endPosition></gml:endPosition>
                     </gml:TimePeriod>
                   </gex:extent>
                 </gex:EX_TemporalExtent>
               </gex:temporalElement>
             </gex:EX_Extent>
           </mcc:extent>
-          <mcc:levelDescription>
-            <mcc:MD_ScopeDescription>
-              <mcc:other>
-                <gco:CharacterString>Description of mosaic, source, township - not covered by dataset title or abstract</gco:CharacterString>
-              </mcc:other>
-            </mcc:MD_ScopeDescription>
-          </mcc:levelDescription>
         </mcc:MD_Scope>
       </mac:scope>
       <mac:operation>
         <mac:MI_Operation>
-          <mac:otherPropertyType xlink:href="https://github.com/geonetwork-delwp/iso19115-3.2018#xpointer(//complexType[@name='MD_OperationProperties_Type'])"/>
+          <mac:status>
+            <mcc:MD_ProgressCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml#MD_ProgressCode" codeListValue="complete" />
+          </mac:status>
           <mac:otherProperty>
             <gco:Record xsi:type="delwp:MD_OperationProperties_Type">
               <delwp:datasetDetails>
                 <delwp:MD_DatasetDetails>
                   <delwp:platformType>
-                    <delwp:MD_PlatformTypeCode codeList="codeListLocation#MD_PlatformTypeCode" codeListValue="NotEntered"/>
+                    <delwp:MD_PlatformTypeCode codeList="https://github.com/geonetwork-delwp/iso19115-3.2018/blob/master/codelists.xml#MD_PlatformTypeCode" codeListValue="Not Entered" />
                   </delwp:platformType>
                   <delwp:assembly>
-                    <delwp:MD_AssemblyCode codeList="codeListLocation#MD_AssemblyCode" codeListValue="NotEntered"/>
+                    <delwp:MD_AssemblyCode codeList="https://github.com/geonetwork-delwp/iso19115-3.2018/blob/master/codelists.xml#MD_AssemblyCode" codeListValue="Not Entered" />
                   </delwp:assembly>
                   <delwp:tileSize>
-                    <delwp:MD_TileSizeCode codeList="codeListLocation#MD_TileSizeCode" codeListValue="NotEntered"/>
+                    <delwp:MD_TileSizeCode codeList="https://github.com/geonetwork-delwp/iso19115-3.2018/blob/master/codelists.xml#MD_TileSizeCode" codeListValue="Not Entered" />
                   </delwp:tileSize>
                   <delwp:dataDetails>
                     <delwp:MD_DataDetails>
                       <delwp:pointCloudDetails>
                         <delwp:MD_PointCloudDetails>
                           <delwp:pulseMode>
-                             <gco:CharacterString/>
+                            <gco:CharacterString></gco:CharacterString>
                           </delwp:pulseMode>
-                          <delwp:returnType>
-                             <gco:CharacterString/>
-                          </delwp:returnType>
                           <delwp:scanRate>
-                             <gco:Measure uom="Hz"/>
+                            <gco:Measure uom="Hz"></gco:Measure>
                           </delwp:scanRate>
                           <delwp:scanFrequency>
-                             <gco:Measure uom="kHz"/>
+                            <gco:Measure uom="kHz"></gco:Measure>
                           </delwp:scanFrequency>
-                          <delwp:scanAngle>
-                             <gco:Measure uom="degrees"/>
-                          </delwp:scanAngle>
                           <delwp:footprintSize>
-                             <gco:Measure uom="m"/>
+                            <gco:Measure uom="m"></gco:Measure>
                           </delwp:footprintSize>
-                          <delwp:pointDensityTarget>
-                             <gco:Measure uom="pts/m2"/>
-                          </delwp:pointDensityTarget>
                           <delwp:pointDensityActual>
-                             <gco:Measure uom="pts/m2"/>
+                            <gco:Measure uom="points/m2"></gco:Measure>
                           </delwp:pointDensityActual>
-                          <delwp:pointSpacingTarget>
-                             <gco:Measure uom="pts/m"/>
-                          </delwp:pointSpacingTarget>
                           <delwp:pointSpacingActual>
-                             <gco:Measure uom="pts/m"/>
+                            <gco:Measure uom="points/m2"></gco:Measure>
                           </delwp:pointSpacingActual>
                           <delwp:ellipsoidProvided>
-                             <gco:Boolean/>
+                            <gco:Boolean>0</gco:Boolean>
                           </delwp:ellipsoidProvided>
                           <delwp:ellipsoidVerticalDatum>
-                             <delwp:MD_EllipsoidVerticalDatumCode codeList="codeListLocation#MD_EllipsoidVerticalDatumCode" codeListValue=""/>
+                            <delwp:MD_EllipsoidVerticalDatumCode codeList="https://github.com/geonetwork-delwp/iso19115-3.2018/blob/master/codelists.xml#MD_EllipsoidVerticalDatumCode" codeListValue="Not Entered" />
                           </delwp:ellipsoidVerticalDatum>
                           <delwp:ellipsoidFormat>
-                             <delwp:MD_EllipsoidFormatCode codeList="codeListLocation#MD_EllipsoidFormatCode" codeListValue=""/>
+                            <delwp:MD_EllipsoidFormatCode codeList="https://github.com/geonetwork-delwp/iso19115-3.2018/blob/master/codelists.xml#MD_EllipsoidFormatCode" codeListValue="Not Entered" />
                           </delwp:ellipsoidFormat>
                           <delwp:geoidVerticalDatum>
-                             <delwp:MD_GeoidVerticalDatumCode codeList="codeListLocation#MD_GeoidVerticalDatumCode" codeListValue=""/>
+                            <delwp:MD_GeoidVerticalDatumCode codeList="https://github.com/geonetwork-delwp/iso19115-3.2018/blob/master/codelists.xml#MD_GeoidVerticalDatumCode" codeListValue="Not Entered" />
                           </delwp:geoidVerticalDatum>
-                          <delwp:additionalAdjustments>
-                             <gco:CharacterString/>
-                          </delwp:additionalAdjustments>
-                          <delwp:environmentalConditions>
-                             <gco:CharacterString/>
-                          </delwp:environmentalConditions>
-                          <delwp:tidalConditions>
-                             <gco:CharacterString/>
-                          </delwp:tidalConditions>
+                          <delwp:classification>
+                            <delwp:MD_Classification>
+                              <delwp:classLevel>
+                                <gco:Integer></gco:Integer>
+                              </delwp:classLevel>
+                              <delwp:class0>
+                                <gco:Boolean>0</gco:Boolean>
+                              </delwp:class0>
+                              <delwp:class1>
+                                <gco:Boolean>0</gco:Boolean>
+                              </delwp:class1>
+                              <delwp:class2>
+                                <gco:Boolean>0</gco:Boolean>
+                              </delwp:class2>
+                              <delwp:class3>
+                                <gco:Boolean>0</gco:Boolean>
+                              </delwp:class3>
+                              <delwp:class4>
+                                <gco:Boolean>0</gco:Boolean>
+                              </delwp:class4>
+                              <delwp:class5>
+                                <gco:Boolean>0</gco:Boolean>
+                              </delwp:class5>
+                              <delwp:class6>
+                                <gco:Boolean>0</gco:Boolean>
+                              </delwp:class6>
+                              <delwp:class7>
+                                <gco:Boolean>0</gco:Boolean>
+                              </delwp:class7>
+                              <delwp:class8>
+                                <gco:Boolean>0</gco:Boolean>
+                              </delwp:class8>
+                              <delwp:class9>
+                                <gco:Boolean>0</gco:Boolean>
+                              </delwp:class9>
+                              <delwp:class10>
+                                <gco:Boolean>0</gco:Boolean>
+                              </delwp:class10>
+                              <delwp:class12>
+                                <gco:Boolean>0</gco:Boolean>
+                              </delwp:class12>
+                            </delwp:MD_Classification>
+                          </delwp:classification>
                         </delwp:MD_PointCloudDetails>
                       </delwp:pointCloudDetails>
                     </delwp:MD_DataDetails>
                   </delwp:dataDetails>
+                  <delwp:surveyDetails>
+                    <delwp:MD_SurveyDetails>
+                      <delwp:aerialSurveyDetails>
+                        <delwp:MD_AerialSurveyDetails>
+                          <delwp:runs>
+                            <gco:Integer></gco:Integer>
+                          </delwp:runs>
+                          <delwp:runOrientation>
+                            <delwp:MD_RunOrientationCode codeList="https://github.com/geonetwork-delwp/iso19115-3.2018/blob/master/codelists.xml#MD_RunOrientationCode" codeListValue="Not Entered" />
+                          </delwp:runOrientation>
+                          <delwp:swathWidth>
+                            <gco:Integer></gco:Integer>
+                          </delwp:swathWidth>
+                          <delwp:sideOverlap>
+                            <gco:Integer></gco:Integer>
+                          </delwp:sideOverlap>
+                          <delwp:flyingHeightUnit>
+                            <delwp:MD_FlyingHeightUnitCode codeList="https://github.com/geonetwork-delwp/iso19115-3.2018/blob/master/codelists.xml#MD_FlyingHeightUnitCode" codeListValue="Not Entered" />
+                          </delwp:flyingHeightUnit>
+                          <delwp:flightHeight>
+                            <gco:Integer></gco:Integer>
+                          </delwp:flightHeight>
+                        </delwp:MD_AerialSurveyDetails>
+                      </delwp:aerialSurveyDetails>
+                    </delwp:MD_SurveyDetails>
+                  </delwp:surveyDetails>
                 </delwp:MD_DatasetDetails>
               </delwp:datasetDetails>
             </gco:Record>
           </mac:otherProperty>
         </mac:MI_Operation>
-      </mac:operation> 
+      </mac:operation>
     </mac:MI_AcquisitionInformation>
   </mdb:acquisitionInformation>
 </mdb:MD_Metadata>

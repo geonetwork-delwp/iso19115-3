@@ -2597,15 +2597,7 @@
   </element>
   <element name="mri:distance" id="61.0">
     <label>Horizontal Accuracy</label>
-    <description>Horizontal Accuracy eg. 10</description>
-    <helper relAtt="uom">
-      <option value="10" title="cm">10 cm</option>
-      <option value="25" title="cm">25 cm</option>
-      <option value="50" title="cm">50 cm</option>
-      <option value="1" title="m">1 m</option>
-      <option value="30" title="m">30 m</option>
-      <option value="100" title="m">100 m</option>
-    </helper>
+    <description>Horizontal Accuracy eg. 1.0m</description>
   </element>
   <element name="mrd:distributionFormat" id="271.0">
     <label>Distribution format</label>
@@ -4021,15 +4013,7 @@
   </element>
   <element name="mri:vertical">
     <label>Vertical Accuracy</label>
-    <description>Vertical accuracy eg. 10</description>
-    <helper relAtt="uom">
-      <option value="10" title="cm">10 cm</option>
-      <option value="25" title="cm">25 cm</option>
-      <option value="50" title="cm">50 cm</option>
-      <option value="1" title="m">1 m</option>
-      <option value="30" title="m">30 m</option>
-      <option value="100" title="m">100 m</option>
-    </helper>
+    <description>Vertical accuracy eg. 1.0</description>
   </element>
   <element name="mri:angularDistance">
     <label>Angular sampling measure</label>
@@ -4284,7 +4268,7 @@
     </description>
   </element>
   <element name="cit:title" id="285.0"
-           context="/mdb:MD_Metadata/mdb:distributionInfo/mrd:MD_Distribution/mrd:distributionFormat/mrd:MD_Format/mrd:formatSpecificationCitation/cit:CI_Citation/cit:title">
+           context="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceFormat/mrd:MD_Format/mrd:formatSpecificationCitation/cit:CI_Citation/cit:title">
     <label>Format name</label>
     <description>Name of the data format(s)</description>
     <help>File or link format name</help>
@@ -5808,55 +5792,51 @@
     <description></description>
   </element>
   <element name="delwp:class0">
-    <label>Class 0</label>
+    <label>Class 0 - Unclassified</label>
     <description></description>
   </element>
   <element name="delwp:class1">
-    <label>Class 1</label>
+    <label>Class 1 - Default</label>
     <description></description>
   </element>
   <element name="delwp:class2">
-    <label>Class 2</label>
+    <label>Class 2 - Ground</label>
     <description></description>
   </element>
   <element name="delwp:class3">
-    <label>Class 3</label>
+    <label>Class 3 - Low Vegetation</label>
     <description></description>
   </element>
   <element name="delwp:class4">
-    <label>Class 4</label>
+    <label>Class 4 - Medium Vegetation</label>
     <description></description>
   </element>
   <element name="delwp:class5">
-    <label>Class 5</label>
+    <label>Class 5 - High Vegetation</label>
     <description></description>
   </element>
   <element name="delwp:class6">
-    <label>Class 6</label>
+    <label>Class 6 - Buildings/Structures</label>
     <description></description>
   </element>
   <element name="delwp:class7">
-    <label>Class 7</label>
+    <label>Class 7 - Low/High Points</label>
     <description></description>
   </element>
   <element name="delwp:class8">
-    <label>Class 8</label>
+    <label>Class 8 - Model Key Points</label>
     <description></description>
   </element>
   <element name="delwp:class9">
-    <label>Class 9</label>
+    <label>Class 9- Water</label>
     <description></description>
   </element>
   <element name="delwp:class10">
-    <label>Class 10</label>
-    <description></description>
-  </element>
-  <element name="delwp:class11">
-    <label>Class 11</label>
+    <label>Class 10 - Bridge</label>
     <description></description>
   </element>
   <element name="delwp:class12">
-    <label>Class 12</label>
+    <label>Class 12 - Flightline Overlap Points</label>
     <description></description>
   </element>
   <element name="delwp:demCreator">
@@ -5926,5 +5906,12 @@
   <element name="mac:MI_Sensor">
     <label>Sensor</label>
     <description></description>
+  </element>
+  <element name="mcc:code" id="72000.0" context="/mdb:MD_Metadata/mdb:referenceSystemInfo/mrs:MD_ReferenceSystem/mrs:referenceSystemIdentifier/mcc:MD_Identifier/mcc:code">
+    <label>Reference System</label>
+    <description>The spatial reference system used for coordinates in the dataset.</description>
+    <helper>
+      <option value="MGA Zone 55 GDA94">MGA Zone 55 GDA94</option>
+    </helper>
   </element>
 </labels>

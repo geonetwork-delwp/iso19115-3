@@ -86,6 +86,7 @@
   <metadataConstraints>Metadata Constraints</metadataConstraints>
   <projectContacts>Responsibility</projectContacts>
   <resourceSpatial>Spatial</resourceSpatial>
+  <resourceTemporal>Temporal</resourceTemporal>
   <distribution_name>Name</distribution_name>
   <distribution_version>Version</distribution_version>
   <resourceType>Type</resourceType>
@@ -162,5 +163,5 @@
   <program>Program</program>
   <jurisdictionId>Jurisdiction</jurisdictionId>
   <vsdl>Victorian Spatial Data Library (VSDL) Schema</vsdl>
-  <custodianIsMandatory><span>You <b>must</b> have a resource custodian! Please select one by searching <i class="fa fa-search"></i> or typing in the box. If you can't find a custodian then enter one manually by pressing the <i class="fa fa-plus"></i> button.</span></custodianIsMandatory>
+  <custodianIsMandatory><span>You <b>must</b> have a resource custodian! Please select one by searching <i class="fa fa-search"></i> or typing in the box.</span></custodianIsMandatory>
 </strings>
