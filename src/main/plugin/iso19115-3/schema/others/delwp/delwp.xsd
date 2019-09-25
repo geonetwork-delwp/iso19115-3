@@ -222,21 +222,21 @@
       <complexContent>
         <extension base="gco:AbstractObject_Type">
       <sequence minOccurs="0">
-        <element minOccurs="1" name="classLevel" type="gco:Integer_PropertyType"/>
+        <element minOccurs="0" name="classLevel" type="gco:Integer_PropertyType"/>
         <element minOccurs="0" name="classAccuracy" type="gco:Real_PropertyType"/>
         <element minOccurs="0" name="otherClass" type="gco:CharacterString_PropertyType"/>
-        <element minOccurs="1" name="class0" type="gco:Boolean_PropertyType"/>
-        <element minOccurs="1" name="class1" type="gco:Boolean_PropertyType"/>
-        <element minOccurs="1" name="class2" type="gco:Boolean_PropertyType"/>
-        <element minOccurs="1" name="class3" type="gco:Boolean_PropertyType"/>
-        <element minOccurs="1" name="class4" type="gco:Boolean_PropertyType"/>
-        <element minOccurs="1" name="class5" type="gco:Boolean_PropertyType"/>
-        <element minOccurs="1" name="class6" type="gco:Boolean_PropertyType"/>
-        <element minOccurs="1" name="class7" type="gco:Boolean_PropertyType"/>
-        <element minOccurs="1" name="class8" type="gco:Boolean_PropertyType"/>
-        <element minOccurs="1" name="class9" type="gco:Boolean_PropertyType"/>
-        <element minOccurs="1" name="class10" type="gco:Boolean_PropertyType"/>
-        <element minOccurs="1" name="class12" type="gco:Boolean_PropertyType"/>
+        <element minOccurs="0" name="class0" type="gco:Boolean_PropertyType"/>
+        <element minOccurs="0" name="class1" type="gco:Boolean_PropertyType"/>
+        <element minOccurs="0" name="class2" type="gco:Boolean_PropertyType"/>
+        <element minOccurs="0" name="class3" type="gco:Boolean_PropertyType"/>
+        <element minOccurs="0" name="class4" type="gco:Boolean_PropertyType"/>
+        <element minOccurs="0" name="class5" type="gco:Boolean_PropertyType"/>
+        <element minOccurs="0" name="class6" type="gco:Boolean_PropertyType"/>
+        <element minOccurs="0" name="class7" type="gco:Boolean_PropertyType"/>
+        <element minOccurs="0" name="class8" type="gco:Boolean_PropertyType"/>
+        <element minOccurs="0" name="class9" type="gco:Boolean_PropertyType"/>
+        <element minOccurs="0" name="class10" type="gco:Boolean_PropertyType"/>
+        <element minOccurs="0" name="class12" type="gco:Boolean_PropertyType"/>
       </sequence>
         </extension>
       </complexContent>

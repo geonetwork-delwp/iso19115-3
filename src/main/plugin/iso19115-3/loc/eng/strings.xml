@@ -163,5 +163,6 @@
   <program>Program</program>
   <jurisdictionId>Jurisdiction</jurisdictionId>
   <vsdl>Victorian Spatial Data Library (VSDL) Schema</vsdl>
+  <classification>Classification</classification>
   <custodianIsMandatory><span>You <b>must</b> have a resource custodian! Please select one by searching <i class="fa fa-search"></i> or typing in the box.</span></custodianIsMandatory>
 </strings>

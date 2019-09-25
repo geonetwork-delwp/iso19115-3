@@ -180,6 +180,7 @@
       </mrc:cloudCoverPercentage>
     </mrc:MD_ImageDescription>
   </mdb:contentInfo>
+  <!--
   <mdb:resourceLineage>
     <mrl:LI_Lineage>
       <mrl:processStep>
@@ -191,6 +192,7 @@
       </mrl:processStep>
     </mrl:LI_Lineage>
   </mdb:resourceLineage>
+  -->
   <mdb:acquisitionInformation>
     <mac:MI_AcquisitionInformation>
       <mac:scope>
@@ -236,6 +238,7 @@
                     <delwp:MD_DataDetails>
                       <delwp:pointCloudDetails>
                         <delwp:MD_PointCloudDetails>
+                          <!-- all optional but need to make sure uom is added in update-fixed-info.xsl 
                           <delwp:scanRate>
                             <gco:Measure uom="Hz"></gco:Measure>
                           </delwp:scanRate>
@@ -251,18 +254,22 @@
                           <delwp:pointDensityTarget>
                             <gco:Measure uom="points/m2"></gco:Measure>
                           </delwp:pointDensityTarget>
+                          -->
                           <delwp:pointDensityActual>
                             <gco:Measure uom="points/m2"></gco:Measure>
                           </delwp:pointDensityActual>
+                          <!--
                           <delwp:pointSpacingTarget>
                             <gco:Measure uom="points/m2"></gco:Measure>
                           </delwp:pointSpacingTarget>
+                          -->
                           <delwp:pointSpacingActual>
                             <gco:Measure uom="points/m2"></gco:Measure>
                           </delwp:pointSpacingActual>
                           <delwp:geoidVerticalDatum>
                             <delwp:MD_GeoidVerticalDatumCode codeList="https://github.com/geonetwork-delwp/iso19115-3.2018/blob/master/codelists.xml#MD_GeoidVerticalDatumCode" codeListValue="Not Entered" />
                           </delwp:geoidVerticalDatum>
+                          <!--
                           <delwp:classification>
                             <delwp:MD_Classification>
                               <delwp:classLevel>
@@ -306,6 +313,7 @@
                               </delwp:class12>
                             </delwp:MD_Classification>
                           </delwp:classification>
+                          -->
                         </delwp:MD_PointCloudDetails>
                       </delwp:pointCloudDetails>
                     </delwp:MD_DataDetails>

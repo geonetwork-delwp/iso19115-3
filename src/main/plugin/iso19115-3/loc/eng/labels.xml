@@ -5651,8 +5651,8 @@
     <label>Pulse Mode</label>
     <description></description>
   </element>
-  <element name="delwp:returnTypes">
-    <label>Return Types</label>
+  <element name="delwp:returnType">
+    <label>Return Type</label>
     <description></description>
   </element>
   <element name="delwp:scanRate">
@@ -5789,6 +5789,14 @@
   </element>
   <element name="delwp:classLevel">
     <label>Class Level</label>
+    <description></description>
+  </element>
+  <element name="delwp:otherClass">
+    <label>Other Classification</label>
+    <description></description>
+  </element>
+  <element name="delwp:classAccuracy">
+    <label>Classification Accuracy</label>
     <description></description>
   </element>
   <element name="delwp:class0">
