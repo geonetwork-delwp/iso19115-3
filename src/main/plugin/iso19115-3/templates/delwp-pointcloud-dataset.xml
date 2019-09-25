@@ -236,33 +236,30 @@
                     <delwp:MD_DataDetails>
                       <delwp:pointCloudDetails>
                         <delwp:MD_PointCloudDetails>
-                          <delwp:pulseMode>
-                            <gco:CharacterString></gco:CharacterString>
-                          </delwp:pulseMode>
                           <delwp:scanRate>
                             <gco:Measure uom="Hz"></gco:Measure>
                           </delwp:scanRate>
                           <delwp:scanFrequency>
                             <gco:Measure uom="kHz"></gco:Measure>
                           </delwp:scanFrequency>
+                          <delwp:scanAngle>
+                            <gco:Measure uom="degrees"></gco:Measure>
+                          </delwp:scanAngle>
                           <delwp:footprintSize>
                             <gco:Measure uom="m"></gco:Measure>
                           </delwp:footprintSize>
+                          <delwp:pointDensityTarget>
+                            <gco:Measure uom="points/m2"></gco:Measure>
+                          </delwp:pointDensityTarget>
                           <delwp:pointDensityActual>
                             <gco:Measure uom="points/m2"></gco:Measure>
                           </delwp:pointDensityActual>
+                          <delwp:pointSpacingTarget>
+                            <gco:Measure uom="points/m2"></gco:Measure>
+                          </delwp:pointSpacingTarget>
                           <delwp:pointSpacingActual>
                             <gco:Measure uom="points/m2"></gco:Measure>
                           </delwp:pointSpacingActual>
-                          <delwp:ellipsoidProvided>
-                            <gco:Boolean>0</gco:Boolean>
-                          </delwp:ellipsoidProvided>
-                          <delwp:ellipsoidVerticalDatum>
-                            <delwp:MD_EllipsoidVerticalDatumCode codeList="https://github.com/geonetwork-delwp/iso19115-3.2018/blob/master/codelists.xml#MD_EllipsoidVerticalDatumCode" codeListValue="Not Entered" />
-                          </delwp:ellipsoidVerticalDatum>
-                          <delwp:ellipsoidFormat>
-                            <delwp:MD_EllipsoidFormatCode codeList="https://github.com/geonetwork-delwp/iso19115-3.2018/blob/master/codelists.xml#MD_EllipsoidFormatCode" codeListValue="Not Entered" />
-                          </delwp:ellipsoidFormat>
                           <delwp:geoidVerticalDatum>
                             <delwp:MD_GeoidVerticalDatumCode codeList="https://github.com/geonetwork-delwp/iso19115-3.2018/blob/master/codelists.xml#MD_GeoidVerticalDatumCode" codeListValue="Not Entered" />
                           </delwp:geoidVerticalDatum>
@@ -313,6 +310,7 @@
                       </delwp:pointCloudDetails>
                     </delwp:MD_DataDetails>
                   </delwp:dataDetails>
+                  <!--
                   <delwp:surveyDetails>
                     <delwp:MD_SurveyDetails>
                       <delwp:aerialSurveyDetails>
@@ -339,6 +337,7 @@
                       </delwp:aerialSurveyDetails>
                     </delwp:MD_SurveyDetails>
                   </delwp:surveyDetails>
+                  -->
                 </delwp:MD_DatasetDetails>
               </delwp:datasetDetails>
             </gco:Record>

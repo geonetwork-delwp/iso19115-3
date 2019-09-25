@@ -259,12 +259,12 @@
           <documentation>Description: Lidar details return types</documentation>
         </annotation>
       </element>
-      <element minOccurs="1" name="scanRate" type="gco:Measure_PropertyType">
+      <element minOccurs="0" name="scanRate" type="gco:Measure_PropertyType">
         <annotation>
           <documentation>Description: Lidar details scan rate</documentation>
         </annotation>
       </element>
-      <element minOccurs="1" name="scanFrequency" type="gco:Measure_PropertyType">
+      <element minOccurs="0" name="scanFrequency" type="gco:Measure_PropertyType">
         <annotation>
           <documentation>Description: Lidar details scan frequency</documentation>
         </annotation>
@@ -274,7 +274,7 @@
           <documentation>Description: Lidar details scan angle</documentation>
         </annotation>
       </element>
-      <element minOccurs="1" name="footprintSize" type="gco:Measure_PropertyType">
+      <element minOccurs="0" name="footprintSize" type="gco:Measure_PropertyType">
         <annotation>
           <documentation>Description: Lidar details footprint size</documentation>
         </annotation>
@@ -299,7 +299,7 @@
           <documentation>Description: Lidar details point spacing actual</documentation>
         </annotation>
       </element>
-      <element minOccurs="1" name="ellipsoidProvided" type="gco:Boolean_PropertyType">
+      <element minOccurs="0" name="ellipsoidProvided" type="gco:Boolean_PropertyType">
         <annotation>
           <documentation>Description: Lidar details ellipsoid provided</documentation>
         </annotation>
@@ -314,7 +314,7 @@
           <documentation>Description: Describes the ellipsoid format</documentation>
         </annotation>
       </element>
-      <element minOccurs="0" name="geoidVerticalDatum" type="delwp:MD_GeoidVerticalDatumCode_PropertyType">
+      <element minOccurs="1" name="geoidVerticalDatum" type="delwp:MD_GeoidVerticalDatumCode_PropertyType">
         <annotation>
           <documentation>Description: Describes the geoid vertical datum</documentation>
         </annotation>
