@@ -172,6 +172,11 @@
     <description></description>
     <condition></condition>
   </element>
+  <element name="cit:CI_Responsibility" context="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation/cit:citedResponsibleParty">
+    <label>Supplier</label>
+    <description>Party that supplied the data used in the project</description>
+    <condition>mandatory</condition>
+  </element>
   <element name="mac:identifier">
     <label>Identifier</label>
     <description></description>
@@ -182,10 +187,10 @@
     <description></description>
     <condition></condition>
   </element>
-  <element name="mac:description">
-    <label>Description</label>
-    <description></description>
-    <condition></condition>
+  <element name="mac:description" context="mac:MI_Operation">
+    <label>Program</label>
+    <description>Program under which data has been collected</description>
+    <condition>mandatory</condition>
   </element>
   <element name="mac:mountedOn">
     <label>Mounted on</label>
@@ -1966,6 +1971,7 @@
       information is known.
       Example: "DCW" as an alternative title for "Digital Chart of the World
     </description>
+    <condition>mandatory</condition>
   </element>
   <element name="mrd:amendmentNumber" id="287.0">
     <label>Amendment number</label>
@@ -3911,6 +3917,7 @@
     <description>Summary of the intentions with which the resource(s) was
       developed
     </description>
+    <condition>mandatory</condition>
   </element>
   <element name="mrc:radiometricCalibrationDataAvailability" id="252.0">
     <label>Radiometric calibration data availability</label>

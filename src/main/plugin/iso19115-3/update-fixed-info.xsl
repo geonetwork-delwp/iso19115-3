@@ -26,6 +26,8 @@
   <xsl:include href="convert/functions.xsl"/>
   <xsl:include href="layout/utility-fn.xsl"/>
 
+  <xsl:variable name="codelistloc" select="'http://standards.iso.org/iso/19115/resources/Codelist/cat/codelists.xml'"/>
+
   <xsl:variable name="editorConfig"
                 select="document('layout/config-editor.xml')"/>
 
@@ -105,7 +107,7 @@
               <gco:DateTime><xsl:value-of select="/root/env/changeDate"/></gco:DateTime>
             </cit:date>
             <cit:dateType>
-              <cit:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation"/>
+              <cit:CI_DateTypeCode codeList="{concat($codelistloc,'#CI_DateTypeCode')}" codeListValue="creation"/>
             </cit:dateType>
           </cit:CI_Date>
         </mdb:dateInfo>
@@ -117,7 +119,7 @@
               <gco:DateTime><xsl:value-of select="/root/env/changeDate"/></gco:DateTime>
             </cit:date>
             <cit:dateType>
-              <cit:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision"/>
+              <cit:CI_DateTypeCode codeList="{concat($codelistloc,'#CI_DateTypeCode')}" codeListValue="revision"/>
             </cit:dateType>
           </cit:CI_Date>
         </mdb:dateInfo>
@@ -137,7 +139,7 @@
                   <gco:DateTime><xsl:value-of select="/root/env/changeDate"/></gco:DateTime>
                 </cit:date>
                 <cit:dateType>
-                  <cit:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision"/>
+                  <cit:CI_DateTypeCode codeList="{concat($codelistloc,'#CI_DateTypeCode')}" codeListValue="revision"/>
                 </cit:dateType>
               </cit:CI_Date>
             </mdb:dateInfo>
@@ -187,7 +189,7 @@
             point of truth for the metadata linkage but this
             needs to be language dependant. -->
             <cit:function>
-              <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
+              <cit:CI_OnLineFunctionCode codeList="{concat($codelistloc,'#CI_OnLineFunctionCode')}"
                                          codeListValue="completeMetadata"/>
             </cit:function>
           </cit:CI_OnlineResource>
@@ -210,6 +212,34 @@
     </xsl:copy>
   </xsl:template>
 
+  <xsl:template match="cit:CI_Citation[name(..)='mri:citation']">
+    <xsl:copy>
+      <xsl:apply-templates select="cit:title"/>
+      <xsl:apply-templates select="cit:alternateTitle"/>
+      <xsl:apply-templates select="cit:date"/>
+      <xsl:apply-templates select="cit:edition"/>
+      <xsl:apply-templates select="cit:editionDate"/>
+      <xsl:apply-templates select="cit:identifier"/>
+      <xsl:if test="count(cit:citedResponsibleParty/cit:CI_Responsibility/cit:role/cit:CI_RoleCode[@codeListValue='custodian'])=0">
+        <cit:citedResponsibleParty>
+          <cit:CI_Responsibility>
+            <cit:role>
+              <cit:CI_RoleCode codeList="{concat($codelistloc,'#CI_RoleCode')}"
+                               codeListValue="custodian">custodian</cit:CI_RoleCode>
+            </cit:role>
+          </cit:CI_Responsibility>
+        </cit:citedResponsibleParty>
+      </xsl:if>
+      <xsl:apply-templates select="cit:citedResponsibleParty"/>
+      <xsl:apply-templates select="cit:presentationForm"/>
+      <xsl:apply-templates select="cit:series"/>
+      <xsl:apply-templates select="cit:otherCitationDetails"/>
+      <xsl:apply-templates select="cit:ISBN"/>
+      <xsl:apply-templates select="cit:ISSN"/>
+      <xsl:apply-templates select="cit:onlineResource"/>
+      <xsl:apply-templates select="cit:graphic"/>
+    </xsl:copy>
+  </xsl:template>
 
   <!-- Update revision date -->
   <xsl:template match="mdb:dateInfo[cit:CI_Date/cit:dateType/cit:CI_DateTypeCode/@codeListValue='lastUpdate']">
@@ -221,7 +251,7 @@
               <gco:DateTime><xsl:value-of select="/root/env/changeDate"/></gco:DateTime>
             </cit:date>
             <cit:dateType>
-              <cit:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="lastUpdate"/>
+              <cit:CI_DateTypeCode codeList="{concat($codelistloc,'#CI_DateTypeCode')}" codeListValue="lastUpdate"/>
             </cit:dateType>
           </cit:CI_Date>
         </xsl:when>
@@ -364,7 +394,7 @@
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
       <xsl:attribute name="codeList">
-        <xsl:value-of select="concat('http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19157_Schemas/resources/codelist/ML_gmxCodelists.xml#',local-name(.))"/>
+        <xsl:value-of select="concat($codelistloc,'#',local-name(.))"/>
       </xsl:attribute>
     </xsl:copy>
   </xsl:template>
@@ -373,7 +403,7 @@
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
       <xsl:attribute name="codeList">
-        <xsl:value-of select="concat('http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#',local-name(.))"/>
+        <xsl:value-of select="concat($codelistloc,'#',local-name(.))"/>
       </xsl:attribute>
     </xsl:copy>
   </xsl:template>

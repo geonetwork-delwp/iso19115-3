@@ -78,13 +78,13 @@
   <resourceKeywords>Keywords</resourceKeywords>
   <projectKeywords>Keywords</projectKeywords>
   <resourceMaintenance>Maintenance</resourceMaintenance>
-  <projectMaintenance>Maintenance</projectMaintenance>
+  <projectConstraints>Constraints</projectConstraints>
   <resourceAcquisitionInfo>Acquisition Info</resourceAcquisitionInfo>
   <projectAcquisitionInfo>Acquisition Info</projectAcquisitionInfo>
   <constraints>Constraints</constraints>
   <resourceConstraints>Constraints</resourceConstraints>
   <metadataConstraints>Metadata Constraints</metadataConstraints>
-  <projectContacts>Responsibiliy</projectContacts>
+  <projectContacts>Responsibility</projectContacts>
   <resourceSpatial>Spatial</resourceSpatial>
   <distribution_name>Name</distribution_name>
   <distribution_version>Version</distribution_version>
@@ -162,4 +162,5 @@
   <program>Program</program>
   <jurisdictionId>Jurisdiction</jurisdictionId>
   <vsdl>Victorian Spatial Data Library (VSDL) Schema</vsdl>
+  <custodianIsMandatory><span>You <b>must</b> have a resource custodian! Please select one by searching <i class="fa fa-search"></i> or typing in the box. If you can't find a custodian then enter one manually by pressing the <i class="fa fa-plus"></i> button.</span></custodianIsMandatory>
 </strings>
