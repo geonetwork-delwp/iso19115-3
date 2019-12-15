@@ -95,6 +95,9 @@
           </cit:alternateTitle>
         </cit:CI_Citation>
       </mri:citation>
+      <mri:status>
+         <mcc:MD_ProgressCode codeList="codeListLocation#MD_ProgressCode" codeListValue="complete"/>
+       </mri:status>
       <mri:abstract>
         <gco:CharacterString></gco:CharacterString>
       </mri:abstract>
@@ -129,6 +132,14 @@
       <mri:topicCategory>
         <mri:MD_TopicCategoryCode>imageryBaseMapsEarthCover</mri:MD_TopicCategoryCode>
       </mri:topicCategory>
+      <mri:resourceMaintenance>
+        <mmi:MD_MaintenanceInformation>
+          <mmi:maintenanceAndUpdateFrequency>
+            <mmi:MD_MaintenanceFrequencyCode codeListValue="complete"
+              codeList="./resources/codeList.xml#MD_MaintenanceFrequencyCode"/>
+          </mmi:maintenanceAndUpdateFrequency>
+        </mmi:MD_MaintenanceInformation>
+      </mri:resourceMaintenance>
       <mri:resourceFormat>
         <mrd:MD_Format>
           <mrd:formatSpecificationCitation>

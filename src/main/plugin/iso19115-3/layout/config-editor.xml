@@ -287,9 +287,9 @@
                   <mcc:code>
                     <gco:CharacterString>WGS 84 (EPSG:4326)</gco:CharacterString>
                   </mcc:code>
-                  <mcc:codeSpace>
+                  <mcc:description>
                     <gco:CharacterString>EPSG Geodetic Parameter</gco:CharacterString>
-                  </mcc:codeSpace>
+                  </mcc:description>
                 </mcc:MD_Identifier>
               </mrs:referenceSystemIdentifier>
             </mrs:MD_ReferenceSystem>
@@ -556,9 +556,7 @@
       <!-- Raster type details: only applies to spatial rep type = grid -->
       <tab id="rasterTypeDetails" mode="flat" displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='grid']) > 0">
           <!-- No raster type details -->
-          <section displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record//delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails//delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[@codeListValue = 'AerialPhoto' or @codeListValue = 'Satellite' or @codeListValue = 'DEM']) = 0">
-            <text ref="noRasterTypeDetails"/>
-				  </section>
+          <text ref="noRasterTypeDetails" if="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record//delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails//delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[not(@codeListValue='AerialPhoto') and not(@codeListValue='DEM') and not(@codeListValue='Satellite')]) > 0"/>
 
           <!-- Aerial Photo raster type details -->
           <section displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record//delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails//delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[@codeListValue='AerialPhoto']) > 0">
@@ -814,7 +812,7 @@
           <!-- mac:method = rastermeta Method -->
           <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record//delwp:projectDetails/delwp:MD_ProjectDetails/delwp:method"/>
 					<!-- offer a cit:identifier for schedule number aka RFQ Number--> 
-          <field name="projectScheduleNumber" templateModeOnly="true" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation/cit:identifier[mcc:MD_Identifier/mcc:codeSpace/gco:CharacterString='SequenceNumber']" del=".">
+          <field name="projectScheduleNumber" templateModeOnly="true" xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:citation/cit:CI_Citation/cit:identifier[mcc:MD_Identifier/mcc:description/gco:CharacterString='ScheduleNumber']" del=".">
             <template>
               <values>
                 <key label="projectScheduleNumber" xpath="mcc:MD_Identifier/mcc:code/gco:CharacterString" tooltip="delwp-scheduleNumber" use="textarea"/>
@@ -825,9 +823,9 @@
           					<mcc:code>
             					<gco:CharacterString>{{projectScheduleNumber}}</gco:CharacterString>
           					</mcc:code>
-            				<mcc:codeSpace>
+            				<mcc:description>
               				<gco:CharacterString>ScheduleNumber</gco:CharacterString>
-            				</mcc:codeSpace>
+            				</mcc:description>
         					</mcc:MD_Identifier>
       					</cit:identifier>
               </snippet>
