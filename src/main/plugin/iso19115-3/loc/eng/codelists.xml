@@ -3716,4 +3716,223 @@
 </entry>
 </codelist>
 
+<codelist name="delwp:MD_ProcessingLevelCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>ACRESMap-Oriented</code>
+   <label>ACRES Map-Oriented</label>
+   <description>ACRES Map-Oriented</description>
+</entry>
+<entry>
+   <code>ACRESOrtho-Corrected</code>
+   <label>ACRES Ortho-Corrected</label>
+   <description>ACRES Ortho-Corrected</description>
+</entry>
+<entry>
+   <code>ACRESPath-Image</code>
+   <label>ACRES Path-Image</label>
+   <description>ACRES Path-Image</description>
+</entry>
+<entry>
+   <code>ACRESSystematicGeo-Correction</code>
+   <label>ACRES Systematic Geo-Correction</label>
+   <description>ACRES Systematic Geo-Correction</description>
+</entry>
+<entry>
+   <code>ASTERLevel-1A</code>
+   <label>ASTER Level-1A</label>
+   <description>ASTER Level-1A</description>
+</entry>
+<entry>
+   <code>ASTERLevel-2</code>
+   <label>ASTER Level-2</label>
+   <description>ASTER Level-2</description>
+</entry>
+<entry>
+   <code>Ortho-Corrected</code>
+   <label>Ortho-Corrected</label>
+   <description>Ortho-Corrected</description>
+</entry>
+<entry>
+   <code>SAR-PRI</code>
+   <label>SAR-PRI</label>
+   <description>SAR-PRI</description>
+</entry>
+<entry>
+   <code>SAR-SGF</code>
+   <label>SAR-SGF</label>
+   <description>SAR-SGF</description>
+</entry>
+<entry>
+   <code>SAR-SLC</code>
+   <label>SAR-SLC</label>
+   <description>SAR-SLC</description>
+</entry>
+<entry>
+   <code>SPOTLevel-1</code>
+   <label>SPOT Level-1</label>
+   <description>SPOT Level-1</description>
+</entry>
+<entry>
+   <code>SPOTLevel-10</code>
+   <label>SPOT Level-10</label>
+   <description>SPOT Level-10</description>
+</entry>
+<entry>
+   <code>SPOTLevel-1A</code>
+   <label>SPOT Level-1A</label>
+   <description>SPOT Level-1A</description>
+</entry>
+<entry>
+   <code>SPOTLevel-5</code>
+   <label>SPOT Level-5</label>
+   <description>SPOT Level-5</description>
+</entry>
+<entry>
+   <code>SPOTLevel-6</code>
+   <label>SPOT Level-6</label>
+   <description>SPOT Level-6</description>
+</entry>
+<entry>
+   <code>SPOTLevel-8</code>
+   <label>SPOT Level-8</label>
+   <description>SPOT Level-8</description>
+</entry>
+<entry>
+   <code>SPOTLevel-9</code>
+   <label>SPOT Level-9</label>
+   <description>SPOT Level-9</description>
+</entry>
+<entry>
+   <code>UnRecorded</code>
+   <label>UnRecorded</label>
+   <description>UnRecorded</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
+</entry>
+<entry>
+   <code>RapidEyeLevel1A</code>
+   <label>RapidEye Level 1A</label>
+   <description>RapidEye Level 1A</description>
+</entry>
+<entry>
+   <code>RapidEyeLevel3B</code>
+   <label>RapidEye Level 3B</label>
+   <description>RapidEye Level 3B</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_AtmosphericCorrectionCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>None</code>
+   <label>None</label>
+   <description>None</description>
+</entry>
+<entry>
+   <code>AtCor2</code>
+   <label>AtCor2</label>
+   <description>AtCor2</description>
+</entry>
+<entry>
+   <code>AtCor3</code>
+   <label>AtCor3</label>
+   <description>AtCor3</description>
+</entry>
+<entry>
+   <code>Calibration-AGO</code>
+   <label>Calibration-AGO</label>
+   <description>Calibration-AGO</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_PhotoTypeCode">
+<entry>
+   <code>Analog</code>
+   <label>Analog</label>
+   <description>Analog</description>
+</entry>
+<entry>
+   <code>Digital</code>
+   <label>Digital</label>
+   <description>Digital</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_LensCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>13123</code>
+   <label>13123</label>
+   <description>13123</description>
+</entry>
+<entry>
+   <code>13149&amp;13237</code>
+   <label>13149 &amp; 13237</label>
+   <description>13149 &amp; 13237</description>
+</entry>
+<entry>
+   <code>13237</code>
+   <label>13237</label>
+   <description>13237</description>
+</entry>
+<entry>
+   <code>271084</code>
+   <label>271084</label>
+   <description>271084</description>
+</entry>
+<entry>
+   <code>13244</code>
+   <label>13244</label>
+   <description>13244</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_DEMCreatorCode">
+<entry>
+   <code>NotEntered</code>
+   <label>Not Entered</label>
+   <description>Not Entered</description>
+</entry>
+<entry>
+   <code>Supplier</code>
+   <label>Supplier</label>
+   <description>Supplier</description>
+</entry>
+<entry>
+   <code>CIP</code>
+   <label>CIP</label>
+   <description>CIP</description>
+</entry>
+<entry>
+   <code>Unknown</code>
+   <label>Unknown</label>
+   <description>Unknown</description>
+</entry>
+</codelist>
 </codelists>

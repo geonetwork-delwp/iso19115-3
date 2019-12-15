@@ -5907,6 +5907,10 @@
     <label>Definition</label>
     <description></description>
   </element>
+  <element name="delwp:controlPoints">
+    <label>Control Points</label>
+    <description></description>
+  </element>
   <element name="mrc:cloudCoverPercentage">
     <label>Cloud Cover Percentage</label>
     <description></description>
