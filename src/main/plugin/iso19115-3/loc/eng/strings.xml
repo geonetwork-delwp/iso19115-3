@@ -98,7 +98,7 @@
   <resourceExtents>Extents</resourceExtents>
   <projectExtents>Extents</projectExtents>
   <rasterDataDetails>Raster Data Details</rasterDataDetails>
-  <rasterPlatformDetails>Raster Platform Details</rasterPlatformDetails>
+  <rasterTypeDetails>Raster Type Details</rasterTypeDetails>
   <pointCloudDataDetails>Point Cloud Data Details</pointCloudDataDetails>
   <contourDataDetails>Contour Data Details</contourDataDetails>
   <surveyDetails>Survey Details</surveyDetails>
@@ -164,5 +164,7 @@
   <jurisdictionId>Jurisdiction</jurisdictionId>
   <vsdl>Victorian Spatial Data Library (VSDL) Schema</vsdl>
   <classification>Classification</classification>
+
   <custodianIsMandatory><span>You <b>must</b> have a resource custodian! Please select one by searching <i class="fa fa-search"></i> or typing in the box.</span></custodianIsMandatory>
+  <noRasterTypeDetails><span><b>No</b> raster type details required, so this tab is <i>easy</i> to complete!</span></noRasterTypeDetails>
 </strings>

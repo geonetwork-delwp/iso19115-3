@@ -241,6 +241,75 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- Match delwp:MD_RasterDetails, add in the required raster type detail elements,
+       prolly a better way to do this? Eg. Offer a choice element in the template? -->
+  <xsl:template match="delwp:MD_RasterDetails">
+    <xsl:copy>
+      <xsl:variable name="rasterType" select="delwp:type/delwp:MD_RasterTypeCode/@codeListValue"/>
+      <xsl:apply-templates select="delwp:type"/>
+      <xsl:apply-templates select="delwp:seamlessness"/>
+      <xsl:apply-templates select="delwp:rectificationType"/>
+      <xsl:apply-templates select="delwp:numberOfBands"/>
+      <xsl:apply-templates select="delwp:bandList"/>
+      <xsl:apply-templates select="delwp:resamplingKernel"/>
+      <xsl:apply-templates select="delwp:platform"/>
+      <xsl:apply-templates select="delwp:rectificationNotes"/>
+      <xsl:choose>
+        <xsl:when test="$rasterType='AerialPhoto'">
+          <xsl:choose>
+            <xsl:when test="delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:aerialPhoto">
+              <xsl:copy-of select="delwp:rasterTypeSpecificProperties"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <delwp:rasterTypeSpecificProperties>
+                <delwp:MD_RasterTypeSpecificProperties>
+                  <delwp:aerialPhoto>
+                    <delwp:MD_AerialPhoto>
+                    </delwp:MD_AerialPhoto>
+                  </delwp:aerialPhoto>
+                </delwp:MD_RasterTypeSpecificProperties>
+              </delwp:rasterTypeSpecificProperties>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:when>   
+        <xsl:when test="$rasterType='Satellite'">
+          <xsl:choose>
+            <xsl:when test="delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:satellite">
+              <xsl:copy-of select="delwp:rasterTypeSpecificProperties"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <delwp:rasterTypeSpecificProperties>
+                <delwp:MD_RasterTypeSpecificProperties>
+                  <delwp:satellite>
+                    <delwp:MD_Satellite>
+                    </delwp:MD_Satellite>
+                  </delwp:satellite>
+                </delwp:MD_RasterTypeSpecificProperties>
+              </delwp:rasterTypeSpecificProperties>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:when>
+        <xsl:when test="$rasterType='DEM'">
+          <xsl:choose>
+            <xsl:when test="delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties/delwp:dem">
+              <xsl:copy-of select="delwp:rasterTypeSpecificProperties"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <delwp:rasterTypeSpecificProperties>
+                <delwp:MD_RasterTypeSpecificProperties>
+                  <delwp:dem>
+                    <delwp:MD_DEM>
+                    </delwp:MD_DEM>
+                  </delwp:dem>
+                </delwp:MD_RasterTypeSpecificProperties>
+              </delwp:rasterTypeSpecificProperties>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:when>
+      </xsl:choose>
+    </xsl:copy>
+  </xsl:template>
+
   <!-- Update revision date -->
   <xsl:template match="mdb:dateInfo[cit:CI_Date/cit:dateType/cit:CI_DateTypeCode/@codeListValue='lastUpdate']">
     <xsl:copy>
