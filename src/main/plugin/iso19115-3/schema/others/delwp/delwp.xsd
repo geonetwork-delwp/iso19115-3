@@ -490,7 +490,7 @@
                 <documentation>Description: film number</documentation>
               </annotation>
             </element>
-            <element minOccurs="1" name="lens" type="delwp:MD_LensCode_PropertyType">
+            <element minOccurs="0" name="lens" type="delwp:MD_LensCode_PropertyType">
               <annotation>
                 <documentation>Description: lens</documentation>
               </annotation>
@@ -718,7 +718,7 @@
           <documentation>Description: rectification notes</documentation>
         </annotation>
       </element>
-      <element minOccurs="1" name="rasterTypeSpecificProperties" type="delwp:MD_RasterTypeSpecificProperties_PropertyType">
+      <element minOccurs="0" name="rasterTypeSpecificProperties" type="delwp:MD_RasterTypeSpecificProperties_PropertyType">
         <annotation>
           <documentation>Description: satellite or aerial photo or DEM properties for raster datasets</documentation>
         </annotation>

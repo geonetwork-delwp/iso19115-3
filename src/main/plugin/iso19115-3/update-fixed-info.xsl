@@ -265,6 +265,9 @@
                 <delwp:MD_RasterTypeSpecificProperties>
                   <delwp:aerialPhoto>
                     <delwp:MD_AerialPhoto>
+                      <delwp:photoType>
+                        <delwp:MD_PhotoTypeCode codeList="{concat($codelistloc,'#MD_PhotoTypeCode')}" codeListValue="Digital"/>
+                      </delwp:photoType>
                     </delwp:MD_AerialPhoto>
                   </delwp:aerialPhoto>
                 </delwp:MD_RasterTypeSpecificProperties>

@@ -116,9 +116,11 @@
           <msr:dimensionName>
             <msr:MD_DimensionNameTypeCode codeList="http://www.isotc211.org/2005/resources/codeList.xml#MD_DimensionNameTypeCode" codeListValue="column"/>
           </msr:dimensionName>
+          <!--
           <msr:dimensionSize>
             <gco:Integer></gco:Integer>
           </msr:dimensionSize>
+          -->
           <msr:resolution>
             <gco:Measure uom="cm"></gco:Measure>
           </msr:resolution>
@@ -129,9 +131,11 @@
           <msr:dimensionName>
             <msr:MD_DimensionNameTypeCode codeList="http://www.isotc211.org/2005/resources/codeList.xml#MD_DimensionNameTypeCode" codeListValue="row"/>
           </msr:dimensionName>
+          <!--
           <msr:dimensionSize>
             <gco:Integer></gco:Integer>
           </msr:dimensionSize>
+          -->
           <msr:resolution>
             <gco:Measure uom="cm"></gco:Measure>
           </msr:resolution>
@@ -316,27 +320,33 @@
                           <delwp:type>
                              <delwp:MD_RasterTypeCode codeList="codeListLocation#MD_RasterTypeCode" codeListValue="Not Entered"/>
                           </delwp:type>
+                          <!--
                           <delwp:seamlessness>
                              <delwp:MD_SeamlessnessCode codeList="codeListLocation#MD_SeamlessnessCode" codeListValue="Not Entered"/>
                           </delwp:seamlessness>
                           <delwp:rectificationType>
                              <delwp:MD_RectificationTypeCode codeList="codeListLocation#MD_RectificationTypeCode" codeListValue="Not Entered"/>
                           </delwp:rectificationType>
+                          -->
                           <delwp:numberOfBands>
                              <gco:Integer/>
                           </delwp:numberOfBands>
+                          <!--
                           <delwp:bandList>
                              <delwp:MD_BandListCode codeList="codeListLocation#MD_BandListCode" codeListValue="Not Entered"/>
                           </delwp:bandList>
                           <delwp:resamplingKernel>
                              <delwp:MD_ResamplingKernelCode codeList="codeListLocation#MD_ResamplingKernelCode" codeListValue="Not Entered"/>
                           </delwp:resamplingKernel>
+                          -->
                           <delwp:platform>
                              <delwp:MD_PlatformCode codeList="codeListLocation#MD_PlatformCode" codeListValue="Not Entered"/>
                           </delwp:platform>
+                          <!--
                           <delwp:rectificationNotes>
                              <gco:CharacterString/>
                           </delwp:rectificationNotes>
+                          -->
                         </delwp:MD_RasterDetails>
                       </delwp:rasterDetails>
                     </delwp:MD_DataDetails>

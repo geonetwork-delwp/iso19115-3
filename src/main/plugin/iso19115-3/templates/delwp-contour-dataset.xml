@@ -111,7 +111,7 @@
       <mri:citation>
         <cit:CI_Citation>
           <cit:title>
-            <gco:CharacterString>DELWP Template for contour datasets</gco:CharacterString>
+            <gco:CharacterString>DELWP Template for DEM derived contour datasets</gco:CharacterString>
           </cit:title>
           <cit:alternateTitle>
             <gco:CharacterString></gco:CharacterString>
