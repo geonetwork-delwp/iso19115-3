@@ -2503,7 +2503,7 @@
     <help></help>
     <condition>optional</condition>
   </element>
-  <element name="gex:description" id="335.0" context="gex:EX_Extent">
+  <element name="gex:description" id="335.0">
     <label>Description</label>
     <description>Spatial and temporal extent for the referring object
     </description>

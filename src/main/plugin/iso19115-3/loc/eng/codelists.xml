@@ -1571,7 +1571,7 @@
       <label>Collection session</label>
       <description>Information applies to the collection session</description>
     </entry>
-    <entry hideInEditMode="true">
+    <entry>
       <code>dataset</code>
       <label>Dataset</label>
       <description>Information applies to the dataset</description>

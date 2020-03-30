@@ -52,7 +52,7 @@
   <resourceQuality>Quality</resourceQuality>
   <logicalConsistency>Logical Consistency</logicalConsistency>
   <conceptualConsistency>Conceptual Consistency</conceptualConsistency>
-  <completenessOmission>Completeness</completenessOmission>
+  <completenessOmission>Missing Data</completenessOmission>
   <conformity_title>Report Title</conformity_title>
   <conformity_date>Report Date</conformity_date>
   <explanation>Comments</explanation>
@@ -75,6 +75,7 @@
   <!-- new tabs in default mode -->
   <resourceCitation>Citation</resourceCitation>
   <description>Description</description>
+  <resourceContacts>Contacts</resourceContacts>
   <resourceKeywords>Keywords</resourceKeywords>
   <projectKeywords>Keywords</projectKeywords>
   <resourceMaintenance>Maintenance</resourceMaintenance>
@@ -153,9 +154,9 @@
   <unrectifiedImageFormat>Unrectified Image Format</unrectifiedImageFormat>
   <rectifiedImageFormat>Rectified Image Format</rectifiedImageFormat>
   <rawImageFormat>Raw Image Format</rawImageFormat>
-  <completenessCommission>Completeness Commission</completenessCommission>
-  <nonQuantitativeAttributeCorrectness>Non-quantitative Attribute Correctness</nonQuantitativeAttributeCorrectness>
-  <absoluteExternalPositionalAccuracy>Absolute External Positional Accuracy</absoluteExternalPositionalAccuracy>
+  <completenessCommission>Excess Data</completenessCommission>
+  <nonQuantitativeAttributeCorrectness>Attribute Quality</nonQuantitativeAttributeCorrectness>
+  <absoluteExternalPositionalAccuracy>Positional Accuracy</absoluteExternalPositionalAccuracy>
   <otherDatasetDetails>Other Dataset Details</otherDatasetDetails>
   <constraintsOnMetadata>Metadata Constraints</constraintsOnMetadata>
   <attributes>Attributes</attributes>
