@@ -169,6 +169,38 @@
       </mri:defaultLocale>
     </mri:MD_DataIdentification>
   </mdb:identificationInfo>
+  <mdb:distributionInfo>
+    <mrd:MD_Distribution>
+      <mrd:distributionFormat>
+        <mrd:MD_Format>
+          <mrd:formatSpecificationCitation>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>DIGITAL - All major formats available</gco:CharacterString>
+              </cit:title>
+            </cit:CI_Citation>
+          </mrd:formatSpecificationCitation>
+        </mrd:MD_Format>
+      </mrd:distributionFormat>
+      <mrd:transferOptions>
+        <mrd:MD_DigitalTransferOptions>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://www.delwp.vic.gov.au/maps</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>WWW:LINK-1.0-http--related</gco:CharacterString>
+              </cit:protocol>
+              <cit:description>
+                <gco:CharacterString>Web page listing describing spatial information in Department of Environment, Land, Water and Planning (DELWP)</gco:CharacterString>
+              </cit:description>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+        </mrd:MD_DigitalTransferOptions>
+      </mrd:transferOptions>
+    </mrd:MD_Distribution>
+  </mdb:distributionInfo>
   <mdb:dataQualityInfo>
     <mdq:DQ_DataQuality>
       <mdq:scope>

@@ -399,7 +399,7 @@
     <condition></condition>
   </element>
   <element name="mdb:resourceScope" id="40.0">
-    <label>Resource scope</label>
+    <label>Resource Type</label>
     <description iso="true">Code for the scope.</description>
     <condition>mandatory</condition>
   </element>
@@ -4706,6 +4706,14 @@
   <element name="gml:timePosition">
     <label>Time position</label>
     <description/>
+  </element>
+  <element name="gml:timePosition" id="71000.0" context="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent/gml:TimePeriod/gml:begin/gml:TimeInstant/gml:timePosition">
+    <label>Start Date</label>
+    <description>Start of dataset temporal extent</description>
+  </element>
+  <element name="gml:timePosition" id="71001.0" context="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent/gml:TimePeriod/gml:end/gml:TimeInstant/gml:timePosition">
+    <label>End Date</label>
+    <description>End of dataset temporal extent</description>
   </element>
   <element name="gml:TimePeriod">
     <label>Time period</label>
