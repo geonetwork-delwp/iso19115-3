@@ -226,7 +226,6 @@
   <!-- View configuration -->
   <views>
     <!-- CI_Organisation subtemplates -->
-    <!--
     <view name="default" displayIfRecord="count(cit:CI_Organisation) > 0">
       <tab id="simple" default="true">
         <section>
@@ -234,7 +233,6 @@
         </section>
       </tab>
     </view>
-    -->
 
     <!-- metashare: doesn't have acquisitionInformation  -->
     <view name="metashare" displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation) = 0">
