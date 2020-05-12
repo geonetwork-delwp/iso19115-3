@@ -163,10 +163,20 @@
     </xsl:variable>
     <!--<xsl:message><xsl:value-of select="$fieldName"/>:<xsl:value-of select="normalize-space($value)"/> (<xsl:value-of select="$langId"/>) </xsl:message>-->
     <xsl:if test="normalize-space($value) != ''">
-      <Field name="{$fieldName}"
-             string="{normalize-space($value)}"
-             store="{$store}"
-             index="{$index}"/>
+      <xsl:choose>                               
+          <xsl:when test="$fieldName = 'abstract'">
+            <Field name="{$fieldName}"             
+              string="{$value}"                    
+              store="{$store}"                     
+              index="{$index}"/>                   
+          </xsl:when>                              
+          <xsl:otherwise>                          
+            <Field name="{$fieldName}"             
+              string="{normalize-space($value)}"   
+              store="{$store}"                     
+              index="{$index}"/>                   
+          </xsl:otherwise>                         
+        </xsl:choose>                              
     </xsl:if>
   </xsl:function>
 
@@ -251,6 +261,7 @@
 
         <!-- Add ANZLIC ID as a separate field -->
         <xsl:for-each select="cit:identifier/mcc:MD_Identifier[mcc:authority/cit:CI_Citation/cit:title/gco:CharacterString='ANZLIC Dataset Identifier']/mcc:code">
+<<<<<<< Updated upstream
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('anzlicid', ., $langId)"/>
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('databaseid', ., $langId, true(), true())"/>
         </xsl:for-each>
@@ -259,6 +270,10 @@
         <xsl:for-each select="cit:identifier/mcc:MD_Identifier[mcc:authority/cit:CI_Citation/cit:title/gco:CharacterString='DELWP Rastermeta Project Identifier']/mcc:code">
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('projectid', ., $langId)"/>
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('databaseid', ., $langId, true(), true())"/>
+=======
+          <!-- Add and index ANZLIC ID -->                                                             
+          <xsl:copy-of select="gn-fn-iso19115-3:index-field('anzlicid', ., $langId, true(), true())"/> 
+>>>>>>> Stashed changes
         </xsl:for-each>
 
         <!-- Add vsdl schema as a separate field -->
@@ -274,6 +289,11 @@
         <xsl:for-each select="cit:title">
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('title', ., $langId)"/>
         </xsl:for-each>
+
+         <!-- Add DELWP resource owner - selects org of first owner, because some have additional owner  -->                                                                                      
+        <xsl:for-each select="cit:citedResponsibleParty[cit:CI_Responsibility/cit:role/cit:CI_RoleCode/@codeListValue = 'owner']/cit:CI_Responsibility/cit:party/cit:CI_Organisation/cit:name">  
+          <xsl:copy-of select="gn-fn-iso19115-3:index-field('resOwner', ., $langId, true(), true())"/>                                                                                           
+        </xsl:for-each>                                                                                                                                                                          
 
         <xsl:for-each select="cit:alternateTitle">
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('altTitle', ., $langId, true(), true())"/>
@@ -596,6 +616,10 @@
         <xsl:for-each select="//mco:useLimitation">
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('conditionApplyingToAccessAndUse', ., $langId)"/>
         </xsl:for-each>
+         <!-- Add separate field for DELWP res constraints - not indexed -->                                                                            
+        <xsl:for-each select="mco:MD_SecurityConstraints/mco:classification">                                                                          
+          <xsl:copy-of select="gn-fn-iso19115-3:index-field('resClassification', mco:MD_ClassificationCode/@codeListValue, $langId, true(), false())"/>
+        </xsl:for-each>                                                                                                                                
       </xsl:for-each>
 
 
@@ -633,6 +657,12 @@
     </xsl:for-each>
 
 
+    <!-- Add DELWP metadata constraints - not indexed -->                                                                                           
+    <xsl:for-each select="$metadata/mdb:metadataConstraints/*">                                                                                     
+      <xsl:for-each select="mco:classification">                                                                                                    
+        <xsl:copy-of select="gn-fn-iso19115-3:index-field('mdClassification', mco:MD_ClassificationCode/@codeListValue, $langId, true(), true())"/>
+      </xsl:for-each>                                                                                                                               
+    </xsl:for-each>                                                                                                                                 
 
     <xsl:for-each select="$metadata/mdb:distributionInfo/mrd:MD_Distribution">
       <xsl:for-each select="mrd:distributionFormat/mrd:MD_Format/

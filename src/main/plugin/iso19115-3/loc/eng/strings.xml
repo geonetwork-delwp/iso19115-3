@@ -168,4 +168,71 @@
 
   <custodianIsMandatory><span>You <b>must</b> have a resource custodian! Please select one by searching <i class="fa fa-search"></i> or typing in the box.</span></custodianIsMandatory>
   <noRasterTypeDetails><span><b>No</b> raster type details required, so this tab is <i>easy</i> to complete!</span></noRasterTypeDetails>
+
+
+  <!-- SV added -->
+  <!-- MISC -->
+  <individual>Individual contact</individual>
+  <operation>Operation</operation>
+  <resourceLineageInfo>Lineage</resourceLineageInfo>
+
+  <!-- Full Description Report fields -->
+  <!-- prefix fdr -->
+  <fdr_fullDescriptionReport>Full Description Report - </fdr_fullDescriptionReport>
+  <fdr_anzlic>ANZLIC</fdr_anzlic>
+  <fdr_title>Title:</fdr_title>
+  <fdr_spatialExtent>Spatial Extent:</fdr_spatialExtent>
+  <fdr_owner>Owner:</fdr_owner>
+  <fdr_custodian>Custodian:</fdr_custodian>
+  <fdr_dataAccess>Data access:</fdr_dataAccess>
+  <fdr_sourceDataScale>Source Data Scale:</fdr_sourceDataScale>
+  <fdr_masterLibraryGroup>Master Library Group:</fdr_masterLibraryGroup>
+  <fdr_jurisdiction>Jurisdiction:</fdr_jurisdiction>
+  <fdr_custodialBusinessUnit>Custodial Business Unit:</fdr_custodialBusinessUnit>
+  <fdr_custodialProgram>Custodial Program:</fdr_custodialProgram>
+  <fdr_abstract>Abstract:</fdr_abstract>
+  <fdr_purpose>Purpose:</fdr_purpose>
+  <fdr_dataCurrencyInformation>Data Currency Information:</fdr_dataCurrencyInformation>
+  <fdr_dataSetStatus>Data Set Status:</fdr_dataSetStatus>
+  <fdr_dataCollection>Data Collection:</fdr_dataCollection>
+  <fdr_collectionPeriod>Collection Period:</fdr_collectionPeriod>
+  <fdr_updateFrequency>Update Frequency:</fdr_updateFrequency>
+  <fdr_datasetInformation>Dataset Information:</fdr_datasetInformation>
+  <fdr_datasetOrigin>Dataset Origin:</fdr_datasetOrigin>
+  <fdr_originality>Originality:</fdr_originality>
+  <fdr_dataCollectionMethod>Data Collection Method:</fdr_dataCollectionMethod>
+  <fdr_datasetSource>Dataset Source:</fdr_datasetSource>
+  <fdr_datasetProcessingDetails>Dataset Processing Details:</fdr_datasetProcessingDetails>
+  <fdr_positionalAccuracy>Positional Accuracy:</fdr_positionalAccuracy>
+  <fdr_attributeAccuracy>Attribute Accuracy:</fdr_attributeAccuracy>
+  <fdr_logicalConsistency>Logical Consistency:</fdr_logicalConsistency>
+  <fdr_completeness>Completeness:</fdr_completeness>
+  <fdr_access>Access:</fdr_access>
+  <fdr_constraints>Constraints:</fdr_constraints>
+  <fdr_storedDataFormat>Stored Data Format:</fdr_storedDataFormat>
+  <fdr_availableFormatType>Available Format Type:</fdr_availableFormatType>
+  <fdr_quality>Quality:</fdr_quality>
+  <fdr_compliance>Compliance:</fdr_compliance>
+  <fdr_requirements>Requirements:</fdr_requirements>
+  <fdr_validations>Validations:</fdr_validations>
+  <fdr_search>Search:</fdr_search>
+  <fdr_searchWord>Search Word:</fdr_searchWord>
+  <fdr_furtherInformation>Further Information:</fdr_furtherInformation>
+  <fdr_supportingDocumentation>Supporting Documentation:</fdr_supportingDocumentation>
+  <fdr_history>History:</fdr_history>
+  <fdr_stages>Stages:</fdr_stages>
+  <fdr_lastUpdated>Last Updated:</fdr_lastUpdated>
+  <fdr_date>Date:</fdr_date>
+  <fdr_user>User:</fdr_user>
+  <fdr_relatedDatasets>Related Datasets:</fdr_relatedDatasets>
+  <fdr_name>Name:</fdr_name>
+  <fdr_type>Type:</fdr_type>
+  <fdr_description>Description:</fdr_description>
+  <fdr_citations>Citations:</fdr_citations>
+  <fdr_additionalMetadataURL>Additional Metadata URL:</fdr_additionalMetadataURL>
+  <fdr_contacts>Contacts:</fdr_contacts>
+  <fdr_contactName>Contact Name:</fdr_contactName>
+  <fdr_telephone>Telephone:</fdr_telephone>
+  <fdr_contactRole>Contact Role:</fdr_contactRole>
+
 </strings>
