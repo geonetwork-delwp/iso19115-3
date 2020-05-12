@@ -259,21 +259,12 @@
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('identifier', ., $langId)"/>
         </xsl:for-each>
 
-        <!-- Add ANZLIC ID as a separate field -->
-        <xsl:for-each select="cit:identifier/mcc:MD_Identifier[mcc:authority/cit:CI_Citation/cit:title/gco:CharacterString='ANZLIC Dataset Identifier']/mcc:code">
-<<<<<<< Updated upstream
-          <xsl:copy-of select="gn-fn-iso19115-3:index-field('anzlicid', ., $langId)"/>
-          <xsl:copy-of select="gn-fn-iso19115-3:index-field('databaseid', ., $langId, true(), true())"/>
-        </xsl:for-each>
-
         <!-- Add Project ID as a separate field -->
         <xsl:for-each select="cit:identifier/mcc:MD_Identifier[mcc:authority/cit:CI_Citation/cit:title/gco:CharacterString='DELWP Rastermeta Project Identifier']/mcc:code">
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('projectid', ., $langId)"/>
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('databaseid', ., $langId, true(), true())"/>
-=======
           <!-- Add and index ANZLIC ID -->                                                             
           <xsl:copy-of select="gn-fn-iso19115-3:index-field('anzlicid', ., $langId, true(), true())"/> 
->>>>>>> Stashed changes
         </xsl:for-each>
 
         <!-- Add vsdl schema as a separate field -->
