@@ -17,6 +17,7 @@
                 xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
                 xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0"
                 xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0"
                 xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
                 xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
@@ -495,17 +496,37 @@
 
       <!-- TODO: Index new type of resolution -->
       <xsl:for-each select="mri:spatialResolution/mri:MD_Resolution">
-        <xsl:for-each select="mri:equivalentScale/mri:MD_RepresentativeFraction/mri:denominator/gco:Integer">
+      
+        <xsl:for-each select="mri:distance/*">
+          <xsl:variable name="distanceVal" select="string(.)"/>
+          <xsl:variable name="distanceUom" select="string(@uom)"/>
+
+          <!-- <xsl:variable name="horizontalAccuracy" select="concat($distanceVal, $distanceUom)"/> -->
+
+          <Field name="horizontalAccuracy" string="{concat($distanceVal, $distanceUom)}" store="true" index="false"/>
+        </xsl:for-each>
+
+        <xsl:for-each select="mri:vertical/*">
+          <xsl:variable name="distanceVal" select="string(.)"/>
+          <xsl:variable name="distanceUom" select="string(@uom)"/>
+
+          <!-- <xsl:variable name="verticalAccuracy" select="concat($distanceVal, $distanceUom)"/> -->
+
+          <Field name="verticalAccuracy" string="{concat($distanceVal, $distanceUom)}" store="true" index="false"/>
+        </xsl:for-each>
+
+        <!-- <xsl:for-each select="mri:equivalentScale/mri:MD_RepresentativeFraction/mri:denominator/gco:Integer">
           <Field name="denominator" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
         <xsl:for-each select="mri:distance/gco:Distance">
-          <Field name="distanceVal" string="{string(.)}" store="true" index="true"/>
+          <Field name="distanceUom" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
         <xsl:for-each select="mri:distance/gco:Distance/@uom">
           <Field name="distanceUom" string="{string(.)}" store="true" index="true"/>
-        </xsl:for-each>
+        </xsl:for-each> -->
+
       </xsl:for-each>
 
       <!-- Add an extra value to the status codelist to indicate all
@@ -647,13 +668,69 @@
 
     </xsl:for-each>
 
+    <!-- Add DELWP grid resolution -->                                                                             
+    <xsl:for-each select="$metadata/mdb:spatialRepresentationInfo//msr:MD_Dimension">                                                                                     
+      
+      <xsl:choose>
+        <!-- handle row resolution -->
+        <xsl:when test="msr:dimensionName/msr:MD_DimensionNameTypeCode/@codeListValue = 'row'">
+          <xsl:variable name="distanceVal" select="string(msr:resolution/*)"/>
+          <xsl:variable name="distanceUom" select="string(msr:resolution/*/@uom)"/>
 
+          <!-- <xsl:variable name="rowResolution" select="concat($distanceVal, $distanceUom)"/> -->
+
+          <Field name="rowResolution" string="{concat($distanceVal, $distanceUom)}" store="true" index="false"/>
+          <!-- <xsl:copy-of select="gn-fn-iso19115-3:index-field('rowResolution', $rowResolution, $langId, true(), true())"/> -->
+        </xsl:when>
+        <!-- handle column resolution -->
+        <xsl:when test="msr:dimensionName/msr:MD_DimensionNameTypeCode/@codeListValue = 'column'">
+          <xsl:variable name="distanceVal" select="string(msr:resolution/*)"/>
+          <xsl:variable name="distanceUom" select="string(msr:resolution/*/@uom)"/>
+
+          <!-- <xsl:variable name="columnResolution" select="concat($distanceVal, $distanceUom)"/> -->
+
+          <Field name="columnResolution" string="{concat($distanceVal, $distanceUom)}" store="true" index="false"/>
+          <!-- <xsl:copy-of select="gn-fn-iso19115-3:index-field('columnResolution', $columnResolution, $langId, true(), true())"/> -->
+        </xsl:when>
+      </xsl:choose>
+    </xsl:for-each>   
+
+    <!-- Add DELWP LiDAR fields to index -->
+    <xsl:for-each select="$metadata/mdb:acquisitionInformation//delwp:MD_PointCloudDetails">
+
+      <!-- get footprintSize -->
+      <xsl:variable name="footprintVal" select="string(delwp:footprintSize/*)"/>
+      <xsl:variable name="footprintUom" select="string(delwp:footprintSize/*/@uom)"/>
+      <Field name="footprintSize" string="{concat($footprintVal, $footprintUom)}" store="true" index="false"/>
+      
+      <!-- get pointDensityTarget -->
+      <xsl:variable name="pointDensityTargetVal" select="string(delwp:pointDensityTarget/*)"/>
+      <xsl:variable name="pointDensityTargetUom" select="string(delwp:pointDensityTarget/*/@uom)"/>
+      <Field name="pointDensityTarget" string="{concat($pointDensityTargetVal, $pointDensityTargetUom)}" store="true" index="false"/>
+
+      <!-- get pointDensityActual -->
+      <xsl:variable name="pointDensityActualVal" select="string(delwp:pointDensityActual/*)"/>
+      <xsl:variable name="pointDensityActualUom" select="string(delwp:pointDensityActual/*/@uom)"/>
+      <Field name="pointDensityActual" string="{concat($pointDensityActualVal, $pointDensityActualUom)}" store="true" index="false"/>
+
+      <!-- get pointSpacingTarget -->
+      <xsl:variable name="pointSpacingTargetVal" select="string(delwp:pointSpacingTarget/*)"/>
+      <xsl:variable name="pointSpacingTargetUom" select="string(delwp:pointSpacingTarget/*/@uom)"/>
+      <Field name="pointSpacingTarget" string="{concat($pointSpacingTargetVal, $pointSpacingTargetUom)}" store="true" index="false"/>
+
+      <!-- get pointSpacingActual -->
+      <xsl:variable name="pointSpacingActualVal" select="string(delwp:pointSpacingActual/*)"/>
+      <xsl:variable name="pointSpacingActualUom" select="string(delwp:pointSpacingActual/*/@uom)"/>
+      <Field name="pointSpacingActual" string="{concat($pointSpacingActualVal, $pointSpacingActualUom)}" store="true" index="false"/>
+
+    </xsl:for-each> 
+    
     <!-- Add DELWP metadata constraints - not indexed -->                                                                                           
     <xsl:for-each select="$metadata/mdb:metadataConstraints/*">                                                                                     
       <xsl:for-each select="mco:classification">                                                                                                    
         <xsl:copy-of select="gn-fn-iso19115-3:index-field('mdClassification', mco:MD_ClassificationCode/@codeListValue, $langId, true(), true())"/>
       </xsl:for-each>                                                                                                                               
-    </xsl:for-each>                                                                                                                                 
+    </xsl:for-each>    
 
     <xsl:for-each select="$metadata/mdb:distributionInfo/mrd:MD_Distribution">
       <xsl:for-each select="mrd:distributionFormat/mrd:MD_Format/
