@@ -184,3 +184,4 @@ Comments and questions to geonetwork-developers or geonetwork-users mailing list
 * François Prunayre (titellus)
 * Arnaud De Groof (Spacebel)
 * Ted Habermann (hdfgroup)
+
