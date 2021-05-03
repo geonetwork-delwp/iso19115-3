@@ -539,6 +539,8 @@
     </entry>
   </codelist>
   <codelist name="mri:DS_AssociationTypeCode" alias="associationType">
+    <!-- DELWP Restriction - no association types except isComposedOf are permitted -->
+    <!--
     <entry>
       <code>crossReference</code>
       <label>Cross reference</label>
@@ -563,12 +565,14 @@
         three-dimensional images
       </description>
     </entry>
+    -->
     <entry>
       <code>isComposedOf</code>
       <label>Is composed of</label>
       <description>Reference to resources that are parts of this resource
       </description>
     </entry>
+    <!--
     <entry>
       <code>collectiveTitle</code>
       <label>Collective Title</label>
@@ -594,8 +598,10 @@
       <label>Revision Of</label>
       <description>Resource is a revision of associated resource</description>
     </entry>
+    -->
   </codelist>
   <codelist name="mri:DS_InitiativeTypeCode" alias="initiativeType">
+    <!--
     <entry>
       <code>campaign</code>
       <label>Campaign</label>
@@ -657,11 +663,13 @@
       <label>Program</label>
       <description>Specific planned activity</description>
     </entry>
+    -->
     <entry>
       <code>project</code>
       <label>Project</label>
       <description>Organized undertaking, research, or development</description>
     </entry>
+    <!--
     <entry>
       <code>study</code>
       <label>Study</label>
@@ -677,6 +685,12 @@
       <label>Trial</label>
       <description>Process of testing to discover or demonstrate something
       </description>
+    </entry>
+    -->
+    <entry>
+      <code>product</code>
+      <label>Product</label>
+      <description>Data product produced by organisation</description>
     </entry>
   </codelist>
   <codelist name="gfc:FC_RoleType">
