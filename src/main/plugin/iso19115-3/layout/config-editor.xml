@@ -36,6 +36,7 @@
     <for name="mrd:orderingInstructions" use="textarea"/>
     <for name="mco:otherConstraints" use="textarea"/>
     <for name="mrl:statement" use="textarea"/>
+    <for name="mrl:description" use="textarea"/>
     <for name="mri:supplementalInformation" use="textarea"/>
     <for name="mri:specificUsage" use="textarea"/>
     <for name="mco:useLimitation" use="textarea"/>
@@ -158,6 +159,8 @@
 
     <for name="mri:descriptiveKeywords" addDirective="data-gn-thesaurus-selector">
       <directiveAttributes
+              data-include="xpath::string-join(mdb:MD_Metadata/mdb:identificationInfo//mri:thesaurusName/*/cit:identifier/*/mcc:code/gcx:Anchor/concat('-', substring-after(text()[. != ''], 'geonetwork.thesaurus.')), ',')"
+              data-allow-free-text-keywords="false"
               data-transformation="to-iso19115-3-keyword"/>
     </for>
   </fields>
@@ -254,8 +257,8 @@
           <field xpath="/mdb:MD_Metadata/mdb:metadataScope/mdb:MD_MetadataScope/mdb:resourceScope"/>
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:abstract"/>
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:purpose"/>
-          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:credit"/>
-          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:supplementalInformation"/>
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:credit" or="credit"/>
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:supplementalInformation" or="supplementalInformation"/>
 				</section>
 			</tab>
 
@@ -408,9 +411,10 @@
 
       <tab id="resourceContacts" mode="flat">
         <section>
+          <text ref="pointOfContactIsMandatory" if="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:pointOfContact/cit:CI_Responsibility[cit:role/cit:CI_RoleCode/@codeListValue='pointOfContact']/cit:*) = 0"/>
+					<field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:pointOfContact" or="pointOfContact" in="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification"/>
           <text ref="custodianIsMandatory" if="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:citedResponsibleParty/cit:CI_Responsibility[cit:role/cit:CI_RoleCode/@codeListValue='custodian']/cit:*) = 1"/>
 					<field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:citedResponsibleParty" or="citedResponsibleParty" in="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation"/>
-					<field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:pointOfContact" or="pointOfContact" in="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification"/>
 				</section>
 			</tab>
 
@@ -424,7 +428,7 @@
 
       <tab id="resourceConstraints" mode="flat">
         <section>
-          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/mco:MD_SecurityConstraints/mco:useLimitation"/>
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/mco:MD_SecurityConstraints/mco:useLimitation" or="useLimitation" in="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/mco:MD_SecurityConstraints"/>
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/mco:MD_SecurityConstraints/mco:classification"/>
           <!-- TODO: allow creative commons license to be picked -->
 				</section>
@@ -467,7 +471,7 @@
       <!-- metadataConstraints -->
       <tab id="metadataConstraints" mode="flat">
         <section>
-          <field xpath="/mdb:MD_Metadata/mdb:metadataConstraints/mco:MD_SecurityConstraints/mco:useLimitation"/>
+          <field xpath="/mdb:MD_Metadata/mdb:metadataConstraints/mco:MD_SecurityConstraints/mco:useLimitation" or="useLimitation" in="/mdb:MD_Metadata/mdb:metadataConstraints/mco:MD_SecurityConstraints"/>
           <field xpath="/mdb:MD_Metadata/mdb:metadataConstraints/mco:MD_SecurityConstraints/mco:classification"/>
 				</section>
 			</tab>
@@ -1133,8 +1137,7 @@
       <!-- Raster type details: only applies to spatial rep type = grid -->
       <tab id="rasterTypeDetails" mode="flat" displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode[@codeListValue='grid']) > 0">
           <!-- No raster type details -->
-          <text ref="noRasterTypeDetails" if="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record//delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails//delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[not(@codeListValue='AerialPhoto') and not(@codeListValue='DEM') and not(@codeListValue='Satellite')]) > 0"/>
-
+          <text ref="noRasterTypeDetails" if="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record//delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails//delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[not(@codeListValue='Aerial Photo') and not(@codeListValue='DEM') and not(@codeListValue='Satellite')]) > 0"/>
           <!-- Aerial Photo raster type details -->
           <section displayIfRecord="count(mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record//delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails//delwp:rasterDetails/delwp:MD_RasterDetails/delwp:type/delwp:MD_RasterTypeCode[@codeListValue='AerialPhoto']) > 0">
             <field xpath="/mdb:MD_Metadata/mdb:acquisitionInformation/mac:MI_AcquisitionInformation/mac:operation/mac:MI_Operation/mac:otherProperty/gco:Record//delwp:datasetDetails/delwp:MD_DatasetDetails/delwp:dataDetails/delwp:MD_DataDetails//delwp:rasterDetails/delwp:MD_RasterDetails/delwp:rasterTypeSpecificProperties/delwp:MD_RasterTypeSpecificProperties//delwp:aerialPhoto/delwp:MD_AerialPhoto/delwp:photoType"/>

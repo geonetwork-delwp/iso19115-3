@@ -167,6 +167,7 @@
   <classification>Classification</classification>
 
   <custodianIsMandatory><span>You <b>must</b> have a resource custodian! Please select one by searching <i class="fa fa-search"></i> or typing in the box.</span></custodianIsMandatory>
+  <pointOfContactIsMandatory><span>You <b>must</b> have a resource point of contact! Please add one by clicking the plus button and/or selecting <b>Point of contact</b> as the role.</span></pointOfContactIsMandatory>
   <noRasterTypeDetails><span><b>No</b> raster type details required, so this tab is <i>easy</i> to complete!</span></noRasterTypeDetails>
 
 
