@@ -1775,6 +1775,12 @@
       <label>Contours</label>
       <description>Contour data from a Digital Elevation Model (DEM)</description>
     </entry>
+    <!-- delwp extensions -->
+    <entry>
+      <code>view</code>
+      <label>View</label>
+      <description>Data view</description>
+    </entry>
   </codelist>
   <codelist name="mri:MD_TopicCategoryCode" alias="topicCategory">
     <entry>
@@ -3933,6 +3939,115 @@
    <code>Unknown</code>
    <label>Unknown</label>
    <description>Unknown</description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_EllipsoidVerticalDatumCode">
+<entry>
+   <code>AUSGEOID98</code>
+   <label>AUSGEOID98</label>
+   <description></description>
+</entry>
+<entry>
+   <code>AUSGEOID09</code>
+   <label>AUSGEOID09</label>
+   <description></description>
+</entry>
+<entry>
+   <code>AUSGEOID2020</code>
+   <label>AUSGEOID2020</label>
+   <description></description>
+</entry>
+<entry>
+   <code>MELBOURNEGEOID08</code>
+   <label>MELBOURNEGEOID08</label>
+   <description></description>
+</entry>
+<entry>
+   <code>GRS80 Ellipsoidal (ITRF 1992)</code>
+   <label>GRS80 Ellipsoidal (ITRF 1992)</label>
+   <description></description>
+</entry>
+<entry>
+   <code>GRS80 Ellipsoidal (ITRF 2005)</code>
+   <label>GRS80 Ellipsoidal (ITRF 2005)</label>
+   <description></description>
+</entry>
+<entry>
+   <code>GRS80 Ellipsoidal (ITRF 2008)</code>
+   <label>GRS80 Ellipsoidal (ITRF 2008)</label>
+   <description></description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_GeoidVerticalDatumCode">
+<entry>
+   <code>AUSGEOID98</code>
+   <label>AUSGEOID98</label>
+   <description></description>
+</entry>
+<entry>
+   <code>AUSGEOID09</code>
+   <label>AUSGEOID09</label>
+   <description></description>
+</entry>
+<entry>
+   <code>AUSGEOID2020</code>
+   <label>AUSGEOID2020</label>
+   <description></description>
+</entry>
+<entry>
+   <code>MELBOURNEGEOID08</code>
+   <label>MELBOURNEGEOID08</label>
+   <description></description>
+</entry>
+<entry>
+   <code>GRS80 Ellipsoidal (ITRF 1992)</code>
+   <label>GRS80 Ellipsoidal (ITRF 1992)</label>
+   <description></description>
+</entry>
+<entry>
+   <code>GRS80 Ellipsoidal (ITRF 2005)</code>
+   <label>GRS80 Ellipsoidal (ITRF 2005)</label>
+   <description></description>
+</entry>
+<entry>
+   <code>GRS80 Ellipsoidal (ITRF 2008)</code>
+   <label>GRS80 Ellipsoidal (ITRF 2008)</label>
+   <description></description>
+</entry>
+</codelist>
+
+<codelist name="delwp:MD_EllipsoidFormatCode">
+<entry>
+   <code>LAS 1.3</code>
+   <label>LAS 1.3</label>
+   <description></description>
+</entry>
+<entry>
+   <code>LAS 1.2 Classification Level 1</code>
+   <label>LAS 1.2 Classification Level 1</label>
+   <description></description>
+</entry>
+<entry>
+   <code>LAS 1.3, Waveform Packets</code>
+   <label>LAS 1.3, Waveform Packets</label>
+   <description></description>
+</entry>
+<entry>
+   <code>LAS 1.2</code>
+   <label>LAS 1.2</label>
+   <description></description>
+</entry>
+<entry>
+   <code>LAS 1.2 Classification Level 2</code>
+   <label>LAS 1.2 Classification Level 2</label>
+   <description></description>
+</entry>
+<entry>
+   <code>LAS 1.2 - Class(Model Key Points, Non-Ground)</code>
+   <label>LAS 1.2 - Class(Model Key Points, Non-Ground)</label>
+   <description></description>
 </entry>
 </codelist>
 </codelists>
