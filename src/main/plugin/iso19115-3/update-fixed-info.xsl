@@ -91,7 +91,49 @@
       <xsl:apply-templates select="mdb:defaultLocale"/>
       <xsl:apply-templates select="mdb:parentMetadata"/>
       <xsl:apply-templates select="mdb:metadataScope"/>
+      <!--
       <xsl:apply-templates select="mdb:contact"/>
+      -->
+      <xsl:choose>
+        <!-- If no originator then add current user as originator -->
+        <xsl:when test="/root/env/created">
+          <mdb:contact>
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="{concat($codelistloc,'#CI_RoleCode')}" codeListValue="originator">originator</cit:CI_RoleCode>
+              </cit:role>
+              <xsl:call-template name="addCurrentUserAsParty"/>
+            </cit:CI_Responsibility>
+          </mdb:contact>
+        </xsl:when>
+        <!-- Add current user as processor, then process everything except the 
+             existing processor which will be excluded from the output
+             document - this is to ensure that only the latest user is
+             added as a processor - note: Marlin administrator is excluded from 
+             this role -->
+        <xsl:otherwise>
+          <xsl:choose>
+            <xsl:when test="/root/env/user/details/username!='admin'">
+              <!-- admin does not replace a processor -->
+              <mdb:contact>
+                <cit:CI_Responsibility>
+                  <cit:role>
+                    <cit:CI_RoleCode codeList="{concat($codelistloc,'#CI_RoleCode')}" codeListValue="processor">processor</cit:CI_RoleCode>
+                  </cit:role>
+                  <xsl:call-template name="addCurrentUserAsParty"/>
+                </cit:CI_Responsibility>
+              </mdb:contact>
+              <!-- copy any other metadata contacts with the exception of processors and 
+                   pointOfContact so we make sure that IDC is point of contact -->
+              <xsl:apply-templates select="mdb:contact[not(cit:CI_Responsibility/cit:role/cit:CI_RoleCode='processor' or cit:CI_Responsibility/cit:role/cit:CI_RoleCode='pointOfContact')]"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <!-- admin does not replace a processor, so add IDC and then grab all mdb:contact except pointOfContact -->
+              <xsl:apply-templates select="mdb:contact[cit:CI_Responsibility/cit:role/cit:CI_RoleCode!='pointOfContact']"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:otherwise>
+      </xsl:choose>
 
 
       <xsl:variable name="isCreationDateAvailable"
@@ -210,6 +252,25 @@
       <xsl:apply-templates select="mdb:metadataMaintenance"/>
       <xsl:apply-templates select="mdb:acquisitionInformation"/>
     </xsl:copy>
+  </xsl:template>
+
+   <!-- ================================================================= -->
+
+  <xsl:template name="addCurrentUserAsParty">
+    <cit:party>
+      <cit:CI_Organisation>
+        <cit:name>
+          <gco:CharacterString><xsl:value-of select="/root/env/user/details/organisation"/></gco:CharacterString>
+        </cit:name>
+        <cit:individual>
+          <cit:CI_Individual>
+            <cit:name>
+              <gco:CharacterString><xsl:value-of select="concat(/root/env/user/details/surname,', ',/root/env/user/details/firstname)"/></gco:CharacterString>
+            </cit:name>
+          </cit:CI_Individual>
+        </cit:individual>
+      </cit:CI_Organisation>
+    </cit:party>
   </xsl:template>
 
   <xsl:template match="cit:CI_Citation[name(..)='mri:citation']">
