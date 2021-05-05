@@ -3978,17 +3978,17 @@
    <description></description>
 </entry>
 <entry>
-   <code>GRS80 Ellipsoidal (ITRF 1992)</code>
+   <code>GRS80Ellipsoidal(ITRF1992)</code>
    <label>GRS80 Ellipsoidal (ITRF 1992)</label>
    <description></description>
 </entry>
 <entry>
-   <code>GRS80 Ellipsoidal (ITRF 2005)</code>
+   <code>GRS80Ellipsoidal(ITRF2005)</code>
    <label>GRS80 Ellipsoidal (ITRF 2005)</label>
    <description></description>
 </entry>
 <entry>
-   <code>GRS80 Ellipsoidal (ITRF 2008)</code>
+   <code>GRS80Ellipsoidal(ITRF2008)</code>
    <label>GRS80 Ellipsoidal (ITRF 2008)</label>
    <description></description>
 </entry>
@@ -4016,17 +4016,17 @@
    <description></description>
 </entry>
 <entry>
-   <code>GRS80 Ellipsoidal (ITRF 1992)</code>
+   <code>GRS80Ellipsoidal(ITRF1992)</code>
    <label>GRS80 Ellipsoidal (ITRF 1992)</label>
    <description></description>
 </entry>
 <entry>
-   <code>GRS80 Ellipsoidal (ITRF 2005)</code>
+   <code>GRS80Ellipsoidal(ITRF2005)</code>
    <label>GRS80 Ellipsoidal (ITRF 2005)</label>
    <description></description>
 </entry>
 <entry>
-   <code>GRS80 Ellipsoidal (ITRF 2008)</code>
+   <code>GRS80Ellipsoidal(ITRF2008)</code>
    <label>GRS80 Ellipsoidal (ITRF 2008)</label>
    <description></description>
 </entry>
@@ -4034,32 +4034,32 @@
 
 <codelist name="delwp:MD_EllipsoidFormatCode">
 <entry>
-   <code>LAS 1.3</code>
+   <code>LAS1.3</code>
    <label>LAS 1.3</label>
    <description></description>
 </entry>
 <entry>
-   <code>LAS 1.2 Classification Level 1</code>
+   <code>LAS1.2ClassificationLevel1</code>
    <label>LAS 1.2 Classification Level 1</label>
    <description></description>
 </entry>
 <entry>
-   <code>LAS 1.3, Waveform Packets</code>
+   <code>LAS1.3,WaveformPackets</code>
    <label>LAS 1.3, Waveform Packets</label>
    <description></description>
 </entry>
 <entry>
-   <code>LAS 1.2</code>
+   <code>LAS1.2</code>
    <label>LAS 1.2</label>
    <description></description>
 </entry>
 <entry>
-   <code>LAS 1.2 Classification Level 2</code>
+   <code>LAS1.2 Classification Level 2</code>
    <label>LAS 1.2 Classification Level 2</label>
    <description></description>
 </entry>
 <entry>
-   <code>LAS 1.2 - Class(Model Key Points, Non-Ground)</code>
+   <code>LAS1.2-Class(ModelKeyPoints,Non-Ground)</code>
    <label>LAS 1.2 - Class(Model Key Points, Non-Ground)</label>
    <description></description>
 </entry>

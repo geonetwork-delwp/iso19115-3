@@ -35,6 +35,8 @@
   <acquisitionInformation>Acquisition Info</acquisitionInformation>
   <anzlicId>ANZLIC Id</anzlicId>
 
+  <alternateTitle>Alternate Title</alternateTitle>
+
 
   <add-resource-id>Compute resource identifier</add-resource-id>
   <add-resource-idHelp>Compose the resource identifier using the catalog URL and the metadata identifier (eg. http://www.organization.org/catalogue/5391bf69-44bc-4ea0-8cc0-6cf6c3bc81ae).</add-resource-idHelp>
