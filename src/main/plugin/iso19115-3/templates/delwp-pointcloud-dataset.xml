@@ -88,7 +88,7 @@
       <mri:citation>
         <cit:CI_Citation>
           <cit:title>
-            <gco:CharacterString>DELWP Template for pointcloud datasets</gco:CharacterString>
+            <gco:CharacterString>Template: pointcloud datasets</gco:CharacterString>
           </cit:title>
           <cit:alternateTitle>
             <gco:CharacterString></gco:CharacterString>

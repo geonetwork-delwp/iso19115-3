@@ -154,7 +154,7 @@
       <mri:citation>
         <cit:CI_Citation>
           <cit:title>
-            <gco:CharacterString>DELWP Template for raster datasets</gco:CharacterString>
+            <gco:CharacterString>Template: aerial photo, satellite and DEM raster datasets</gco:CharacterString>
           </cit:title>
           <cit:alternateTitle>
             <gco:CharacterString></gco:CharacterString>
