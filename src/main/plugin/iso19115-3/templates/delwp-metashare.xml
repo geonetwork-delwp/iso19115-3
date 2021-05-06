@@ -75,7 +75,7 @@
       <mri:citation>
         <cit:CI_Citation>
           <cit:title>
-            <gco:CharacterString>Template: vector metadata records</gco:CharacterString>
+            <gco:CharacterString>Template: vector datasets</gco:CharacterString>
           </cit:title>
           <cit:alternateTitle>
             <gco:CharacterString></gco:CharacterString>
