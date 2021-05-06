@@ -438,7 +438,16 @@
 
       <tab id="resourceConstraints" mode="flat">
         <section>
-          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/mco:MD_SecurityConstraints/mco:useLimitation" or="useLimitation" in="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/mco:MD_SecurityConstraints"/>
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/mco:MD_SecurityConstraints/mco:useLimitation"/>
+          <action type="add" name="useLimitation" or="useLimitation" if="count(mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/mco:MD_SecurityConstraints/mco:useLimitation)=0" in="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/mco:MD_SecurityConstraints">
+            <template>
+              <snippet>
+                <mco:useLimitation>
+                  <gco:CharacterString/>
+                </mco:useLimitation>
+              </snippet>
+            </template>
+          </action>
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/mco:MD_SecurityConstraints/mco:classification"/>
           <!-- TODO: allow creative commons license to be picked -->
 				</section>
@@ -481,7 +490,16 @@
       <!-- metadataConstraints -->
       <tab id="metadataConstraints" mode="flat">
         <section>
-          <field xpath="/mdb:MD_Metadata/mdb:metadataConstraints/mco:MD_SecurityConstraints/mco:useLimitation" or="useLimitation" in="/mdb:MD_Metadata/mdb:metadataConstraints/mco:MD_SecurityConstraints"/>
+          <field xpath="/mdb:MD_Metadata/mdb:metadataConstraints/mco:MD_SecurityConstraints/mco:useLimitation"/>
+          <action type="add" name="useLimitation" or="useLimitation" if="count(mdb:MD_Metadata/mdb:metadataConstraints/mco:MD_SecurityConstraints/mco:useLimitation)=0" in="/mdb:MD_Metadata/mdb:metadataConstraints/mco:MD_SecurityConstraints">
+            <template>
+              <snippet>
+                <mco:useLimitation>
+                  <gco:CharacterString/>
+                </mco:useLimitation>
+              </snippet>
+            </template>
+          </action>
           <field xpath="/mdb:MD_Metadata/mdb:metadataConstraints/mco:MD_SecurityConstraints/mco:classification"/>
 				</section>
 			</tab>
