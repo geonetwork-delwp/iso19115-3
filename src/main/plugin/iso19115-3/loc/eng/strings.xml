@@ -35,7 +35,7 @@
   <acquisitionInformation>Acquisition Info</acquisitionInformation>
   <anzlicId>ANZLIC Id</anzlicId>
 
-  <alternateTitle>Alternate Title</alternateTitle>
+  <alternateTitle>Resource Name</alternateTitle>
 
 
   <add-resource-id>Compute resource identifier</add-resource-id>

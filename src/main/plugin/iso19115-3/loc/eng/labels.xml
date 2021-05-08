@@ -1971,6 +1971,11 @@
       information is known.
       Example: "DCW" as an alternative title for "Digital Chart of the World
     </description>
+  </element>
+  <element name="cit:alternateTitle" id="777.1"
+           context="/mdb:MD_Metadata/mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:alternateTitle">
+    <label>Resource Name</label>
+    <description>Name of the resource</description>
     <condition>mandatory</condition>
   </element>
   <element name="mrd:amendmentNumber" id="287.0">
